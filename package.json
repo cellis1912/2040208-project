@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "2040208-project.helloWorld",
-        "title": "Hello World"
+        "command": "accessible-toggle.showUI",
+        "title": "Open Accessible Extension"
       }
     ]
   },
