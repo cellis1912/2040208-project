@@ -31,12 +31,12 @@ function activate(context) {
 
     async function toggleMinimalistMode() {
         await vscode.commands.executeCommand('workbench.action.toggleActivityBarVisibility');
+        await vscode.commands.executeCommand('workbench.action.toggleSidebarVisibility');
         await vscode.commands.executeCommand('workbench.action.toggleStatusbarVisibility');
-        await vscode.commands.executeCommand('workbench.action.toggleEditorMinimap');
+        await vscode.commands.executeCommand('workbench.action.closeAuxiliaryBar');
+        await vscode.commands.executeCommand('workbench.action.togglePanel');
+        await vscode.commands.executeCommand('editor.action.toggleMinimap');
         await vscode.commands.executeCommand('breadcrumbs.toggle');
-        await vscode.commands.executeCommand('workbench.action.close');
-        await vscode.commands.executeCommand('workbench.action.closePanel');
-
         vscode.window.showInformationMessage('Minimalist Mode toggled!');
     }
 }
