@@ -1,4 +1,7 @@
 const vscode = require('vscode');
+let timerInterval = null;
+let remainingSeconds = 25 * 60;
+let timerPanel = null;
 
 const ORIGINAL_THEME_KEY = 'originalTheme';
 const ORIGINAL_EDITOR_SETTINGS_KEY = 'originalEditorSettings';
@@ -22,6 +25,16 @@ function activate(context) {
                     switch (message.command) {
                         case 'toggle':
                             await toggleMinimalistMode();
+                            break;
+                        case 'startTimer':
+                            timerPanel = panel
+                            startTimer(panel);
+                            break;
+                        case 'pauseTimer':
+                            pauseTimer();
+                            break;
+                        case 'resetTimer':
+                            resetTimer(panel);
                             break;
                         case 'hcDark':
                             await applyHighContrastDark(context);
@@ -179,16 +192,57 @@ async function restoreOriginalTheme(context) {
     vscode.window.showInformationMessage('Theme restored');
 }
 
+function startTimer(panel) {
+    if (timerInterval) return;
+
+    timerInterval = setInterval(() => {
+        remainingSeconds--;
+
+        panel.webview.postMessage({
+            command: 'updateTime',
+            time: formatTime(remainingSeconds)
+        });
+
+        if (remainingSeconds <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            vscode.window.showInformationMessage('⏰ Focus session complete!');
+        }
+    }, 1000);
+}
+
+function pauseTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+}
+
+function resetTimer(panel) {
+    pauseTimer();
+    remainingSeconds = 25 * 60;
+
+    panel.webview.postMessage({
+        command: 'updateTime',
+        time: formatTime(remainingSeconds)
+    });
+}
+
+function formatTime(seconds) {
+    const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const s = String(seconds % 60).padStart(2, '0');
+    return `${m}:${s}`;
+}
+
 function getWebviewContent() {
     return `
     <!DOCTYPE html>
     <html lang="en">
     <body style="font-family:sans-serif;padding:20px">
-        <label style="display:flex;align-items:center;font-size:16px">
-            <input type="checkbox" id="toggleSwitch">
-            <span style="margin-left:10px">Minimalist Mode</span>
-        </label>
 
+        <label style="display:flex;align-items:center;font-size:16px">
+            <h1>Accessibily Dashboard</h1>
+        </label>
+        <input type="checkbox" id="toggleSwitch">
+        <span style="margin-left:10px">Minimalist Mode</span>
         <hr>
 
         <button id="hcDark">High Contrast Dark</button>
@@ -201,29 +255,52 @@ function getWebviewContent() {
             Dyslexia-friendly Mode
         </label>
 
+        <h2 id="timer">25:00</h2>
+
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+
         <script>
             const vscode = acquireVsCodeApi();
 
-            document.getElementById('toggleSwitch')
-                .addEventListener('change', () =>
-                    vscode.postMessage({ command: 'toggle' })
-                );
+            // Timer buttons
+            document.getElementById('start').onclick = () =>
+                vscode.postMessage({ command: 'startTimer' });
 
-            document.getElementById('hcDark').onclick =
-                () => vscode.postMessage({ command: 'hcDark' });
+            document.getElementById('pause').onclick = () =>
+                vscode.postMessage({ command: 'pauseTimer' });
 
-            document.getElementById('hcLight').onclick =
-                () => vscode.postMessage({ command: 'hcLight' });
+            document.getElementById('reset').onclick = () =>
+                vscode.postMessage({ command: 'resetTimer' });
 
-            document.getElementById('restore').onclick =
-                () => vscode.postMessage({ command: 'restoreTheme' });
+            // Minimalist toggle
+            document.getElementById('toggleSwitch').addEventListener('change', () =>
+                vscode.postMessage({ command: 'toggle' })
+            );
 
+            // High contrast buttons
+            document.getElementById('hcDark').onclick = () =>
+                vscode.postMessage({ command: 'hcDark' });
+            document.getElementById('hcLight').onclick = () =>
+                vscode.postMessage({ command: 'hcLight' });
+            document.getElementById('restore').onclick = () =>
+                vscode.postMessage({ command: 'restoreTheme' });
+
+            // Dyslexia-friendly toggle
             const dyslexiaToggle = document.getElementById('dyslexiaToggle');
             dyslexiaToggle.addEventListener('change', () => {
                 vscode.postMessage({
                     command: dyslexiaToggle.checked ? 'dyslexiaOn' : 'dyslexiaOff'
                 });
-            }); 
+            });
+
+            // Receive timer updates from extension
+            window.addEventListener('message', event => {
+                if (event.data.command === 'updateTime') {
+                    document.getElementById('timer').textContent = event.data.time;
+                }
+            });
         </script>
     </body>
     </html>
