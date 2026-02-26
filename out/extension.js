@@ -236,66 +236,112 @@ function getWebviewContent() {
     return `
     <!DOCTYPE html>
     <html lang="en">
-    <body style="font-family:sans-serif;padding:20px">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            :root {
+                --spacing: 12px;
+                --border-radius: 4px;
+            }
+            body {
+                font-family: var(--vscode-font-family);
+                color: var(--vscode-foreground);
+                background-color: var(--vscode-editor-background);
+                padding: 20px;
+                line-height: 1.4;
+            }
+            h1 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--vscode-widget-border); padding-bottom: 8px; }
+            h2 { font-size: 1rem; margin-top: 0; opacity: 0.8; }
+            
+            .container { display: grid; gap: 20px; max-width: 400px; }
+            
+            /* Card Styling */
+            .section-card {
+                background: var(--vscode-sideBar-background);
+                border: 1px solid var(--vscode-widget-border);
+                padding: var(--spacing);
+                border-radius: var(--border-radius);
+            }
 
-        <label style="display:flex;align-items:center;font-size:16px">
-            <h1>Accessibily Dashboard</h1>
-        </label>
-        <input type="checkbox" id="toggleSwitch">
-        <span style="margin-left:10px">Minimalist Mode</span>
-        <hr>
+            /* Controls */
+            .row { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; }
+            .row input { margin-right: 10px; }
+            
+            .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+            .button-grid button:last-child { grid-column: span 2; }
 
-        <button id="hcDark">High Contrast Dark</button>
-        <button id="hcLight">High Contrast Light</button>
-        <button id="restore">Restore Theme</button>
+            /* Timer Specifics */
+            #timer { font-size: 3rem; font-weight: bold; text-align: center; margin: 10px 0; font-family: monospace; }
+            .timer-controls { display: flex; gap: 8px; justify-content: center; }
 
-        <hr>
-        <label>
-            <input type="checkbox" id="dyslexiaToggle">
-            Dyslexia-friendly Mode
-        </label>
+            /* VS Code Style Buttons */
+            button {
+                background: var(--vscode-button-background);
+                color: var(--vscode-button-foreground);
+                border: none;
+                padding: 8px 12px;
+                border-radius: 2px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+            button:hover { background: var(--vscode-button-hoverBackground); }
+            button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
+            button.secondary:hover { background: var(--vscode-button-secondaryHoverBackground); }
+        </style>
+    </head>
+    <body>
+        <h1>Accessibly Dashboard</h1>
+        
+        <div class="container">
+            <section class="section-card">
+                <h2>Interface Settings</h2>
+                <label class="row">
+                    <input type="checkbox" id="toggleSwitch">
+                    <span>Minimalist Mode</span>
+                </label>
+                <label class="row">
+                    <input type="checkbox" id="dyslexiaToggle">
+                    <span>Dyslexia-friendly Mode</span>
+                </label>
+                
+                <div class="button-grid">
+                    <button id="hcDark">High Contrast Dark</button>
+                    <button id="hcLight">High Contrast Light</button>
+                    <button id="restore" class="secondary">Restore Theme</button>
+                </div>
+            </section>
 
-        <h2 id="timer">25:00</h2>
-
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="reset">Reset</button>
+            <section class="section-card">
+                <h2>Focus Timer</h2>
+                <div id="timer">25:00</div>
+                <div class="timer-controls">
+                    <button id="start">Start</button>
+                    <button id="pause" class="secondary">Pause</button>
+                    <button id="reset" class="secondary">Reset</button>
+                </div>
+            </section>
+        </div>
 
         <script>
             const vscode = acquireVsCodeApi();
 
-            // Timer buttons
-            document.getElementById('start').onclick = () =>
-                vscode.postMessage({ command: 'startTimer' });
+            // Timer Logic
+            document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
+            document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
+            document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
 
-            document.getElementById('pause').onclick = () =>
-                vscode.postMessage({ command: 'pauseTimer' });
+            // Settings Logic
+            document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
+            document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
+            document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
+            document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
 
-            document.getElementById('reset').onclick = () =>
-                vscode.postMessage({ command: 'resetTimer' });
-
-            // Minimalist toggle
-            document.getElementById('toggleSwitch').addEventListener('change', () =>
-                vscode.postMessage({ command: 'toggle' })
-            );
-
-            // High contrast buttons
-            document.getElementById('hcDark').onclick = () =>
-                vscode.postMessage({ command: 'hcDark' });
-            document.getElementById('hcLight').onclick = () =>
-                vscode.postMessage({ command: 'hcLight' });
-            document.getElementById('restore').onclick = () =>
-                vscode.postMessage({ command: 'restoreTheme' });
-
-            // Dyslexia-friendly toggle
             const dyslexiaToggle = document.getElementById('dyslexiaToggle');
-            dyslexiaToggle.addEventListener('change', () => {
-                vscode.postMessage({
-                    command: dyslexiaToggle.checked ? 'dyslexiaOn' : 'dyslexiaOff'
-                });
-            });
+            dyslexiaToggle.onchange = () => {
+                vscode.postMessage({ command: dyslexiaToggle.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
+            };
 
-            // Receive timer updates from extension
             window.addEventListener('message', event => {
                 if (event.data.command === 'updateTime') {
                     document.getElementById('timer').textContent = event.data.time;
