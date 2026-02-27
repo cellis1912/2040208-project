@@ -1,16 +1,15 @@
 {
   "name": "2040208-project",
   "displayName": "2040208_project",
-  "description": "",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.109.0"
   },
-  "categories": [
-    "Other"
+  "activationEvents": [
+    "onCommand:accessible-toggle.showUI"
   ],
-  "activationEvents": [],
-  "main": "./out/extension.js",
+  "enabledApiProposals": ["languageModels"],
+  "main": "./extension.js", 
   "contributes": {
     "commands": [
       {

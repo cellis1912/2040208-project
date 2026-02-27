@@ -280,7 +280,56 @@ function getWebviewContent() {
     <!DOCTYPE html>
     <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+            :root {
+                --spacing: 12px;
+                --border-radius: 4px;
+            }
+            body {
+                font-family: var(--vscode-font-family);
+                color: var(--vscode-foreground);
+                background-color: var(--vscode-editor-background);
+                padding: 20px;
+                line-height: 1.4;
+            }
+            h1 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--vscode-widget-border); padding-bottom: 8px; }
+            h2 { font-size: 1rem; margin-top: 0; opacity: 0.8; }
+            .container { display: grid; gap: 20px; max-width: 400px; }
+
+            /* Card Styling */
+            .section-card {
+                background: var(--vscode-sideBar-background);
+                border: 1px solid var(--vscode-widget-border);
+                padding: var(--spacing);
+                border-radius: var(--border-radius);
+            }
+            /* Controls */
+            .row { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; }
+            .row input { margin-right: 10px; }
+            .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+            .button-grid button:last-child { grid-column: span 2; }
+
+            /* Timer Specifics */
+            #timer { font-size: 3rem; font-weight: bold; text-align: center; margin: 10px 0; font-family: monospace; }
+            .timer-controls { display: flex; gap: 8px; justify-content: center; }
+
+            /* VS Code Style Buttons */
+            button {
+                background: var(--vscode-button-background);
+                color: var(--vscode-button-foreground);
+                border: none;
+                padding: 8px 12px;
+                border-radius: 2px;
+                cursor: pointer;
+                font-size: 12px;
+            }
+
+            button:hover { background: var(--vscode-button-hoverBackground); }
+            button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
+            button.secondary:hover { background: var(--vscode-button-secondaryHoverBackground); }
+
             /* New AI section styling */
             .ai-box { margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 4px; font-style: italic; font-size: 11px; }
             .hidden { display: none; }
@@ -290,13 +339,38 @@ function getWebviewContent() {
         <h1>Accessibly Dashboard</h1>
         <div class="container">
             <section class="section-card">
-                <h2>AI Accessibility Assistant</h2>
-                <button id="analyzeBtn" style="width: 100%">Analyze Current File for A11y</button>
-                <div id="aiResponse" class="ai-box hidden">Waiting for AI...</div>
+                <h2>Interface Settings</h2>
+                <label class="row">
+                    <input type="checkbox" id="toggleSwitch">
+                    <span>Minimalist Mode</span>
+                </label>
+                <label class="row">
+                    <input type="checkbox" id="dyslexiaToggle">
+                    <span>Dyslexia-friendly Mode</span>
+                </label>
+                <div class="button-grid">
+                    <button id="hcDark">High Contrast Dark</button>
+                    <button id="hcLight">High Contrast Light</button>
+                    <button id="restore" class="secondary">Restore Theme</button>
+                </div>
             </section>
-
+            <section class="section-card">
+                <h2>Focus Timer</h2>
+                <div id="timer">25:00</div>
+                <div class="timer-controls">
+                    <button id="start">Start</button>
+                    <button id="pause" class="secondary">Pause</button>
+                    <button id="reset" class="secondary">Reset</button>
+                </div>
+            </section>
+            <div class="container">
+                    <section class="section-card">
+                        <h2>AI Accessibility Assistant</h2>
+                        <button id="analyzeBtn" style="width: 100%">Analyze Current File for A11y</button>
+                        <div id="aiResponse" class="ai-box hidden">Waiting for AI...</div>
+                    </section>
             </div>
-
+        </div>
         <script>
             const vscode = acquireVsCodeApi();
 
@@ -320,8 +394,6 @@ function getWebviewContent() {
                     aiResponse.textContent = message.text;
                 }
             });
-            
-            const vscode = acquireVsCodeApi();
 
             // Timer Logic
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
