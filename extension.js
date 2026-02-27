@@ -36,8 +36,8 @@ function activate(context) {
                         case 'resetTimer':
                             resetTimer(panel);
                             break;
-                        case 'analyzeCode':
-                            await runAIAnalysis(panel);
+                        case 'breakdownTask':
+                            await runTaskBreakdown(panel, message.userQuery);
                             break;
                         case 'hcDark':
                             await applyHighContrastDark(context);
@@ -86,25 +86,32 @@ function activate(context) {
     }
 }
 
-async function runAIAnalysis(panel) {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) {
-        vscode.window.showErrorMessage('No active editor found');
-        return;
-    }
-
-    const code = editor.document.getText();
-
+async function runTaskBreakdown(panel, userQuery) {
     try {
-        // Select the AI model
+        // Using the native LM API as the bridge for OpenAI/Copilot
         const [model] = await vscode.lm.selectChatModels({ family: 'gpt-4o' });
-        if (!model) return;
+        if (!model) {
+            vscode.window.showErrorMessage("AI Model not found.");
+            return;
+        }
 
         const messages = [
             vscode.LanguageModelChatMessage.User(
-                `Analyze this code for accessibility (a11y) issues like missing aria-labels, 
-                poor color contrast logic, or non-semantic HTML. 
-                Provide a 2-sentence summary of the biggest issue: \n\n${code}`
+                `Act as a Task Architect for a developer with ADHD or executive dysfunction. 
+                The goal is to provide 'Task Initiation' support.
+                
+                USER GOAL: "${userQuery}"
+
+                INSTRUCTIONS (Chain of Thought Strategy):
+                1. Identify the high-level objective.
+                2. Break this down into 3-5 major sub-tasks.
+                3. For each sub-task, provide 2 very small 'micro-steps' that take less than 5 minutes.
+                4. DO NOT provide any code snippets or technical syntax.
+                5. Use clear, encouraging, and actionable language.
+                
+                FORMAT:
+                - Use Markdown bold for sub-tasks.
+                - Use [ ] for micro-steps.`
             )
         ];
 
@@ -113,16 +120,16 @@ async function runAIAnalysis(panel) {
         let responseText = '';
         for await (const fragment of request.text) {
             responseText += fragment;
+            // Optional: Send fragments to webview for real-time streaming effect
         }
 
-        // Send the AI result back to your Webview
         panel.webview.postMessage({
-            command: 'aiResult',
+            command: 'taskResult',
             text: responseText
         });
 
     } catch (err) {
-        vscode.window.showErrorMessage(`AI Analysis failed: ${err.message}`);
+        vscode.window.showErrorMessage(`Architect Error: ${err.message}`);
     }
 }
 
@@ -305,6 +312,14 @@ function getWebviewContent() {
                 padding: var(--spacing);
                 border-radius: var(--border-radius);
             }
+            .architect-card {
+                border-top: 4px solid var(--vscode-debugIcon-breakpointForeground);
+                background: var(--vscode-sideBar-background);
+                padding: var(--spacing);
+                border-radius: var(--border-radius);
+                border: 1px solid var(--vscode-widget-border);
+            }
+
             /* Controls */
             .row { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; }
             .row input { margin-right: 10px; }
@@ -315,7 +330,7 @@ function getWebviewContent() {
             #timer { font-size: 3rem; font-weight: bold; text-align: center; margin: 10px 0; font-family: monospace; }
             .timer-controls { display: flex; gap: 8px; justify-content: center; }
 
-            /* VS Code Style Buttons */
+            /* VS Code Style Elements */
             button {
                 background: var(--vscode-button-background);
                 color: var(--vscode-button-foreground);
@@ -325,13 +340,31 @@ function getWebviewContent() {
                 cursor: pointer;
                 font-size: 12px;
             }
-
             button:hover { background: var(--vscode-button-hoverBackground); }
             button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
             button.secondary:hover { background: var(--vscode-button-secondaryHoverBackground); }
 
-            /* New AI section styling */
-            .ai-box { margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 4px; font-style: italic; font-size: 11px; }
+            textarea {
+                width: 100%;
+                background: var(--vscode-input-background);
+                color: var(--vscode-input-foreground);
+                border: 1px solid var(--vscode-input-border);
+                padding: 8px;
+                font-family: inherit;
+                resize: vertical;
+                box-sizing: border-box;
+            }
+
+            .checklist-output {
+                background: var(--vscode-editor-background);
+                border: 1px solid var(--vscode-widget-border);
+                padding: 12px;
+                margin-top: 15px;
+                line-height: 1.6;
+                font-size: 13px;
+                border-radius: 4px;
+                white-space: pre-wrap;
+            }
             .hidden { display: none; }
         </style>
     </head>
@@ -354,6 +387,7 @@ function getWebviewContent() {
                     <button id="restore" class="secondary">Restore Theme</button>
                 </div>
             </section>
+
             <section class="section-card">
                 <h2>Focus Timer</h2>
                 <div id="timer">25:00</div>
@@ -363,44 +397,52 @@ function getWebviewContent() {
                     <button id="reset" class="secondary">Reset</button>
                 </div>
             </section>
-            <div class="container">
-                    <section class="section-card">
-                        <h2>AI Accessibility Assistant</h2>
-                        <button id="analyzeBtn" style="width: 100%">Analyze Current File for A11y</button>
-                        <div id="aiResponse" class="ai-box hidden">Waiting for AI...</div>
-                    </section>
-            </div>
+
+            <section class="architect-card">
+                <h2>The Task Architect</h2>
+                <p style="font-size: 11px; margin-bottom: 8px;">Break complex goals into micro-steps:</p>
+                <textarea id="taskInput" rows="3" placeholder="e.g. 'Build a navigation bar'"></textarea>
+                <div class="button-grid" style="margin-top:10px;">
+                    <button id="buildBtn">Decompose Task</button>
+                    <button id="clearBtn" class="secondary">Clear Output</button>
+                </div>
+                <div id="output" class="checklist-output hidden"></div>
+            </section>
         </div>
+
         <script>
             const vscode = acquireVsCodeApi();
+            
+            // Timer UI Elements
+            const timerDisplay = document.getElementById('timer');
+            
+            // Architect UI Elements
+            const buildBtn = document.getElementById('buildBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const output = document.getElementById('output');
+            const taskInput = document.getElementById('taskInput');
 
-            // AI Action
-            const analyzeBtn = document.getElementById('analyzeBtn');
-            const aiResponse = document.getElementById('aiResponse');
-
-            analyzeBtn.onclick = () => {
-                aiResponse.classList.remove('hidden');
-                aiResponse.textContent = "Analyzing code...";
-                vscode.postMessage({ command: 'analyzeCode' });
-            };
-
-            window.addEventListener('message', event => {
-                const message = event.data;
-                if (message.command === 'updateTime') {
-                    document.getElementById('timer').textContent = message.time;
-                }
-                // Handle AI Response
-                if (message.command === 'aiResult') {
-                    aiResponse.textContent = message.text;
-                }
-            });
-
-            // Timer Logic
+            // --- Timer Logic ---
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
             document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
             document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
 
-            // Settings Logic
+            // --- Architect Logic ---
+            buildBtn.onclick = () => {
+                const query = taskInput.value.trim();
+                if (!query) return;
+                output.classList.remove('hidden');
+                output.innerHTML = "<em>Architecting your steps...</em>";
+                vscode.postMessage({ command: 'breakdownTask', userQuery: query });
+            };
+
+            clearBtn.onclick = () => {
+                output.classList.add('hidden');
+                output.innerText = '';
+                taskInput.value = '';
+            };
+
+            // --- Settings Logic ---
             document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
             document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
             document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
@@ -411,9 +453,16 @@ function getWebviewContent() {
                 vscode.postMessage({ command: dyslexiaToggle.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
             };
 
+            // --- Message Listener ---
             window.addEventListener('message', event => {
-                if (event.data.command === 'updateTime') {
-                    document.getElementById('timer').textContent = event.data.time;
+                const message = event.data;
+                switch (message.command) {
+                    case 'updateTime':
+                        timerDisplay.textContent = message.time;
+                        break;
+                    case 'taskResult':
+                        output.innerText = message.text;
+                        break;
                 }
             });
         </script>
