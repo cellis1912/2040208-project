@@ -290,10 +290,7 @@ function getWebviewContent() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            :root {
-                --spacing: 12px;
-                --border-radius: 4px;
-            }
+            :root { --spacing: 12px; --border-radius: 4px; }
             body {
                 font-family: var(--vscode-font-family);
                 color: var(--vscode-foreground);
@@ -305,32 +302,22 @@ function getWebviewContent() {
             h2 { font-size: 1rem; margin-top: 0; opacity: 0.8; }
             .container { display: grid; gap: 20px; max-width: 400px; }
 
-            /* Card Styling */
-            .section-card {
+            .section-card, .architect-card {
                 background: var(--vscode-sideBar-background);
                 border: 1px solid var(--vscode-widget-border);
                 padding: var(--spacing);
                 border-radius: var(--border-radius);
             }
-            .architect-card {
-                border-top: 4px solid var(--vscode-debugIcon-breakpointForeground);
-                background: var(--vscode-sideBar-background);
-                padding: var(--spacing);
-                border-radius: var(--border-radius);
-                border: 1px solid var(--vscode-widget-border);
-            }
+            .architect-card { border-top: 4px solid var(--vscode-debugIcon-breakpointForeground); }
 
-            /* Controls */
             .row { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; }
             .row input { margin-right: 10px; }
             .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
             .button-grid button:last-child { grid-column: span 2; }
 
-            /* Timer Specifics */
             #timer { font-size: 3rem; font-weight: bold; text-align: center; margin: 10px 0; font-family: monospace; }
             .timer-controls { display: flex; gap: 8px; justify-content: center; }
 
-            /* VS Code Style Elements */
             button {
                 background: var(--vscode-button-background);
                 color: var(--vscode-button-foreground);
@@ -342,7 +329,6 @@ function getWebviewContent() {
             }
             button:hover { background: var(--vscode-button-hoverBackground); }
             button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
-            button.secondary:hover { background: var(--vscode-button-secondaryHoverBackground); }
 
             textarea {
                 width: 100%;
@@ -350,21 +336,26 @@ function getWebviewContent() {
                 color: var(--vscode-input-foreground);
                 border: 1px solid var(--vscode-input-border);
                 padding: 8px;
-                font-family: inherit;
-                resize: vertical;
                 box-sizing: border-box;
             }
 
-            .checklist-output {
+            .task-row {
+                display: flex;
+                align-items: center;
+                gap: 10px;
                 background: var(--vscode-editor-background);
                 border: 1px solid var(--vscode-widget-border);
-                padding: 12px;
-                margin-top: 15px;
-                line-height: 1.6;
-                font-size: 13px;
+                padding: 8px;
+                margin-top: 5px;
                 border-radius: 4px;
-                white-space: pre-wrap;
             }
+            .task-text {
+                flex-grow: 1;
+                background: transparent;
+                border: none;
+                color: var(--vscode-foreground);
+            }
+            .delete-task { background: transparent; color: var(--vscode-errorForeground); cursor: pointer; border: none; font-size: 16px; }
             .hidden { display: none; }
         </style>
     </head>
@@ -373,18 +364,12 @@ function getWebviewContent() {
         <div class="container">
             <section class="section-card">
                 <h2>Interface Settings</h2>
-                <label class="row">
-                    <input type="checkbox" id="toggleSwitch">
-                    <span>Minimalist Mode</span>
-                </label>
-                <label class="row">
-                    <input type="checkbox" id="dyslexiaToggle">
-                    <span>Dyslexia-friendly Mode</span>
-                </label>
+                <label class="row"><input type="checkbox" id="toggleSwitch"><span>Minimalist Mode</span></label>
+                <label class="row"><input type="checkbox" id="dyslexiaToggle"><span>Dyslexia-friendly</span></label>
                 <div class="button-grid">
-                    <button id="hcDark">High Contrast Dark</button>
-                    <button id="hcLight">High Contrast Light</button>
-                    <button id="restore" class="secondary">Restore Theme</button>
+                    <button id="hcDark">HC Dark</button>
+                    <button id="hcLight">HC Light</button>
+                    <button id="restore" class="secondary">Restore</button>
                 </div>
             </section>
 
@@ -400,71 +385,84 @@ function getWebviewContent() {
 
             <section class="architect-card">
                 <h2>The Task Architect</h2>
-                <p style="font-size: 11px; margin-bottom: 8px;">Break complex goals into micro-steps:</p>
-                <textarea id="taskInput" rows="3" placeholder="e.g. 'Build a navigation bar'"></textarea>
-                <div class="button-grid" style="margin-top:10px;">
-                    <button id="buildBtn">Decompose Task</button>
-                    <button id="clearBtn" class="secondary">Clear Output</button>
+                <textarea id="taskInput" rows="3" placeholder="Describe your goal..."></textarea>
+                <div class="button-grid">
+                    <button id="buildBtn">Decompose</button>
+                    <button id="clearBtn" class="secondary">Clear</button>
                 </div>
-                <div id="output" class="checklist-output hidden"></div>
+                <div id="output" style="margin-top: 15px;"></div>
             </section>
         </div>
 
         <script>
             const vscode = acquireVsCodeApi();
-            
-            // Timer UI Elements
-            const timerDisplay = document.getElementById('timer');
-            
-            // Architect UI Elements
-            const buildBtn = document.getElementById('buildBtn');
-            const clearBtn = document.getElementById('clearBtn');
             const output = document.getElementById('output');
             const taskInput = document.getElementById('taskInput');
 
-            // --- Timer Logic ---
+            document.getElementById('buildBtn').onclick = () => {
+                const val = taskInput.value.trim();
+                if(val) {
+                    output.innerHTML = '<em>Architecting...</em>';
+                    vscode.postMessage({ command: 'breakdownTask', userQuery: val });
+                }
+            };
+
+            document.getElementById('clearBtn').onclick = () => {
+                output.innerHTML = '';
+                taskInput.value = '';
+            };
+
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
             document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
             document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
 
-            // --- Architect Logic ---
-            buildBtn.onclick = () => {
-                const query = taskInput.value.trim();
-                if (!query) return;
-                output.classList.remove('hidden');
-                output.innerHTML = "<em>Architecting your steps...</em>";
-                vscode.postMessage({ command: 'breakdownTask', userQuery: query });
-            };
-
-            clearBtn.onclick = () => {
-                output.classList.add('hidden');
-                output.innerText = '';
-                taskInput.value = '';
-            };
-
-            // --- Settings Logic ---
             document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
             document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
             document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
             document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
-
-            const dyslexiaToggle = document.getElementById('dyslexiaToggle');
-            dyslexiaToggle.onchange = () => {
-                vscode.postMessage({ command: dyslexiaToggle.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
+            document.getElementById('dyslexiaToggle').onchange = (e) => {
+                vscode.postMessage({ command: e.target.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
             };
 
-            // --- Message Listener ---
             window.addEventListener('message', event => {
-                const message = event.data;
-                switch (message.command) {
-                    case 'updateTime':
-                        timerDisplay.textContent = message.time;
-                        break;
-                    case 'taskResult':
-                        output.innerText = message.text;
-                        break;
-                }
+                const msg = event.data;
+                if (msg.command === 'updateTime') document.getElementById('timer').textContent = msg.time;
+                if (msg.command === 'taskResult') renderTasks(msg.text);
             });
+
+            function renderTasks(text) {
+                output.innerHTML = '';
+                // Split by newline and filter out headers/encouragement
+                const lines = text.split('\\n').filter(l => l.trim() && !l.includes('---'));
+                
+                const filteredLines = lines.filter((line, index) => {
+                    const isHeader = line.includes('**');
+                    const isLast = index === lines.length - 1;
+                    return !isHeader && !isLast;
+                });
+
+                filteredLines.forEach((line) => {
+                    const clean = line.replace(/^[#\\d\\.\\s\\-\\[\\]]+/, '').trim();
+                    if(!clean) return;
+
+                    const div = document.createElement('div');
+                    div.className = 'task-row';
+                    div.innerHTML = '<input type="checkbox">' +
+                                   '<input type="text" class="task-text" value="' + clean + '">' +
+                                   '<button class="delete-task">×</button>';
+                    
+                    const check = div.querySelector('input[type="checkbox"]');
+                    const txt = div.querySelector('.task-text');
+                    
+                    check.onchange = () => {
+                        txt.style.textDecoration = check.checked ? 'line-through' : 'none';
+                        txt.style.opacity = check.checked ? '0.5' : '1';
+                    };
+
+                    div.querySelector('.delete-task').onclick = () => div.remove();
+                    output.appendChild(div);
+                });
+            }
         </script>
     </body>
     </html>
