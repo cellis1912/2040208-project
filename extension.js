@@ -7,6 +7,29 @@ const ORIGINAL_THEME_KEY = 'originalTheme';
 const ORIGINAL_EDITOR_SETTINGS_KEY = 'originalEditorSettings';
 
 function activate(context) {
+    vscode.languages.onDidChangeDiagnostics(() => {
+
+        collection.clear();
+        const diagnostics = vscode.languages.getDiagnostics();
+
+        diagnostics.forEach(([uri, diagnosticList]) => {
+
+            const simplifiedDiagnostics = diagnosticList.map(d => {
+
+                if (d.severity !== vscode.DiagnosticSeverity.Error) return d;
+
+                const simplified = explainError(d.message);
+
+                return new vscode.Diagnostic(
+                    d.range,
+                    simplified,
+                    d.severity
+                );
+            });
+
+            collection.set(uri, simplifiedDiagnostics);
+        });
+    });
 
     const showToggleUI = vscode.commands.registerCommand(
         'accessible-toggle.showUI',
@@ -88,7 +111,6 @@ function activate(context) {
 
 async function runTaskBreakdown(panel, userQuery) {
     try {
-        // Using the native LM API as the bridge for OpenAI/Copilot
         const [model] = await vscode.lm.selectChatModels({ family: 'gpt-4o' });
         if (!model) {
             vscode.window.showErrorMessage("AI Model not found.");
@@ -97,8 +119,9 @@ async function runTaskBreakdown(panel, userQuery) {
 
         const messages = [
             vscode.LanguageModelChatMessage.User(
-                `Act as a Task Architect for a developer with ADHD or executive dysfunction. 
+                `Act as a Task Architect for a neurodiverse developer. 
                 The goal is to provide 'Task Initiation' support.
+                Please simply state list with no other explanations, preambles, or encouragement.
                 
                 USER GOAL: "${userQuery}"
 
@@ -116,13 +139,15 @@ async function runTaskBreakdown(panel, userQuery) {
         ];
 
         const request = await model.sendRequest(messages, {}, new vscode.CancellationTokenSource().token);
-        
+
         let responseText = '';
         for await (const fragment of request.text) {
             responseText += fragment;
             // Optional: Send fragments to webview for real-time streaming effect
         }
-
+        console.log("--- PLAIN AI OUTPUT START ---");
+        console.log(responseText);
+        console.log("--- PLAIN AI OUTPUT END ---");
         panel.webview.postMessage({
             command: 'taskResult',
             text: responseText
@@ -437,8 +462,7 @@ function getWebviewContent() {
                 
                 const filteredLines = lines.filter((line, index) => {
                     const isHeader = line.includes('**');
-                    const isLast = index === lines.length - 1;
-                    return !isHeader && !isLast;
+                    return !isHeader;
                 });
 
                 filteredLines.forEach((line) => {
