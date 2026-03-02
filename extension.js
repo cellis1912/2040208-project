@@ -77,6 +77,9 @@ function activate(context) {
                         case 'dyslexiaOff':
                             restoreEditorSettings(context);
                             break;
+                        case 'scanErrors':
+                            await explainActiveErrors(panel);
+                            break;
                     }
                 },
                 undefined,
@@ -307,6 +310,63 @@ function formatTime(seconds) {
     return `${m}:${s}`;
 }
 
+async function explainActiveErrors(panel) {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+        vscode.window.showErrorMessage("Open a file first to scan for errors.");
+        return;
+    }
+
+    // 1. Get errors for the current file
+    const uri = editor.document.uri;
+    const diagnostics = vscode.languages.getDiagnostics(uri)
+        .filter(d => d.severity === vscode.DiagnosticSeverity.Error);
+
+    if (diagnostics.length === 0) {
+        panel.webview.postMessage({ 
+            command: 'taskResult', 
+            text: "✅ No errors found in this file! Everything looks good." 
+        });
+        return;
+    }
+
+    // 2. Format the errors for the AI
+    const errorList = diagnostics.map((d, i) => 
+        `Error ${i+1}: "${d.message}" at line ${d.range.start.line + 1}`
+    ).join('\n');
+
+    try {
+        const [model] = await vscode.lm.selectChatModels({ family: 'gpt-4o' });
+        if (!model) return;
+
+        const messages = [
+            vscode.LanguageModelChatMessage.User(
+                `I have the following code errors in my file. 
+                Explain them simply to a developer who prefers clear, jargon-free language.
+                For each error, tell me: 1. What is actually wrong? 2. How do I fix it?
+                
+                ERRORS:
+                ${errorList}`
+            )
+        ];
+
+        const request = await model.sendRequest(messages, {}, new vscode.CancellationTokenSource().token);
+        
+        let responseText = '';
+        for await (const fragment of request.text) {
+            responseText += fragment;
+        }
+
+        panel.webview.postMessage({
+            command: 'taskResult',
+            text: `### 🔍 Error Breakdown\n\n${responseText}`
+        });
+
+    } catch (err) {
+        vscode.window.showErrorMessage(`AI Error: ${err.message}`);
+    }
+}
+
 function getWebviewContent() {
     return `
     <!DOCTYPE html>
@@ -417,6 +477,11 @@ function getWebviewContent() {
                 </div>
                 <div id="output" style="margin-top: 15px;"></div>
             </section>
+
+            <section class="section-card">
+                <h2>Code Helper</h2>
+                <button id="scanBtn" style="width: 100%;">Scan File for Errors</button>
+            </section>
         </div>
 
         <script>
@@ -424,6 +489,10 @@ function getWebviewContent() {
             const output = document.getElementById('output');
             const taskInput = document.getElementById('taskInput');
 
+            document.getElementById('scanBtn').onclick = () => {
+                output.innerHTML = '<em>Scanning problems...</em>';
+                vscode.postMessage({ command: 'scanErrors' });
+            };
             document.getElementById('buildBtn').onclick = () => {
                 const val = taskInput.value.trim();
                 if(val) {
