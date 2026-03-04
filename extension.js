@@ -50,7 +50,11 @@ function activate(context) {
                             break;
                         case 'startTimer':
                             timerPanel = panel
-                            startTimer(panel);
+                            startTimer(panel, 25*60);
+                            break;
+                        case 'startBreak':
+                            timerPanel = panel
+                            startTimer(panel, 5*60);
                             break;
                         case 'pauseTimer':
                             pauseTimer();
@@ -288,8 +292,14 @@ async function restoreOriginalTheme(context) {
     vscode.window.showInformationMessage('Theme restored');
 }
 
-function startTimer(panel) {
-    if (timerInterval) return;
+function startTimer(panel, seconds) {
+    if (timerInterval) pauseTimer();
+
+    remainingSeconds = seconds;
+    panel.webview.postMessage({
+        command: 'updateTime',
+        time: formatTime(remainingSeconds)
+    });
 
     timerInterval = setInterval(() => {
         remainingSeconds--;
@@ -302,24 +312,23 @@ function startTimer(panel) {
         if (remainingSeconds <= 0) {
             clearInterval(timerInterval);
             timerInterval = null;
-            vscode.window.showInformationMessage('⏰ Focus session complete!');
+            vscode.window.showInformationMessage('⏰ Session complete!');
         }
     }, 1000);
-}
-
-function pauseTimer() {
-    clearInterval(timerInterval);
-    timerInterval = null;
 }
 
 function resetTimer(panel) {
     pauseTimer();
     remainingSeconds = 25 * 60;
-
     panel.webview.postMessage({
         command: 'updateTime',
         time: formatTime(remainingSeconds)
     });
+}
+
+function pauseTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
 }
 
 function formatTime(seconds) {
@@ -329,9 +338,15 @@ function formatTime(seconds) {
 }
 
 async function explainActiveErrors(panel) {
-    const editor = vscode.window.activeTextEditor;
+    // 1. Try to find the editor that is currently visible alongside the panel
+    // Or fall back to the first visible text editor
+    const editor = vscode.window.activeTextEditor || vscode.window.visibleTextEditors.find(e => e.document.uri.scheme === 'file');
+
     if (!editor) {
-        vscode.window.showErrorMessage("Open a file first to scan for errors.");
+        panel.webview.postMessage({ 
+            command: 'errorResult',
+            text: "**No code file detected.** Please click into your code file and then back to the dashboard." 
+        });
         return;
     }
 
@@ -342,7 +357,7 @@ async function explainActiveErrors(panel) {
     if (diagnostics.length === 0) {
         panel.webview.postMessage({ 
             command: 'errorResult',
-            text: "✅ No errors found in this file!" 
+            text: " No errors found in this file!" 
         });
         return;
     }
@@ -353,7 +368,9 @@ async function explainActiveErrors(panel) {
 
     try {
         const [model] = await vscode.lm.selectChatModels({ family: 'gpt-4o' });
-        if (!model) return;
+        if (!model) {
+                    throw new Error("AI Model not found");
+                }
 
         const messages = [
             vscode.LanguageModelChatMessage.User(
@@ -371,17 +388,21 @@ async function explainActiveErrors(panel) {
         const request = await model.sendRequest(messages, {}, new vscode.CancellationTokenSource().token);
         
         let responseText = '';
-        // Use request.text for the fragment iterator
         for await (const fragment of request.text) {
             responseText += fragment;
         }
 
         panel.webview.postMessage({
-            command: 'errorResult', // Changed from taskResult to distinguish formatting
+            command: 'errorResult',
             text: responseText
         });
 
     } catch (err) {
+        // IMPORTANT: Tell the webview that the scan failed
+        panel.webview.postMessage({
+            command: 'errorResult',
+            text: `❌ Error during scan: ${err.message}`
+        });
         vscode.window.showErrorMessage(`AI Error: ${err.message}`);
     }
 }
@@ -404,13 +425,31 @@ function getWebviewContent() {
             }
             h1 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--vscode-widget-border); padding-bottom: 8px; }
             h2 { font-size: 1rem; margin-top: 0; opacity: 0.8; }
-            .container { display: grid; gap: 20px; max-width: 400px; }
+            /* Change max-width to a percentage or remove it to fill the space */
+            .container { 
+                display: grid; 
+                gap: 20px; 
+                width: 100%;
+                margin: 0 auto;
+                /* This creates as many columns as will fit, with a minimum width of 300px each */
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            }
 
             .section-card, .architect-card {
                 background: var(--vscode-sideBar-background);
                 border: 1px solid var(--vscode-widget-border);
                 padding: var(--spacing);
                 border-radius: var(--border-radius);
+                /* Remove fixed widths here if any exist */
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Ensure images or textareas inside don't break the layout */
+            textarea {
+                width: 100%;
+                box-sizing: border-box; 
+                resize: vertical;
             }
             .architect-card { border-top: 4px solid var(--vscode-debugIcon-breakpointForeground); }
 
@@ -543,7 +582,9 @@ function getWebviewContent() {
                 <h2>Focus Timer</h2>
                 <div id="timer">25:00</div>
                 <div class="timer-controls">
-                    <button id="start">Start</button>
+                    <button id="start">Focus (25m)</button>
+                    <button id="break">Break (5m)</button> </div>
+                <div class="timer-controls" style="margin-top: 8px;">
                     <button id="pause" class="secondary">Pause</button>
                     <button id="reset" class="secondary">Reset</button>
                 </div>
@@ -600,6 +641,7 @@ function getWebviewContent() {
             };
 
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
+            document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' }); // New Listener
             document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
             document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
             document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
