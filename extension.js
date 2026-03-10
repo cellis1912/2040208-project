@@ -560,6 +560,10 @@ function getWebviewContent() {
                 <h2>Interface Settings</h2>
                 <label class="row"><input type="checkbox" id="toggleSwitch"><span>Minimalist Mode</span></label>
                 <label class="row"><input type="checkbox" id="dyslexiaToggle"><span>Dyslexia-friendly</span></label>
+            </section>
+
+            <section class="section-card">
+                <h2>Theme</h2>
                 <div class="button-grid">
                     <button id="hcDark">HC Dark</button>
                     <button id="hcLight">HC Light</button>
@@ -590,7 +594,7 @@ function getWebviewContent() {
                 </div>
             </section>
 
-            <section class="architect-card">
+            <section class="section-card">
                 <h2>The Task Architect</h2>
                 <textarea id="taskInput" rows="3" placeholder="Describe your goal..."></textarea>
                 <div class="button-grid">
