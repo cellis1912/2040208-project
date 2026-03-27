@@ -1,0 +1,103 @@
+\section{Design and Planning}
+\subsection{User Requirements} 
+The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the "Direct Instruction" and "Visual Comfort" frameworks identified by \textcite{rocha2025conceptual}.
+
+\subsection{Module Design}
+
+\subsubsection{Minimalist Toggle}
+Logic for \gls{UI} state management.
+
+\subsubsection{Task Architect}
+Prompt engineering strategy (HITL approach).
+
+\subsubsection{Visual Styler} 
+WCAG 2.1 compliance mapping.
+
+\includegraphics[width=0.5\linewidth]{logos/Plug-in plan.png}
+
+\subsection{System Architecture}
+The system is divided into three primary layers: the Presentation Layer (Webview), the Orchestration Layer (Extension Host), and the External Services Layer (VS Code API).
+
+1. The Presentation Layer: WebView UI
+
+The user interface is implemented as a \texttt{WebviewPanel}, which renders a custom HTML/JavaScript dashboard. This allows for a highly flexible UI. This allows for the extension to be customised to best fit the user's needs, predetermined through prior research. This also allows for easier changes as more research is collected in the future
+
+\begin{itemize}
+    \item State Communication: Because WebViews are isolated from the main editor, communication is handled via asynchronous message passing. The UI dispatches JSON-formatted messages using \texttt{vscode.postMessage()}, which are then intercepted by the extension’s backend.
+    \item Asynchronous Feedback: The UI remains responsive by using event listeners that wait for \texttt{updateTime}, \texttt{taskResult}, or \texttt{errorResult} commands sent back from the extension host.
+\end{itemize}
+
+2. The Orchestration Layer: Extension Host
+
+The core logic resides in the activate function, which serves as the central hub while the extension is active.
+
+\begin{itemize}
+    \item Command Registration: The system registers specific URI commands (e.g., accessible-toggle.showUI) that map user intents to internal JavaScript functions.
+    \item Configuration Management: A key architectural feature is the interaction with vscode.workspace.getConfiguration(). The extension reads and writes global settings to modify the editor's environment (font size, themes, and layout) in real-time, effectively acting as a wrapper for the VS Code "Settings" engine.
+    \item Context Preservation: To ensure the system is non-destructive, the architecture utilises \texttt{context.globalState}. This allows the extension to "remember" the user’s original theme and font settings before applying accessibility modifications, enabling a seamless restoration process. This also acts as a form of error prevention in case any settings are applied by accident.
+\end{itemize}
+
+
+3. The Functional Providers
+
+The architecture employs specialised logic blocks to handle distinct accessibility needs:
+
+\begin{table}[ht]
+    \centering
+    \caption{System Component Interaction and API Dependencies}
+    \label{tab:system_architecture}
+    \small % Slightly smaller text to ensure it fits the margins
+    \begin{tabular}{@{} l p{4cm} l @{}}
+        \toprule
+        \textbf{Component} & \textbf{Interaction Strategy} & \textbf{VS Code API Dependency} \\ 
+        \midrule
+        Interface Controller & Imperative Commands          & \texttt{commands.executeCommand} \\
+        Theme/Font Engine    & Configuration Updates        & \texttt{workspace.getConfiguration} \\
+        Task Architect       & AI Stream Processing         & \texttt{vscode.lm} (Language Model) \\
+        Code Helper          & Diagnostic Polling           & \texttt{languages.getDiagnostics} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+4. Integration with Language Models 
+
+The "Task Architect" and "Code Helper" features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, neurodiverse-friendly steps before pushing the data back to the Presentation Layer.
+
+
+
+\subsection{Implementation}
+
+\subsection{Technology Stack}
+JavaScript, Node.js, and OpenAI API.
+
+\subsection{UI Simplification and Minimalist Toggle}
+The implementation of the "Minimalist Mode" focuses on reducing visual noise, which is a primary driver of cognitive overload. This is achieved through an imperative command pattern:
+\begin{itemize}
+\item \textbf{Workspace Manipulation:} Using \texttt{vscode.commands.executeCommand}, the plugin toggles the visibility of the Activity Bar, Side Bar, Status Bar, and Breadcrumbs.
+\item \textbf{Global Configuration:} To disable the Minimap, the system interacts directly with the global user settings via \texttt{config.update('editor.minimap.enabled', ...)}.
+\end{itemize}
+
+\subsection{AI Integration}
+The AI-driven features are implemented using a Streaming Data Pattern.
+\begin{itemize}
+\item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a "Micro-step" structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents "Wall of Text" responses that can be overwhelming.
+\item \textbf{Code Explainer:} This module polls the \texttt{vscode.languages.getDiagnostics} API. It filters for \texttt{DiagnosticSeverity.Error}, extracts the error message and line number, and passes this context to the \texttt{gpt-4o} model to generate a simplified, non-technical explanation.
+\end{itemize}
+
+\subsection{Challenges Overcome}
+Handling API latency or VS Code API limitations.
+
+\subsection{Evaluation and Methodology}
+\subsubsection{Experimental Design}
+The study employs a \textbf{within-subjects comparative design}. Participants will perform two standardised debugging and project-planning tasks:
+\begin{enumerate}
+\item \textbf{Control Condition:} Using a standard ("Vanilla") VS Code installation.
+\item \textbf{Experimental Condition:} Using VS Code equipped with the Accessibility Plugin.
+\end{enumerate}
+
+\subsubsection{Qualitative Frameworks}
+To capture the subjective experience of neurodivergent users, two validated instruments are used:
+\begin{itemize}
+\item \textbf{NASA-TLX (Task Load Index):} This is critical for measuring the "Mental Demand" and "Frustration" sub-scales, which are often higher for developers with ADHD or Dyslexia.
+\item \textbf{System Usability Scale (SUS):} Provides a global view of the plugin's reliability and ease of integration into a professional workflow.
+\end{itemize}

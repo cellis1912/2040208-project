@@ -1,0 +1,100 @@
+\section{Literature Review}
+\subsection{Cognitive Load Theory (CLT)}
+Cognitive Load Theory, primarily developed by John Sweller, suggests that since the human brain has limited working memory capacity, instructional design can aid in avoiding overload.
+\newline
+
+\textbf{Sweller’s Tripartite Framework of Load}
+
+\textcite{sweller1988cognitive} proposes a three-part load framework that identifies three different types of cognitive load that impact a learner's ability to process information:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth, alt={A diagram illustrating Sweller's Tripartite Model. It shows Total Cognitive Load as a header, supported by three equal categories: Intrinsic Load (task difficulty), Extraneous Load (presentation noise), and Germane Load (knowledge construction).}] {logos/clt_diagram.png}
+    \caption{Sweller's Tripartite Model of Cognitive Load, illustrating the balance between Intrinsic, Extraneous, and Germane loads.}
+    \label{fig:clt_diagram}
+\end{figure}
+
+\begin{enumerate}
+    \item Intrinsic Load: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed simultaneously to understand a concept. For example, learning basic vocabulary has low intrinsic load, while mastering complex syntax has high intrinsic load.
+    \item Extraneous Load: This is seen as the unnecessary load that you would aim to minimise wherever possible. It is influenced by the way information is presented. Some examples that could exacerbate the load are poorly designed diagrams, distracting environments or redundant text. Poor design choices force the brain to waste resources on non-essential processing.
+    \item Germane Load: This is the load I am aiming to maximise. It refers to the mental effort that can be directed toward the more key task, which in this scenario would be the code programming task.
+\end{enumerate}
+
+The key role of CLT is to manage intrinsic load, break down tasks, minimise extraneous load, facilitate a clear design, and maximise germane load, allowing the user to focus on their core task.
+\newline
+
+\textbf{Integration with Rosenshine’s Principles of Instruction}
+
+While Sweller provided the theoretical framework, Barack Rosenshine provided a "how-to." to be used in classrooms or digital environments \cite{rosenshine2012principles}. 
+
+Key intersections include:
+
+\begin{itemize}
+    \item Small Steps (Principle 2): By presenting new material in small increments, the instructor limits the Intrinsic Load, ensuring the working memory is not overwhelmed at the outset.
+    \item Scaffolding (Principle 7): Providing temporary supports reduces Extraneous Load, allowing the learner to focus their cognitive resources on the core task rather than the "noise" of the process.
+\end{itemize}
+
+To view these from more of a development lens, principle 2 supports breaking down the core task into smaller, more manageable steps. Further more these smaller task can be seen as "scaffolding" for the user when they are beginning a task without handing them the answer directly.
+
+\subsection{Neurodiversity in Software Engineering}
+To best design an inclusive plug-in, I needed to gain a deep understanding of the specific cognitive roadblocks faced by neurodivergent developers. Recent research by \textcite{verma2025differences} and \textcite{gama2025socio} highlights that developers with \gls{ADHD}, \gls{ASD}, and Dyslexia face significantly higher frequency of interruptions and difficulty obtaining knowledge.
+
+\textbf{The Cognitive Load Connection}
+
+For a neurodivergent developer, a standard \gls{IDE} error message often carries a high Extraneous Load. What a neurotypical developer might perceive as a simple notification, a neurodivergent individual may experience as a wall of cryptic text, inconsistent highlighting, and ambiguous phrasing. This noise competes for limited working memory resources, leaving little room for the Intrinsic Load required actually to solve the logical problem.
+
+\textbf{\gls{executive_dysfunction} and Task Switching}
+
+\gls{executive_dysfunction} is a primary barrier cited by both \cite{verma2025differences} and \cite{gama2025socio}. This manifests itself as difficulty in "task initiation" (starting a new project) and "set-shifting" (switching between tasks).
+
+The Industry Context: In a modern software environment, developers are rarely afforded the luxury of a single focus; they must balance code reviews, meetings, and multiple projects.
+
+The Impact: For those with \gls{ADHD}, the mental cost of "re-loading" the context of a project after an interruption is significantly higher. If the \gls{IDE} does not provide clear "waypoints" or historical context, the developer may become cognitively paralysed, unable to determine where they left off.
+
+\textbf{Specific Challenges by Condition}
+
+Based on the synthesis of recent studies, the challenges can be categorised as follows:
+
+\gls{ADHD}: Frequent loss of "state" due to external interruptions and internal distraction. \cite{verma2025differences} found that these developers report higher stress related to "waiting for answers," as delays in information retrieval often lead to a total loss of task momentum.
+
+\gls{ASD}: Challenges with the "Double Empathy" problem in code—where the high-level abstractions or "implied logic" used by neurotypical colleagues create a high cognitive overhead for autistic developers who prefer explicit, literal documentation.
+
+Dyslexia: Significant hurdles during the "syntax-heavy" stages of programming. While these developers often excel at high-level architectural mapping, the Extraneous Load of spelling-sensitive compiler errors and dense documentation can be a major deterrent to productivity.
+
+\subsection{The "Double-Edged Sword" of Hyperfocus}
+While neurodivergent developers, particularly those with ASD and \gls{ADHD}, are often stereotyped as having a "superpower" for deep work, this ability to hyperfocus is more accurately described as a dysregulation of attention. As noted by \cite{gama2025socio}, hyperfocus allows for an exhaustive exploration of complex problems, yet this intensity often comes at the expense of self-care. Developers may neglect fundamental biological needs, such as nutrition, sleep, and hygiene, leading to rapid burnout. Furthermore, this state is notoriously difficult to achieve, \cite{newman2025get} identifies that for \gls{ADHD} programmers, "getting in the groove" is a fragile process where a single interruption can collapse hours of built-up mental context.
+
+In a professional engineering context, this creates a significant conflict between depth and delivery. Hyperfocus can inadvertently trigger over-engineering, where a developer becomes "locked" into optimising a single component while neglecting broader project milestones or team collaborations. This inability to switch off from an interesting problem makes task-switching, a fundamental requirement of agile development, mentally exhausting and practically difficult. Consequently, what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
+
+\subsection{Existing Tools}
+The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a neurotypical bias, creating barriers for those who may require additional support. \cite{morris2015understanding} observes workplace tools are frequently built with assumptions that "may not align with the needs of neurodiverse employees." \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with neurodiverse developers in mind, and complex nested menus can be overwhelming.
+
+Despite the obstacles described, certain features provide essential support for developers. \cite{morris2015understanding} notes that tools such as code completion and linters are vital to alleviate the difficulties associated with dyslexia, such as syntax memorisation and spelling.
+
+However, the burden of making tools accessible often falls to the user. \cite{liebel2024challenges} found that developers often create “individual strategies and tool configurations to support their productivity." While these features are currently helping, the reliance on manual customisation implies a lack of "out-of-the-box" inclusivity.
+
+This project aims to bridge the gap between the availability of generic tools and their functional utility. While current tools are excellent at detecting errors, they often fail at explaining them in an accessible manner. By integrating an Error Explainer that decomposes complex compiler messages into manageable tasks, therefore reducing the cognitive load required to debug. This shifts the \gls{IDE} from a passive environment that requires expert configuration to an active partner in the development process.
+
+\subsection{Colour filters}
+Visual presentation can influence reading performance and comfort. \cite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, although the benefits vary significantly between individuals. This suggests that software tools should support flexible visual customisation rather than relying on a single accessibility configuration.
+
+In some cases, high-contrast models are essential because they provide the necessary visual scaffolding to combat task paralysis. For developers with \gls{ADHD}, a low-contrast or "aesthetic" pastel theme can cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
+
+By utilising high-contrast ratios (such as 7:1 or higher, per WCAG 2.1 guidelines), the \gls{IDE} creates a clear hierarchy. This high "signal" allows the developer to:
+
+\begin{itemize}
+    \item Reduce Visual Search Time: Finding the start and end of a function block becomes instantaneous rather than a manual scan.
+    \item Mitigate the "Blur" of Hyperfocus: As noted by \cite{newman2025get}, the intense mental strain of being "in the groove" can lead to visual fatigue; high contrast maintains legibility even as physiological focus wanes.
+    \item Support Syntax Logic: In complex, nested code, high-contrast separation between brackets and operators serves as a "visual prosthetic," offloading the work of pattern recognition from the brain to the interface.
+\end{itemize}
+
+However, the implementation must be nuanced. While high contrast is vital for clarity, "pure" high contrast can cause halation (a glowing effect around letters) for those with ASD or visual stress. Therefore, the most effective high-contrast models for neurodiversity are often "Soft High Contrast", utilising high-visibility colours against deep non-pure-black backgrounds.
+
+(ADD IMAGES)
+
+\subsection{AI as a Cognitive Tool: Task Decomposition and Scaffolding}
+For developers with \gls{ADHD} and ASD, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with "state recovery" and task initiation. \glspl{LLM} offer a unique solution to this through cognitive scaffolding. This process handles the "low-value" mental energy drains, such as formatting and scheduling, leaving more room for "high-value" deep thinking (\cite{Navigati93:online}).
+
+\gls{CoT} as Task Decomposition is one of the most effective applications of \glspl{LLM} for neurodivergent developers. Instead of asking a model to simply "write a function," the developer can use the model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the "activation energy" barrier identified in \gls{ADHD} populations. By prompting a model to "think step-by-step," the AI generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
+
+As noted by Mew (2025), this "automated pattern" of scaffolding can increase productivity for developers with \gls{ADHD} by up to 55 percent. Existing tools already demonstrate this by taking a single overwhelming command (e.g., "build an authentication system") and breaking it into manageable milestones. This effectively transforms AI from a simple code generator into a "digital ramp" that bypasses the freeze response common in task paralysis (\cite{Navigati93:online}).

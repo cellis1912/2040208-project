@@ -1,0 +1,39 @@
+\newgeometry{ top=2.5cm, bottom=2cm, left=3cm, right=3cm }
+
+\begin{titlepage}
+\begin{center}
+\vspace*{\fill} % oben strecken
+\begin{minipage}{0.9\textwidth}
+\begin{center}
+\setstretch{1.5} % Zeilenabstand 1,5
+
+% Uni Logo
+\IfFileExists{\TitleSealFile}{%
+  \includegraphics[width=\TitleSealWidth]{\TitleSealFile}\par\vspace{0.8cm}%
+}{%
+  \PackageWarning{template}{Seal logo file not found: \TitleSealFile}%
+}
+
+\large\textbf{\ThesisTitle}\\[1.2cm]
+\AuthorName \\
+\StudentNumber\\
+\SubmissionMonth\ \SubmissionYear\\
+[0.8cm]
+
+
+\ProgramName\\
+Supervisor: 'I\&'\SupervisorName\\
+
+\vspace{1.5cm}
+\vfill
+\end{center}
+\end{minipage}
+\vspace*{\fill}
+\begin{center}
+
+
+\end{center}
+\end{center}
+\end{titlepage}
+
+\restoregeometry

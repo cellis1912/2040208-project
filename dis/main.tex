@@ -1,0 +1,153 @@
+\documentclass[a4paper,12pt,onecolumn]{article}
+
+% --------------------------------------------------------
+% Encoding & Language
+% --------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{booktabs}
+% Language selection:
+\newcommand{\TemplateLanguage}{english}
+\usepackage[english]{babel}
+\AtBeginDocument{\selectlanguage{\TemplateLanguage}}
+
+
+% --------------------------------------------------------
+% Template variables (edit these in ONE place)
+% --------------------------------------------------------
+% Title page logo
+\newcommand{\TitleSealFile}{logos/Newcastle.png}
+\newcommand{\TitleSealWidth}{0.5\textwidth}
+
+% Title page metadata
+\newcommand{\ThesisTitle}{Design and Evaluation of an Accessible IDE Plugin for Supporting Neuro-divergent Software Developers}
+\newcommand{\ProgramName}{Computer Science}
+
+
+% People
+\newcommand{\SupervisorName}{Dr. Vlad Gonzalez }
+\newcommand{\AuthorName}{Clo Elis}
+\newcommand{\StudentNumber}{220402088}
+
+% Place and date
+\newcommand{\SubmissionMonth}{May}
+\newcommand{\SubmissionYear}{2026}
+
+% --------------------------------------------------------
+% Font: Times New Roman (with math support)
+% --------------------------------------------------------
+\usepackage{newtxtext,newtxmath}
+
+% --------------------------------------------------------
+% Page margins
+% --------------------------------------------------------
+\usepackage[top=2.5cm,bottom=2cm,inner=4cm,outer=2cm]{geometry}
+
+% --------------------------------------------------------
+% Line spacing
+% --------------------------------------------------------
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{footmisc}
+\setlength{\footnotesep}{0.8\baselineskip}
+\renewcommand{\footnotelayout}{\setstretch{1.0}}
+
+% Keep tables single-spaced to avoid stretched rows
+\usepackage{etoolbox}
+\AtBeginEnvironment{table}{\singlespacing}
+
+% --------------------------------------------------------
+% Useful packages
+% --------------------------------------------------------
+\usepackage{booktabs, amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\urlstyle{rm}
+
+% --------------------------------------------------------
+% Hyperlinks
+% --------------------------------------------------------
+\usepackage[pdfpagelabels,plainpages=false,hypertexnames=false]{hyperref}
+\usepackage{xcolor}
+\definecolor{smdsblue}{RGB}{0,69,134}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=smdsblue
+}
+
+% --------------------------------------------------------
+% Bibliography (BibLaTeX)
+% --------------------------------------------------------
+\usepackage[backend=biber,maxcitenames=2,maxbibnames=99,natbib=true]{biblatex}
+\usepackage{csquotes}
+\addbibresource{references.bib}
+
+% --------------------------------------------------------
+% Formatting
+% --------------------------------------------------------
+\parindent 0em
+\parskip 6pt
+
+% --------------------------------------------------------
+% TOC, LOF, LOT spacing
+% --------------------------------------------------------
+\usepackage{tocloft}
+% Reduce spacing in table of contents
+\setlength{\cftbeforesubsubsecskip}{1pt}
+% Reduce spacing in list of tables
+\setlength{\cftbeforetabskip}{3pt}
+
+
+\usepackage[acronym, toc]{glossaries}
+\makeglossaries
+\input{glossary_entries}
+
+% --------------------------------------------------------
+% Main document
+% --------------------------------------------------------
+\begin{document}
+
+% Render the title page
+\input{titlepage.tex}
+
+% Front matter: Roman numbering
+\pagenumbering{Roman}
+
+% Abstract
+\clearpage
+\include{chapters/abstract}
+\phantomsection
+
+% Declaration and Acknowledgement
+\include{chapters/declarationacknowlegement}
+\clearpage
+
+% Table of Contents
+\tableofcontents
+\clearpage
+
+% 1. The Abbreviations List
+\printglossary[type=\acronymtype, title={List of Abbreviations}]
+\clearpage
+
+% 2. The Glossary List
+\printglossary[title={Glossary}]
+\clearpage
+
+% Main body: Arabic numbering
+\pagenumbering{arabic}
+
+\include{chapters/01-introduction}
+\include{chapters/lit-review}
+\include{chapters/methadology}
+\include{chapters/results}
+
+\clearpage
+
+% Bibliography (automatically adds itself to TOC via heading=bibintoc)
+\printbibliography[heading=bibintoc, title={\iflanguage{ngerman}{Literaturverzeichnis}{References}}]
+
+\end{document}
