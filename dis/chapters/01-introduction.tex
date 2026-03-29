@@ -5,57 +5,86 @@ This project was initially motivated by my lived experience as a \gls{neurodiver
 Existing \glspl{IDE} can lead to increased cognitive overload and difficulty in maintaining focus. By streamlining interfaces and providing \gls{AI}-driven task decomposition, this project aims to reduce the strain on \gls{neurodivergent} individuals in both professional and educational settings, as developers often report challenges with cognitive overload, \gls{hyperfocus}, and breaking down more complex problems when programming
 
 \subsection{Problem Statement}
-\glspl{IDE} are a code tool for modern software development, but there are still elements of the interface that remain a significant barrier for \gls{neurodivergent} developers, specifically those with \gls{ADHD}, \gls{ASD}, and related executive functioning challenges. Current \glspl{IDE} are designed with "maximalist" in mind, presenting a constant stream of visual stimuli, complex nested menus, and dense technical jargon.
+\glspl{IDE} are a code tool for modern software development, but there are still elements of the interface that remain a significant barrier for \gls{neurodivergent} developers, specifically those with \gls{ADHD}, \gls{ASD}, and related executive functioning challenges. Current \glspl{IDE} are designed with ``maximalist''  in mind, presenting a constant stream of visual stimuli, complex nested menus, and dense technical jargon.
 
-For developers who experience sensory overwhelm or \gls{executive_dysfunction}, modern \glspl{IDE} can create an immense Extraneous Cognitive Load \cite{sweller1988cognitive}. Research by \textcite{bramham2009executive} found that groups with \gls{ADHD} often battle with task paralysis during the initiation phase, while those with \gls{ASD} may struggle more with the initial strategic planning and decomposition of a project.
+For developers who experience sensory overwhelm or \gls{executive_dysfunction}, modern \glspl{IDE} can create an immense Extraneous Cognitive Load~\cite{sweller1988cognitive}. Research by \textcite{bramham2009executive} found that groups with \gls{ADHD} often battle with task paralysis during the initiation phase, while those with \gls{ASD} may struggle more with the initial strategic planning and decomposition of a project.
 
-Constant notifications from compiler errors and recommendations can trigger \gls{hyperfocus} on peripheral details rather than the core logic. There is currently a growing resilience on \gls{AI} tools, with developers using them to write their code. Even if they are using the models as a form of support, they often provide answers rather than acting as a "cognitive prosthetic" that doesn't just help with code, but helps with the process of being a developer by filtering noise and decomposing complexity.
+Constant notifications from compiler errors and recommendations can trigger \gls{hyperfocus} on peripheral details rather than the core logic. There is currently a growing resilience on \gls{AI} tools, with developers using them to write their code. Even if they are using the models as a form of support, they often provide answers rather than acting as a ``cognitive prosthetic'' that doesn't just help with code, but helps with the process of being a developer by filtering noise and decomposing complexity.
 
 Here is a more precise breakdown of the challenges and potential strengths of neurodiverse people regarding their conditions. Obvously the challenges faced by individuals can be deeply varied and nuanced, but this should provide enough of an overview for you to understand the key points and aims of the project.
 
-\begin{table}
+\subsection{Understanding Neurodiversity in Software Development}
+Before going into the specific technical barriers of modern \glspl{IDE}, it is necessary to define neurodiversity and the cognitive
+ frameworks that underpin this research. Originally coined by Judy Singer in the late 1990s, ``neurodiversity''  views neurological differences—such 
+ as \gls{ASD}, \gls{ADHD}, and \gls{Dyslexia}, as natural variations in the human genome rather than purely medical deficits~\cite{singer1999why}.
+
+In the context of software engineering, these variations often manifest as unique cognitive profiles. While many \gls{neurodivergent} 
+developers possess high aptitude for logic and pattern recognition, they frequently encounter barriers related to Executive Functioning. 
+This is an umbrella term for the mental processes that enable us to plan, focus attention, remember instructions, and juggle multiple tasks 
+successfully. For a developer, \gls{executive_dysfunction} might manifest as \gls{task_paralysis} when faced with a blank text editor, or an inability 
+to filter out the visual noise of a complex interface.
+
+To provide a clearer lens for the objectives of this project, the below table outlines the specific strengths and environmental challenges associated with the conditions most prevalent in the developer community.
+\begin{table}[h]
     \centering
-    \begin{tabular}{ccc}
-        Condition & Potential Strengths & Common Environmental Challenges \\
-        \gls{ASD} & Deep focus, systematic thinking, high integrity, exceptional memory for details, strong pattern recognition. & Sensory overload in noisy or bright environments, misinterpretation of direct communication style, difficulty with unspoken social rules.\\
+    \caption{Neurodivergent Strengths and Environmental Challenges}
+    \renewcommand{\arraystretch}{1.5} % Adds breathing room between rows
+    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{Condition} & \textbf{Potential Strengths} & \textbf{Common Environmental Challenges} \\
+        \midrule
+        \gls{ASD} & Deep focus, systematic thinking, high integrity, exceptional memory for details, strong pattern recognition. & Sensory overload in noisy or bright environments, misinterpretation of direct communication style, difficulty with unspoken social rules. \\
+        \addlinespace
         \gls{ADHD} & Creativity, hyperfocus on passions, adaptability, high energy, ability to multitask or rapidly switch contexts. & Distractibility in chaotic settings, struggles with time management and organisation, impulsivity in structured environments. \\
+        \addlinespace
         \gls{Dyslexia} & Strong visual-spatial reasoning, excellent big-picture thinking, creative problem-solving, strong verbal skills. & Difficulties with text-heavy tasks, timed reading assignments, and conventional written communication. \\
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:placeholder}
+        \bottomrule
+    \end{tabularx}
 \end{table}
 
 \subsection{Aims and Objectives}
 
 \textbf{Project Aim}
 
-The primary objective of this project is to design, implement, and evaluate an assistive VS Code plug-in that reduces cognitive overload and \gls{executive_dysfunction} for \gls{neurodivergent} software developers. By introducing a "cognitive prosthetic" layer, the project seeks to determine if targeted \gls{UI} simplification and \gls{AI}-driven task decomposition can measurably improve the developer experience by minimising extraneous cognitive load.
+The primary objective of this project is to design, implement, and evaluate an assistive VS Code plug-in that reduces cognitive overload and
+ \gls{executive_dysfunction} for \gls{neurodivergent} software developers. By introducing a ``cognitive prosthetic'' layer, the project seeks
+  to determine if targeted \gls{UI} simplification and \gls{AI}-driven task decomposition can measurably improve the developer experience by 
+  minimising extraneous cognitive load.
 
 \textbf{Research Objectives}
 
 \textbf{Objective 1:} Interface Optimisation (The Minimalist Toggle)
 
-The first aim will be to create a "Minimalist Toggle" using the VS Code Extension to allow users to instantly close all non-essential \gls{UI} elements. The toggle hides the Activity Bar, Status Bar, Mini-map, and Breadcrumbs at the same time, reducing the need for extensive menu navigation. This addresses the "Extraneous Cognitive Load" identified by \cite{sweller1988cognitive}, reducing visual noise that leads to distraction and sensory overwhelm for autistic and \gls{ADHD} developers.
+The first aim will be to create a ``Minimalist Toggle''~\allowbreak{}\,using the VS Code Extension to allow users to instantly close all non-essential
+ \gls{UI} elements. The toggle hides the Activity Bar, Status Bar, Mini-map, and Breadcrumbs at the same time, reducing the need for extensive menu
+  navigation. This addresses the ``Extraneous Cognitive Load'' identified by~\cite{sweller1988cognitive}, reducing visual noise that leads to
+   distraction and sensory overwhelm for autistic and \gls{ADHD} developers.
 
 \textbf{Objective 2: }\gls{AI}-Driven Task Decomposition (The Task Architect)
 
-I will develop a \gls{LLM} integration that translates complex, ambiguous programming goals into structured, editable checklists. This element will require the implementation of a "\gls{CoT}" prompting strategy (\cite{ringel2019ai}) via the Open\gls{AI} \gls{API} that breaks down high-level requirements without providing the direct code solution. This supports "Task Initiation" and "Executive Functioning," helping users overcome the paralysis often associated with large, unstructured projects (\cite{gama2025socio}).
+I will develop a \gls{LLM} integration that translates complex, ambiguous programming goals into structured, editable checklists. This element will 
+require the implementation of a ``\gls{CoT}'' prompting strategy (\cite{ringel2019ai}) via the Open\gls{AI} \gls{API} that breaks down high-level 
+requirements without providing the direct code solution. This supports ``Task Initiation'' and ``Executive Functioning,'' helping users overcome 
+the paralysis often associated with large, unstructured projects (\cite{gama2025socio}).
 
 \textbf{Objective 3:} Simplification of Technical Feedback (The Code Explainer)
 
 To build a module that intercepts complex compiler error messages and re-interprets them into plain-language, direct instructions.
-Limit output to a maximum of three bullet points using a "Direct Instruction" style \cite{rocha2025conceptual}.
-Justification: This minimises the cognitive demand of interpreting dense technical jargon during high-stress moments (such as debugging), preventing \gls{hyperfocus} "rabbit holes."
+Limit output to a maximum of three bullet points using a ``Direct Instruction'' style~\cite{rocha2025conceptual}.
+Justification: This minimises the cognitive demand of interpreting dense technical jargon during high-stress moments (such as debugging), 
+preventing \gls{hyperfocus} ``rabbit holes.''
 
 \textbf{Objective 4: }Visual Accessibility Customisation (The Visual Styler)
 
 To implement a suite of visual presets focused on reducing eye strain and enhancing readability.
-Target: Develop at least two high-contrast and low-stimuli themes that adhere to WCAG 2.1 contrast guidelines \cite{bengtsson2025web}.
-Justification: Addresses the sensory sensitivities and "attractive colour" preferences reported by \gls{neurodivergent} developers in recent surveys \cite{rocha2025conceptual}.
+Target: Develop at least two high-contrast and low-stimuli themes that adhere to WCAG 2.1 contrast guidelines~\cite{bengtsson2025web}.
+Justification: Addresses the sensory sensitivities and ``attractive colour'' preferences reported by \gls{neurodivergent} developers in recent
+ surveys~\cite{rocha2025conceptual}.
 
 \textbf{Objective 5:} Empirical Evaluation of Cognitive Impact
 
 To conduct a comparative study assessing the plugin’s efficacy against a standard \gls{IDE} environment.
 Target: Collect and analyse quantitative data via the \gls{NASATLX} and the \gls{SUS}.
-Justification: This provides a standardised scientific metric to validate whether the tool successfully reduces mental demand and improves the workflow for the target demographic.
+Justification: This provides a standardised scientific metric to validate whether the tool successfully reduces
+ mental demand and improves the workflow for the target demographic.
 

@@ -1,0 +1,667 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{bengtsson2025web}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=157baebbd2cffd4e12482572350a5360}{%
+           family={Bengtsson},
+           familyi={B\bibinitperiod},
+           given={Linus},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0a71233a8f68bfce2faff9f1864541e5}{%
+           family={Hammarberg},
+           familyi={H\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{fullhash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{fullhashraw}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{bibnamehash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{authorbibnamehash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{authornamehash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{authorfullhash}{1d9b8407c3a97af8d9b9471115d8920d}
+      \strng{authorfullhashraw}{1d9b8407c3a97af8d9b9471115d8920d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Web Content Accessibility Guidelines (WCAG) within a Company}
+      \field{year}{2025}
+    \endentry
+    \entry{bramham2009executive}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=593dc1a6c6531fd89989e8999bd15452}{%
+           family={Bramham},
+           familyi={B\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7dacf0dacd6ff32ac081530fecef8bbb}{%
+           family={Ambery},
+           familyi={A\bibinitperiod},
+           given={Fiona},
+           giveni={F\bibinitperiod}}}%
+        {{hash=39ae59152c533c7502ee6a49b1b0fd69}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Susan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=faa6a89fa3b27f7ee4970c77d4314a24}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b0956499cf3800f47928d7d4f657b252}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Ailsa},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3f76613f25491301dbfead31ae3f9a98}{%
+           family={Xenitidis},
+           familyi={X\bibinitperiod},
+           given={Kiriakos},
+           giveni={K\bibinitperiod}}}%
+        {{hash=eb991171bdae4920d876c329d7260da5}{%
+           family={Asherson},
+           familyi={A\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2c5cdeb6cdaa05e0147ea87f69220833}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Declan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sage Publications Sage UK: London, England}%
+      }
+      \strng{namehash}{570c223981f40b93059b6c6bcebdb42e}
+      \strng{fullhash}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \strng{fullhashraw}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \strng{bibnamehash}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \strng{authorbibnamehash}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \strng{authornamehash}{570c223981f40b93059b6c6bcebdb42e}
+      \strng{authorfullhash}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \strng{authorfullhashraw}{0748d1e11e2c4ba8a3d5e5aea3a0ae70}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autism}
+      \field{number}{3}
+      \field{title}{Executive functioning differences between adults with attention deficit hyperactivity disorder and autistic spectrum disorder in initiation, planning and strategy formation}
+      \field{volume}{13}
+      \field{year}{2009}
+      \field{pages}{245\bibrangedash 264}
+      \range{pages}{20}
+    \endentry
+    \entry{NASATLX}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=2344d0fa538eff98ea5a92384b2c0b80}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d4e419c398aa465b280c4681217ea00d}{%
+           family={Chintamani},
+           familyi={C\bibinitperiod},
+           given={K.\bibnamedelimi K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=0333146dde60f97d82a60d0384ac2554}{%
+           family={Pandya},
+           familyi={P\bibinitperiod},
+           given={A.\bibnamedelimi K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=fa9ef587363e4ab95a2ea79f5ded1df0}{%
+           family={Ellis},
+           familyi={E\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ad136fc5e30e73a3c4b59e36f9ed4}
+      \strng{fullhash}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \strng{fullhashraw}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \strng{bibnamehash}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \strng{authorbibnamehash}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \strng{authornamehash}{312ad136fc5e30e73a3c4b59e36f9ed4}
+      \strng{authorfullhash}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \strng{authorfullhashraw}{9ff267d6a7660a991c1d0d8c21c26c1b}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 2026-02-25]}
+      \field{title}{NASA TLX: Software for assessing subjective mental workload.}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://psycnet.apa.org/record/2011-00741-013
+      \endverb
+      \verb{url}
+      \verb https://psycnet.apa.org/record/2011-00741-013
+      \endverb
+    \endentry
+    \entry{gama2025socio}{misc}{}{}
+      \name{author}{5}{}{%
+        {{hash=efdb4bb7385aa997050c44c4a6ba2370}{%
+           family={Gama},
+           familyi={G\bibinitperiod},
+           given={Kiev},
+           giveni={K\bibinitperiod}}}%
+        {{hash=620cc9f7fd0de9cfd0af5d7f6bd56311}{%
+           family={Liebel},
+           familyi={L\bibinitperiod},
+           given={Grischa},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1b1033001089b6eb342237c4ff6cde9b}{%
+           family={Goulão},
+           familyi={G\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bc3d189ee4199171a96e88572ae34cf2}{%
+           family={Lacerda},
+           familyi={L\bibinitperiod},
+           given={Aline},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6ff90c124972148069ce7569275cdc73}{%
+           family={Lacerda},
+           familyi={L\bibinitperiod},
+           given={Cristiana},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a4661442e0e2b6986bc947104e3be5fd}
+      \strng{fullhash}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \strng{fullhashraw}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \strng{bibnamehash}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \strng{authorbibnamehash}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \strng{authornamehash}{a4661442e0e2b6986bc947104e3be5fd}
+      \strng{authorfullhash}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \strng{authorfullhashraw}{0b4eef59761a3de98b8c10e3f173a3fb}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 IEEE/ACM 47th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS)}
+      \field{title}{A socio-technical grounded theory on the effect of cognitive dysfunctions in the performance of software developers with ADHD and autism}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{griffiths2016effect}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=98d397a049654398eaf39f1b49caf4b9}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={Philip\bibnamedelima G},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=55853bd208410985be9a4f33c49a89da}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={Robert\bibnamedelima H},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=ccea1fe6d0ea031bfa247213e0adc915}{%
+           family={Henderson},
+           familyi={H\bibinitperiod},
+           given={Lisa\bibnamedelima M},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=dffa005ce9f19705218831d8f160f5cc}{%
+           family={Barrett},
+           familyi={B\bibinitperiod},
+           given={Brendan\bibnamedelima T},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ba2c2f5387a5124cbcfbdf2945c1bcbe}
+      \strng{fullhash}{755c6c88ed675f2923f5c2d15ec4656c}
+      \strng{fullhashraw}{755c6c88ed675f2923f5c2d15ec4656c}
+      \strng{bibnamehash}{755c6c88ed675f2923f5c2d15ec4656c}
+      \strng{authorbibnamehash}{755c6c88ed675f2923f5c2d15ec4656c}
+      \strng{authornamehash}{ba2c2f5387a5124cbcfbdf2945c1bcbe}
+      \strng{authorfullhash}{755c6c88ed675f2923f5c2d15ec4656c}
+      \strng{authorfullhashraw}{755c6c88ed675f2923f5c2d15ec4656c}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ophthalmic and Physiological Optics}
+      \field{number}{5}
+      \field{title}{The effect of coloured overlays and lenses on reading: a systematic review of the literature}
+      \field{volume}{36}
+      \field{year}{2016}
+      \field{pages}{519\bibrangedash 544}
+      \range{pages}{26}
+    \endentry
+    \entry{Navigati93:online}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=296118bafa7bf4e5e27996dfbf5e08a1}{%
+           family={Harwood},
+           familyi={H\bibinitperiod},
+           given={Connor},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{fullhash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{fullhashraw}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{bibnamehash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{authorbibnamehash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{authornamehash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{authorfullhash}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \strng{authorfullhashraw}{296118bafa7bf4e5e27996dfbf5e08a1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{[Online; accessed 2026-03-16]}
+      \field{title}{Navigating the Brain-AI Loop | Remtek Workplace}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://remtekworkplace.com/knowledge-hub/the-digital-ramp-and-the-cognitive-debt-navigating-the-brain-ai-loop/
+      \endverb
+      \verb{url}
+      \verb https://remtekworkplace.com/knowledge-hub/the-digital-ramp-and-the-cognitive-debt-navigating-the-brain-ai-loop/
+      \endverb
+    \endentry
+    \entry{Hyzy2022}{misc}{}{}
+      \name{author}{6}{}{%
+        {{hash=59fc9fc9c205dc05a6b3ea5af58017fb}{%
+           family={Hyzy},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=63c5f3206d21b9a9fd4bdfbe22c4a2b4}{%
+           family={Bond},
+           familyi={B\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9b0fae7f90ad92e7e7438950f8214f64}{%
+           family={Mulvenna},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7c43ffe38ef3ae9853436b1ad9a84ee8}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=060dc162405799bf9688f9fd5fb72fbe}{%
+           family={Dix},
+           familyi={D\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9a43901dbe4f3cbf9dd17b6569dc453f}{%
+           family={Leigh},
+           familyi={L\bibinitperiod},
+           given={Hunt},
+           giveni={H\bibinitperiod},
+           suffix={S.},
+           suffixi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d64785a12ad2df1a7989f43f887b586b}
+      \strng{fullhash}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \strng{fullhashraw}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \strng{bibnamehash}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \strng{authorbibnamehash}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \strng{authornamehash}{d64785a12ad2df1a7989f43f887b586b}
+      \strng{authorfullhash}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \strng{authorfullhashraw}{ac4ecc6c12be08f42e59b4ed17d88582}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 2026-02-25]}
+      \field{title}{JMIR mHealth and uHealth - System Usability Scale Benchmarking for Digital Health Apps: Meta-analysis}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://mhealth.jmir.org/2022/8/e37290
+      \endverb
+      \verb{url}
+      \verb https://mhealth.jmir.org/2022/8/e37290
+      \endverb
+    \endentry
+    \entry{liebel2024challenges}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=620cc9f7fd0de9cfd0af5d7f6bd56311}{%
+           family={Liebel},
+           familyi={L\bibinitperiod},
+           given={Grischa},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ff16bd1c39bd2c8a9d7f8bf91c435c98}{%
+           family={Langlois},
+           familyi={L\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=efdb4bb7385aa997050c44c4a6ba2370}{%
+           family={Gama},
+           familyi={G\bibinitperiod},
+           given={Kiev},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{91225675d87431e08dd1d9720fca8e02}
+      \strng{fullhash}{3b83de480a06805518c8839c7f84cadd}
+      \strng{fullhashraw}{3b83de480a06805518c8839c7f84cadd}
+      \strng{bibnamehash}{3b83de480a06805518c8839c7f84cadd}
+      \strng{authorbibnamehash}{3b83de480a06805518c8839c7f84cadd}
+      \strng{authornamehash}{91225675d87431e08dd1d9720fca8e02}
+      \strng{authorfullhash}{3b83de480a06805518c8839c7f84cadd}
+      \strng{authorfullhashraw}{3b83de480a06805518c8839c7f84cadd}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 46th International Conference on Software Engineering: Software Engineering in Society}
+      \field{title}{Challenges, strengths, and strategies of software engineers with ADHD: A case study}
+      \field{year}{2024}
+      \field{pages}{57\bibrangedash 68}
+      \range{pages}{12}
+    \endentry
+    \entry{morris2015understanding}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=5283a53c5c081c04252a659743f886e1}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Meredith\bibnamedelima Ringel},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2694e1d90cf02deb1abecbc6e1f2f80a}{%
+           family={Begel},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9101d15a1e99672480e65214e3d73c37}{%
+           family={Wiedermann},
+           familyi={W\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{883e813c4e84fc571504cb1cc2ebd4b6}
+      \strng{fullhash}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \strng{fullhashraw}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \strng{bibnamehash}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \strng{authorbibnamehash}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \strng{authornamehash}{883e813c4e84fc571504cb1cc2ebd4b6}
+      \strng{authorfullhash}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \strng{authorfullhashraw}{78b0ba4cc2d9f26a99a3e2c40ab87a58}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 17th International ACM SIGACCESS Conference on computers \& accessibility}
+      \field{title}{Understanding the challenges faced by neurodiverse software engineering employees: Towards a more inclusive and productive technical workforce}
+      \field{year}{2015}
+      \field{pages}{173\bibrangedash 184}
+      \range{pages}{12}
+    \endentry
+    \entry{newman2025get}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=a695ccb8a74deb989348c857371360fb}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Kaia},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c1a1e4745371e397e1351378e9fe6395}{%
+           family={Snay},
+           familyi={S\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b378329a6d0ba4b9e47ac889ea9f4dfd}{%
+           family={Endres},
+           familyi={E\bibinitperiod},
+           given={Madeline},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a7a89e4d069d2dc2bcd48ca93f502d74}{%
+           family={Parikh},
+           familyi={P\bibinitperiod},
+           given={Manasvi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2694e1d90cf02deb1abecbc6e1f2f80a}{%
+           family={Begel},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{ca7de64bda4b221f18c0bc821954b0bc}
+      \strng{fullhash}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \strng{fullhashraw}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \strng{bibnamehash}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \strng{authorbibnamehash}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \strng{authornamehash}{ca7de64bda4b221f18c0bc821954b0bc}
+      \strng{authorfullhash}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \strng{authorfullhashraw}{0e1674c3f6f4c45a6737d9657d6664a1}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)}
+      \field{title}{“get me in the groove”: A mixed methods study on supporting ADHD professional programmers}
+      \field{year}{2025}
+      \field{pages}{1217\bibrangedash 1229}
+      \range{pages}{13}
+    \endentry
+    \entry{ringel2019ai}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa38a764081c7fcdfb8da34fe071e63b}{%
+           family={Ringel\bibnamedelima Morris},
+           familyi={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Meredith},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{fullhash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{fullhashraw}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{bibnamehash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{authorbibnamehash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{authornamehash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{authorfullhash}{aa38a764081c7fcdfb8da34fe071e63b}
+      \strng{authorfullhashraw}{aa38a764081c7fcdfb8da34fe071e63b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv e-prints}
+      \field{title}{AI and Accessibility: A Discussion of Ethical Considerations}
+      \field{year}{2019}
+      \field{pages}{arXiv\bibrangedash 1908}
+      \range{pages}{-1}
+    \endentry
+    \entry{rocha2025conceptual}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=187c9e70693ecaf9d4c0961e16204dbc}{%
+           family={Rocha},
+           familyi={R\bibinitperiod},
+           given={Inês\bibnamedelimb Lazana\bibnamedelimb Barros\bibnamedelima da},
+           giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{fullhash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{fullhashraw}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{bibnamehash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{authorbibnamehash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{authornamehash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{authorfullhash}{187c9e70693ecaf9d4c0961e16204dbc}
+      \strng{authorfullhashraw}{187c9e70693ecaf9d4c0961e16204dbc}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Conceptual Model on Neurodivergent Issues in Software Engineering}
+      \field{year}{2025}
+    \endentry
+    \entry{rosenshine2012principles}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=637d536a44f3a937548843805b3ffbfb}{%
+           family={Rosenshine},
+           familyi={R\bibinitperiod},
+           given={Barak},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ERIC}%
+      }
+      \strng{namehash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{fullhash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{fullhashraw}{637d536a44f3a937548843805b3ffbfb}
+      \strng{bibnamehash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{authorbibnamehash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{authornamehash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{authorfullhash}{637d536a44f3a937548843805b3ffbfb}
+      \strng{authorfullhashraw}{637d536a44f3a937548843805b3ffbfb}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American educator}
+      \field{number}{1}
+      \field{title}{Principles of instruction: Research-based strategies that all teachers should know.}
+      \field{volume}{36}
+      \field{year}{2012}
+      \field{pages}{12}
+      \range{pages}{1}
+    \endentry
+    \entry{singer1999why}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=19ecbd67332a8a5bb0d63e0749744e67}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={Judy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=f2681611c16dd3e7d34fa56342c40b78}{%
+           family={Corker},
+           familyi={C\bibinitperiod},
+           given={Mairian},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fd441d462f364adbfdf64a12596fa554}{%
+           family={French},
+           familyi={F\bibinitperiod},
+           given={Sally},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Buckingham}%
+      }
+      \list{publisher}{1}{%
+        {Open University Press}%
+      }
+      \strng{namehash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{fullhash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{fullhashraw}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{bibnamehash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{authorbibnamehash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{authornamehash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{authorfullhash}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{authorfullhashraw}{19ecbd67332a8a5bb0d63e0749744e67}
+      \strng{editorbibnamehash}{f126307506970d5882eb010565eb121c}
+      \strng{editornamehash}{f126307506970d5882eb010565eb121c}
+      \strng{editorfullhash}{f126307506970d5882eb010565eb121c}
+      \strng{editorfullhashraw}{f126307506970d5882eb010565eb121c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Disability Discourse}
+      \field{title}{Why can't you be normal for once in your life? From a 'problem with no name' to the emergence of a new category of difference}
+      \field{year}{1999}
+      \field{pages}{59\bibrangedash 67}
+      \range{pages}{9}
+    \endentry
+    \entry{sweller1988cognitive}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9612a12907a8ce45293ceed61ce5e09b}{%
+           family={Sweller},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{fullhash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{fullhashraw}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{bibnamehash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{authorbibnamehash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{authornamehash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{authorfullhash}{9612a12907a8ce45293ceed61ce5e09b}
+      \strng{authorfullhashraw}{9612a12907a8ce45293ceed61ce5e09b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cognitive science}
+      \field{number}{2}
+      \field{title}{Cognitive load during problem solving: Effects on learning}
+      \field{volume}{12}
+      \field{year}{1988}
+      \field{pages}{257\bibrangedash 285}
+      \range{pages}{29}
+    \endentry
+    \entry{verma2025differences}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=32fbd1f477bce2d7f25c0ef30629f9eb}{%
+           family={Verma},
+           familyi={V\bibinitperiod},
+           given={Pragya},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8bb2f3b79a8b96783b72f7043f6c44f8}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Marcos\bibnamedelima Vinicius},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=620cc9f7fd0de9cfd0af5d7f6bd56311}{%
+           family={Liebel},
+           familyi={L\bibinitperiod},
+           given={Grischa},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b4970fc56e55c56df6af196f9526256f}
+      \strng{fullhash}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \strng{fullhashraw}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \strng{bibnamehash}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \strng{authorbibnamehash}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \strng{authornamehash}{b4970fc56e55c56df6af196f9526256f}
+      \strng{authorfullhash}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \strng{authorfullhashraw}{de959a8e9f16a2beddb4e1fe7f1decf6}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Euromicro Conference on Software Engineering and Advanced Applications}
+      \field{title}{Differences between neurodivergent and neurotypical software engineers: Analyzing the 2022 stack overflow survey}
+      \field{year}{2025}
+      \field{pages}{57\bibrangedash 74}
+      \range{pages}{18}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
