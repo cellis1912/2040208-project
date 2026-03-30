@@ -23,13 +23,13 @@
 \contentsline {subsection}{\numberline {3.5}Technology Stack}{13}{subsection.28}%
 \contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{14}{subsection.29}%
 \contentsline {subsection}{\numberline {3.7}AI Integration}{14}{subsection.30}%
-\contentsline {subsection}{\numberline {3.8}Challenges Overcome}{14}{subsection.31}%
-\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{14}{subsection.32}%
-\contentsline {subsubsection}{\numberline {3.9.1}Experimental Design}{14}{subsubsection.33}%
-\contentsline {subsubsection}{\numberline {3.9.2}Qualitative Frameworks}{15}{subsubsection.36}%
-\contentsline {section}{\numberline {4}Results and Discussion}{16}{section.37}%
-\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{16}{subsection.38}%
-\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{16}{subsection.39}%
-\contentsline {subsection}{\numberline {4.3}Discussion}{16}{subsection.40}%
-\contentsline {subsection}{\numberline {4.4}Limitations}{16}{subsection.41}%
-\contentsline {section}{References}{17}{section*.42}%
+\contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{14}{subsection.31}%
+\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{15}{subsection.33}%
+\contentsline {subsubsection}{\numberline {3.9.1}Experimental Design}{15}{subsubsection.34}%
+\contentsline {subsubsection}{\numberline {3.9.2}Qualitative Frameworks}{16}{subsubsection.37}%
+\contentsline {section}{\numberline {4}Results and Discussion}{17}{section.38}%
+\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{17}{subsection.39}%
+\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{17}{subsection.40}%
+\contentsline {subsection}{\numberline {4.3}Discussion}{17}{subsection.41}%
+\contentsline {subsection}{\numberline {4.4}Limitations}{17}{subsection.42}%
+\contentsline {section}{References}{18}{section*.43}%

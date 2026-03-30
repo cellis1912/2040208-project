@@ -558,7 +558,7 @@ function getWebviewContent() {
         <div class="container">
             <section class="section-card">
                 <h2>Interface Settings</h2>
-                <label class="row"><input type="checkbox" id="toggleSwitch"><span>Minimalist Mode</span></label>
+                <label class="row"><input type="checkbox" id="toggleSwitch"><span>Close Unnecessary Panels</span></label>
                 <label class="row"><input type="checkbox" id="dyslexiaToggle"><span>Dyslexia-friendly</span></label>
             </section>
 
@@ -596,9 +596,9 @@ function getWebviewContent() {
 
             <section class="section-card">
                 <h2>The Task Architect</h2>
-                <textarea id="taskInput" rows="3" placeholder="Describe your goal..."></textarea>
+                <textarea id="taskInput" rows="3" placeholder="Describe your goal (e.g., Build a login page)"></textarea>
                 <div class="button-grid">
-                    <button id="buildBtn">Decompose</button>
+                    <button id="buildBtn">Generate Steps</button>
                     <button id="clearBtn" class="secondary">Clear</button>
                 </div>
                 <div id="output" style="margin-top: 15px;"></div>

@@ -84,8 +84,50 @@ The AI-driven features are implemented using a Streaming Data Pattern.
 \item \textbf{Code Explainer:} This module polls the \texttt{vscode.languages.getDiagnostics} API. It filters for \texttt{DiagnosticSeverity.Error}, extracts the error message and line number, and passes this context to the \texttt{gpt-4o} model to generate a simplified, non-technical explanation.
 \end{itemize}
 
-\subsection{Challenges Overcome}
-Handling API latency or VS Code API limitations.
+\subsection{Inital User Testing and Feedback}
+The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
+tested with a developer to get feedback on UI and functionality of the draft design. At this point the plugin
+ was mostly fully functional, but I wanted to get feedback on the design and usability of the plugin.
+ I asked the user to complete a few tasks using the plugin and then provide feedback on their experience.
+ Some of the tasks that I asked them to complete where changing the theme to a high contrast one, and then changing 
+the font size to 18, this was to test the functionality of the plugin and also to see if it was easy for the user to use.
+From this, I had three main takeaways:
+
+
+1. UI and Functionality requirements:
+The user found that some of the UI elements where not clearly labelled, this caused confusion
+especially when it came to the ``Task Architect''and ``minimalist toggle'' features. Specifically for the 
+task tool the user was unclear on what to input into the goal fields. When executing the original button label,
+ ``Decompose'', was too abstract and didn't clearly signal the expected outcome.
+
+ To address this, I renamed the action button to ``Generate Steps'' to create a direct link between the action
+ and the result. I also inproved the placeholder with an example goal (e.g., ``Build a login page''). 
+ This provides more context for the tool without overcrouding it with a lenghty description.
+
+2. AI Response Integrity
+There was a technical bug what was truncating the AI response or omitting text contained within quotation marks.
+This resulted in incomplete micro-steps, significantly reducing the utility of the generated plan.
+The Solution:
+
+
+3. Accessibility and Customization Testing
+To evaluate the plugin`s versatility and ease of use, the user was tasked with modifying the environment's appearance.
+The user was first asked to complete the tasks in vanilla VS Code, and then with the plugin enabled.
+The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both vedrsions of
+the \gls{IDE}. However in in all cases the user found the plugin's interface far quicker to navigate for these specific tasks,
+ as it provided a more direct path to the settings without needing to search through the standard VS Code menus. For example, 
+ the user was able to change the theme in aprovimately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
+
+
+Overall the user felt that the plugin would be helpful for developers once the issues with the UI and AI responses 
+were resolved, and that it had the potential to reduce cognitive load and improve task initiation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth, alt={}] {logos/uiprefix.png}
+    \caption{UI at the time of initial user testing, before improvements to the UI and AI response integrity were made.}
+    \label{fig:uiprefix}
+\end{figure}
 
 \subsection{Evaluation and Methodology}
 \subsubsection{Experimental Design}
