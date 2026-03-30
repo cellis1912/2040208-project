@@ -415,142 +415,113 @@ function getWebviewContent() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            :root { --spacing: 12px; --border-radius: 4px; }
+            :root { 
+                --spacing: 20px; 
+                --radius: 12px;
+                --card-bg: var(--vscode-sideBar-background);
+                --input-bg: var(--vscode-input-background);
+                --accent: var(--vscode-button-background);
+            }
+            
             body {
-                font-family: var(--vscode-font-family);
+                font-family: 'Segoe UI', system-ui, sans-serif;
                 color: var(--vscode-foreground);
                 background-color: var(--vscode-editor-background);
-                padding: 20px;
-                line-height: 1.4;
-            }
-            h1 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid var(--vscode-widget-border); padding-bottom: 8px; }
-            h2 { font-size: 1rem; margin-top: 0; opacity: 0.8; }
-            /* Change max-width to a percentage or remove it to fill the space */
-            .container { 
-                display: grid; 
-                gap: 20px; 
-                width: 100%;
-                margin: 0 auto;
-                /* This creates as many columns as will fit, with a minimum width of 300px each */
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+                padding: 30px;
+                line-height: 1.5;
             }
 
-            .section-card, .architect-card {
-                background: var(--vscode-sideBar-background);
+            h1 { font-size: 2rem; font-weight: 300; margin-bottom: 30px; letter-spacing: -1px; color: var(--vscode-editor-foreground); }
+
+            .container { 
+                display: grid; 
+                gap: 25px; 
+                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            }
+
+            .section-card {
+                background: var(--card-bg);
                 border: 1px solid var(--vscode-widget-border);
                 padding: var(--spacing);
-                border-radius: var(--border-radius);
-                /* Remove fixed widths here if any exist */
+                border-radius: var(--radius);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
                 display: flex;
                 flex-direction: column;
             }
 
-            /* Ensure images or textareas inside don't break the layout */
-            textarea {
-                width: 100%;
-                box-sizing: border-box; 
-                resize: vertical;
-            }
-            .architect-card { border-top: 4px solid var(--vscode-debugIcon-breakpointForeground); }
-
-            #errorOutput {
-                margin-top: 15px;
-                font-size: 13px;
-                white-space: pre-wrap;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: var(--border-radius);
-                display: none;
-            }
-            .error-inner { padding: 10px; border-left: 3px solid var(--vscode-errorForeground); }
-
-            .row { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; }
-            .row input { margin-right: 10px; }
-            .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-            .button-grid button:last-child { grid-column: span 2; }
-
-            #timer { font-size: 3rem; font-weight: bold; text-align: center; margin: 10px 0; font-family: monospace; }
-            .timer-controls { display: flex; gap: 8px; justify-content: center; }
-
-            button {
-                background: var(--vscode-button-background);
-                color: var(--vscode-button-foreground);
+            .delete-task {
+                background: transparent;
+                color: var(--vscode-errorForeground);
                 border: none;
-                padding: 8px 12px;
-                border-radius: 2px;
                 cursor: pointer;
-                font-size: 12px;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 0 5px;
+                opacity: 0.5;
+                transition: opacity 0.2s;
             }
-            button:hover { background: var(--vscode-button-hoverBackground); }
+
+            .delete-task:hover {
+                opacity: 1;
+            }
+
+            /* Ensure the task text can be struck through */
+            .task-text {
+                flex-grow: 1;
+                background: transparent;
+                border: none;
+                color: var(--vscode-foreground);
+                outline: none;
+            }
+
+            h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; opacity: 0.6; font-weight: 700; }
+
+            /* Modern Toggles */
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 14px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 8px;
+                margin-bottom: 8px;
+                cursor: pointer;
+            }
+            .row input[type="checkbox"] {
+                appearance: none; width: 40px; height: 20px; background: #444; border-radius: 20px; position: relative; cursor: pointer; transition: 0.3s;
+            }
+            .row input[type="checkbox"]::before {
+                content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50%; top: 2px; left: 2px; background: white; transition: 0.3s;
+            }
+            .row input[type="checkbox"]:checked { background: var(--accent); }
+            .row input[type="checkbox"]:checked::before { transform: translateX(20px); }
+
+            /* Buttons & Inputs */
+            button {
+                background: var(--accent); color: var(--vscode-button-foreground); border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.2s; font-size: 13px;
+            }
+            button:hover { background: var(--vscode-button-hoverBackground); transform: translateY(-1px); }
             button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
+            
+            .button-row, .timer-controls { display: flex; gap: 8px; margin-top: 10px; }
+            .button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
             textarea {
-                width: 100%;
-                background: var(--vscode-input-background);
-                color: var(--vscode-input-foreground);
-                border: 1px solid var(--vscode-input-border);
-                padding: 8px;
-                box-sizing: border-box;
+                width: 100%; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--vscode-widget-border); border-radius: 8px; padding: 14px; color: var(--vscode-input-foreground); resize: vertical; min-height: 80px; box-sizing: border-box;
             }
 
-            .task-row {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                background: var(--vscode-editor-background);
-                border: 1px solid var(--vscode-widget-border);
-                padding: 8px;
-                margin-top: 5px;
-                border-radius: 4px;
-            }
-            .task-text { flex-grow: 1; background: transparent; border: none; color: var(--vscode-foreground); }
-            .delete-task { background: transparent; color: var(--vscode-errorForeground); cursor: pointer; border: none; font-size: 16px; }
-            
-            #currentFontSize { font-weight: bold; min-width: 35px; display: inline-block; text-align: center; }
-            /* Container for the scaling controls */
+            #timer { font-size: 4rem; font-weight: 200; text-align: center; color: var(--vscode-textLink-foreground); margin: 10px 0; }
+
             .font-scaler-container {
-                display: flex;
-                align-items: center;
-                justify-content: space-between; /* Spreads buttons to edges */
-                background: var(--vscode-input-background);
-                border: 1px solid var(--vscode-widget-border);
-                border-radius: 20px; /* Capsule shape */
-                padding: 4px;
-                margin-top: 10px;
+                display: flex; align-items: center; justify-content: space-between; background: var(--input-bg); padding: 10px 15px; border-radius: 50px; border: 1px solid var(--vscode-widget-border);
             }
 
-            /* Style the buttons as circular or rounded squares */
-            .font-scaler-container button {
-                height: 32px;
-                width: 32px;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%; /* Makes them circular */
-                font-size: 14px;
-                font-weight: bold;
-                transition: filter 0.2s;
-            }
-
-            /* Middle display area */
-            .font-size-badge {
-                flex-grow: 1;
-                text-align: center;
-                font-family: var(--vscode-editor-font-family, monospace);
-                font-weight: 600;
-                font-size: 13px;
-                color: var(--vscode-input-foreground);
-                letter-spacing: 0.5px;
-            }
-
-            #currentFontSize {
-                color: var(--vscode-textLink-foreground); /* Adds a hint of color */
-            }
-
-            /* Feedback for accessibility */
-            .font-scaler-container button:active {
-                transform: scale(0.95);
-            }
+            /* Error Output Box */
+            #errorOutput { margin-top: 15px; font-size: 13px; display: none; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px; border-left: 4px solid var(--vscode-errorForeground); }
+            
+            /* Task Rows */
+            .task-row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; margin-bottom: 5px; }
+            .task-text { flex-grow: 1; background: transparent; border: none; color: white; }
         </style>
     </head>
     <body>
@@ -558,27 +529,25 @@ function getWebviewContent() {
         <div class="container">
             <section class="section-card">
                 <h2>Interface Settings</h2>
-                <label class="row"><input type="checkbox" id="toggleSwitch"><span>Close Unnecessary Panels</span></label>
-                <label class="row"><input type="checkbox" id="dyslexiaToggle"><span>Dyslexia-friendly</span></label>
+                <label class="row"><span>Close Panels</span><input type="checkbox" id="toggleSwitch"></label>
+                <label class="row"><span>Dyslexia Mode</span><input type="checkbox" id="dyslexiaToggle"></label>
             </section>
 
             <section class="section-card">
-                <h2>Theme</h2>
+                <h2>Theme Presets</h2>
                 <div class="button-grid">
                     <button id="hcDark">HC Dark</button>
                     <button id="hcLight">HC Light</button>
-                    <button id="restore" class="secondary">Restore</button>
+                    <button id="restore" class="secondary" style="grid-column: span 2;">Restore Original</button>
                 </div>
             </section>
 
             <section class="section-card">
                 <h2>Text Scaling</h2>
                 <div class="font-scaler-container">
-                    <button id="decFont" class="secondary" title="Decrease Font Size">A-</button>
-                    <div class="font-size-badge">
-                        <span id="currentFontSize" style="font-size: 18px;">20px</span>
-                    </div>
-                    <button id="incFont" class="secondary" title="Increase Font Size">A+</button>
+                    <button id="decFont" class="secondary">A-</button>
+                    <span id="currentFontSize">20px</span>
+                    <button id="incFont" class="secondary">A+</button>
                 </div>
             </section>
 
@@ -586,125 +555,137 @@ function getWebviewContent() {
                 <h2>Focus Timer</h2>
                 <div id="timer">25:00</div>
                 <div class="timer-controls">
-                    <button id="start">Focus (25m)</button>
-                    <button id="break">Break (5m)</button> </div>
-                <div class="timer-controls" style="margin-top: 8px;">
-                    <button id="pause" class="secondary">Pause</button>
-                    <button id="reset" class="secondary">Reset</button>
+                    <button id="start" style="flex:1">Focus (25 mins)</button>
+                    <button id="break" style="flex:1">Break (5 mins)</button>
+                </div>
+                <div class="timer-controls">
+                    <button id="pause" class="secondary" style="flex:1">Pause</button>
+                    <button id="reset" class="secondary" style="flex:1">Reset</button>
                 </div>
             </section>
 
-            <section class="section-card">
-                <h2>The Task Architect</h2>
-                <textarea id="taskInput" rows="3" placeholder="Describe your goal (e.g., Build a login page)"></textarea>
-                <div class="button-grid">
+            <section class="section-card architect-card">
+                <h2>Task Architect</h2>
+                <textarea id="taskInput" placeholder="What's the goal? e.g., Build a login system"></textarea>
+                <div class="button-row">
                     <button id="buildBtn">Generate Steps</button>
                     <button id="clearBtn" class="secondary">Clear</button>
                 </div>
-                <div id="output" style="margin-top: 15px;"></div>
+                <div id="output"></div>
             </section>
 
             <section class="section-card">
                 <h2>Code Helper</h2>
-                <button id="scanBtn" style="width: 100%;">Scan File for Errors</button>
+                <button id="scanBtn">Scan File for Errors</button>
                 <div id="errorOutput"></div>
             </section>
         </div>
 
         <script>
             const vscode = acquireVsCodeApi();
-            const output = document.getElementById('output');
-            const errorOutput = document.getElementById('errorOutput');
-            const taskInput = document.getElementById('taskInput');
-            const fontSizeDisplay = document.getElementById('currentFontSize');
-
-            // Initial Load
-            vscode.postMessage({ command: 'getInitialFontSize' });
-
-            // Button Listeners
+            
+            // Re-linking all the button IDs from your script
             document.getElementById('incFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'increase' });
             document.getElementById('decFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'decrease' });
+            document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
+            document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
+            document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
+            document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
+            document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' });
+            document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
+            document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
+            document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
+            document.getElementById('dyslexiaToggle').onchange = (e) => vscode.postMessage({ command: e.target.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
             
             document.getElementById('scanBtn').onclick = () => {
-                errorOutput.style.display = 'block';
-                errorOutput.innerHTML = '<div class="error-inner"><em>Scanning problems...</em></div>';
+                const errOut = document.getElementById('errorOutput');
+                errOut.style.display = 'block';
+                errOut.innerHTML = '<em>Scanning...</em>';
                 vscode.postMessage({ command: 'scanErrors' });
             };
 
             document.getElementById('buildBtn').onclick = () => {
-                const val = taskInput.value.trim();
+                const val = document.getElementById('taskInput').value.trim();
                 if(val) {
-                    output.innerHTML = '<em>Architecting...</em>';
+                    document.getElementById('output').innerHTML = '<em>Architecting...</em>';
                     vscode.postMessage({ command: 'breakdownTask', userQuery: val });
                 }
             };
 
+            // Add this right after the buildBtn.onclick block
             document.getElementById('clearBtn').onclick = () => {
-                output.innerHTML = '';
-                taskInput.value = '';
+                // 1. Clear the text area where you type
+                document.getElementById('taskInput').value = '';
+                
+                // 2. Clear the generated list of tasks below it
+                document.getElementById('output').innerHTML = '';
             };
 
-            document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
-            document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' }); // New Listener
-            document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
-            document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
-            document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
-            document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
-            document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
-            document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
-            document.getElementById('dyslexiaToggle').onchange = (e) => {
-                vscode.postMessage({ command: e.target.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
-            };
-
-            // Message Receiver
             window.addEventListener('message', event => {
                 const msg = event.data;
-                switch (msg.command) {
-                    case 'updateFontSize':
-                        fontSizeDisplay.textContent = msg.value + 'px';
-                        break;
-                    case 'updateTime':
-                        document.getElementById('timer').textContent = msg.time;
-                        break;
-                    case 'taskResult':
-                        renderTasks(msg.text);
-                        break;
-                    case 'errorResult':
-                        errorOutput.style.display = 'block';
-                        errorOutput.innerHTML = '<div class="error-inner">' + msg.text + '</div>';
-                        break;
+                if (msg.command === 'updateFontSize') document.getElementById('currentFontSize').textContent = msg.value + 'px';
+                if (msg.command === 'updateTime') document.getElementById('timer').textContent = msg.time;
+                if (msg.command === 'errorResult') {
+                    const errOut = document.getElementById('errorOutput');
+                    errOut.style.display = 'block';
+                    errOut.innerHTML = msg.text;
                 }
+                if (msg.command === 'taskResult') renderTasks(msg.text);
             });
 
             function renderTasks(text) {
-                output.innerHTML = '';
-                const lines = text.split('\\n').filter(l => l.trim() && !l.includes('---'));
-                const filteredLines = lines.filter(line => !line.includes('**'));
+                const out = document.getElementById('output');
+                out.innerHTML = '';
+                
+                // Split lines and filter out empty ones or AI bolding headers
+                const lines = text.split('\\n').filter(l => l.trim() && !l.includes('**'));
 
-                filteredLines.forEach((line) => {
-                    const clean = line.replace(/^[#\\d\\.\\s\\-\\[\\]]+/, '').trim();
-                    if(!clean) return;
+                lines.forEach((line) => {
+                    // Clean up AI markers like [ ], -, 1. etc.
+                    const cleanText = line.replace(/^[#\\d\\.\\s\\-\\[\\]]+/, '').trim();
+                    if(!cleanText) return;
 
+                    // 1. Create the container
                     const div = document.createElement('div');
                     div.className = 'task-row';
-                    div.innerHTML = '<input type="checkbox"><input type="text" class="task-text" value="' + clean + '"><button class="delete-task">×</button>';
                     
-                    const check = div.querySelector('input[type="checkbox"]');
-                    const txt = div.querySelector('.task-text');
-                    check.onchange = () => {
-                        txt.style.textDecoration = check.checked ? 'line-through' : 'none';
-                        txt.style.opacity = check.checked ? '0.5' : '1';
+                    // 2. Set the Inner HTML with the checkbox, text input, and delete button
+                    div.innerHTML = \`
+                        <input type="checkbox" class="task-check">
+                        <input type="text" class="task-text" value="\${cleanText}">
+                        <button class="delete-task" title="Delete Task">×</button>
+                    \`;
+
+                    // 3. Grab references to the elements we just created
+                    const checkbox = div.querySelector('.task-check');
+                    const textInput = div.querySelector('.task-text');
+                    const deleteBtn = div.querySelector('.delete-task');
+
+                    // 4. Logic: Gray out/Strikethrough on toggle
+                    checkbox.onchange = () => {
+                        if (checkbox.checked) {
+                            textInput.style.textDecoration = 'line-through';
+                            textInput.style.opacity = '0.4';
+                            div.style.background = 'rgba(255, 255, 255, 0.01)'; // Fade the whole row
+                        } else {
+                            textInput.style.textDecoration = 'none';
+                            textInput.style.opacity = '1';
+                            div.style.background = 'rgba(255, 255, 255, 0.05)';
+                        }
                     };
-                    div.querySelector('.delete-task').onclick = () => div.remove();
-                    output.appendChild(div);
+
+                    // 5. Logic: Delete task on click
+                    deleteBtn.onclick = () => {
+                        div.remove();
+                    };
+
+                    out.appendChild(div);
                 });
             }
         </script>
     </body>
-    </html>
-    `;
+    </html>`;
 }
-
 function deactivate() {}
 
 module.exports = { activate, deactivate };

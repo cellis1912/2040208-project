@@ -1,17 +1,56 @@
 \section{Design and Planning}
 \subsection{User Requirements} 
-The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the "Direct Instruction" and "Visual Comfort" frameworks identified by \textcite{rocha2025conceptual}.
+The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the ``Direct 
+Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha2025conceptual}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Functional and Non-Functional Requirements for the Accessible IDE Plugin}
+    \label{tab:requirements}
+    \small % Slightly smaller text for better fit
+    \begin{tabularx}{\textwidth}{@{} l l X @{}}
+        \toprule
+        \textbf{ID} & \textbf{Category} & \textbf{Requirement Description} \\ 
+        \midrule
+        \textbf{FR1} & Interface & The system shall provide a single-click ``Minimalist Toggle'' to hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs simultaneously. \\ \addlinespace
+        \textbf{FR2} & AI Support & The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 3--5 manageable sub-tasks. \\ \addlinespace
+        \textbf{FR3} & Feedback & The ``Code Explainer'' shall intercept compiler errors and provide non-technical, bulleted summaries (max 3 points). \\ \addlinespace
+        \midrule
+        \textbf{NFR1} & Accessibility & The UI must adhere to WCAG 2.1 Level AA contrast ratios (4.5:1 for text). \\ \addlinespace
+        \textbf{NFR2} & Cognitive & The system must provide ``Non-Destructive Restoration,'' allowing users to revert all UI changes instantly to prevent anxiety over lost settings. \\ \addlinespace
+        \textbf{NFR3} & Latency & AI-generated task steps must begin streaming to the UI within 2 seconds of the request to prevent ``task-switching'' distractions. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
 \subsection{Module Design}
+The plugin is architected around three core modules, each designed to address specific executive functioning barriers identified in Section 1.3. These modules
+ are unified within the Accessible Dashboard (see Figure [X]), a centralized Webview panel that provides a low-friction entry point to the tool's features.
 
-\subsubsection{Minimalist Toggle}
-Logic for \gls{UI} state management.
+\textbf{Minimalist Toggle}
 
-\subsubsection{Task Architect}
-Prompt engineering strategy (HITL approach).
+The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilizes a state-management system to track the current visibility of the VS Code workbench.
+When activated, it dispatches a batch of imperative commands to the vscode.commands API, hiding the Activity Bar, Status Bar, Side Bar, and Breadcrumbs simultaneously.
+By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the code editor itself.
 
-\subsubsection{Visual Styler} 
-WCAG 2.1 compliance mapping.
+\textbf{Task Architect}
+
+The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps.
+The module employs a \gls{CoT} prompting strategy. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the LLM to output a
+maximum of five actionable sub-tasks. Once the tasks have been generated and optmised for clarity, they are shown in the "Task Breakdown" section of the dashboard. 
+The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
+Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
+As shown in the "Task Breakdown" section of the dashboard, tasks are rendered as editable fields. This allows the user to modify or refine the AI's suggestions, ensuring the developer maintains agency over their project architecture while the AI handles the "heavy lifting" of the initial decomposition.
+
+
+\textbf{Visual Styler} 
+
+The Visual Styler manages the aesthetic environment of the IDE to reduce eye strain and sensory overwhelm.
+
+WCAG Mapping: The module provides presets (e.g., "High Contrast Dark," "High Contrast Light") that have been mapped to meet WCAG 2.1 Level AA compliance.
+
+Functionality: Beyond simple theme switching, the styler interacts with workspace.getConfiguration to adjust font sizes and line heights. This addresses the "Visual Comfort" framework by ensuring that text-heavy tasks remain legible for developers with dyslexia or light sensitivities.
+
 
 \includegraphics[width=0.5\linewidth]{logos/Plug-in plan.png}
 
