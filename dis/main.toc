@@ -15,18 +15,18 @@
 \contentsline {section}{\numberline {3}Design and Planning}{11}{section.19}%
 \contentsline {subsection}{\numberline {3.1}User Requirements}{11}{subsection.20}%
 \contentsline {subsection}{\numberline {3.2}Module Design}{11}{subsection.22}%
-\contentsline {subsection}{\numberline {3.3}System Architecture}{13}{subsection.23}%
-\contentsline {subsection}{\numberline {3.4}Implementation}{14}{subsection.25}%
-\contentsline {subsection}{\numberline {3.5}Technology Stack}{14}{subsection.26}%
-\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{15}{subsection.27}%
-\contentsline {subsection}{\numberline {3.7}AI Integration}{15}{subsection.28}%
-\contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{15}{subsection.29}%
-\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{16}{subsection.31}%
-\contentsline {subsubsection}{\numberline {3.9.1}Experimental Design}{16}{subsubsection.32}%
-\contentsline {subsubsection}{\numberline {3.9.2}Qualitative Frameworks}{17}{subsubsection.35}%
-\contentsline {section}{\numberline {4}Results and Discussion}{18}{section.36}%
-\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{18}{subsection.37}%
-\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{18}{subsection.38}%
-\contentsline {subsection}{\numberline {4.3}Discussion}{18}{subsection.39}%
-\contentsline {subsection}{\numberline {4.4}Limitations}{18}{subsection.40}%
-\contentsline {section}{References}{19}{section*.41}%
+\contentsline {subsection}{\numberline {3.3}System Architecture}{13}{subsection.24}%
+\contentsline {subsection}{\numberline {3.4}Implementation}{15}{subsection.26}%
+\contentsline {subsection}{\numberline {3.5}Technology Stack}{15}{subsection.27}%
+\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{15}{subsection.28}%
+\contentsline {subsection}{\numberline {3.7}AI Integration}{15}{subsection.29}%
+\contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{15}{subsection.30}%
+\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{17}{subsection.33}%
+\contentsline {subsubsection}{\numberline {3.9.1}Experimental Design}{17}{subsubsection.34}%
+\contentsline {subsubsection}{\numberline {3.9.2}Qualitative Frameworks}{18}{subsubsection.37}%
+\contentsline {section}{\numberline {4}Results and Discussion}{19}{section.38}%
+\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{19}{subsection.39}%
+\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{19}{subsection.40}%
+\contentsline {subsection}{\numberline {4.3}Discussion}{19}{subsection.41}%
+\contentsline {subsection}{\numberline {4.4}Limitations}{19}{subsection.42}%
+\contentsline {section}{References}{20}{section*.43}%

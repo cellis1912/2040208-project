@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  30 MAR 2026 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  31 MAR 2026 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1252,66 +1252,72 @@ Overfull \hbox (43.52402pt too wide) in paragraph at lines 52--53
 <logos/Plug-in plan.png, id=393, 514.17094pt x 899.61093pt>
 File: logos/Plug-in plan.png Graphic file (type png)
 <use logos/Plug-in plan.png>
-Package pdftex.def Info: logos/Plug-in plan.png  used on input line 55.
-(pdftex.def)             Requested size: 213.39568pt x 373.37276pt.
+Package pdftex.def Info: logos/Plug-in plan.png  used on input line 56.
+(pdftex.def)             Requested size: 256.07741pt x 448.04732pt.
 [12]
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 62.
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 67.
  (C:\Users\Clo\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 62.
+(Font)              scaled to size 12.0pt on input line 67.
 
-Overfull \hbox (31.39168pt too wide) in paragraph at lines 62--63
+Overfull \hbox (31.39168pt too wide) in paragraph at lines 67--68
 []\T1/ntxtlf/m/n/12 The user in-ter-face is im-ple-mented as a \T1/ntxtt/m/n/12 WebviewPanel\T1/ntxtlf/m/n/12 , which ren-ders a cus-tom HTML/JavaScript
  []
 
 [13 <./logos/Plug-in plan.png>]
-Overfull \hbox (10.76155pt too wide) in paragraph at lines 74--75
+Overfull \hbox (10.76155pt too wide) in paragraph at lines 79--80
 []\T1/ntxtlf/m/n/12 Command Reg-is-tra-tion: The sys-tem reg-is-ters spe-cific URI com-mands (e.g., accessible-
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 93.
+(Font)              scaled to size 10.95pt on input line 98.
 [14]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 122.
+(Font)              scaled to size 12.0pt on input line 127.
  [15]
-<logos/uiprefix.png, id=419, 779.91376pt x 339.2675pt>
-File: logos/uiprefix.png Graphic file (type png)
-<use logos/uiprefix.png>
-Package pdftex.def Info: logos/uiprefix.png  used on input line 166.
-(pdftex.def)             Requested size: 341.43437pt x 148.52234pt.
- [16 <./logos/uiprefix.png>]) [17]
+<logos/uiprefix1.png, id=420, 251.43938pt x 168.63pt>
+File: logos/uiprefix1.png Graphic file (type png)
+<use logos/uiprefix1.png>
+Package pdftex.def Info: logos/uiprefix1.png  used on input line 171.
+(pdftex.def)             Requested size: 256.07741pt x 171.74043pt.
+ [16]
+<logos/uipostfix1.png, id=425, 499.11469pt x 421.575pt>
+File: logos/uipostfix1.png Graphic file (type png)
+<use logos/uipostfix1.png>
+Package pdftex.def Info: logos/uipostfix1.png  used on input line 178.
+(pdftex.def)             Requested size: 256.07741pt x 216.2998pt.
+ [17 <./logos/uiprefix1.png> <./logos/uipostfix1.png>]) [18]
 \openout2 = `chapters/results.aux'.
 
- (chapters/results.tex) [18
+ (chapters/results.tex) [19
 
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 151.
- [19
+ [20
 
 
 
-{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [20] (main.aux (chapters/abstract.aux) (chapters/declarationacknowlegement.aux) (chapters/01-introduction.aux) (chapters/lit-review.aux) (chapters/methadology.aux) (chapters/results.aux))
+{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [21] (main.aux (chapters/abstract.aux) (chapters/declarationacknowlegement.aux) (chapters/01-introduction.aux) (chapters/lit-review.aux) (chapters/methadology.aux) (chapters/results.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3DD922B037B23563AED8B60469BD2084;5180.
+(rerunfilecheck)             Checksum: 754CA6172E42795468CC10E68BFB10C5;5180.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31536 strings out of 467871
- 585038 string characters out of 5419344
- 1471056 words of memory out of 5000000
- 59891 multiletter control sequences out of 15000+600000
+ 31548 strings out of 467871
+ 585290 string characters out of 5419344
+ 1471186 words of memory out of 5000000
+ 59900 multiletter control sequences out of 15000+600000
  682281 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,79p,2520b,1974s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1364,9 +1370,9 @@ pdfTeX warning (dest): name{glo:neurodivergent} has been referenced but does not
 pdfTeX warning (dest): name{glo:IDE} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (26 pages, 425875 bytes).
+Output written on main.pdf (27 pages, 409027 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 510 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
