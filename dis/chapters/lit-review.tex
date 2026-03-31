@@ -14,17 +14,23 @@ Cognitive Load Theory, primarily developed by John Sweller, suggests that since 
     \label{fig:clt_diagram}
 \end{figure}
 
+The framework can be simplified down to the idea that the Total Cognitive Load (TCL) is the sum of Intrinsic Load, Extraneous Load, and Germane Load. 
+The goal of instructional design is to manage these loads effectively to maximise learning outcomes.
+
 \begin{enumerate}
-    \item Intrinsic Load: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
+    \item \gls{IL}: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
     simultaneously to understand a concept. For example, learning basic vocabulary has low intrinsic load, while mastering complex syntax has high intrinsic load.
-    \item Extraneous Load: This is seen as the unnecessary load that you would aim to minimise wherever possible. It is influenced by the way 
+    \item \gls{EL}: This is seen as the unnecessary load that you would aim to minimise wherever possible. It is influenced by the way 
     information is presented. Some examples that could exacerbate the load are poorly designed diagrams, distracting environments or redundant
      text. Poor design choices force the brain to waste resources on non-essential processing.
-    \item Germane Load: This is the load I am aiming to maximise. It refers to the mental effort that can be directed toward the more key task, 
+    \item \gls{GL}: This is the load I am aiming to maximise. It refers to the mental effort that can be directed toward the more key task, 
     which in this scenario would be the code programming task.
 \end{enumerate}
 
-The key role of CLT is to manage intrinsic load, break down tasks, minimise extraneous load, facilitate a clear design, and maximise germane load, allowing the user to focus on their core task.
+One of the main focuses of this project is that for neurodivergent developers, the \gls{IDE} environment often imposes an disproportionate Extraneous Load. 
+When \gls{EL} is high, the "cognitive budget" is exhausted before the developer can engage with the \gls{IL} of the code, leading to task paralysis.
+ My plugin aims to "free up" this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and scaffolding \gls{IL}
+  (via the Task Architect), thereby maximizing the capacity for \gls{GL}.
 \newline
 
 \textbf{Integration with Rosenshin`s Principles of Instruction}
@@ -46,18 +52,12 @@ Further more these smaller task can be seen as ``scaffolding'' for the user when
 
 
 \textbf{The Cognitive Theory of Multimedia Learning (CTML)}
-While Sweller focuses on the load, Richard Mayer`s CTML provides a granular look at how visual and auditory channels process information.
- In the context of a software developer, the IDE is a high-density multimedia environment.
 
-The Split-Attention and Redundancy Principles
-Mayer (2021) identifies the Split-Attention Effect, which occurs when learners must divide their attention between multiple sources 
-of information that are physically separated but cognitively related. For a neurodivergent developer, an error in the "Output" console
- that refers to a line of code 500 lines above creates a massive "spatial split." The mental effort required to integrate these two sources
-  is entirely Extraneous Load.
+While Sweller focuses on the load, Richard Mayer`s CTML provides a more detailed look at how visual and auditory channels process information. In the context of a software developer, the IDE is a high-density multimedia environment.
 
-Furthermore, the Redundancy Principle suggests that humans learn better from graphics and narration than from graphics, narration, and on-screen
- text combined. In modern IDEs,``hover-over'' documentation often repeats exactly what is written in the type-hinting, adding "visual noise" that
-  can trigger sensory overload in developers with ASD.
+The Split-Attention and Redundancy Principles by Mayer (2021) identifies the Split-Attention Effect, which occurs when learners must divide their attention between multiple sources 
+of information that are physically separated but cognitively related. For a neurodivergent developer, an error in the console that refers to a line of code 500
+ lines above creates a massive ``spatial split''. The mental effort required to integrate these two sources is entirely Extraneous Load.
 
 
 \subsection{Neurodiversity in Software Engineering}
@@ -72,7 +72,7 @@ For a neurodivergent developer, a standard \gls{IDE} error message often carries
  and ambiguous phrasing. This noise competes for limited working memory resources, leaving little room for the Intrinsic Load required actually 
  to solve the logical problem.
 
-\textbf{\gls{executive_dysfunction} and Task Switching}
+\textbf{Executive Functioning and Task Switching}
 
 \gls{executive_dysfunction} is a primary barrier cited by both~\cite{verma2025differences} and~\cite{gama2025socio}. This manifests
  itself as difficulty in ``task initiation'' (starting a new project) and ``set-shifting'' (switching between tasks).
@@ -94,7 +94,6 @@ Dyslexia: Significant hurdles during the ``syntax-heavy'' stages of programming.
 
 \textbf{Beyond Medical}
 
-
 To understand why existing tools fail, we  must examine the shift from the Medical Model to the Social Model of disability.
 
 \begin{itemize}
@@ -110,15 +109,21 @@ To deepen the analysis of \gls{executive_dysfunction}, we must break it into thr
     \item Cognitive Flexibility: The ability to switch between thinking about the ``big picture'' architecture and the ``low-level'' syntax.
 \end{itemize}
 
-\subsection{The "Double-Edged Sword" of Hyperfocus}
+\subsection{The ``Double-Edged Sword'' of Hyperfocus}
 While neurodivergent developers, particularly those with ASD and \gls{ADHD}, are often stereotyped as having a ``superpower'' for deep work, 
-this ability to hyperfocus is more accurately described as a dysregulation of attention. As noted by \cite{gama2025socio}, hyperfocus allows 
+this ability to hyperfocus is more accurately described as a dysregulation of attention. Unlike the psychological concept of ``Flow'' which is
+ generally sustainable and self-directed, hyperfocus is an involuntary immersion into a task or activity. As noted by \cite{gama2025socio}, hyperfocus allows 
 for an exhaustive exploration of complex problems, yet this intensity often comes at the expense of self-care. Developers may neglect fundamental 
-biological needs, such as nutrition, sleep, and hygiene, leading to rapid burnout. Furthermore, this state is notoriously difficult to 
-achieve, \cite{newman2025get} identifies that for \gls{ADHD} programmers, ``getting in the groove'' is a fragile process where a single interruption 
-can collapse hours of built-up mental context.
+biological needs, such as nutrition, sleep, and hygiene, leading to rapid burnout. 
 
-In a professional engineering context, this creates a significant conflict between depth and delivery. Hyperfocus can inadvertently trigger over-engineering, where a developer becomes "locked" into optimising a single component while neglecting broader project milestones or team collaborations. This inability to switch off from an interesting problem makes task-switching, a fundamental requirement of agile development, mentally exhausting and practically difficult. Consequently, what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
+In the context of software engineering, this creates a High-Intensity/High-Fragility paradox. \cite{newman2025get} identifies that for \gls{ADHD} programmers, ``getting 
+in the groove'' is a fragile process where a single interruption can collapse hours of built-up mental context. The subsequent state recovery cost is significantly higher 
+for neurodivergent individuals, often leading to burnout or irritability when the state is broken.
+
+In a professional engineering context, this creates a significant conflict between depth and delivery. Hyperfocus can inadvertently trigger over-engineering, 
+where a developer becomes locked into optimising a single component while neglecting broader project milestones or team collaborations. This inability to switch 
+off from an interesting problem makes task-switching, a fundamental requirement of agile development, mentally exhausting and practically difficult. Consequently, 
+what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
 
 \subsection{Existing Tools}
 The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a neurotypical bias, creating barriers for those who may require additional support. \cite{morris2015understanding} observes workplace tools are frequently built with assumptions that "may not align with the needs of neurodiverse employees." \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with neurodiverse developers in mind, and complex nested menus can be overwhelming.

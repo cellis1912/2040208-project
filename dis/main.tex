@@ -1,3 +1,6 @@
+% !TeX program = pdflatex
+% !BIB program = biber
+% !IDTX program = makeglossaries
 \documentclass[a4paper,12pt,onecolumn]{article}
 
 % --------------------------------------------------------
@@ -89,8 +92,8 @@
 % --------------------------------------------------------
 % Formatting
 % --------------------------------------------------------
-\parindent 0em
-\parskip 6pt
+\parindent0em
+\parskip6pt
 
 % --------------------------------------------------------
 % TOC, LOF, LOT spacing
@@ -102,14 +105,13 @@
 \setlength{\cftbeforetabskip}{3pt}
 
 \usepackage[acronym, toc]{glossaries}
-\makeglossaries
+\makeglossaries%
 \input{glossary_entries}
 
 % --------------------------------------------------------
 % Main document
 % --------------------------------------------------------
 \begin{document}
-
 % Render the title page
 \input{titlepage.tex}
 
@@ -134,7 +136,8 @@
 \clearpage
 
 % 2. The Glossary List
-\printglossary[title={Glossary}]
+\glsaddall%
+\printglossary[title={Glossary}] 
 \clearpage
 
 % Main body: Arabic numbering
@@ -144,8 +147,6 @@
 \include{chapters/lit-review}
 \include{chapters/methadology}
 \include{chapters/results}
-
-\clearpage
 
 % Bibliography (automatically adds itself to TOC via heading=bibintoc)
 \printbibliography[heading=bibintoc, title={\iflanguage{ngerman}{Literaturverzeichnis}{References}}]
