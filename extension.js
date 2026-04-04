@@ -465,15 +465,29 @@ function getWebviewContent() {
                 opacity: 1;
             }
 
-            /* Ensure the task text can be struck through */
-            .task-text {
-                flex-grow: 1;
-                background: transparent;
-                border: none;
-                color: var(--vscode-foreground);
-                outline: none;
+            .task-row {
+                display: flex;
+                align-items: flex-start; /* Keeps check and X at the top */
+                gap: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 8px;
+                transition: all 0.3s ease;
             }
 
+            /* The actual text area */
+            .task-text {
+                flex-grow: 1;
+                color: var(--vscode-foreground);
+                font-size: 13px;
+                line-height: 1.4;
+                word-break: break-word; /* Prevents long words from breaking the UI */
+                white-space: pre-wrap;  /* Allows text to wrap to the next line */
+                outline: none;
+                min-height: 1.4em;
+            }
+                
             h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; opacity: 0.6; font-weight: 700; }
 
             /* Modern Toggles */
@@ -520,8 +534,30 @@ function getWebviewContent() {
             #errorOutput { margin-top: 15px; font-size: 13px; display: none; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px; border-left: 4px solid var(--vscode-errorForeground); }
             
             /* Task Rows */
-            .task-row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; margin-bottom: 5px; }
-            .task-text { flex-grow: 1; background: transparent; border: none; color: white; }
+            .task-row {
+                display: flex;
+                align-items: flex-start; /* Align checkbox and X to the top of long text */
+                gap: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 8px;
+            }
+            .task-text {
+                flex-grow: 1;
+                background: transparent;
+                border: none;
+                color: var(--vscode-foreground);
+                outline: none;
+                font-size: 13px;
+                line-height: 1.4;
+                word-break: break-word; /* This is the "Magic" line that stops clipping */
+                white-space: pre-wrap;  /* Ensures text wraps naturally */
+            }
+            .task-check {
+                flex-shrink: 0;
+                margin-top: 3px;
+            }
         </style>
     </head>
     <body>
@@ -652,7 +688,7 @@ function getWebviewContent() {
                     // 2. Set the Inner HTML with the checkbox, text input, and delete button
                     div.innerHTML = \`
                         <input type="checkbox" class="task-check">
-                        <input type="text" class="task-text" value="\${cleanText}">
+                        <span class="task-text" contenteditable="true">\${cleanText}</span>
                         <button class="delete-task" title="Delete Task">×</button>
                     \`;
 
