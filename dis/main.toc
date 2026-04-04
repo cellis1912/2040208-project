@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {section}{List of Abbreviations}{IV}{section*.2}%
-\contentsline {section}{Glossary}{V}{section*.4}%
+\contentsline {section}{List of Abbreviations}{V}{section*.2}%
+\contentsline {section}{Glossary}{VI}{section*.4}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.6}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.7}%
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{1}{subsection.8}%
@@ -24,11 +24,14 @@
 \contentsline {subsection}{\numberline {3.7}AI Integration}{15}{subsection.33}%
 \contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{15}{subsection.34}%
 \contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{17}{subsection.37}%
-\contentsline {subsubsection}{\numberline {3.9.1}Experimental Design}{17}{subsubsection.38}%
-\contentsline {subsubsection}{\numberline {3.9.2}Qualitative Frameworks}{18}{subsubsection.41}%
-\contentsline {section}{\numberline {4}Results and Discussion}{19}{section.42}%
-\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{19}{subsection.43}%
-\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{19}{subsection.44}%
-\contentsline {subsection}{\numberline {4.3}Discussion}{19}{subsection.45}%
-\contentsline {subsection}{\numberline {4.4}Limitations}{19}{subsection.46}%
-\contentsline {section}{References}{20}{section*.47}%
+\contentsline {subsection}{\numberline {3.10}Experimental Design}{17}{subsection.38}%
+\contentsline {subsection}{\numberline {3.11}Quantitative and Qualitative Frameworks}{18}{subsection.41}%
+\contentsline {subsubsection}{\numberline {3.11.1}NASA Task Load Index (\gls {NASATLX})}{18}{subsubsection.42}%
+\contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{18}{subsubsection.43}%
+\contentsline {subsection}{\numberline {3.12}Data Collection and Analysis}{19}{subsection.46}%
+\contentsline {section}{\numberline {4}Results and Discussion}{20}{section.47}%
+\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{20}{subsection.48}%
+\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{20}{subsection.49}%
+\contentsline {subsection}{\numberline {4.3}Discussion}{20}{subsection.50}%
+\contentsline {subsection}{\numberline {4.4}Limitations}{20}{subsection.51}%
+\contentsline {section}{References}{21}{section*.52}%

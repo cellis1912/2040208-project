@@ -182,46 +182,40 @@ were resolved, and that it had the potential to reduce cognitive load and improv
 
 
 \subsection{Evaluation and Methodology}
-\subsubsection{Experimental Design}
-The study employs a \textbf{within-subjects comparative design}. Participants will perform two standardised debugging and project-planning tasks:
+
+\subsection{Experimental Design}
+This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for neurodivergent research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
+
 \begin{enumerate}
-\item \textbf{Control Condition:} Using a standard ("Vanilla") VS Code installation.
-\item \textbf{Experimental Condition:} Using VS Code equipped with the Accessibility Plugin.
+    \item \textbf{Control Condition:} Tasks are performed using a standard ("Vanilla") \gls{IDE} installation.
+    \item \textbf{Experimental Condition:} Tasks are performed using the \gls{IDE} equipped with the Accessible Plugin features (Minimalist Toggle, Task Architect, and Visual Styler).
 \end{enumerate}
 
-\subsubsection{Qualitative Frameworks}
-To capture the subjective experience of neurodivergent users, two validated instruments are used:
+To mitigate the \textbf{carry-over effect} (where learning from the first task makes the second easier), the order of conditions will be counterbalanced, and task sets of equivalent \gls{IL} will be used across both conditions.
+
+\subsection{Quantitative and Qualitative Frameworks}
+To evaluate the efficacy of the plugin in reducing \gls{EL} and supporting \gls{executive_dysfunction}, two validated instruments will be administered.
+
+\subsubsection{NASA Task Load Index (\gls{NASATLX})}
+The \gls{NASATLX} is a multidimensional assessment tool used to quantify perceived workload. It is uniquely suited for this study as it allows for the isolation of specific cognitive pressures. While all six subscales will be measured to ensure a comprehensive view, the analysis will focus specifically on four key dimensions:
+
 \begin{itemize}
-\item \textbf{NASA-TLX (Task Load Index):} This is critical for measuring the "Mental Demand" and "Frustration" sub-scales, which are often higher for developers with ADHD or Dyslexia.
-
-
-NASA-TLX provides a multidimensional assessment of perceived workload, allowing us to quantify the cognitive load reduction achieved by the plugin. The quesutionnaire
-will be administered after completing the tasks to capture real-time feedback on the user's experience.
-The NASA-TLX consists of six subscales: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration. Each subscale is rated on a 20-point scale, 
-and the overall workload score is calculated by weighting each subscale according to its importance to the task. 
-
-Specifcially for this study, the following questions from the NASA-TLX will be most relevant:
-How mentally demanding was the task?
-How successful were you in accomplishing what you were asked to do?
-How hard did you have to work to accomplish your level of performance?
-How insecure, discouraged, irritated, stressed, and annoyed were you?
-
-Other subscales such as Physical Demand and Temporal Demand may be less relevant for this study, but will still be included to provide a comprehensive view of the user's experience.
-
-
-\item \textbf{System Usability Scale (SUS):} Provides a global view of the plugin's reliability and ease of integration into a professional workflow.
-
-The SUS is a 10-item questionnaire that assesses the usability of a system. It uses a 5-point Likert scale for responses, ranging from "Strongly Disagree" to 
-"Strongly Agree". The SUS provides a single score on a scale of 0 to 100, which can be used to evaluate the overall usability of the plugin.
-The SUS will be administered after the experimental condition to capture the user's perception of the plugin's usability. The questions include:
-I think that I would like to use this system frequently.
-I found the system unnecessarily complex.
-I thought the system was easy to use.
-I think that I would need the support of a technical person to be able to use this system.
-I found the various functions in this system were well integrated.
-I thought there was too much inconsistency in this system.
-I would imagine that most people would learn to use this system very quickly.
-I found the system very cumbersome to use.
-I felt very confident using the system.
-I needed to learn a lot of things before I could get going with this system.
+    \item \textbf{Mental Demand:} To assess if the Task Architect successfully reduces the "Executive Function Tax" required for project initiation.
+    \item \textbf{Performance:} To measure the user's self-perception of success in the face of syntax errors or logic bugs.
+    \item \textbf{Effort:} To quantify the total mental resources required to reach the goal.
+    \item \textbf{Frustration:} Critical for neurodivergent populations, this measures the emotional cost of "task-switching" and sensory overwhelm.
 \end{itemize}
+
+Ratings will be collected on a 20-point scale. By comparing \gls{NASATLX} scores across conditions, the study aims to demonstrate a statistically significant reduction in the "Mental Demand" and "Frustration" subscales when using the plugin.
+
+\subsubsection{System Usability Scale (\gls{SUS})}
+To assess the reliability and integration of the tool, the \gls{SUS} will be administered following the Experimental Condition. The \gls{SUS} is a 10-item questionnaire using a 5-point Likert scale, providing a global view of system usability. 
+
+In the context of this study, the \gls{SUS} serves two primary purposes:
+\begin{enumerate}
+    \item \textbf{Integration Assessment:} Identifying if the "Minimalist Toggle" feels like a seamless part of the workflow or an added complexity.
+    \item \textbf{Confidence and Learnability:} Measuring the "Activation Energy" required to use the AI features. For a developer experiencing \gls{task_paralysis}, a tool that is perceived as "cumbersome" (Item 8) or "complex" (Item 2) would be counter-productive.
+\end{enumerate}
+
+\subsection{Data Collection and Analysis}
+In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of "State Recovery" costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.

@@ -1,22 +1,36 @@
 \section{Introduction}
 \subsection{Motivation}
-This project was initially motivated by my lived experience as a \gls{neurodivergent} developer and by personal challenges in using industrial software development tools. Once I started talking to other developers and researching the area, I became even more motivated to find a solution to these issues.
+This project was initially motivated by my lived experience as a \gls{neurodivergent} developer and by personal challenges in using industrial software development tools. In professional settings, my \gls{ASD} was 
+often framed as a ``superpower'' due to my ability to rapidly acquire new technical skills and engage in deep logical analysis. However, this perceived strength came with a significant \gls{cognitive_tax}. I found adapting
+ to new environments and maintaining a sustainable work-life balance extremely difficult, particularly when faced with task initiation and the decomposition of complex programming problems.
+Upon researching existing methodologies and consulting with other neurodivergent developers, it became clear that current Integrated Development Environments (IDEs) offer no effective, ``out-of-the-box'' solutions
+ for managing these executive functioning barriers. This gap in assistive technology motivated the development of a solution that transitions the IDE from a passive tool to an active cognitive partner.
 
-Existing \glspl{IDE} can lead to increased cognitive overload and difficulty in maintaining focus. By streamlining interfaces and providing \gls{AI}-driven task decomposition, this project aims to reduce the strain on \gls{neurodivergent} individuals in both professional and educational settings, as developers often report challenges with cognitive overload, \gls{hyperfocus}, and breaking down more complex problems when programming
+Existing \glspl{IDE} can lead to increased cognitive overload and difficulty in maintaining focus. By streamlining interfaces and providing \gls{AI}-driven task decomposition, this project aims 
+to reduce the strain on \gls{neurodivergent} individuals in both professional and educational settings, as developers often report challenges with cognitive overload, \gls{hyperfocus}, and breaking
+ down more complex problems when programming
 
 \subsection{Problem Statement}
-\glspl{IDE} are a code tool for modern software development, but there are still elements of the interface that remain a significant barrier for \gls{neurodivergent} developers, specifically those with \gls{ADHD}, \gls{ASD}, and related executive functioning challenges. Current \glspl{IDE} are designed with ``maximalist''  in mind, presenting a constant stream of visual stimuli, complex nested menus, and dense technical jargon.
+\glspl{IDE} are a primary coding tool for modern software development, yet there are still elements of the interface that remain a significant barrier for \gls{neurodivergent} developers, specifically
+ those with \gls{ADHD}, \gls{ASD}, and \gls{dyslexia}. While these tools are feature-rich, they are designed with a ``neurotypical bias'' that assumes a high baseline for filtering distractions and
+  managing multi-step planning.
 
-For developers who experience sensory overwhelm or \gls{executive_dysfunction}, modern \glspl{IDE} can create an immense Extraneous Cognitive Load~\cite{sweller1988cognitive}. Research by \textcite{bramham2009executive} found that groups with \gls{ADHD} often battle with task paralysis during the initiation phase, while those with \gls{ASD} may struggle more with the initial strategic planning and decomposition of a project.
+Current IDEs prioritize high feature density, often presenting a constant stream of visual stimuli, including nested menus, status bars, and dense technical jargon. For developers who experience 
+sensory overwhelm, this environment creates an immense Extraneous Cognitive Load~\cite{sweller1988cognitive}. This ``visual noise'' competes for limited working memory, often exhausting a developer’s
+ ``cognitive budget'' before they can engage with the actual logic of the code.
 
-Constant notifications from compiler errors and recommendations can trigger \gls{hyperfocus} on peripheral details rather than the core logic. There is currently a growing resilience on \gls{AI} tools, with developers using them to write their code. Even if they are using the models as a form of support, they often provide answers rather than acting as a ``cognitive prosthetic'' that doesn't just help with code, but helps with the process of being a developer by filtering noise and decomposing complexity.
+Research indicates that developers with \gls{ADHD} frequently struggle with task paralysis during the initiation phase of a project~\cite{bramham2009executive}. Furthermore, those with \gls{ASD} may face 
+challenges with high-level strategic planning and the decomposition of abstract requirements into actionable steps. Constant notifications—such as linter warnings or compiler recommendations—can inadvertently trigger hyperfocus on peripheral
+  details, leading to ``rabbit holes'' that derail the core development goal.
 
-Here is a more precise breakdown of the challenges and potential strengths of neurodiverse people regarding their conditions. Obvously the challenges faced by individuals can be deeply varied and nuanced, but this should provide enough of an overview for you to understand the key points and aims of the project.
+While AI tools are increasingly used in software development, they often focus on generating code rather than supporting the process of being a developer. There is a lack of ``out-of-the-box'' inclusivity in 
+these tools, forcing neurodivergent individuals to manually create complex custom configurations to remain productive. Consequently, there is a critical need for an IDE intervention that acts as a 
+``digital ramp'', one that filters environmental noise and provides the necessary scaffolding to bypass the freeze response common in task paralysis.
 
 \subsection{Understanding Neurodiversity in Software Development}
 Before going into the specific technical barriers of modern \glspl{IDE}, it is necessary to define neurodiversity and the cognitive
  frameworks that underpin this research. Originally coined by Judy Singer in the late 1990s, ``neurodiversity''  views neurological differences—such 
- as \gls{ASD}, \gls{ADHD}, and \gls{Dyslexia}, as natural variations in the human genome rather than purely medical deficits~\cite{singer1999why}.
+ as \gls{ASD}, \gls{ADHD}, and \gls{dyslexia}, as natural variations in the human genome rather than purely medical deficits~\cite{singer1999why}.
 
 In the context of software engineering, these variations often manifest as unique cognitive profiles. While many \gls{neurodivergent} 
 developers possess high aptitude for logic and pattern recognition, they frequently encounter barriers related to Executive Functioning. 
@@ -37,7 +51,7 @@ To provide a clearer lens for the objectives of this project, the below table ou
         \addlinespace
         \gls{ADHD} & Creativity, hyperfocus on passions, adaptability, high energy, ability to multitask or rapidly switch contexts. & Distractibility in chaotic settings, struggles with time management and organisation, impulsivity in structured environments. \\
         \addlinespace
-        \gls{Dyslexia} & Strong visual-spatial reasoning, excellent big-picture thinking, creative problem-solving, strong verbal skills. & Difficulties with text-heavy tasks, timed reading assignments, and conventional written communication. \\
+        Dyslexia & Strong visual-spatial reasoning, excellent big-picture thinking, creative problem-solving, strong verbal skills. & Difficulties with text-heavy tasks, timed reading assignments, and conventional written communication. \\
         \bottomrule
     \end{tabularx}
 \end{table}
