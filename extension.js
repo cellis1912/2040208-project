@@ -71,6 +71,12 @@ function activate(context) {
                         case 'hcLight':
                             await applyHighContrastLight(context);
                             break;
+                        case 'shcDark':
+                            await applySoftHighContrastDark(context);
+                            break;
+                        case 'shcLight':
+                            await applySoftHighContrastLight(context);
+                            break;
                         case 'restoreTheme':
                             await restoreOriginalTheme(context);
                             break;
@@ -276,20 +282,68 @@ async function applyHighContrastLight(context) {
     vscode.window.showInformationMessage('High Contrast Light preset applied');
 }
 
+async function applySoftHighContrastLight(context) {
+    const config = vscode.workspace.getConfiguration();
+
+    if (!context.globalState.get(ORIGINAL_THEME_KEY)) {
+        await context.globalState.update(
+            ORIGINAL_THEME_KEY,
+            config.get('workbench.colorTheme')
+        );
+    }
+
+    await config.update('workbench.colorTheme', 'Visual Studio Dark', vscode.ConfigurationTarget.Global);
+
+        // Inject Soft HC Overrides
+        await config.update('workbench.colorCustomizations', {
+            "editor.background": "#121212", // Deeper black for focus
+            "editor.foreground": "#e0e0e0", // Brighter text
+            "editorLineNumber.activeForeground": "#00ffcc", // High vis current line
+            "editor.lineHighlightBackground": "#222222",
+            "editorBracketMatch.border": "#00ffcc"
+        }, vscode.ConfigurationTarget.Global);
+
+        await config.update('editor.cursorStyle', 'block', vscode.ConfigurationTarget.Global);
+        vscode.window.showInformationMessage('Soft High Contrast Dark applied');
+}
+
+async function applySoftHighContrastDark(context) {
+    const config = vscode.workspace.getConfiguration();
+
+    if (!context.globalState.get(ORIGINAL_THEME_KEY)) {
+        await context.globalState.update(
+            ORIGINAL_THEME_KEY,
+            config.get('workbench.colorTheme')
+        );
+    }
+
+    await config.update(
+        'workbench.colorTheme',
+        'Visual Studio Dark',
+        vscode.ConfigurationTarget.Global
+    );
+
+    await config.update('editor.cursorStyle', 'block', vscode.ConfigurationTarget.Global);
+    await config.update('editor.renderWhitespace', 'boundary', vscode.ConfigurationTarget.Global);
+    await config.update('editor.guides.indentation', true, vscode.ConfigurationTarget.Global);
+
+    vscode.window.showInformationMessage('High Contrast Dark preset applied');
+}
+
 async function restoreOriginalTheme(context) {
     const config = vscode.workspace.getConfiguration();
     const originalTheme = context.globalState.get(ORIGINAL_THEME_KEY);
 
     if (originalTheme) {
-        await config.update(
-            'workbench.colorTheme',
-            originalTheme,
-            vscode.ConfigurationTarget.Global
-        );
+        await config.update('workbench.colorTheme', originalTheme, vscode.ConfigurationTarget.Global);
+        
+        // CRITICAL: Clear the overrides so the original theme looks correct
+        await config.update('workbench.colorCustomizations', {}, vscode.ConfigurationTarget.Global);
+        await config.update('editor.cursorStyle', undefined, vscode.ConfigurationTarget.Global);
+        
         await context.globalState.update(ORIGINAL_THEME_KEY, null);
     }
-
-    vscode.window.showInformationMessage('Theme restored');
+    vscode.window.showInformationMessage('Theme and UI restored');
 }
 
 function startTimer(panel, seconds) {
@@ -574,6 +628,8 @@ function getWebviewContent() {
                 <div class="button-grid">
                     <button id="hcDark">HC Dark</button>
                     <button id="hcLight">HC Light</button>
+                    <button id="SHCDark">Soft HC Dark</button>
+                    <button id="SHCLight">Soft HC Light</button>
                     <button id="restore" class="secondary" style="grid-column: span 2;">Restore Original</button>
                 </div>
             </section>
@@ -625,6 +681,8 @@ function getWebviewContent() {
             document.getElementById('decFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'decrease' });
             document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
             document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
+            document.getElementById('SHCLight').onclick = () => vscode.postMessage({ command: 'SHCLight' });
+            document.getElementById('SHCDark').onclick = () => vscode.postMessage({ command: 'SHCDark' });
             document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
             document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' });
