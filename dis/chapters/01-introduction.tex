@@ -32,14 +32,22 @@ Before going into the specific technical barriers of modern \glspl{IDE}, it is n
  frameworks that underpin this research. Originally coined by Judy Singer in the late 1990s, ``neurodiversity''  views neurological differences—such 
  as \gls{ASD}, \gls{ADHD}, and \gls{dyslexia}, as natural variations in the human genome rather than purely medical deficits~\cite{singer1999why}.
 
-In the context of software engineering, these variations often manifest as unique cognitive profiles. While many \gls{neurodivergent} 
-developers possess high aptitude for logic and pattern recognition, they frequently encounter barriers related to Executive Functioning. 
-This is an umbrella term for the mental processes that enable us to plan, focus attention, remember instructions, and juggle multiple tasks 
-successfully. For a developer, \gls{executive_dysfunction} might manifest as \gls{task_paralysis} when faced with a blank text editor, or an inability 
-to filter out the visual noise of a complex interface.
+In the context of software engineering, these variations often manifest as unique cognitive processing styles. While many \gls{neurodivergent} 
+developers possess high aptitude for logic and pattern recognition, they frequently encounter barriers related to \gls{executive_dysfunction}. 
+This is an umbrella term for difficulty in mental processes that enable us to plan, focus attention, remember instructions, and juggle multiple tasks 
+successfully. For a developer, executive dysfunction is not a lack of technical ability, but rather a barrier in three key areas: Inhibitory Control
+ (filtering IDE ``noise''), Working Memory (tracking complex syntax), and Cognitive Flexibility (switching between high-level logic and low-level code).
+
+This challenge is further complicated by the ``Double Empathy'' problem—the idea that communication breakdowns occur because different groups process information differently, rather than one group being
+ inherently ``wrong''. In the context of this project, neurodivergent developers may struggle with ``implied'' logic in a team setting, where their interpretation of a task differs from the team's original
+  plan. However, if instructions are provided clearly and literally, these challenges can be mitigated.
+ Furthermore, while neurodivergent developers often utilize hyperfocus to solve complex problems, this state is inherently fragile. A single interruption—such as a non-essential notification—can lead
+  to a total loss of mental context, carrying a ``state recovery cost'' that significantly hinders productivity. By identifying these specific cognitive roadblocks, we can move away from a
+    medical model of disability and toward a social model that adapts the development environment to the user's brain.
+
 
 To provide a clearer lens for the objectives of this project, the below table outlines the specific strengths and environmental challenges associated with the conditions most prevalent in the developer community.
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \caption{Neurodivergent Strengths and Environmental Challenges}
     \renewcommand{\arraystretch}{1.5} % Adds breathing room between rows
@@ -60,45 +68,48 @@ To provide a clearer lens for the objectives of this project, the below table ou
 
 \textbf{Project Aim}
 
-The primary objective of this project is to design, implement, and evaluate an assistive VS Code plug-in that reduces cognitive overload and
+The primary objective of this project is to design, implement, and evaluate an assistive VS Code plug-in that reduces extraneous cognitive load and mitigates the effects of
  \gls{executive_dysfunction} for \gls{neurodivergent} software developers. By introducing a ``cognitive prosthetic'' layer, the project seeks
-  to determine if targeted \gls{UI} simplification and \gls{AI}-driven task decomposition can measurably improve the developer experience by 
-  minimising extraneous cognitive load.
+  to determine if targeted \gls{UI} simplification and \gls{AI}-driven task scaffolding can measurably improve the developer experience.
 
 \textbf{Research Objectives}
 
 \textbf{Objective 1:} Interface Optimisation (The Minimalist Toggle)
 
-The first aim will be to create a ``Minimalist Toggle''~\allowbreak{}\,using the VS Code Extension to allow users to instantly close all non-essential
- \gls{UI} elements. The toggle hides the Activity Bar, Status Bar, Mini-map, and Breadcrumbs at the same time, reducing the need for extensive menu
-  navigation. This addresses the ``Extraneous Cognitive Load'' identified by~\cite{sweller1988cognitive}, reducing visual noise that leads to
-   distraction and sensory overwhelm for autistic and \gls{ADHD} developers.
+Target: Develop a single ``Minimalist Toggle'' feature that simultaneously hides non-essential \gls{UI} elements, including the Activity Bar, Status Bar, Mini-map, and Breadcrumbs.
+
+
+Justification: This directly addresses the issue of visual overload by reducing the number of stimuli competing for the developer's attention, thus lowering the Extraneous
+ Cognitive Load and creating a more focused coding environment \cite{sweller1988cognitive}, reducing visual noise that leads to distraction and sensory overwhelm for autistic and \gls{ADHD} developers.
 
 \textbf{Objective 2: }\gls{AI}-Driven Task Decomposition (The Task Architect)
 
-I will develop a \gls{LLM} integration that translates complex, ambiguous programming goals into structured, editable checklists. This element will 
-require the implementation of a ``\gls{CoT}'' prompting strategy (\cite{ringel2019ai}) via the Open\gls{AI} \gls{API} that breaks down high-level 
-requirements without providing the direct code solution. This supports ``Task Initiation'' and ``Executive Functioning,'' helping users overcome 
-the paralysis often associated with large, unstructured projects (\cite{gama2025socio}).
+Target: To implement an \gls{LLM}-integrated module that translates ambiguous programming goals into structured, editable checklists using a Chain of Thought (CoT) prompting strategy. This should be
+implemented via the Open\gls{AI} \gls{API} that breaks down high-level requirements without providing the direct code solution \cite{ringel2019ai}.
+
+
+Justification: This supports ``Task Initiation'' and reduces the energy required to overcome task paralysis, a primary barrier for developers with ADHD and ASD \cite{gama2025socio}.
 
 \textbf{Objective 3:} Simplification of Technical Feedback (The Code Explainer)
 
-To build a module that intercepts complex compiler error messages and re-interprets them into plain-language, direct instructions.
-Limit output to a maximum of three bullet points using a ``Direct Instruction'' style~\cite{rocha2025conceptual}.
-Justification: This minimises the cognitive demand of interpreting dense technical jargon during high-stress moments (such as debugging), 
-preventing \gls{hyperfocus} ``rabbit holes.''
+Target: To build a diagnostic interceptor that re-interprets complex compiler errors into plain-language, bulleted instructions~\cite{rocha2025conceptual}. Limit output to a maximum of three bullet points using a ``Direct Instruction'' style.
+
+
+Justification: This minimizes the cognitive demand of interpreting dense jargon, preventing ``rabbit holes'' and supporting the literal communication needs identified in the Double Empathy
+ problem. By simplifying the feedback loop, developers can maintain focus on the core problem rather than getting lost in peripheral details. This is particularly beneficial for those with ASD,
+  who may struggle with implied logic and prefer clear, direct instructions. Additionally, it can help mitigate the hyperfocus trap by providing concise guidance that keeps the developer on track 
+  without overwhelming them with information.
 
 \textbf{Objective 4: }Visual Accessibility Customisation (The Visual Styler)
 
-To implement a suite of visual presets focused on reducing eye strain and enhancing readability.
-Target: Develop at least two high-contrast and low-stimuli themes that adhere to WCAG 2.1 contrast guidelines~\cite{bengtsson2025web}.
-Justification: Addresses the sensory sensitivities and ``attractive colour'' preferences reported by \gls{neurodivergent} developers in recent
- surveys~\cite{rocha2025conceptual}.
+Target: To create at least two visual presets, such as ``Soft High Contrast'', that adhere to WCAG 2.1 guidelines to reduce eye strain and enhance readability~\cite{bengtsson2025web}.
+
+Justification: Addresses the sensory sensitivities and ``attractive colour'' preferences reported by \gls{neurodivergent} developers in research surveys~\cite{rocha2025conceptual}.
 
 \textbf{Objective 5:} Empirical Evaluation of Cognitive Impact
 
-To conduct a comparative study assessing the plugin’s efficacy against a standard \gls{IDE} environment.
-Target: Collect and analyse quantitative data via the \gls{NASATLX} and the \gls{SUS}.
-Justification: This provides a standardised scientific metric to validate whether the tool successfully reduces
- mental demand and improves the workflow for the target demographic.
+Target: To conduct a comparative study using the \gls{NASATLX} and the \gls{SUS} to validate the plugin's efficacy against a standard IDE.
+
+Justification: This provides a standardized scientific metric to confirm if the tool successfully reduces mental demand and frustration for the target demographic.
+
 
