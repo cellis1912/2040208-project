@@ -16,6 +16,9 @@ Cognitive Load Theory, primarily developed by John Sweller, suggests that since 
 
 The framework can be simplified down to the idea that the Total Cognitive Load (TCL) is the sum of Intrinsic Load, Extraneous Load, and Germane Load. 
 The goal of instructional design is to manage these loads effectively to maximise learning outcomes.
+$$TCL = IL + EL + GL$$
+where the goal of your plugin is to satisfy the condition:
+$$\downarrow EL + \text{scaffold } IL = \uparrow GL$$
 
 \begin{enumerate}
     \item \gls{IL}: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
@@ -27,11 +30,12 @@ The goal of instructional design is to manage these loads effectively to maximis
     which in this scenario would be the code programming task.
 \end{enumerate}
 
-One of the main focuses of this project is that for neurodivergent developers, the \gls{IDE} environment often imposes an disproportionate Extraneous Load. 
-When \gls{EL} is high, the "cognitive budget" is exhausted before the developer can engage with the \gls{IL} of the code, leading to task paralysis.
- My plugin aims to "free up" this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and scaffolding \gls{IL}
-  (via the Task Architect), thereby maximizing the capacity for \gls{GL}.
-\newline
+
+One of the main focuses of this project is that for neurodivergent developers, the \gls{IDE} environment often imposes a disproportionate Extraneous Load. 
+When \gls{EL} is high, the ``cognitive budget'' is exhausted before the developer can engage with the core logic of the code, leading to task paralysis. 
+ My plugin aims to ``free up'' this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and scaffolding \gls{IL} (via the Task Architect),
+  thereby maximizing the availability of cognitive resources for Germane processing. By reducing the noise and providing structured support, the plugin allows neurodivergent developers to focus
+   their cognitive resources on the actual problem-solving aspect of programming, rather than being overwhelmed by the interface or the complexity of the task at hand.
 
 \textbf{Integration with Rosenshin`s Principles of Instruction}
 
@@ -98,7 +102,9 @@ To understand why existing tools fail, we  must examine the shift from the Medic
 
 \begin{itemize}
     \item The Medical Model: Traditionally, ADHD or Dyslexia in engineering has been viewed as a ``deficit'' to be corrected through individual coaching or medication.
-    \item The Social Model: This perspective argues that the developer is ``disabled'' not by their neurology, but by an IDE designed with a ``neurotypical bias''. The problem is not the individual's brain, but the environment that fails to accommodate it.
+    \item The Social Model: This perspective argues that the developer is ``disabled'' not by their neurology, but by an IDE designed with a ``neurotypical bias''. The problem is not the individual's
+     brain, but the environment that fails to accommodate it. This shift in perspective is crucial for designing tools that are not just ``assistive'' but truly inclusive, as it focuses on modifying the
+      environment (the IDE) rather than trying to fix the individual.
 \end{itemize}
 
 Executive Functioning (EF) Domains in Programming
@@ -135,25 +141,49 @@ However, the burden of making tools accessible often falls to the user. \cite{li
 This project aims to bridge the gap between the availability of generic tools and their functional utility. While current tools are excellent at detecting errors, they often fail at explaining them in an accessible manner. By integrating an Error Explainer that decomposes complex compiler messages into manageable tasks, therefore reducing the cognitive load required to debug. This shifts the \gls{IDE} from a passive environment that requires expert configuration to an active partner in the development process.
 
 \subsection{Colour filters}
-Visual presentation can influence reading performance and comfort. \cite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, although the benefits vary significantly between individuals. This suggests that software tools should support flexible visual customisation rather than relying on a single accessibility configuration.
+Visual presentation can influence reading performance and comfort.\textcite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, 
+although the benefits vary significantly between individuals. This suggests that software tools should support flexible visual customisation rather than relying on a single accessibility configuration.
 
-In some cases, high-contrast models are essential because they provide the necessary visual scaffolding to combat task paralysis. For developers with \gls{ADHD}, a low-contrast or "aesthetic" pastel theme can cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
+In some cases, high-contrast models are essential because they provide the necessary visual scaffolding to combat task paralysis. For developers with \gls{ADHD}, a low-contrast or pastel theme can
+ cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
+By utilizing high-contrast ratios—such as 7:1 or higher, per WCAG 2.1 guidelines—the IDE creates a clear visual hierarchy.
 
-By utilising high-contrast ratios (such as 7:1 or higher, per WCAG 2.1 guidelines), the \gls{IDE} creates a clear hierarchy. This high "signal" allows the developer to:
-
+This high ``signal'' environment provides several technical advantages:
 \begin{itemize}
     \item Reduce Visual Search Time: Finding the start and end of a function block becomes instantaneous rather than a manual scan.
-    \item Mitigate the "Blur" of Hyperfocus: As noted by \cite{newman2025get}, the intense mental strain of being "in the groove" can lead to visual fatigue; high contrast maintains legibility even as physiological focus wanes.
-    \item Support Syntax Logic: In complex, nested code, high-contrast separation between brackets and operators serves as a "visual prosthetic," offloading the work of pattern recognition from the brain to the interface.
+    \item Mitigate the ``Blur'' of Hyperfocus: As noted by \cite{newman2025get}, the intense mental strain of being ``in the groove'' can lead to visual fatigue; high contrast maintains legibility even as physiological focus wanes.
+    \item Support Syntax Logic: In complex, nested code, high-contrast separation between brackets and operators serves as a ``visual prosthetic,'' offloading the work of pattern recognition from the brain to the interface.
 \end{itemize}
 
-However, the implementation must be nuanced. While high contrast is vital for clarity, "pure" high contrast can cause halation (a glowing effect around letters) for those with ASD or visual stress. Therefore, the most effective high-contrast models for neurodiversity are often "Soft High Contrast", utilising high-visibility colours against deep non-pure-black backgrounds.
+\text{The ``Halation'' Risk and Soft High Contrast}
+While high contrast is vital for clarity, pure high contrast (e.g., stark white text on a pure black background) can be counterproductive for those with ASD or specific visual stresses.
+ This combination can cause halation—a glowing or ``bleeding'' effect around letters that makes text appear to vibrate or move.
 
-(ADD IMAGES)
+ To address this, the most effective models for neurodiversity are often ``Soft High Contrast'' themes. These utilize high-visibility colors against deep, non-pure-black backgrounds 
+ (such as dark greys or navy). This balance provides the necessary ``signal'' for ADHD developers to maintain focus while preventing the sensory overwhelm and visual distortion common in ASD profiles.
+However, the implementation must be nuanced. While high contrast is vital for clarity, ``pure'' high contrast can cause halation (a glowing effect around letters) for those with ASD or visual stress. 
+Therefore, the most effective high-contrast models for neurodiversity are often ``Soft High Contrast'', utilising high-visibility colours against deep non-pure-black backgrounds.
 
 \subsection{AI as a Cognitive Tool: Task Decomposition and Scaffolding}
-For developers with \gls{ADHD} and ASD, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with "state recovery" and task initiation. \glspl{LLM} offer a unique solution to this through cognitive scaffolding. This process handles the "low-value" mental energy drains, such as formatting and scheduling, leaving more room for "high-value" deep thinking (\cite{Navigati93:online}).
+For developers with \gls{ADHD} and ASD, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. 
+Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with "state recovery" and task initiation. \glspl{LLM} offer a unique solution to this 
+through cognitive scaffolding. This process handles the ``low-value'' mental energy drains, such as formatting and scheduling, leaving more room for ``high-value'' deep thinking (\cite{Navigati93:online}).
 
-\gls{CoT} as Task Decomposition is one of the most effective applications of \glspl{LLM} for neurodivergent developers. Instead of asking a model to simply "write a function," the developer can use the model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the "activation energy" barrier identified in \gls{ADHD} populations. By prompting a model to "think step-by-step," the AI generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
+\gls{CoT} as Task Decomposition is one of the most effective applications of \glspl{LLM} for neurodivergent developers. Instead of asking a model to simply ``write a function,'' the developer can use the 
+model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the ``activation energy'' barrier identified in \gls{ADHD} populations. By prompting a model to 
+``think step-by-step," the AI generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
 
-As noted by Mew (2025), this "automated pattern" of scaffolding can increase productivity for developers with \gls{ADHD} by up to 55 percent. Existing tools already demonstrate this by taking a single overwhelming command (e.g., "build an authentication system") and breaking it into manageable milestones. This effectively transforms AI from a simple code generator into a "digital ramp" that bypasses the freeze response common in task paralysis (\cite{Navigati93:online}).
+As noted by Mew (2025), this ``automated pattern'' of scaffolding can increase productivity for developers with \gls{ADHD} by up to 55 percent. Existing tools already demonstrate this by taking a single
+ overwhelming command (e.g., ``build an authentication system'') and breaking it into manageable milestones. This effectively transforms AI from a simple code generator into a ``digital ramp'' that bypasses 
+ the freeze response common in task paralysis (\cite{Navigati93:online}).
+
+ \subsection{NASA-TLX and SUS: Measuring Cognitive Load and Usability}
+To evaluate the effectiveness of the plugin, I will use the NASA Task Load Index (NASA-TLX) to measure cognitive load and the System Usability Scale (SUS) to assess usability.
+The NASA-TLX provides a multidimensional assessment of perceived workload across six dimensions: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
+This will allow me to quantify the reduction in cognitive load achieved by the plugin. The SUS, on the other hand, is a widely used tool for assessing the usability of systems and interfaces.
+It consists of a 10-item questionnaire that provides a global view of subjective assessments of usability. By using both tools, I can gain insights into how well the plugin reduces cognitive
+ load while also ensuring that it is user-friendly and accessible for neurodivergent developers.
+
+ I have chosen these tools because they are well-established in the field of human-computer interaction and provide a comprehensive framework for evaluating both the cognitive and usability
+  aspects of the plugin. The NASA-TLX will help me understand the specific areas where cognitive load is reduced, while the SUS will provide feedback on the overall user experience. 
+  This dual approach ensures that the plugin is not only effective in reducing cognitive load but also meets the usability needs of its target audience.
