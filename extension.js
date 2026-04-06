@@ -286,48 +286,46 @@ async function applySoftHighContrastLight(context) {
     const config = vscode.workspace.getConfiguration();
 
     if (!context.globalState.get(ORIGINAL_THEME_KEY)) {
-        await context.globalState.update(
-            ORIGINAL_THEME_KEY,
-            config.get('workbench.colorTheme')
-        );
+        await context.globalState.update(ORIGINAL_THEME_KEY, config.get('workbench.colorTheme'));
     }
 
-    await config.update('workbench.colorTheme', 'Visual Studio Dark', vscode.ConfigurationTarget.Global);
+    // Set Base Theme
+    await config.update('workbench.colorTheme', 'Visual Studio Light - C++', vscode.ConfigurationTarget.Global);
 
-        // Inject Soft HC Overrides
-        await config.update('workbench.colorCustomizations', {
-            "editor.background": "#121212", // Deeper black for focus
-            "editor.foreground": "#e0e0e0", // Brighter text
-            "editorLineNumber.activeForeground": "#00ffcc", // High vis current line
-            "editor.lineHighlightBackground": "#222222",
-            "editorBracketMatch.border": "#00ffcc"
-        }, vscode.ConfigurationTarget.Global);
+    // Apply Soft HC Overrides for Light Mode
+    await config.update('workbench.colorCustomizations', {
+        "editor.background": "#ffffff",
+        "editor.foreground": "#000000",
+        "sideBar.background": "#f3f3f3",
+        "editorLineNumber.foreground": "#2b91af",
+        "editor.lineHighlightBackground": "#eeeeee"
+    }, vscode.ConfigurationTarget.Global);
 
-        await config.update('editor.cursorStyle', 'block', vscode.ConfigurationTarget.Global);
-        vscode.window.showInformationMessage('Soft High Contrast Dark applied');
+    await config.update('editor.cursorStyle', 'block', vscode.ConfigurationTarget.Global);
+    vscode.window.showInformationMessage('Soft High Contrast Light applied');
 }
 
 async function applySoftHighContrastDark(context) {
     const config = vscode.workspace.getConfiguration();
 
     if (!context.globalState.get(ORIGINAL_THEME_KEY)) {
-        await context.globalState.update(
-            ORIGINAL_THEME_KEY,
-            config.get('workbench.colorTheme')
-        );
+        await context.globalState.update(ORIGINAL_THEME_KEY, config.get('workbench.colorTheme'));
     }
 
-    await config.update(
-        'workbench.colorTheme',
-        'Visual Studio Dark',
-        vscode.ConfigurationTarget.Global
-    );
+    // Set Base Theme
+    await config.update('workbench.colorTheme', 'Visual Studio Dark', vscode.ConfigurationTarget.Global);
+
+    // Apply Soft HC Overrides for Dark Mode
+    await config.update('workbench.colorCustomizations', {
+        "editor.background": "#0d0d0d", // Deep charcoal, softer than pure black
+        "editor.foreground": "#e0e0e0",
+        "editorLineNumber.activeForeground": "#00ffcc",
+        "editor.lineHighlightBackground": "#1a1a1a",
+        "editorBracketMatch.border": "#00ffcc"
+    }, vscode.ConfigurationTarget.Global);
 
     await config.update('editor.cursorStyle', 'block', vscode.ConfigurationTarget.Global);
-    await config.update('editor.renderWhitespace', 'boundary', vscode.ConfigurationTarget.Global);
-    await config.update('editor.guides.indentation', true, vscode.ConfigurationTarget.Global);
-
-    vscode.window.showInformationMessage('High Contrast Dark preset applied');
+    vscode.window.showInformationMessage('Soft High Contrast Dark applied');
 }
 
 async function restoreOriginalTheme(context) {
@@ -681,8 +679,8 @@ function getWebviewContent() {
             document.getElementById('decFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'decrease' });
             document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
             document.getElementById('hcLight').onclick = () => vscode.postMessage({ command: 'hcLight' });
-            document.getElementById('SHCLight').onclick = () => vscode.postMessage({ command: 'SHCLight' });
-            document.getElementById('SHCDark').onclick = () => vscode.postMessage({ command: 'SHCDark' });
+            document.getElementById('SHCLight').onclick = () => vscode.postMessage({ command: 'shcLight' });
+            document.getElementById('SHCDark').onclick = () => vscode.postMessage({ command: 'shcDark' });
             document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
             document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
             document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' });

@@ -7,32 +7,45 @@
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{1}{subsection.8}%
 \contentsline {subsection}{\numberline {1.3}Understanding Neurodiversity in Software Development}{2}{subsection.9}%
 \contentsline {subsection}{\numberline {1.4}Aims and Objectives}{3}{subsection.11}%
-\contentsline {section}{\numberline {2}Literature Review}{5}{section.12}%
-\contentsline {subsection}{\numberline {2.1}Cognitive Load Theory (CLT)}{5}{subsection.13}%
-\contentsline {subsection}{\numberline {2.2}Neurodiversity in Software Engineering}{7}{subsection.18}%
-\contentsline {subsection}{\numberline {2.3}The ``Double-Edged Sword'' of Hyperfocus}{8}{subsection.19}%
-\contentsline {subsection}{\numberline {2.4}Existing Tools}{9}{subsection.20}%
-\contentsline {subsection}{\numberline {2.5}Colour filters}{10}{subsection.21}%
-\contentsline {subsection}{\numberline {2.6}AI as a Cognitive Tool: Task Decomposition and Scaffolding}{11}{subsection.22}%
-\contentsline {subsection}{\numberline {2.7}NASA-TLX and SUS: Measuring Cognitive Load and Usability}{11}{subsection.23}%
-\contentsline {section}{\numberline {3}Design and Planning}{13}{section.24}%
-\contentsline {subsection}{\numberline {3.1}User Requirements}{13}{subsection.25}%
-\contentsline {subsection}{\numberline {3.2}Module Design}{13}{subsection.27}%
-\contentsline {subsection}{\numberline {3.3}System Architecture}{15}{subsection.29}%
-\contentsline {subsection}{\numberline {3.4}Implementation}{17}{subsection.31}%
-\contentsline {subsection}{\numberline {3.5}Technology Stack}{17}{subsection.32}%
-\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{17}{subsection.33}%
-\contentsline {subsection}{\numberline {3.7}AI Integration}{17}{subsection.34}%
-\contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{17}{subsection.35}%
-\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{19}{subsection.38}%
-\contentsline {subsection}{\numberline {3.10}Experimental Design}{19}{subsection.39}%
-\contentsline {subsection}{\numberline {3.11}Quantitative and Qualitative Frameworks}{20}{subsection.42}%
-\contentsline {subsubsection}{\numberline {3.11.1}NASA Task Load Index (\gls {NASATLX})}{20}{subsubsection.43}%
-\contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{20}{subsubsection.44}%
-\contentsline {subsection}{\numberline {3.12}Data Collection and Analysis}{21}{subsection.47}%
-\contentsline {section}{\numberline {4}Results and Discussion}{22}{section.48}%
-\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{22}{subsection.49}%
-\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{22}{subsection.50}%
-\contentsline {subsection}{\numberline {4.3}Discussion}{22}{subsection.51}%
-\contentsline {subsection}{\numberline {4.4}Limitations}{22}{subsection.52}%
-\contentsline {section}{References}{23}{section*.53}%
+\contentsline {subsubsection}{\numberline {1.4.1}Project Aim}{3}{subsubsection.12}%
+\contentsline {subsubsection}{\numberline {1.4.2}Research Objectives}{3}{subsubsection.13}%
+\contentsline {section}{\numberline {2}Literature Review}{5}{section.14}%
+\contentsline {subsection}{\numberline {2.1}Cognitive Load Theory (CLT)}{5}{subsection.15}%
+\contentsline {subsubsection}{\numberline {2.1.1}Sweller’s Tripartite Framework of Load}{5}{subsubsection.16}%
+\contentsline {subsubsection}{\numberline {2.1.2}Integration with Rosenshin`s Principles of Instruction}{6}{subsubsection.21}%
+\contentsline {subsubsection}{\numberline {2.1.3}The Cognitive Theory of Multimedia Learning (CTML)}{6}{subsubsection.22}%
+\contentsline {subsection}{\numberline {2.2}Neurodiversity in Software Engineering}{7}{subsection.23}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Cognitive Load Connection}{7}{subsubsection.24}%
+\contentsline {subsubsection}{\numberline {2.2.2}Executive Functioning and Task Switching}{7}{subsubsection.25}%
+\contentsline {subsubsection}{\numberline {2.2.3}Specific Challenges by Condition}{8}{subsubsection.26}%
+\contentsline {subsubsection}{\numberline {2.2.4}Beyond Medical}{8}{subsubsection.27}%
+\contentsline {subsubsection}{\numberline {2.2.5}The ``Double-Edged Sword'' of Hyperfocus}{9}{subsubsection.28}%
+\contentsline {subsection}{\numberline {2.3}Existing Tools}{9}{subsection.29}%
+\contentsline {subsection}{\numberline {2.4}Colour filters}{10}{subsection.30}%
+\contentsline {subsubsection}{\numberline {2.4.1}The ``Halation'' Risk and Soft High Contrast}{10}{subsubsection.31}%
+\contentsline {subsection}{\numberline {2.5}AI as a Cognitive Tool: Task Decomposition and Scaffolding}{11}{subsection.32}%
+\contentsline {subsection}{\numberline {2.6}NASA-TLX and SUS: Measuring Cognitive Load and Usability}{11}{subsection.33}%
+\contentsline {section}{\numberline {3}Design and Implementation}{13}{section.34}%
+\contentsline {subsection}{\numberline {3.1}User Requirements}{13}{subsection.35}%
+\contentsline {subsection}{\numberline {3.2}Module Design}{13}{subsection.37}%
+\contentsline {subsubsection}{\numberline {3.2.1}Minimalist Toggle}{14}{subsubsection.39}%
+\contentsline {subsubsection}{\numberline {3.2.2}Task Architect}{15}{subsubsection.40}%
+\contentsline {subsubsection}{\numberline {3.2.3}Visual Styler}{16}{subsubsection.41}%
+\contentsline {subsection}{\numberline {3.3}System Architecture}{17}{subsection.42}%
+\contentsline {subsection}{\numberline {3.4}Implementation}{18}{subsection.44}%
+\contentsline {subsection}{\numberline {3.5}Technology Stack}{18}{subsection.45}%
+\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{18}{subsection.46}%
+\contentsline {subsection}{\numberline {3.7}AI Integration}{18}{subsection.47}%
+\contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{22}{subsection.52}%
+\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{23}{subsection.55}%
+\contentsline {subsection}{\numberline {3.10}Experimental Design}{23}{subsection.56}%
+\contentsline {subsection}{\numberline {3.11}Quantitative and Qualitative Frameworks}{24}{subsection.59}%
+\contentsline {subsubsection}{\numberline {3.11.1}NASA Task Load Index (\gls {NASATLX})}{24}{subsubsection.60}%
+\contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{24}{subsubsection.61}%
+\contentsline {subsection}{\numberline {3.12}Data Collection and Analysis}{25}{subsection.64}%
+\contentsline {section}{\numberline {4}Results and Discussion}{26}{section.65}%
+\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{26}{subsection.66}%
+\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{26}{subsection.67}%
+\contentsline {subsection}{\numberline {4.3}Discussion}{26}{subsection.68}%
+\contentsline {subsection}{\numberline {4.4}Limitations}{26}{subsection.69}%
+\contentsline {section}{References}{27}{section*.70}%

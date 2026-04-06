@@ -1,4 +1,4 @@
-\section{Design and Planning}
+\section{Design and Implementation}
 \subsection{User Requirements} 
 The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the ``Direct 
 Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha2025conceptual}.
@@ -13,7 +13,7 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
         \textbf{ID} & \textbf{Category} & \textbf{Requirement Description} \\ 
         \midrule
         \textbf{FR1} & Interface & The system shall provide a single-click ``Minimalist Toggle'' to hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs simultaneously. \\ \addlinespace
-        \textbf{FR2} & AI Support & The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 3--5 manageable sub-tasks. \\ \addlinespace
+        \textbf{FR2} & AI Support & The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks. \\ \addlinespace
         \textbf{FR3} & Feedback & The ``Code Explainer'' shall intercept compiler errors and provide non-technical, bulleted summaries (max 3 points). \\ \addlinespace
         \midrule
         \textbf{NFR1} & Accessibility & The UI must adhere to WCAG 2.1 Level AA contrast ratios (4.5:1 for text). \\ \addlinespace
@@ -24,40 +24,74 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
 \end{table}
 
 \subsection{Module Design}
-The plugin is architected around three core modules, each designed to address specific executive functioning barriers identified in Section 1.3. These modules
- are unified within the Accessible Dashboard (see Figure [X]), a centralized Webview panel that provides a low-friction entry point to the tool's features.
+The plugin is architected around three core modules, each designed to address specific executive functioning barriers. These modules
+ are unified within the Accessible Dashboard, shown below. This Dashboard is a centralized Webview panel that provides a low-friction entry point to the tool's features.
 
-\textbf{Minimalist Toggle}
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth, alt={}] {logos/Plug-in plan.png}
+    \caption{UI Plan For the Accessible IDE Plugin.}
+    \label{fig:plug-inplan}
+\end{figure}
+
+\subsubsection{Minimalist Toggle}
 
 The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilizes a state-management system to track the current visibility of the VS Code workbench.
 When activated, it dispatches a batch of imperative commands to the vscode.commands API, hiding the Activity Bar, Status Bar, Side Bar, and Breadcrumbs simultaneously.
 By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the code editor itself.
 
-\textbf{Task Architect}
 
-The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps.
-The module employs a \gls{CoT} prompting strategy. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the LLM to output a
-maximum of five actionable sub-tasks. Once the tasks have been generated and optmised for clarity, they are shown in the "Task Breakdown" section of the dashboard. 
-The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
-Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
-As shown in the "Task Breakdown" section of the dashboard, tasks are rendered as editable fields. This allows the user to modify or refine the AI's suggestions, ensuring the developer maintains agency over their project architecture while the AI handles the "heavy lifting" of the initial decomposition.
+\subsubsection{Task Architect}
+The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps. The module should employs a \gls{CoT} prompting strategy to take a complex task and break it down into simpler sub-tasks.
+The generated steps are rendered as editable fields within the dashboard, allowing users to modify or refine the AI's suggestions. This ensures that developers maintain agency over their project architecture while the AI handles the initial decomposition.
+\newline
+
+\textbf{Overcoming "Chatty" Latency and Verbosity}
+\newline
+During the testing of various prompt structures, a recurring challenge emerged, how much unnecessary text was included in the LLM's output.
+ When asked to assist, the model frequently included excessive supportive dialogue. While intended to be user-friendly, this extra text hindered the system's ability to parse the output into discrete, editable UI components.
+
+To solve this issue, the prompt was refined to enforce a strict structural output, prioritizing data over dialogue. This ensured that the generated steps could be seamlessly rendered as editable fields within the dashboard, preserving the developer's agency to modify or refine the architecture without sifting through conversational filler.
 
 
-\textbf{Visual Styler} 
 
-The Visual Styler manages the aesthetic environment of the IDE to reduce eye strain and sensory overwhelm.
+\textbf{Balancing Granularity and Utility}
+\newline
+Initial experiments with simple prompts—such as "How to code a login page"—resulted in a "Direct-to-Code" failure. The LLM would bypass the architectural phase and provide a block of code immediately. 
+This was counterproductive for two reasons:
 
-WCAG Mapping: The module provides presets (e.g., "High Contrast Dark," "High Contrast Light") that have been mapped to meet WCAG 2.1 Level AA compliance.
+\begin{itemize}
+    \item It failed to provide a conceptual roadmap for the user.
+    \item It increased the technical "hallucination" risk by attempting to solve a high-level task in a single step rather than planning the logic first.
+\end{itemize}
 
-Functionality: Beyond simple theme switching, the styler interacts with workspace.getConfiguration to adjust font sizes and line heights. This addresses the "Visual Comfort" framework by ensuring that text-heavy tasks remain legible for developers with dyslexia or light sensitivities.
+\textbf{Increased Steps}
+\newline
+The original design specifications for the Task Architect called for 3 to 5 broad sub-tasks. However, user testing revealed that this flat structure remained overwhelming. A single step like ``Set up the backend'' was still too abstract for many users to execute confidently.
+To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps.''"
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth, alt={}] {logos/Plug-in plan.png}
-    \caption{Plug-in UI Plan.}
-    \label{fig:plug-inplan}
-\end{figure}
+\subsubsection{Visual Styler} 
+The Visual Styler is a specialized UI/UX module designed to manage the IDE’s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
 
+\textbf{Accessibility and WCAG Mapping}
+\newline
+To ensure the platform is accessible to the widest possible audience, the Visual Styler utilizes a systematic mapping of presets based on the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+\begin{itemize}
+    \item High Contrast Modes: The module provides dedicated "High Contrast Dark" and "High Contrast Light" themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
+    \item Sensitivity Accommodations: By offering these specific color profiles, the IDE addresses the needs of users with color vision deficiencies (CVD) and photophobia 
+    (light sensitivity), allowing for a high-degree of legibility without triggering sensory fatigue.
+\end{itemize}
+
+\textbf{Technical Implementation and Functionality}
+\newline
+The Visual Styler operates by interacting directly with the workspace.getConfiguration API. This allows the module to move beyond surface-level CSS changes and manipulate the core structural rendering of the workspace:
+
+Dynamic Scaling: Users can adjust font sizes and line heights across the entire interface. Increasing the line height (e.g., to 1.5 or 2.0) is a critical intervention for developers with dyslexia, as it reduces the "crowding" effect of text and improves character recognition.
+
+Granular Customization: Unlike traditional static themes, the Styler follows a "Visual Comfort" framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
+
+User Agency and Sensory Regulation
+By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the IDE adapts to the user’s biological needs rather than forcing the user to adapt to a rigid interface.
 
 \subsection{System Architecture}
 The system is divided into three primary layers: the Presentation Layer (Webview), the Orchestration Layer (Extension Host), and the External Services Layer (VS Code API).
@@ -127,6 +161,56 @@ The AI-driven features are implemented using a Streaming Data Pattern.
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a "Micro-step" structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents "Wall of Text" responses that can be overwhelming.
 \item \textbf{Code Explainer:} This module polls the \texttt{vscode.languages.getDiagnostics} API. It filters for \texttt{DiagnosticSeverity.Error}, extracts the error message and line number, and passes this context to the \texttt{gpt-4o} model to generate a simplified, non-technical explanation.
 \end{itemize}
+
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth, alt={}] {logos/aiflow.png}
+    \caption{AI Flow for the Task Architect Module.}
+    \label{fig:AIflow}
+\end{figure}
+
+The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the LLM to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth, alt={}] {logos/aicode.png}
+    \caption{Code written to generate tasks}
+    \label{fig:AIcode}
+\end{figure}
+
+Not only does the this prompt ask the LLM to break down the task, but it also instructs it to format the output in a specific way.
+So that the response can be easilt broken down and cleaned for the output the prompt includes instructions to make sure the subtasks in bold and the micro-steps are preceded by ``[ ]''.
+
+While designing this prompt I ran into some issues with the LLM adding accessive praise and suport to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
+This also went against the principle of ``Direct Instruction'' as it added more text and made the output more overwhelming, which is what I was trying to avoid in the first place.
+To solve this I added instructions to the prompt to avoid this, and to only output the tasks in the specified format.
+
+Below shows an example of the output generated by the Task Architect module, showing the micro-steps for a given task. 
+The output is clean and structured, making it easy for the user to follow and understand the steps needed to complete their goal.
+These tasks are then rendered in the dashboard as editable fields.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, alt={}] {logos/taskoutput.png}
+    \caption{Example of the output generated by the Task Architect module, showing the micro-steps for a given task.}
+    \label{fig:taskoutput}
+\end{figure}
+
+Once the tasks are rendered in the dashboard, the user can review them and make any necessary edits.
+The user can also mark tasks as complete by clicking a checkbox, which will gray out the task to indicate that it has been completed.
+ This provides a clear roadmap for task initiation without overwhelming the user with too much information at once.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth, alt={}] {logos/taskarchitect.png}
+    \caption{Task Architect Module in the Dashboard, showing the generated tasks.}
+    \label{fig:task architect}
+\end{figure}
+
+The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
+Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
+
 
 \subsection{Inital User Testing and Feedback}
 The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
