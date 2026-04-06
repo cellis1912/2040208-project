@@ -139,23 +139,37 @@ The architecture employs specialised logic blocks to handle distinct accessibili
 
 4. Integration with Language Models 
 
-The "Task Architect" and "Code Helper" features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, neurodiverse-friendly steps before pushing the data back to the Presentation Layer.
+The ``Task Architect'' and ``Code Helper'' features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, neurodiverse-friendly steps before pushing the data back to the Presentation Layer.
 
 
 
 \subsection{Implementation}
 
 \subsection{Technology Stack}
-JavaScript, Node.js, and OpenAI API.
-
-\subsection{UI Simplification and Minimalist Toggle}
-The implementation of the "Minimalist Mode" focuses on reducing visual noise, which is a primary driver of cognitive overload. This is achieved through an imperative command pattern:
+The development of the plugin utilizes a modern web-based stack compatible with the VS Code extension ecosystem to ensure high performance and seamless API integration.
 \begin{itemize}
-\item \textbf{Workspace Manipulation:} Using \texttt{vscode.commands.executeCommand}, the plugin toggles the visibility of the Activity Bar, Side Bar, Status Bar, and Breadcrumbs.
-\item \textbf{Global Configuration:} To disable the Minimap, the system interacts directly with the global user settings via \texttt{config.update('editor.minimap.enabled', ...)}.
+    \item JavaScript: The primary programming language used for both the extension backend and the Webview frontend. It was chosen for its native compatibility with Node.js and its ability to handle asynchronous message passing between the UI and the extension host.
+    \item Node.js: Acts as the runtime environment for the extension, providing the necessary APIs for file system access, process management, and the execution of imperative commands within the IDE.
+    \item VS Code Extension API: The core framework used to manipulate the IDE environment. Specifically, it facilitates interaction with workspace.getConfiguration for visual styling and vscode.commands for interface simplification.
+    \item OpenAI API / VS Code Language Model API: Provides the generative intelligence required for the Task Architect and Code Explainer. By utilizing the resident gpt-4o model, the plugin performs complex Chain of Thought (CoT) reasoning without requiring the user to provide personal API keys.
+    \item HTML/CSS: Used within the Webview layer to construct the Accessible Dashboard. This allows for the implementation of custom high-contrast themes and dynamic scaling that exceeds the limitations of standard VS Code CSS.
 \end{itemize}
 
-\subsection{AI Integration}
+\subsection{UI Simplification and Minimalist Toggle}
+The implementation of the Minimalist Mode focuses on reducing visual noise, which research identifies as a primary driver of cognitive overload and sensory overwhelm for autistic and ADHD developers.
+ This module acts as a "digital ramp," filtering environmental noise to prevent the exhaustion of a developer's limited "cognitive budget".
+ 
+ The technical execution follows an imperative command pattern to provide a seamless, one-click transition:
+\begin{itemize}
+ \item \textbf{Workspace Manipulation:} Using the vscode.commands.executeCommand API, the plugin simultaneously toggles the visibility of the Activity Bar, Side Bar, Status Bar, and Breadcrumbs.
+ \item \textbf{Global Configuration:} To remove persistent distractions like the Mini-map, the system interacts directly with global user settings using config.update('editor.minimap.enabled', ...).
+ \item \textbf{State Management:} The module utilizes a state-management system to track the current visibility of the VS Code workbench.
+ \item \textbf{Non-Destructive Restoration:} To mitigate anxiety regarding lost settings, the architecture employs context.globalState to ``remember'' the original UI configuration. This allows users to revert all changes instantly, satisfying the requirement for a safe and reversible interface.
+ \end{itemize}
+
+ By centralizing these actions into a single toggle, the plugin lowers Extraneous Cognitive Load (EL). This allows the developer to reallocate mental resources from navigating a complex, high-density interface toward Germane Load (GL), the actual logical problem-solving and programming tasks
+
+ \subsection{AI Integration}
 The AI-driven features are implemented using a Streaming Data Pattern.
 \begin{itemize}
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a "Micro-step" structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents "Wall of Text" responses that can be overwhelming.

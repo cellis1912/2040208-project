@@ -34,14 +34,14 @@
 \contentsline {subsection}{\numberline {3.3}System Architecture}{17}{subsection.42}%
 \contentsline {subsection}{\numberline {3.4}Implementation}{18}{subsection.44}%
 \contentsline {subsection}{\numberline {3.5}Technology Stack}{18}{subsection.45}%
-\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{18}{subsection.46}%
-\contentsline {subsection}{\numberline {3.7}AI Integration}{18}{subsection.47}%
+\contentsline {subsection}{\numberline {3.6}UI Simplification and Minimalist Toggle}{19}{subsection.46}%
+\contentsline {subsection}{\numberline {3.7}AI Integration}{19}{subsection.47}%
 \contentsline {subsection}{\numberline {3.8}Inital User Testing and Feedback}{22}{subsection.52}%
-\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{23}{subsection.55}%
-\contentsline {subsection}{\numberline {3.10}Experimental Design}{23}{subsection.56}%
+\contentsline {subsection}{\numberline {3.9}Evaluation and Methodology}{24}{subsection.55}%
+\contentsline {subsection}{\numberline {3.10}Experimental Design}{24}{subsection.56}%
 \contentsline {subsection}{\numberline {3.11}Quantitative and Qualitative Frameworks}{24}{subsection.59}%
-\contentsline {subsubsection}{\numberline {3.11.1}NASA Task Load Index (\gls {NASATLX})}{24}{subsubsection.60}%
-\contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{24}{subsubsection.61}%
+\contentsline {subsubsection}{\numberline {3.11.1}NASA Task Load Index (\gls {NASATLX})}{25}{subsubsection.60}%
+\contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{25}{subsubsection.61}%
 \contentsline {subsection}{\numberline {3.12}Data Collection and Analysis}{25}{subsection.64}%
 \contentsline {section}{\numberline {4}Results and Discussion}{26}{section.65}%
 \contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{26}{subsection.66}%
