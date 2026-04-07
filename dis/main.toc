@@ -44,8 +44,14 @@
 \contentsline {subsubsection}{\numberline {3.11.2}System Usability Scale (\gls {SUS})}{25}{subsubsection.61}%
 \contentsline {subsection}{\numberline {3.12}Data Collection and Analysis}{25}{subsection.64}%
 \contentsline {section}{\numberline {4}Results and Discussion}{26}{section.65}%
-\contentsline {subsection}{\numberline {4.1}Analysis of NASA-TLX Scores}{26}{subsection.66}%
-\contentsline {subsection}{\numberline {4.2}Task Initiation Findings}{26}{subsection.67}%
-\contentsline {subsection}{\numberline {4.3}Discussion}{26}{subsection.68}%
-\contentsline {subsection}{\numberline {4.4}Limitations}{26}{subsection.69}%
-\contentsline {section}{References}{27}{section*.70}%
+\contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{26}{subsection.66}%
+\contentsline {subsection}{\numberline {4.2}Comparative Performance}{26}{subsection.69}%
+\contentsline {subsection}{\numberline {4.3}Efficiency and Time-on-Task Analysis}{27}{subsection.71}%
+\contentsline {subsection}{\numberline {4.4}SUS Metrics}{28}{subsection.73}%
+\contentsline {subsubsection}{\numberline {4.4.1}Item 2 \& 6: Complexity and Consistency}{28}{subsubsection.74}%
+\contentsline {subsubsection}{\numberline {4.4.2}Item 4 \& 10: Independence and Learning Curve}{28}{subsubsection.75}%
+\contentsline {subsubsection}{\numberline {4.4.3}Item 9: Confidence}{28}{subsubsection.76}%
+\contentsline {subsection}{\numberline {4.5}Real-Time Feedback and User Experience}{29}{subsection.77}%
+\contentsline {subsection}{\numberline {4.6}Discussion}{30}{subsection.78}%
+\contentsline {subsection}{\numberline {4.7}Limitations}{30}{subsection.79}%
+\contentsline {section}{References}{31}{section*.80}%
