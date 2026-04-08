@@ -5,7 +5,7 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
 
 \begin{table}[ht]
     \centering
-    \caption{Functional and Non-Functional Requirements for the Accessible IDE Plugin}
+    \caption{Functional and Non-Functional Requirements for the Accessible \gls{IDE} Plugin}
     \label{tab:requirements}
     \small % Slightly smaller text for better fit
     \begin{tabularx}{\textwidth}{@{} l l X @{}}
@@ -30,7 +30,7 @@ The plugin is architected around three core modules, each designed to address sp
  \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth, alt={}] {logos/Plug-in plan.png}
-    \caption{UI Plan For the Accessible IDE Plugin.}
+    \caption{UI Plan For the Accessible \gls{IDE} Plugin.}
     \label{fig:plug-inplan}
 \end{figure}
 
@@ -48,7 +48,7 @@ The generated steps are rendered as editable fields within the dashboard, allowi
 
 \textbf{Overcoming "Chatty" Latency and Verbosity}
 \newline
-During the testing of various prompt structures, a recurring challenge emerged, how much unnecessary text was included in the LLM's output.
+During the testing of various prompt structures, a recurring challenge emerged, how much unnecessary text was included in the \gls{LLM}'s output.
  When asked to assist, the model frequently included excessive supportive dialogue. While intended to be user-friendly, this extra text hindered the system's ability to parse the output into discrete, editable UI components.
 
 To solve this issue, the prompt was refined to enforce a strict structural output, prioritizing data over dialogue. This ensured that the generated steps could be seamlessly rendered as editable fields within the dashboard, preserving the developer's agency to modify or refine the architecture without sifting through conversational filler.
@@ -57,7 +57,7 @@ To solve this issue, the prompt was refined to enforce a strict structural outpu
 
 \textbf{Balancing Granularity and Utility}
 \newline
-Initial experiments with simple prompts—such as "How to code a login page"—resulted in a "Direct-to-Code" failure. The LLM would bypass the architectural phase and provide a block of code immediately. 
+Initial experiments with simple prompts—such as "How to code a login page"—resulted in a "Direct-to-Code" failure. The \gls{LLM} would bypass the architectural phase and provide a block of code immediately. 
 This was counterproductive for two reasons:
 
 \begin{itemize}
@@ -71,14 +71,14 @@ The original design specifications for the Task Architect called for 3 to 5 broa
 To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps.''"
 
 \subsubsection{Visual Styler} 
-The Visual Styler is a specialized UI/UX module designed to manage the IDE’s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
+The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}’s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
 
 \textbf{Accessibility and WCAG Mapping}
 \newline
 To ensure the platform is accessible to the widest possible audience, the Visual Styler utilizes a systematic mapping of presets based on the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
 \begin{itemize}
     \item High Contrast Modes: The module provides dedicated "High Contrast Dark" and "High Contrast Light" themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
-    \item Sensitivity Accommodations: By offering these specific color profiles, the IDE addresses the needs of users with color vision deficiencies (CVD) and photophobia 
+    \item Sensitivity Accommodations: By offering these specific color profiles, the \gls{IDE} addresses the needs of users with color vision deficiencies (CVD) and photophobia 
     (light sensitivity), allowing for a high-degree of legibility without triggering sensory fatigue.
 \end{itemize}
 
@@ -149,8 +149,8 @@ The ``Task Architect'' and ``Code Helper'' features utilise the VS Code Language
 The development of the plugin utilizes a modern web-based stack compatible with the VS Code extension ecosystem to ensure high performance and seamless API integration.
 \begin{itemize}
     \item JavaScript: The primary programming language used for both the extension backend and the Webview frontend. It was chosen for its native compatibility with Node.js and its ability to handle asynchronous message passing between the UI and the extension host.
-    \item Node.js: Acts as the runtime environment for the extension, providing the necessary APIs for file system access, process management, and the execution of imperative commands within the IDE.
-    \item VS Code Extension API: The core framework used to manipulate the IDE environment. Specifically, it facilitates interaction with workspace.getConfiguration for visual styling and vscode.commands for interface simplification.
+    \item Node.js: Acts as the runtime environment for the extension, providing the necessary APIs for file system access, process management, and the execution of imperative commands within the \gls{IDE}.
+    \item VS Code Extension API: The core framework used to manipulate the \gls{IDE} environment. Specifically, it facilitates interaction with workspace.getConfiguration for visual styling and vscode.commands for interface simplification.
     \item OpenAI API / VS Code Language Model API: Provides the generative intelligence required for the Task Architect and Code Explainer. By utilizing the resident gpt-4o model, the plugin performs complex Chain of Thought (CoT) reasoning without requiring the user to provide personal API keys.
     \item HTML/CSS: Used within the Webview layer to construct the Accessible Dashboard. This allows for the implementation of custom high-contrast themes and dynamic scaling that exceeds the limitations of standard VS Code CSS.
 \end{itemize}
@@ -184,7 +184,7 @@ The AI-driven features are implemented using a Streaming Data Pattern.
     \label{fig:AIflow}
 \end{figure}
 
-The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the LLM to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
+The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
  
 \begin{figure}[H]
     \centering
@@ -193,10 +193,10 @@ The figure above demonstrates the process of the Task Architect module. When a u
     \label{fig:AIcode}
 \end{figure}
 
-Not only does the this prompt ask the LLM to break down the task, but it also instructs it to format the output in a specific way.
+Not only does the this prompt ask the \gls{LLM} to break down the task, but it also instructs it to format the output in a specific way.
 So that the response can be easilt broken down and cleaned for the output the prompt includes instructions to make sure the subtasks in bold and the micro-steps are preceded by ``[ ]''.
 
-While designing this prompt I ran into some issues with the LLM adding accessive praise and suport to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
+While designing this prompt I ran into some issues with the \gls{LLM} adding accessive praise and suport to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
 This also went against the principle of ``Direct Instruction'' as it added more text and made the output more overwhelming, which is what I was trying to avoid in the first place.
 To solve this I added instructions to the prompt to avoid this, and to only output the tasks in the specified format.
 

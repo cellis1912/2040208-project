@@ -132,20 +132,60 @@ off from an interesting problem makes task-switching, a fundamental requirement 
 what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
 
 \subsection{Existing Tools}
-The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a neurotypical bias, creating barriers for those who may require additional support. \cite{morris2015understanding} observes workplace tools are frequently built with assumptions that "may not align with the needs of neurodiverse employees." \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with neurodiverse developers in mind, and complex nested menus can be overwhelming.
+The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a neurotypical bias, creating barriers for those who may 
+require additional support. \cite{morris2015understanding} observes workplace tools are frequently built with assumptions that "may not align with 
+the needs of neurodiverse employees." \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with neurodiverse 
+developers in mind, and complex nested menus can be overwhelming.
 
-Despite the obstacles described, certain features provide essential support for developers. \cite{morris2015understanding} notes that tools such as code completion and linters are vital to alleviate the difficulties associated with dyslexia, such as syntax memorisation and spelling.
+Despite the obstacles described, certain features provide essential support for developers.~\cite{morris2015understanding} notes that tools such as code 
+completion and linters are vital to alleviate the difficulties associated with dyslexia, such as syntax memorisation and spelling.
 
-However, the burden of making tools accessible often falls to the user. \cite{liebel2024challenges} found that developers often create “individual strategies and tool configurations to support their productivity." While these features are currently helping, the reliance on manual customisation implies a lack of "out-of-the-box" inclusivity.
+However, the burden of making tools accessible often falls to the user.~\cite{liebel2024challenges} found that developers often create “individual
+ strategies and tool configurations to support their productivity". While these features are currently helping, the reliance on manual customisation 
+ implies a lack of "out-of-the-box" inclusivity.
 
-This project aims to bridge the gap between the availability of generic tools and their functional utility. While current tools are excellent at detecting errors, they often fail at explaining them in an accessible manner. By integrating an Error Explainer that decomposes complex compiler messages into manageable tasks, therefore reducing the cognitive load required to debug. This shifts the \gls{IDE} from a passive environment that requires expert configuration to an active partner in the development process.
+This project aims to bridge the gap between the availability of generic tools and their functional utility. While current tools are excellent at
+ detecting errors, they often fail at explaining them in an accessible manner. By integrating an Error Explainer that decomposes complex compiler 
+ messages into manageable tasks, therefore reducing the cognitive load required to debug. This shifts the \gls{IDE} from a passive environment that 
+ requires expert configuration to an active partner in the development process.
+
+\subsection{Pomodoro Timer}
+The Pomodoro Technique, developed by Francesco Cirillo in the late 1980s, is a time-management framework that partitions work into focused intervals. Typically
+25 minutes, separated by brief five-minute breaks. In the context of neurodiversity, this method is often reframed as a ``cognitive tool'' rather than a rigid 
+rule set, specifically designed to address common executive functioning barriers~\cite{miller2025wired}.
+
+\subsubsection{Managing Executive Dysfunction and Task Paralysis}
+For developers with ADHD or ASD, \gls{task_paralysis}, an inability to initiate work due to cognitive overload or anxiety represents a significant hurdle. 
+The Pomodoro Technique mitigates this by lowering the ``activation energy'' required to start. By committing to a manageable, 25-minute sprint, the psychological 
+barrier to entry is reduced, helping individuals bypass the freeze response associated with daunting or abstract tasks.
+
+\subsubsection{Combatting Time Blindness and Hyperfocus Burnout}
+Neurodivergent individuals often experience ``time blindness,'' a difficulty in perceiving the passage of time as a concrete resource. Externalizing time through a visual 
+or auditory timer provides real-time feedback, helping to anchor the developer to the present task and reducing the risk of underestimating project timelines.
+
+Furthermore, while hyperfocus is frequently cited as a ``superpower'' for developers, it can lead to severe mental and physical exhaustion if left unregulated. The structured 
+nature of the Pomodoro cycle acts as a ``release valve'' for focus:
+\begin{itemize}
+\item Mandatory Breaks: Frequent breaks prevent the ``hyperfocus trap,'' where a developer may neglect basic biological needs like nutrition or hydration.
+
+\item Sensory Regulation: Scheduled pauses provide essential space for sensory recovery, allowing developers to stretch, stim, or move to prevent the physical strain and irritability that often follow hours of sedentary deep work.
+\end{itemize}
+
+\subsubsection{Cognitive Load and Adaptive Implementation}
+From the perspective of Cognitive Load Theory (CLT), the Pomodoro Technique manages mental resources by preventing the exhaustion of the ``cognitive budget''. By breaking a 
+complex project into small, time-limited stages, the method reduces Extraneous Load—the unnecessary effort required to manage a vast, unstructured task—allowing for more 
+Germane Load to be directed toward core algorithmic problem-solving.
+
+However, current literature suggests that ``out-of-the-box'' Pomodoro settings can sometimes be counterproductive if applied too rigidly. For individuals with ADHD, 
+a 25-minute window may be too short to enter a productive ``flow state'', leading to ``state recovery costs'' if interrupted too early. Consequently, adaptive versions 
+of the tool—such as 10-minute sprints for initiation or 50-minute blocks for deep work—are recommended to align with individual concentration spans.
 
 \subsection{Colour filters}
 Visual presentation can influence reading performance and comfort.\textcite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, 
 although the benefits vary significantly between individuals. This suggests that software tools should support flexible visual customisation rather than relying on a single accessibility configuration.
 
 In some cases, high-contrast models are essential because they provide the necessary visual scaffolding to combat task paralysis. For developers with \gls{ADHD}, a low-contrast or pastel theme can
- cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
+cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
 By utilizing high-contrast ratios—such as 7:1 or higher, per WCAG 2.1 guidelines—the IDE creates a clear visual hierarchy.
 
 This high ``signal'' environment provides several technical advantages:

@@ -378,6 +378,34 @@
       \field{pages}{57\bibrangedash 68}
       \range{pages}{12}
     \endentry
+    \entry{miller2025wired}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=cf09380f4a178e62c25ca912a1c47287}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={April},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fda2c9f2216f36cd4a0f178d22df1856}{%
+           family={Loving},
+           familyi={L\bibinitperiod},
+           given={Katherine},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea462c3548c88932d25880facdbb935b}
+      \strng{fullhash}{ea462c3548c88932d25880facdbb935b}
+      \strng{fullhashraw}{ea462c3548c88932d25880facdbb935b}
+      \strng{bibnamehash}{ea462c3548c88932d25880facdbb935b}
+      \strng{authorbibnamehash}{ea462c3548c88932d25880facdbb935b}
+      \strng{authornamehash}{ea462c3548c88932d25880facdbb935b}
+      \strng{authorfullhash}{ea462c3548c88932d25880facdbb935b}
+      \strng{authorfullhashraw}{ea462c3548c88932d25880facdbb935b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Wired Differently, Working Brilliantly: Understanding and Supporting ADHD \& AuDHD Employees}
+      \field{year}{2025}
+    \endentry
     \entry{morris2015understanding}{misc}{}{}
       \name{author}{3}{}{%
         {{hash=5283a53c5c081c04252a659743f886e1}{%

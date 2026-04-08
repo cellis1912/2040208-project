@@ -41,7 +41,7 @@ Participant & Interface & MD & PD & TD & PF & EF & FR & r-score & w-score \\
 \end{table}
 
 \subsection{Comparative Performance}
-The results indicate a substantial and statistically significant reduction in perceived workload when using the Dashboard interface compared to the Vanilla interface.
+The results indicate a substantial reduction in perceived workload when using the Dashboard interface compared to the Vanilla interface.
 
 \begin{itemize}
 \item \textbf{Overall Workload:} The mean Weighted Score ($w$-score) for the Vanilla interface was $43.00$ ($\sigma = 10.02$), which was reduced to $7.73$ ($\sigma = 2.72$) 
@@ -124,6 +124,31 @@ Overall, even though the results accived for the Dashboard are excellent, the ma
 in the past, so there is a potential bias in the results. The next step would be to conduct a larger scale study with a more diverse participant pool to validate 
 these findings and ensure they generalise across different populations of developers.
 
+\subsection{Pre-Study Interview Findings}
+Prior to the main evaluation, a brief semi-structured interview was conducted with each participant to establish a baseline understanding of their existing 
+workflows, coping strategies, and pain points when using traditional IDEs. Three dominant themes emerged from the responses.
+\begin{itemize}
+
+\item \textbf{Panel Management:} The majority of participants expressed frustration with the number of open panels in a standard IDE, yet reported 
+that they rarely closed them. Rather than actively managing their workspace, participants described a pattern of passive tolerance, simply ignoring panels 
+they did not need. As one participant noted, the effort required to locate and close individual panels felt disproportionate to the benefit, resulting in what 
+might be characterised as a ``cognitive acceptance'' of a cluttered environment. This finding directly supports the need for the single-click Minimalist Toggle.
+
+
+\item \textbf{Task Decomposition:} When asked how they would typically break down a complex programming task, most participants described struggling with initiation.
+Several noted that an empty IDE felt ``daunting'', and their strategies for overcoming this varied: some wrote rough outlines on paper or 
+in a separate document, while others attempted to hold the steps in working memory. One participant reported regularly using ChatGPT to scaffold 
+their thinking, but found it tended to generate code directly rather than a structured plan, which they described as ``not helpful for actually getting 
+started''. This corroborates the task paralysis literature and provides direct user-grounded motivation for the Task Architect module.
+
+\item \textbf{Error Handling:} Participants consistently reported that cryptic or verbose error messages increased their frustration and interrupted their 
+flow. When probed on their typical response to an unfamiliar error, most described a reactive process: attempting solutions from memory, searching 
+online, or pasting the error into an AI chatbot. Notably, no participant described a systematic or confident approach to debugging, suggesting that 
+the standard IDE error output does not provide sufficient scaffolding for independent resolution. This reinforces the rationale for the Code Explainer 
+module's plain-language feedback approach.
+
+\end{itemize}
+
 \subsection{Real-Time Feedback and User Experience}
 During the evaluation, I observed significant differences in how the Dashboard and the Vanilla interface handled real-time feedback. The Dashboard`s capacity to provide instantaneous 
 feedback for aesthetic modifications, such as theme and font-size adjustments, where prefered to the baseline interface. This immediate confirmation allowed
@@ -150,6 +175,19 @@ Similarly, the Code Error Checker transformed the traditionally stressful experi
  By providing a safe environment with clear error recovery paths, the system preserves the developer`s ``attentional budget,'' ensuring that minor 
  technical hurdles do not escalate into focus-breaking frustrations. This transition from "system-centric" to "user-centric" feedback is a cornerstone of inclusive 
  design, specifically catering to the need for clarity and predictability in neurodiverse workflows.
+
+
+\subsection{Number of Clicks and User Flow}
+The Dashboard's design significantly reduced the number of interactions required to perform common tasks. Changing a theme requires just one click compared to an optimal four in the Vanilla interface.
+ It is worth noting that this ``optimal path'' assumes the user already knows exactly where to navigate within VS Code's settings menu, which is often not the case, especially for users who are less 
+ familiar with this specific IDE.Users unfamiliar with the IDE often took a more circuitous route, increasing both click count and completion time beyond the baseline figures reported in Table 7
+ Similarly, adjusting font size was reduced to a single Dashboard interaction, eliminating the need to locate and navigate nested editor settings entirely.
+
+The most pronounced difference was observed in panel management. Prior to testing, this was not anticipated to be a significant point of friction; however, it proved to be the task with which participants
+ most frequently struggled in the Vanilla condition, with several failing to complete it entirely. Where the Vanilla interface required five or more sequential interactions, varying with the number of open
+panels, the Dashboard reduced this to a single toggle. This reduction in interaction depth directly maps to a lower Extraneous Cognitive Load as the developer is no longer required to maintain a mental model
+ of the menu hierarchy in working memory, freeing those resources for the primary programming task.
+
 
 \subsection{Discussion}
 
