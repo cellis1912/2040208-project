@@ -36,14 +36,17 @@ The plugin is architected around three core modules, each designed to address sp
 
 \subsubsection{Minimalist Toggle}
 
-The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilizes a state-management system to track the current visibility of the VS Code workbench.
+The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilises a state-management system to track the current visibility of the VS Code workbench.
 When activated, it dispatches a batch of imperative commands to the vscode.commands API, hiding the Activity Bar, Status Bar, Side Bar, and Breadcrumbs simultaneously.
-By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the code editor itself.
+By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the
+ code editor itself.
 
 
 \subsubsection{Task Architect}
-The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps. The module should employs a \gls{CoT} prompting strategy to take a complex task and break it down into simpler sub-tasks.
-The generated steps are rendered as editable fields within the dashboard, allowing users to modify or refine the AI's suggestions. This ensures that developers maintain agency over their project architecture while the AI handles the initial decomposition.
+The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps. The module should employs 
+a \gls{CoT} prompting strategy to take a complex task and break it down into simpler sub-tasks.
+The generated steps are rendered as editable fields within the dashboard, allowing users to modify or refine the AI's suggestions. This ensures that developers 
+maintain agency over their project architecture while the AI handles the initial decomposition.
 \newline
 
 \textbf{Overcoming "Chatty" Latency and Verbosity}
@@ -225,6 +228,34 @@ The user can also mark tasks as complete by clicking a checkbox, which will gray
 The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
 Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
 
+\subsection{Dyslexia Settings: Test spacing}
+The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with dyslexia, as increasing letter spacing 
+can reduce the ``crowding'' effect of text, improving character recognition and overall readability. To maintain simplicity, the plugin provides a set of predefined spacing presets 
+(e.g., 0.5em, 1em, 1.5em) that users can select from the dashboard. This allows for quick adjustments without overwhelming the user with too many options, while still providing the 
+necessary customization to accommodate different cognitive needs.
+
+Enitally I programmed the plugin to have one set value for line height and letter spacing, but after testing I found that this was not ideal as different users have different needs when it comes to spacing.
+Below shows the diffrece in spaceing between the default settings and the orignal dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, alt={}] {logos/van.png}
+    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
+    \label{fig:dyslexiasettings}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, alt={}] {logos/bas.png}
+    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
+    \label{fig:dyslexiasettings}
+\end{figure}
+
+\subsection{Pomodoro Timer}
+As mentioned in the literature review, the Pomodoro technique can be an effective tool for managing time and maintaining focus, especially for individuals with ADHD. 
+The plugin includes a customizable Pomodoro timer that allows users to set their own focus intervals and break durations. This flexibility is crucial, as a standard
+ 25-minute focus period may not be suitable for everyone.
+
+The timer is integrated into the dashboard, providing a visual countdown and notifications when it's time to take a break or return to work. By allowing users to tailor 
+the timing to their own rhythms, the plugin helps to reduce ``state recovery costs'' associated with interruptions and supports sustained focus.
 
 \subsection{Inital User Testing and Feedback}
 The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
@@ -235,31 +266,37 @@ tested with a developer to get feedback on UI and functionality of the draft des
 the font size to 18, this was to test the functionality of the plugin and also to see if it was easy for the user to use.
 From this, I had three main takeaways:
 
-
-1. UI and Functionality requirements:
-The user found that some of the UI elements where not clearly labelled, this caused confusion
-especially when it came to the ``Task Architect''and ``minimalist toggle'' features. Specifically for the 
-task tool the user was unclear on what to input into the goal fields. When executing the original button label,
- ``Decompose'', was too abstract and didn't clearly signal the expected outcome.
-
- To address this, I renamed the action button to ``Generate Steps'' to create a direct link between the action
- and the result. I also inproved the placeholder with an example goal (e.g., ``Build a login page''). 
- This provides more context for the tool without overcrouding it with a lenghty description.
-
-2. AI Response Integrity
-There was a technical bug what was truncating the AI response or omitting text contained within quotation marks.
-This resulted in incomplete micro-steps, significantly reducing the utility of the generated plan.
-The Solution:
+\begin{enumerate}
+    \item UI and Functionality requirements:
+    
+    The user found that some of the UI elements where not clearly labelled, this caused confusion
+    especially when it came to the ``Task Architect''and ``minimalist toggle'' features. Specifically for the 
+    task tool the user was unclear on what to input into the goal fields. When executing the original button label,
+    ``Decompose'', was too abstract and didn't clearly signal the expected outcome.
 
 
-3. Accessibility and Customization Testing
-To evaluate the plugin`s versatility and ease of use, the user was tasked with modifying the environment's appearance.
-The user was first asked to complete the tasks in vanilla VS Code, and then with the plugin enabled.
-The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both vedrsions of
-the \gls{IDE}. However in in all cases the user found the plugin's interface far quicker to navigate for these specific tasks,
- as it provided a more direct path to the settings without needing to search through the standard VS Code menus. For example, 
- the user was able to change the theme in aprovimately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
+     To address this, I renamed the action button to ``Generate Steps'' to create a direct link between the action
+    and the result. I also inproved the placeholder with an example goal (e.g., ``Build a login page''). 
+    This provides more context for the tool without overcrouding it with a lenghty description.
+    \item AI Response Integrity:
+    
+    There was a technical bug what was truncating the AI response or omitting text contained within quotation marks.
+    This resulted in incomplete micro-steps, significantly reducing the utility of the generated plan.
 
+    To solve this issue, I implemented a more robust parsing strategy that accounts for edge cases in the AI's output. 
+    This involved using regular expressions to ensure that all generated steps, including those with special characters
+     or formatting, are captured and rendered correctly in the UI.
+
+    \item Accessibility and Customization Testing:
+    
+    To evaluate the plugin`s versatility and ease of use, the user was tasked with modifying the environment's appearance.
+    The user was first asked to complete the tasks in vanilla VS Code, and then with the plugin enabled.
+    The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both vedrsions of
+    the \gls{IDE}. However in in all cases the user found the plugin's interface far quicker to navigate for these specific tasks,
+    as it provided a more direct path to the settings without needing to search through the standard VS Code menus. For example, 
+    the user was able to change the theme in aprovimately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
+
+\end{enumerate}
 
 Overall the user felt that the plugin would be helpful for developers once the issues with the UI and AI responses 
 were resolved, and that it had the potential to reduce cognitive load and improve task initiation.

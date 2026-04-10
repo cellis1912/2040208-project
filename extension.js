@@ -83,6 +83,10 @@ function activate(context) {
                         case 'dyslexiaOn':
                             applyDyslexiaMode(context);
                             break;
+                        // Inside the switch (message.command) block:
+                        case 'updateDyslexiaLevel':
+                            await applyDyslexiaSettings(context, message.level);
+                            break;
                         case 'dyslexiaOff':
                             restoreEditorSettings(context);
                             break;
@@ -116,6 +120,35 @@ async function changeFontSize(direction) {
 
     await config.update('editor.fontSize', currentSize, vscode.ConfigurationTarget.Global);
     return currentSize; // Return the new size so we can send it to the UI
+}
+
+async function applyDyslexiaSettings(context, level) {
+    const config = vscode.workspace.getConfiguration();
+
+    // 1. Save original settings if not already saved
+    if (!context.globalState.get(ORIGINAL_EDITOR_SETTINGS_KEY)) {
+        await context.globalState.update(ORIGINAL_EDITOR_SETTINGS_KEY, {
+            fontFamily: config.get('editor.fontFamily'),
+            lineHeight: config.get('editor.lineHeight'),
+            letterSpacing: config.get('editor.letterSpacing'),
+        });
+    }
+
+    // 2. Define our levels
+    const settings = {
+        'standard': { lineHeight: 0, letterSpacing: 0, font: 'editor.fontFamily' }, // This acts as a soft reset
+        'relaxed':  { lineHeight: 30, letterSpacing: 0.8, font: 'Lexend, OpenDyslexic, monospace' },
+        'spacious': { lineHeight: 40, letterSpacing: 1.5, font: 'OpenDyslexic, Lexend, monospace' }
+    };
+
+    const choice = settings[level];
+
+    // 3. Apply settings
+    await config.update('editor.fontFamily', choice.font, vscode.ConfigurationTarget.Global);
+    await config.update('editor.lineHeight', choice.lineHeight, vscode.ConfigurationTarget.Global);
+    await config.update('editor.letterSpacing', choice.letterSpacing, vscode.ConfigurationTarget.Global);
+
+    vscode.window.showInformationMessage(`Dyslexia Mode: ${level.toUpperCase()} applied`);
 }
 
 async function toggleMinimalistMode() {
@@ -622,6 +655,19 @@ function getWebviewContent() {
             </section>
 
             <section class="section-card">
+                <h2>Dyslexia Visual Aids</h2>
+                <div class="row">
+                    <span>Spacing Level</span>
+                    <select id="dyslexiaLevel" style="background: var(--input-bg); color: var(--vscode-foreground); border: 1px solid var(--vscode-widget-border); border-radius: 4px;">
+                        <option value="standard">Standard</option>
+                        <option value="relaxed">Relaxed</option>
+                        <option value="spacious">Spacious</option>
+                    </select>
+                </div>
+                <button id="resetDyslexia" class="secondary" style="margin-top:10px; width: 100%;">Reset to Default Font</button>
+            </section>
+
+            <section class="section-card">
                 <h2>Theme Presets</h2>
                 <div class="button-grid">
                     <button id="hcDark">HC Dark</button>
@@ -694,6 +740,20 @@ function getWebviewContent() {
                 errOut.style.display = 'block';
                 errOut.innerHTML = '<em>Scanning...</em>';
                 vscode.postMessage({ command: 'scanErrors' });
+            };
+
+            // Handle Dropdown Change
+            document.getElementById('dyslexiaLevel').onchange = (e) => {
+                vscode.postMessage({ 
+                    command: 'updateDyslexiaLevel', 
+                    level: e.target.value 
+                });
+            };
+
+            // Handle Reset Button
+            document.getElementById('resetDyslexia').onclick = () => {
+                document.getElementById('dyslexiaLevel').value = 'standard'; // Reset UI dropdown
+                vscode.postMessage({ command: 'dyslexiaOff' }); // Calls your existing restore function
             };
 
             document.getElementById('buildBtn').onclick = () => {
