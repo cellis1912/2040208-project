@@ -160,8 +160,7 @@ async function toggleMinimalistMode() {
     await vscode.commands.executeCommand('workbench.action.closeAuxiliaryBar');
     await vscode.commands.executeCommand('workbench.action.togglePanel');
     await vscode.commands.executeCommand('breadcrumbs.toggle');
-
-        // ✅ Correct way to control minimap
+    
     const minimapEnabled = config.get('editor.minimap.enabled', true);
     await config.update(
         'editor.minimap.enabled',

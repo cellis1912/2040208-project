@@ -50,6 +50,15 @@ The results indicate a substantial reduction in perceived workload when using th
 \item \textbf{Frustration and Effort:} Participants reported significantly lower levels of frustration ($10.0$ vs $54.0$) and required less effort ($9.0$ vs $46.0$) to complete the tasks using the Dashboard.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    % Replace with your exported chart file
+    \includegraphics[width=1\textwidth]{Charts/nasatlxGraph.pdf} 
+    \caption{Two graphs desplaying the diffrences in the NASA-TLX scores for the two interfaces}
+    \label{fig:Overallchart}
+\end{figure}
+
+
 \begin{table}[h]
 \centering
 \caption{Summary of NASA-TLX Workload Scores (Mean $\pm$ SD)}
@@ -70,6 +79,15 @@ Frustration      & 54.00 $\pm$ 10.25 & 10.00 $\pm$ 5.00 \\
 \multicolumn{3}{l}{\small \textit{*Note: Lower performance scores indicate better perceived performance.}}
 \end{tabular}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    % Replace with your exported chart file
+    \includegraphics[width=1\textwidth]{Charts/radar-chart.png} 
+    \caption{}
+    \label{fig:radchart}
+\end{figure}
+
 
 \subsection{Efficiency and Time-on-Task Analysis}
 The Dashboard demonstrated a large improvement in operational efficiency. As shown in the below Table, users completed configuration
@@ -190,6 +208,31 @@ panels, the Dashboard reduced this to a single toggle. This reduction in interac
 
 
 \subsection{Discussion}
-
+The empirical data validates the plugin as a successful ``digital ramp''. 
+The 82\% reduction in weighted workload suggests that the ``executive tax'' paid by neurodivergent developers
+ is not an inherent trait of their neurology, but a byproduct of "neurotypical bias" in tool design. By suppressing Extraneous Load 
+ (via the Minimalist Toggle) and scaffolding Intrinsic Load (via the Task Architect), the system maximizes Germane Load, allowing 
+ cognitive resources to be redirected toward core algorithmic problem-solving.
 
 \subsection{Limitations}
+While the results of this study are encouraging, several limitations must be acknowledged to provide context 
+for the findings:
+\begin{itemize}
+    \item \textbf{Small Sample Size and Recruitment Bias:}
+    The study utilized a limited cohort ($N=5$). Furthermore, participants were known to the researcher 
+    prior to the study, introducing a potential recruitment bias that may affect the objectivity of the 
+    qualitative feedback.
+    \item \textbf{Participant Confidentiality and Neurodiversity Verification:}
+    Due to stringent ethical considerations regarding the storage of sensitive personal data and the project's
+     condensed timeline, participants were not explicitly asked to disclose or verify their neurodivergent 
+     status. Consequently, while the tool is designed for neurodiverse profiles, the data cannot be 
+     definitively categorized by specific clinical diagnoses.
+    \item \textbf{Short-term Evaluation:}
+    The experimental tasks were performed in a controlled, short-term setting. Long-term longitudinal
+     studies are required to determine if the plugin effectively mitigates ``hyperfocus burnout'' or 
+     maintains its efficacy over extended, multi-hour work sessions in a professional environment.
+    \item \textbf{Baseline Expertise:}
+    The absolute values for time-on-task may have been influenced by varying levels of participant expertise
+     with the standard VS Code interface. Developers more accustomed to alternative IDEs may have experienced
+      an inflated learning curve during the ``Vanilla'' control phase.
+\end{itemize}

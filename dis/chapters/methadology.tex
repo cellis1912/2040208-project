@@ -230,24 +230,75 @@ Finally, they can click the checkbox to mark the task as complete, graying out t
 
 \subsection{Dyslexia Settings: Test spacing}
 The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with dyslexia, as increasing letter spacing 
-can reduce the ``crowding'' effect of text, improving character recognition and overall readability. To maintain simplicity, the plugin provides a set of predefined spacing presets 
-(e.g., 0.5em, 1em, 1.5em) that users can select from the dashboard. This allows for quick adjustments without overwhelming the user with too many options, while still providing the 
-necessary customization to accommodate different cognitive needs.
+and vertical padding can significantly reduce the ``crowding'' effect dense code, improving character recognition and overall readability. 
 
-Enitally I programmed the plugin to have one set value for line height and letter spacing, but after testing I found that this was not ideal as different users have different needs when it comes to spacing.
-Below shows the diffrece in spaceing between the default settings and the orignal dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.
+To balance customisability with cognitive ease, the plugin provides a set of predefined spacing presets, Standard, Relaxed, and Spacious,
+for the users to choose from in the dashboard. This allows for quick adjustments without overwhelming the user with too many options, while still providing the 
+necessary customization to accommodate different cognitive needs.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth, alt={}] {logos/dislexSet.png}
+    \caption{The code showing the diffrent presets for spacing and line height}
+    \label{fig:dyslexiasetcode}
+\end{figure}
+
+As shown in Figure \ref{fig:dyslexiasetcode}, the presets implement a hierarchical increase in visual breathing room:
+\begin{itemize}
+    \item Standard: Acts as a "soft reset" to default editor settings ($lineHeight: 0$, $letterSpacing: 0$) using the system's standard font family.
+    \item Relaxed: Increases the $lineHeight$ to $30$ and $letterSpacing$ to $0.8$, introducing specialized fonts such as Lexend and OpenDyslexic.
+    \item Spacious: Offers the maximum level of separation with a $lineHeight$ of $40$ and $letterSpacing$ of $1.5$. This preset prioritizes OpenDyslexic as the primary font to further enhance character distinction.
+\end{itemize}
+
+The inclusion of OpenDyslexic and Lexend is a critical design choice; these fonts use 
+weighted bottoms or unique shapes to help the brain distinguish between similar
+characters (e.g., ``b'' vs ``d''), which is a common hurdle for dyslexic readers. 
+By offering these as a unified ``Spacious'' preset, the plugin provides a high-signal 
+environment that accommodates diverse cognitive needs with minimal interaction cost.
+
+\subsubsection{Initial Plan: One Option}
+Initially, the plugin was programmed with fixed values for line height and letter spacing. 
+However, user testing revealed that a "one-size-fits-all" approach was insufficient, as 
+individual cognitive needs regarding text density vary significantly.
+
+The figures below demonstrate the visual impact of these adjustments. 
+Figure \ref{fig:vanillasettings} displays the standard VS Code environment, 
+while Figure \ref{fig:dyslexiasettings} illustrates the enhanced readability achieved
+ by increasing the line height to 1.5 and the letter spacing to 0.5em.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/van.png}
     \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
-    \label{fig:dyslexiasettings}
+    \label{fig:vanillasettings}
 \end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/bas.png}
     \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
     \label{fig:dyslexiasettings}
 \end{figure}
+
+\subsubsection{Final UI Integration}
+The final UI design (see Figure\ref{fig:dyslexiamenu}) unifies the Visual Styler with other cognitive aids to ensure that environment modification is non-destructive and instantaneous:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, alt={}] {logos/dislecMenu.png}
+    \caption{The UI implementation of the line spacing tool}
+    \label{fig:dyslexiamenu}
+\end{figure}
+The evolution from fixed values to the hierarchical preset system (Standard, Relaxed, Spacious) 
+represents a shift toward a user-centric sensory model. By centralising these 
+complex font and spacing configurations into a single module within the 
+Accessible Dashboard, the plugin minimizes the ``executive tax'' required to curate
+a readable workspace.
+
+\begin{itemize}
+    \item One-Click Presets: Instead of navigating nested VS Code menus, users select the "Dyslexia-friendly Mode" or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
+    \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the "verification anxiety" common when neurodivergent users must exit menus to see if changes were applied.
+    \item Typography Hierarchy: The final implementation ensures that selecting a preset like "Spacious" simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
+    \item Non-Destructive Restoration: A critical component of the final UI is the "Restore Theme" and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom IDE configurations.
+\end{itemize}
 
 \subsection{Pomodoro Timer}
 As mentioned in the literature review, the Pomodoro technique can be an effective tool for managing time and maintaining focus, especially for individuals with ADHD. 
