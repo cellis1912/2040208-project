@@ -56,12 +56,19 @@ Further more these smaller task can be seen as ``scaffolding'' for the user when
 
 
 \subsubsection{The Cognitive Theory of Multimedia Learning (CTML)}
+While Sweller’s Cognitive Load Theory focuses primarily on the nature and management of cognitive load, Mayer’s Cognitive Theory of Multimedia Learning (CTML) 
+provides a more detailed explanation of how information is processed across visual and auditory channels. Within the context of software development, the integrated 
+development environment (IDE) can be understood as a high-density multimedia environment in which multiple streams of related information must be processed simultaneously.
 
-While Sweller focuses on the load, Richard Mayer`s CTML provides a more detailed look at how visual and auditory channels process information. In the context of a software developer, the IDE is a high-density multimedia environment.
+Within this framework, Ayres and Sweller’s split-attention principle describes the split-attention effect as occurring when learners are required to divide their attention 
+between physically separated yet cognitively related sources of information~\cite{AyresSweller2021}. In a software development context, this may occur when an error message 
+in the console refers to a line of code located hundreds of lines away in the editor. For a neurodivergent developer, this creates a significant spatial split, requiring 
+additional mental effort to navigate between and mentally integrate these sources of information. This integration process contributes directly to extraneous cognitive load, 
+as cognitive resources are expended on locating and connecting information rather than resolving the underlying programming problem.
 
-The Split-Attention and Redundancy Principles by Mayer (2021) identifies the Split-Attention Effect, which occurs when learners must divide their attention between multiple sources 
-of information that are physically separated but cognitively related. For a neurodivergent developer, an error in the console that refers to a line of code 500
- lines above creates a massive ``spatial split''. The mental effort required to integrate these two sources is entirely Extraneous Load.
+To mitigate this, the plugin's ``Code Explainer'' feature will provide an integrated view that combines the error message with the relevant code context, effectively 
+reducing the split-attention effect. By presenting the error message and the associated code in a unified interface, the plugin minimizes the need for mental integration
+ across separate sources, thereby reducing extraneous cognitive load and allowing developers to focus more effectively on problem-solving.
 
 
 \subsection{Neurodiversity in Software Engineering}
@@ -106,6 +113,9 @@ To understand why existing tools fail, we  must examine the shift from the Medic
      brain, but the environment that fails to accommodate it. This shift in perspective is crucial for designing tools that are not just ``assistive'' but truly inclusive, as it focuses on modifying the
       environment (the IDE) rather than trying to fix the individual.
 \end{itemize}
+
+The minimalist toggle and the code explainer are designed with this social model in mind, aiming to create an environment that reduces barriers and allows neurodivergent developers to thrive 
+without needing to conform to a neurotypical standard.
 
 Executive Functioning (EF) Domains in Programming
 To deepen the analysis of \gls{executive_dysfunction}, we must break it into three core domains:

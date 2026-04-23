@@ -3,7 +3,7 @@
 The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the ``Direct 
 Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha2025conceptual}.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Functional and Non-Functional Requirements for the Accessible \gls{IDE} Plugin}
     \label{tab:requirements}
@@ -15,18 +15,18 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
         \textbf{FR1} & Interface & The system shall provide a single-click ``Minimalist Toggle'' to hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs simultaneously. \\ \addlinespace
         \textbf{FR2} & AI Support & The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks. \\ \addlinespace
         \textbf{FR3} & Feedback & The ``Code Explainer'' shall intercept compiler errors and provide non-technical, bulleted summaries (max 3 points). \\ \addlinespace
-        \textbf{FR4} (Time Management): The system shall provide a customizable Pomodoro timer integrated into the dashboard, allowing users to define unique focus and break durations. \\ \addlinespace
-        \textbf{FR5} (Visual Presets): The system shall provide at least three predefined typography presets (Standard, Relaxed, Spacious) that adjust lineHeight, letterSpacing, and font family simultaneously. \\ \addlinespace
-        \textbf{FR6} (Task Persistence): The system shall save the state of the ``Task Architect'' checklist between sessions, allowing developers to resume work without re-initiating task decomposition. \\ \addlinespace
-        \textbf{FR7} (Interactive Debugging): The ``Code Explainer'' shall allow users to click a button that provides actionable, non-technical steps for the currently selected compiler error.
+        \textbf{FR4} & Time Management & The system shall provide a customizable Pomodoro timer integrated into the dashboard, allowing users to define unique focus and break durations. \\ \addlinespace
+        \textbf{FR5} & Visual Presets & The system shall provide at least three predefined typography presets (Standard, Relaxed, Spacious) that adjust lineHeight, letterSpacing, and font family simultaneously. \\ \addlinespace
+        \textbf{FR6} & Task Persistence & The system shall save the state of the ``Task Architect'' checklist between sessions, allowing developers to resume work without re-initiating task decomposition. \\ \addlinespace
+        \textbf{FR7} & Interactive Debugging & The ``Code Explainer'' shall allow users to click a button that provides actionable, non-technical steps for the currently selected compiler error. \\
         \midrule
         \textbf{NFR1} & Accessibility & The UI must adhere to WCAG 2.1 Level AA contrast ratios (4.5:1 for text). \\ \addlinespace
         \textbf{NFR2} & Cognitive & The system must provide ``Non-Destructive Restoration,'' allowing users to revert all UI changes instantly to prevent anxiety over lost settings. \\ \addlinespace
         \textbf{NFR3} & Latency & AI-generated task steps must begin streaming to the UI within 2 seconds of the request to prevent ``task-switching'' distractions. \\
-        \textbf{NFR4} (Privacy/Security): The system shall utilize resident LLM models via the VS Code Language Model API to ensure user data remains secure without requiring individual API keys. \\ \addlinespace
-        \textbf{NFR5} (Customizability): The UI must allow for granular adjustments of character spacing (e.g., 0.5em increments) to accommodate individual variances in dyslexic reading preferences. \\ \addlinespace
-        \textbf{NFR6} (Sensory Regulation): All theme changes (High Contrast Dark/Light) must be applied instantaneously across the entire workbench to provide immediate visual confirmation and reduce ``verification anxiety``. \\ \addlinespace
-        \textbf{NFR7} (Minimal Interaction Depth): Core accessibility features (Minimalist Toggle, Theme Switching) must be reachable within a maximum of two clicks from the main dashboard to minimize interaction cost. \\
+        \textbf{NFR4} & Privacy/Security & The system shall utilize resident LLM models via the VS Code Language Model API to ensure user data remains secure without requiring individual API keys. \\ \addlinespace
+        \textbf{NFR5} & Customizability & The UI must allow for granular adjustments of character spacing (e.g., 0.5em increments) to accommodate individual variances in dyslexic reading preferences. \\ \addlinespace
+        \textbf{NFR6} & Sensory Regulation & All theme changes (High Contrast Dark/Light) must be applied instantaneously across the entire workbench to provide immediate visual confirmation and reduce ``verification anxiety``. \\ \addlinespace
+        \textbf{NFR7} & Minimal Interaction Depth & Core accessibility features (Minimalist Toggle, Theme Switching) must be reachable within a maximum of two clicks from the main dashboard to minimize interaction cost. \\
         \bottomrule
     \end{tabularx}
 \end{table}
