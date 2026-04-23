@@ -15,10 +15,18 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
         \textbf{FR1} & Interface & The system shall provide a single-click ``Minimalist Toggle'' to hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs simultaneously. \\ \addlinespace
         \textbf{FR2} & AI Support & The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks. \\ \addlinespace
         \textbf{FR3} & Feedback & The ``Code Explainer'' shall intercept compiler errors and provide non-technical, bulleted summaries (max 3 points). \\ \addlinespace
+        \textbf{FR4} (Time Management): The system shall provide a customizable Pomodoro timer integrated into the dashboard, allowing users to define unique focus and break durations. \\ \addlinespace
+        \textbf{FR5} (Visual Presets): The system shall provide at least three predefined typography presets (Standard, Relaxed, Spacious) that adjust lineHeight, letterSpacing, and font family simultaneously. \\ \addlinespace
+        \textbf{FR6} (Task Persistence): The system shall save the state of the ``Task Architect'' checklist between sessions, allowing developers to resume work without re-initiating task decomposition. \\ \addlinespace
+        \textbf{FR7} (Interactive Debugging): The ``Code Explainer'' shall allow users to click a button that provides actionable, non-technical steps for the currently selected compiler error.
         \midrule
         \textbf{NFR1} & Accessibility & The UI must adhere to WCAG 2.1 Level AA contrast ratios (4.5:1 for text). \\ \addlinespace
         \textbf{NFR2} & Cognitive & The system must provide ``Non-Destructive Restoration,'' allowing users to revert all UI changes instantly to prevent anxiety over lost settings. \\ \addlinespace
         \textbf{NFR3} & Latency & AI-generated task steps must begin streaming to the UI within 2 seconds of the request to prevent ``task-switching'' distractions. \\
+        \textbf{NFR4} (Privacy/Security): The system shall utilize resident LLM models via the VS Code Language Model API to ensure user data remains secure without requiring individual API keys. \\ \addlinespace
+        \textbf{NFR5} (Customizability): The UI must allow for granular adjustments of character spacing (e.g., 0.5em increments) to accommodate individual variances in dyslexic reading preferences. \\ \addlinespace
+        \textbf{NFR6} (Sensory Regulation): All theme changes (High Contrast Dark/Light) must be applied instantaneously across the entire workbench to provide immediate visual confirmation and reduce ``verification anxiety``. \\ \addlinespace
+        \textbf{NFR7} (Minimal Interaction Depth): Core accessibility features (Minimalist Toggle, Theme Switching) must be reachable within a maximum of two clicks from the main dashboard to minimize interaction cost. \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -49,7 +57,7 @@ The generated steps are rendered as editable fields within the dashboard, allowi
 maintain agency over their project architecture while the AI handles the initial decomposition.
 \newline
 
-\textbf{Overcoming "Chatty" Latency and Verbosity}
+\textbf{Overcoming ``Chatty'' Latency and Verbosity}
 \newline
 During the testing of various prompt structures, a recurring challenge emerged, how much unnecessary text was included in the \gls{LLM}'s output.
  When asked to assist, the model frequently included excessive supportive dialogue. While intended to be user-friendly, this extra text hindered the system's ability to parse the output into discrete, editable UI components.
@@ -60,18 +68,18 @@ To solve this issue, the prompt was refined to enforce a strict structural outpu
 
 \textbf{Balancing Granularity and Utility}
 \newline
-Initial experiments with simple prompts—such as "How to code a login page"—resulted in a "Direct-to-Code" failure. The \gls{LLM} would bypass the architectural phase and provide a block of code immediately. 
+Initial experiments with simple prompts—such as ``How to code a login page'', resulted in a ``Direct-to-Code'' failure. The \gls{LLM} would bypass the architectural phase and provide a block of code immediately. 
 This was counterproductive for two reasons:
 
 \begin{itemize}
     \item It failed to provide a conceptual roadmap for the user.
-    \item It increased the technical "hallucination" risk by attempting to solve a high-level task in a single step rather than planning the logic first.
+    \item It increased the technical ``hallucination'' risk by attempting to solve a high-level task in a single step rather than planning the logic first.
 \end{itemize}
 
 \textbf{Increased Steps}
 \newline
 The original design specifications for the Task Architect called for 3 to 5 broad sub-tasks. However, user testing revealed that this flat structure remained overwhelming. A single step like ``Set up the backend'' was still too abstract for many users to execute confidently.
-To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps.''"
+To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps.''
 
 \subsubsection{Visual Styler} 
 The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}’s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
@@ -80,7 +88,7 @@ The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}
 \newline
 To ensure the platform is accessible to the widest possible audience, the Visual Styler utilizes a systematic mapping of presets based on the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
 \begin{itemize}
-    \item High Contrast Modes: The module provides dedicated "High Contrast Dark" and "High Contrast Light" themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
+    \item High Contrast Modes: The module provides dedicated ``High Contrast Dark'' and ``High Contrast Light'' themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
     \item Sensitivity Accommodations: By offering these specific color profiles, the \gls{IDE} addresses the needs of users with color vision deficiencies (CVD) and photophobia 
     (light sensitivity), allowing for a high-degree of legibility without triggering sensory fatigue.
 \end{itemize}
@@ -89,9 +97,9 @@ To ensure the platform is accessible to the widest possible audience, the Visual
 \newline
 The Visual Styler operates by interacting directly with the workspace.getConfiguration API. This allows the module to move beyond surface-level CSS changes and manipulate the core structural rendering of the workspace:
 
-Dynamic Scaling: Users can adjust font sizes and line heights across the entire interface. Increasing the line height (e.g., to 1.5 or 2.0) is a critical intervention for developers with dyslexia, as it reduces the "crowding" effect of text and improves character recognition.
+Dynamic Scaling: Users can adjust font sizes and line heights across the entire interface. Increasing the line height (e.g., to 1.5 or 2.0) is a critical intervention for developers with dyslexia, as it reduces the ``crowding'' effect of text and improves character recognition.
 
-Granular Customization: Unlike traditional static themes, the Styler follows a "Visual Comfort" framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
+Granular Customization: Unlike traditional static themes, the Styler follows a ``Visual Comfort'' framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
 
 User Agency and Sensory Regulation
 By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the IDE adapts to the user’s biological needs rather than forcing the user to adapt to a rigid interface.
@@ -114,8 +122,8 @@ The core logic resides in the activate function, which serves as the central hub
 
 \begin{itemize}
     \item Command Registration: The system registers specific URI commands (e.g., accessible-toggle.showUI) that map user intents to internal JavaScript functions.
-    \item Configuration Management: A key architectural feature is the interaction with vscode.workspace.getConfiguration(). The extension reads and writes global settings to modify the editor's environment (font size, themes, and layout) in real-time, effectively acting as a wrapper for the VS Code "Settings" engine.
-    \item Context Preservation: To ensure the system is non-destructive, the architecture utilises \texttt{context.globalState}. This allows the extension to "remember" the user’s original theme and font settings before applying accessibility modifications, enabling a seamless restoration process. This also acts as a form of error prevention in case any settings are applied by accident.
+    \item Configuration Management: A key architectural feature is the interaction with vscode.workspace.getConfiguration(). The extension reads and writes global settings to modify the editor's environment (font size, themes, and layout) in real-time, effectively acting as a wrapper for the VS Code ``Settings'' engine.
+    \item Context Preservation: To ensure the system is non-destructive, the architecture utilises \texttt{context.globalState}. This allows the extension to ``remember'' the user’s original theme and font settings before applying accessibility modifications, enabling a seamless restoration process. This also acts as a form of error prevention in case any settings are applied by accident.
 \end{itemize}
 
 
@@ -160,7 +168,7 @@ The development of the plugin utilizes a modern web-based stack compatible with 
 
 \subsection{UI Simplification and Minimalist Toggle}
 The implementation of the Minimalist Mode focuses on reducing visual noise, which research identifies as a primary driver of cognitive overload and sensory overwhelm for autistic and ADHD developers.
- This module acts as a "digital ramp," filtering environmental noise to prevent the exhaustion of a developer's limited "cognitive budget".
+ This module acts as a ``digital ramp'', filtering environmental noise to prevent the exhaustion of a developer's limited ``cognitive budget''.
  
  The technical execution follows an imperative command pattern to provide a seamless, one-click transition:
 \begin{itemize}
@@ -175,7 +183,7 @@ The implementation of the Minimalist Mode focuses on reducing visual noise, whic
  \subsection{AI Integration}
 The AI-driven features are implemented using a Streaming Data Pattern.
 \begin{itemize}
-\item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a "Micro-step" structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents "Wall of Text" responses that can be overwhelming.
+\item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
 \item \textbf{Code Explainer:} This module polls the \texttt{vscode.languages.getDiagnostics} API. It filters for \texttt{DiagnosticSeverity.Error}, extracts the error message and line number, and passes this context to the \texttt{gpt-4o} model to generate a simplified, non-technical explanation.
 \end{itemize}
 
@@ -187,7 +195,7 @@ The AI-driven features are implemented using a Streaming Data Pattern.
     \label{fig:AIflow}
 \end{figure}
 
-The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., "Implement a search bar"), the system instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
+The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., ``Implement a search bar''), the system instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
  
 \begin{figure}[H]
     \centering
@@ -244,7 +252,7 @@ necessary customization to accommodate different cognitive needs.
 
 As shown in Figure \ref{fig:dyslexiasetcode}, the presets implement a hierarchical increase in visual breathing room:
 \begin{itemize}
-    \item Standard: Acts as a "soft reset" to default editor settings ($lineHeight: 0$, $letterSpacing: 0$) using the system's standard font family.
+    \item Standard: Acts as a ``soft reset'' to default editor settings ($lineHeight: 0$, $letterSpacing: 0$) using the system's standard font family.
     \item Relaxed: Increases the $lineHeight$ to $30$ and $letterSpacing$ to $0.8$, introducing specialized fonts such as Lexend and OpenDyslexic.
     \item Spacious: Offers the maximum level of separation with a $lineHeight$ of $40$ and $letterSpacing$ of $1.5$. This preset prioritizes OpenDyslexic as the primary font to further enhance character distinction.
 \end{itemize}
@@ -257,7 +265,7 @@ environment that accommodates diverse cognitive needs with minimal interaction c
 
 \subsubsection{Initial Plan: One Option}
 Initially, the plugin was programmed with fixed values for line height and letter spacing. 
-However, user testing revealed that a "one-size-fits-all" approach was insufficient, as 
+However, user testing revealed that a ``one-size-fits-all'' approach was insufficient, as 
 individual cognitive needs regarding text density vary significantly.
 
 The figures below demonstrate the visual impact of these adjustments. 
@@ -294,10 +302,10 @@ Accessible Dashboard, the plugin minimizes the ``executive tax'' required to cur
 a readable workspace.
 
 \begin{itemize}
-    \item One-Click Presets: Instead of navigating nested VS Code menus, users select the "Dyslexia-friendly Mode" or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
-    \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the "verification anxiety" common when neurodivergent users must exit menus to see if changes were applied.
-    \item Typography Hierarchy: The final implementation ensures that selecting a preset like "Spacious" simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
-    \item Non-Destructive Restoration: A critical component of the final UI is the "Restore Theme" and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom IDE configurations.
+    \item One-Click Presets: Instead of navigating nested VS Code menus, users select the ``Dyslexia-friendly Mode'' or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
+    \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the ``verification anxiety'' common when neurodivergent users must exit menus to see if changes were applied.
+    \item Typography Hierarchy: The final implementation ensures that selecting a preset like ``Spacious'' simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
+    \item Non-Destructive Restoration: A critical component of the final UI is the ``Restore Theme'' and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom IDE configurations.
 \end{itemize}
 
 \subsection{Pomodoro Timer}
@@ -373,7 +381,7 @@ were resolved, and that it had the potential to reduce cognitive load and improv
 This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for neurodivergent research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
 
 \begin{enumerate}
-    \item \textbf{Control Condition:} Tasks are performed using a standard ("Vanilla") \gls{IDE} installation.
+    \item \textbf{Control Condition:} Tasks are performed using a standard (``Vanilla'') \gls{IDE} installation.
     \item \textbf{Experimental Condition:} Tasks are performed using the \gls{IDE} equipped with the Accessible Plugin features (Minimalist Toggle, Task Architect, and Visual Styler).
 \end{enumerate}
 
@@ -386,22 +394,22 @@ To evaluate the efficacy of the plugin in reducing \gls{EL} and supporting \gls{
 The \gls{NASATLX} is a multidimensional assessment tool used to quantify perceived workload. It is uniquely suited for this study as it allows for the isolation of specific cognitive pressures. While all six subscales will be measured to ensure a comprehensive view, the analysis will focus specifically on four key dimensions:
 
 \begin{itemize}
-    \item \textbf{Mental Demand:} To assess if the Task Architect successfully reduces the "Executive Function Tax" required for project initiation.
+    \item \textbf{Mental Demand:} To assess if the Task Architect successfully reduces the ``Executive Function Tax'' required for project initiation.
     \item \textbf{Performance:} To measure the user's self-perception of success in the face of syntax errors or logic bugs.
     \item \textbf{Effort:} To quantify the total mental resources required to reach the goal.
-    \item \textbf{Frustration:} Critical for neurodivergent populations, this measures the emotional cost of "task-switching" and sensory overwhelm.
+    \item \textbf{Frustration:} Critical for neurodivergent populations, this measures the emotional cost of ``task-switching'' and sensory overwhelm.
 \end{itemize}
 
-Ratings will be collected on a 20-point scale. By comparing \gls{NASATLX} scores across conditions, the study aims to demonstrate a statistically significant reduction in the "Mental Demand" and "Frustration" subscales when using the plugin.
+Ratings will be collected on a 20-point scale. By comparing \gls{NASATLX} scores across conditions, the study aims to demonstrate a statistically significant reduction in the ``Mental Demand'' and ``Frustration'' subscales when using the plugin.
 
 \subsubsection{System Usability Scale (\gls{SUS})}
 To assess the reliability and integration of the tool, the \gls{SUS} will be administered following the Experimental Condition. The \gls{SUS} is a 10-item questionnaire using a 5-point Likert scale, providing a global view of system usability. 
 
 In the context of this study, the \gls{SUS} serves two primary purposes:
 \begin{enumerate}
-    \item \textbf{Integration Assessment:} Identifying if the "Minimalist Toggle" feels like a seamless part of the workflow or an added complexity.
-    \item \textbf{Confidence and Learnability:} Measuring the "Activation Energy" required to use the AI features. For a developer experiencing \gls{task_paralysis}, a tool that is perceived as "cumbersome" (Item 8) or "complex" (Item 2) would be counter-productive.
+    \item \textbf{Integration Assessment:} Identifying if the ``Minimalist Toggle'' feels like a seamless part of the workflow or an added complexity.
+    \item \textbf{Confidence and Learnability:} Measuring the ``Activation Energy'' required to use the AI features. For a developer experiencing \gls{task_paralysis}, a tool that is perceived as ``cumbersome'' (Item 8) or ``complex'' (Item 2) would be counter-productive.
 \end{enumerate}
 
 \subsection{Data Collection and Analysis}
-In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of "State Recovery" costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.
+In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of ``State Recovery'' costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.
