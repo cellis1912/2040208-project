@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  23 APR 2026 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  25 APR 2026 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1083,7 +1083,7 @@ Package biblatex Info: Reference segment=0 on input line 114.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logos/Newcastle.png, id=275, 3854.4pt x 2168.1pt>
+<logos/Newcastle.png, id=279, 3854.4pt x 2168.1pt>
 File: logos/Newcastle.png Graphic file (type png)
 <use logos/Newcastle.png>
 Package pdftex.def Info: logos/Newcastle.png  used on input line 15.
@@ -1211,14 +1211,14 @@ Package glossaries Warning: Glossary entry `Dyslexia' has not been defined on in
  (chapters/01-introduction.tex [1
 
 
-] [2] [3]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 119.
+] [2]
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 101.
  (C:\Users\Clo\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 119.
- [4{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}]) [5]
+(Font)              scaled to size 10.95pt on input line 101.
+ [3{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}]) [4]
 \openout2 = `chapters/lit-review.aux'.
 
  (chapters/lit-review.tex
@@ -1226,7 +1226,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-<logos/clt_diagram.png, id=574, 598.48593pt x 213.04594pt>
+<logos/clt_diagram.png, id=575, 598.48593pt x 213.04594pt>
 File: logos/clt_diagram.png Graphic file (type png)
 <use logos/clt_diagram.png>
 Package pdftex.def Info: logos/clt_diagram.png  used on input line 12.
@@ -1235,167 +1235,205 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 21.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.1pt on input line 21.
-[6
+[5
 
 
 
- <./logos/clt_diagram.png>] [7] [8] [9] [10] [11] [12]) [13]
+ <./logos/clt_diagram.png>] [6] [7] [8] [9] [10] [11]) [12] [13]
 \openout2 = `chapters/methadology.aux'.
 
  (chapters/methadology.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 10.
- [14
+
+Underfull \hbox (badness 1521) in paragraph at lines 77--77
+\T1/ntxtlf/m/n/10 mul-ta-ne-ously hide the Ac-tiv-ity
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 77--77
+[]|\T1/ntxtlf/m/n/10 Supports ex-ec-u-tive func-tion-ing
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 77--77
+\T1/ntxtlf/m/n/10 that si-mul-ta-ne-ously ad-just line
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 77--77
+[]|\T1/ntxtlf/m/n/10 Reduces vi-sual stress and im-
+ []
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 77--77
+\T1/ntxtlf/m/n/10 proves read-abil-ity for dyslexic
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 77--77
+\T1/ntxtlf/m/n/10 user-specific sen-sory reg-u-la-tion
+ []
+
+
+Underfull \hbox (badness 4686) in paragraph at lines 77--77
+[]|\T1/ntxtlf/m/n/10 Provides im-me-di-ate per-cep-tual
+ []
+
+[14
 
 
 
 ]
-<logos/Plug-in plan.png, id=678, 514.17094pt x 899.61093pt>
+Overfull \vbox (35.88074pt too high) has occurred while \output is active []
+
+ [15]
+<logos/Plug-in plan.png, id=686, 514.17094pt x 899.61093pt>
 File: logos/Plug-in plan.png Graphic file (type png)
 <use logos/Plug-in plan.png>
-Package pdftex.def Info: logos/Plug-in plan.png  used on input line 40.
+Package pdftex.def Info: logos/Plug-in plan.png  used on input line 86.
 (pdftex.def)             Requested size: 256.07741pt x 448.04732pt.
- [15 <./logos/Plug-in plan.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 54--59
+ [16 <./logos/Plug-in plan.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 100--105
 
  []
 
-[16]
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 112.
+[17]
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 158.
  (C:\Users\Clo\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 112.
- [17]
-Overfull \hbox (100.36093pt too wide) in paragraph at lines 125--126
+(Font)              scaled to size 10.95pt on input line 158.
+ [18]
+Overfull \hbox (100.36093pt too wide) in paragraph at lines 171--172
 []\T1/ntxtlf/m/n/10.95 Configuration Man-age-ment: A key ar-chi-tec-tural fea-ture is the in-ter-ac-tion with vs-code.workspace.getConfiguration().
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 143.
-[18] [19]
+(Font)              scaled to size 10.0pt on input line 189.
+[19] [20]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 186.
-<logos/aiflow.png, id=717, 162.6075pt x 453.695pt>
+(Font)              scaled to size 10.95pt on input line 232.
+<logos/aiflow.png, id=725, 162.6075pt x 453.695pt>
 File: logos/aiflow.png Graphic file (type png)
 <use logos/aiflow.png>
-Package pdftex.def Info: logos/aiflow.png  used on input line 193.
+Package pdftex.def Info: logos/aiflow.png  used on input line 239.
 (pdftex.def)             Requested size: 128.0387pt x 357.27286pt.
-<logos/aicode.png, id=719, 842.39719pt x 434.37282pt>
+<logos/aicode.png, id=727, 842.39719pt x 434.37282pt>
 File: logos/aicode.png Graphic file (type png)
 <use logos/aicode.png>
-Package pdftex.def Info: logos/aicode.png  used on input line 202.
+Package pdftex.def Info: logos/aicode.png  used on input line 248.
 (pdftex.def)             Requested size: 426.79135pt x 220.06905pt.
- [20 <./logos/aiflow.png>]
-<logos/taskoutput.png, id=729, 888.31876pt x 523.20468pt>
+ [21 <./logos/aiflow.png>]
+<logos/taskoutput.png, id=737, 888.31876pt x 523.20468pt>
 File: logos/taskoutput.png Graphic file (type png)
 <use logos/taskoutput.png>
-Package pdftex.def Info: logos/taskoutput.png  used on input line 220.
+Package pdftex.def Info: logos/taskoutput.png  used on input line 266.
 (pdftex.def)             Requested size: 298.75264pt x 175.95523pt.
- [21 <./logos/aicode.png>]
-<logos/taskarchitect.png, id=736, 309.40594pt x 639.89063pt>
+ [22 <./logos/aicode.png>]
+<logos/taskarchitect.png, id=744, 309.40594pt x 639.89063pt>
 File: logos/taskarchitect.png Graphic file (type png)
 <use logos/taskarchitect.png>
-Package pdftex.def Info: logos/taskarchitect.png  used on input line 231.
+Package pdftex.def Info: logos/taskarchitect.png  used on input line 277.
 (pdftex.def)             Requested size: 128.0387pt x 264.8076pt.
- [22 <./logos/taskoutput.png> <./logos/taskarchitect.png>]
-<logos/dislexSet.png, id=746, 962.84718pt x 127.97812pt>
+ [23 <./logos/taskoutput.png> <./logos/taskarchitect.png>]
+<logos/dislexSet.png, id=754, 962.84718pt x 127.97812pt>
 File: logos/dislexSet.png Graphic file (type png)
 <use logos/dislexSet.png>
-Package pdftex.def Info: logos/dislexSet.png  used on input line 248.
+Package pdftex.def Info: logos/dislexSet.png  used on input line 294.
 (pdftex.def)             Requested size: 426.79135pt x 56.72649pt.
 
-Overfull \hbox (3.0219pt too wide) in paragraph at lines 257--258
+Overfull \hbox (3.0219pt too wide) in paragraph at lines 303--304
 []\T1/ntxtlf/m/n/10.95 Spacious: Of-fers the max-i-mum level of sep-a-ra-tion with a $\OML/ntxmi/m/it/10.95 lineHeight$ \T1/ntxtlf/m/n/10.95 of $\OT1/minntx/m/n/10.95 40$ \T1/ntxtlf/m/n/10.95 and $\OML/ntxmi/m/it/10.95 letterSpacing$
  []
 
-<logos/van.png, id=750, 385.44pt x 271.0125pt>
+<logos/van.png, id=758, 385.44pt x 271.0125pt>
 File: logos/van.png Graphic file (type png)
 <use logos/van.png>
-Package pdftex.def Info: logos/van.png  used on input line 278.
+Package pdftex.def Info: logos/van.png  used on input line 324.
 (pdftex.def)             Requested size: 298.75264pt x 210.05731pt.
-[23 <./logos/dislexSet.png>]
-<logos/bas.png, id=759, 410.2828pt x 364.36125pt>
+[24 <./logos/dislexSet.png>]
+<logos/bas.png, id=768, 410.2828pt x 364.36125pt>
 File: logos/bas.png Graphic file (type png)
 <use logos/bas.png>
-Package pdftex.def Info: logos/bas.png  used on input line 285.
+Package pdftex.def Info: logos/bas.png  used on input line 331.
 (pdftex.def)             Requested size: 298.75264pt x 265.31433pt.
-<logos/dislecMenu.png, id=761, 410.2828pt x 242.40562pt>
+<logos/dislecMenu.png, id=770, 410.2828pt x 242.40562pt>
 File: logos/dislecMenu.png Graphic file (type png)
 <use logos/dislecMenu.png>
-Package pdftex.def Info: logos/dislecMenu.png  used on input line 294.
+Package pdftex.def Info: logos/dislecMenu.png  used on input line 340.
 (pdftex.def)             Requested size: 298.75264pt x 176.51076pt.
- [24 <./logos/van.png> <./logos/bas.png>] [25 <./logos/dislecMenu.png>]
-<logos/uiprefix1.png, id=776, 251.43938pt x 168.63pt>
+ [25 <./logos/van.png> <./logos/bas.png>] [26 <./logos/dislecMenu.png>]
+<logos/uiprefix1.png, id=784, 251.43938pt x 168.63pt>
 File: logos/uiprefix1.png Graphic file (type png)
 <use logos/uiprefix1.png>
-Package pdftex.def Info: logos/uiprefix1.png  used on input line 365.
+Package pdftex.def Info: logos/uiprefix1.png  used on input line 411.
 (pdftex.def)             Requested size: 256.07741pt x 171.74043pt.
- [26]
-<logos/uipostfix1.png, id=784, 499.11469pt x 421.575pt>
+ [27]
+<logos/uipostfix1.png, id=792, 499.11469pt x 421.575pt>
 File: logos/uipostfix1.png Graphic file (type png)
 <use logos/uipostfix1.png>
-Package pdftex.def Info: logos/uipostfix1.png  used on input line 372.
+Package pdftex.def Info: logos/uipostfix1.png  used on input line 418.
 (pdftex.def)             Requested size: 256.07741pt x 216.2998pt.
- [27 <./logos/uiprefix1.png> <./logos/uipostfix1.png>]
+ [28 <./logos/uiprefix1.png> <./logos/uipostfix1.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 393.
+(hyperref)                removing `\gls' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 405.
+(hyperref)                removing `\gls' on input line 451.
 
-) [28] [29]
+) [29] [30]
 \openout2 = `chapters/results.aux'.
 
- (chapters/results.tex [30
+ (chapters/results.tex [31
 
 
 
 ]
-<Charts/nasatlxGraph.pdf, id=827, 1445.4pt x 813.0375pt>
+<Charts/nasatlxGraph.pdf, id=835, 1445.4pt x 813.0375pt>
 File: Charts/nasatlxGraph.pdf Graphic file (type pdf)
 <use Charts/nasatlxGraph.pdf>
 Package pdftex.def Info: Charts/nasatlxGraph.pdf  used on input line 56.
 (pdftex.def)             Requested size: 426.79135pt x 240.06729pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 79.
-<Charts/radar-chart.png, id=828, 960.58875pt x 695.59875pt>
+<Charts/radar-chart.png, id=836, 960.58875pt x 695.59875pt>
 File: Charts/radar-chart.png Graphic file (type png)
 <use Charts/radar-chart.png>
 Package pdftex.def Info: Charts/radar-chart.png  used on input line 86.
 (pdftex.def)             Requested size: 426.79135pt x 309.05754pt.
- [31 <./Charts/nasatlxGraph.pdf>] [32 <./Charts/radar-chart.png>] [33] [34] [35]) [36]
+ [32 <./Charts/nasatlxGraph.pdf>] [33 <./Charts/radar-chart.png>] [34] [35] [36]) [37]
 \openout2 = `chapters/conclusion.aux'.
 
- (chapters/conclusion.tex) [37
+ (chapters/conclusion.tex) [38
 
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 153.
- [38
+ [39
 
 
-{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [39] (main.aux (chapters/abstract.aux) (chapters/declarationacknowlegement.aux) (chapters/01-introduction.aux) (chapters/lit-review.aux) (chapters/methadology.aux) (chapters/results.aux) (chapters/conclusion.aux))
+{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [40] (main.aux (chapters/abstract.aux) (chapters/declarationacknowlegement.aux) (chapters/01-introduction.aux) (chapters/lit-review.aux) (chapters/methadology.aux) (chapters/results.aux) (chapters/conclusion.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 692BDBEEFFC4B07A0D537737FB9761AA;13390.
+(rerunfilecheck)             Checksum: ACEC1C3E5EB2578D453AF1540AE67D7A;13608.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32412 strings out of 467871
- 603498 string characters out of 5419344
- 1492579 words of memory out of 5000000
- 60656 multiletter control sequences out of 15000+600000
+ 32415 strings out of 467871
+ 603535 string characters out of 5419344
+ 1492582 words of memory out of 5000000
+ 60657 multiletter control sequences out of 15000+600000
  693388 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,79p,2521b,2348s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1412,9 +1450,9 @@ pdfTeX warning (dest): name{page.V} has been referenced but does not exist, repl
 pdfTeX warning (dest): name{page.I} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (46 pages, 1037222 bytes).
+Output written on main.pdf (47 pages, 1038654 bytes).
 PDF statistics:
- 966 PDF objects out of 1000 (max. 8388607)
- 191 named destinations out of 1000 (max. 500000)
- 620 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 975 PDF objects out of 1000 (max. 8388607)
+ 193 named destinations out of 1000 (max. 500000)
+ 628 words of extra memory for PDF output out of 10000 (max. 10000000)
 
