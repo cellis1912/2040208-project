@@ -49,8 +49,10 @@ function activate(context) {
                             await toggleMinimalistMode();
                             break;
                         case 'startTimer':
-                            timerPanel = panel
-                            startTimer(panel, 25*60);
+                            timerPanel = panel;
+                            // Use the custom time from the message, or default to 25 mins
+                            const seconds = message.customSeconds || (25 * 60);
+                            startTimer(panel, seconds);
                             break;
                         case 'startBreak':
                             timerPanel = panel
@@ -58,9 +60,6 @@ function activate(context) {
                             break;
                         case 'pauseTimer':
                             pauseTimer();
-                            break;
-                        case 'resetTimer':
-                            resetTimer(panel);
                             break;
                         case 'breakdownTask':
                             await runTaskBreakdown(panel, message.userQuery);
@@ -401,15 +400,6 @@ function startTimer(panel, seconds) {
     }, 1000);
 }
 
-function resetTimer(panel) {
-    pauseTimer();
-    remainingSeconds = 25 * 60;
-    panel.webview.postMessage({
-        command: 'updateTime',
-        time: formatTime(remainingSeconds)
-    });
-}
-
 function pauseTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
@@ -688,9 +678,17 @@ function getWebviewContent() {
 
             <section class="section-card">
                 <h2>Focus Timer</h2>
-                <div id="timer">25:00</div>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; margin: 10px 0;">
+                    <input type="number" id="focusMinutes" value="25" min="1" max="120"
+                        style="font-size: 4rem; font-weight: 200; text-align: right; width: 110px; 
+                        background: transparent; border: none; color: var(--vscode-textLink-foreground); outline: none;">
+                    
+                    <span id="timerDisplay" style="font-size: 4rem; font-weight: 200; color: var(--vscode-textLink-foreground); opacity: 0.6;">:00</span>
+                </div>
+
                 <div class="timer-controls">
-                    <button id="start" style="flex:1">Focus (25 mins)</button>
+                    <button id="start" style="flex:1">Start Focus</button>
                     <button id="break" style="flex:1">Break (5 mins)</button>
                 </div>
                 <div class="timer-controls">
@@ -727,10 +725,19 @@ function getWebviewContent() {
             document.getElementById('SHCLight').onclick = () => vscode.postMessage({ command: 'shcLight' });
             document.getElementById('SHCDark').onclick = () => vscode.postMessage({ command: 'shcDark' });
             document.getElementById('restore').onclick = () => vscode.postMessage({ command: 'restoreTheme' });
-            document.getElementById('start').onclick = () => vscode.postMessage({ command: 'startTimer' });
-            document.getElementById('break').onclick = () => vscode.postMessage({ command: 'startBreak' });
+            document.getElementById('start').onclick = () => {
+                const mins = document.getElementById('focusMinutes').value;
+                vscode.postMessage({ 
+                    command: 'startTimer', 
+                    customSeconds: parseInt(mins) * 60 
+                });
+            };
+
+            document.getElementById('break').onclick = () => {
+                vscode.postMessage({ command: 'startBreak' });
+            };
+
             document.getElementById('pause').onclick = () => vscode.postMessage({ command: 'pauseTimer' });
-            document.getElementById('reset').onclick = () => vscode.postMessage({ command: 'resetTimer' });
             document.getElementById('toggleSwitch').onchange = () => vscode.postMessage({ command: 'toggle' });
             document.getElementById('dyslexiaToggle').onchange = (e) => vscode.postMessage({ command: e.target.checked ? 'dyslexiaOn' : 'dyslexiaOff' });
             
@@ -775,7 +782,17 @@ function getWebviewContent() {
             window.addEventListener('message', event => {
                 const msg = event.data;
                 if (msg.command === 'updateFontSize') document.getElementById('currentFontSize').textContent = msg.value + 'px';
-                if (msg.command === 'updateTime') document.getElementById('timer').textContent = msg.time;
+                if (msg.command === 'updateTime') {
+                    const [m, s] = msg.time.split(':');
+                    const minInput = document.getElementById('focusMinutes');
+                    const secDisplay = document.getElementById('timerDisplay');
+
+                    // Only update the input box if the user isn't currently typing in it
+                    if (document.activeElement !== minInput) {
+                        minInput.value = m;
+                    }
+                    secDisplay.textContent = ':' + s;
+                }
                 if (msg.command === 'errorResult') {
                     const errOut = document.getElementById('errorOutput');
                     errOut.style.display = 'block';
