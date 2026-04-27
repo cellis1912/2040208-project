@@ -226,7 +226,29 @@ The implementation of the Minimalist Mode focuses on reducing visual noise, whic
 
  By centralizing these actions into a single toggle, the plugin lowers Extraneous Cognitive Load (EL). This allows the developer to reallocate mental resources from navigating a complex, high-density interface toward Germane Load (GL), the actual logical problem-solving and programming tasks
 
- \subsection{AI Integration}
+\textbf{Final UI/Functionality Integration (FR1)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth, alt={}] {logos/preMinimal.png}
+    \caption{Pre-Minimalist UI, showing the default VS Code interface with all standard elements visible.}
+    \label{fig:PreMinimal}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth, alt={}] {logos/postMinimal.png}
+    \caption{Post-Minimalist UI, showing the simplified VS Code interface with reduced visual elements.}
+    \label{fig:PostMinimal}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, alt={}] {logos/MinimalNote.png}
+    \caption{Notification confirming the activation of Minimalist Mode, providing immediate feedback to the user.}
+    \label{fig:MinimalNote}
+\end{figure}
+
+\subsection{AI Integration (FR2 and FR3)}
 The AI-driven features are implemented using a Streaming Data Pattern.
 \begin{itemize}
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
@@ -234,7 +256,7 @@ The AI-driven features are implemented using a Streaming Data Pattern.
 \end{itemize}
 
 
- \begin{figure}[H]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth, alt={}] {logos/aiflow.png}
     \caption{AI Flow for the Task Architect Module.}
@@ -253,7 +275,7 @@ The figure above demonstrates the process of the Task Architect module. When a u
 Not only does the this prompt ask the \gls{LLM} to break down the task, but it also instructs it to format the output in a specific way.
 So that the response can be easilt broken down and cleaned for the output the prompt includes instructions to make sure the subtasks in bold and the micro-steps are preceded by ``[ ]''.
 
-While designing this prompt I ran into some issues with the \gls{LLM} adding accessive praise and suport to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
+While designing this prompt I ran into some issues with the \gls{LLM} adding accessive praise and support to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
 This also went against the principle of ``Direct Instruction'' as it added more text and made the output more overwhelming, which is what I was trying to avoid in the first place.
 To solve this I added instructions to the prompt to avoid this, and to only output the tasks in the specified format.
 
@@ -282,7 +304,10 @@ The user can also mark tasks as complete by clicking a checkbox, which will gray
 The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
 Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
 
-\subsection{Dyslexia Settings: Test spacing}
+In reference to task NFR3, the system is designed to ensure that the AI-generated tasks are streamed back to the UI within 2 seconds of the user submitting their goal.
+Currently the system is able to generate the tasks in approximately 3 seconds, allowing for delay when timing
+
+\subsection{Dyslexia Settings: Test spacing (FR5)}
 The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with dyslexia, as increasing letter spacing 
 and vertical padding can significantly reduce the ``crowding'' effect dense code, improving character recognition and overall readability. 
 
@@ -354,7 +379,7 @@ a readable workspace.
     \item Non-Destructive Restoration: A critical component of the final UI is the ``Restore Theme'' and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom IDE configurations.
 \end{itemize}
 
-\subsection{Pomodoro Timer}
+\subsection{Pomodoro Timer (FR4)}
 As mentioned in the literature review, the Pomodoro technique can be an effective tool for managing time and maintaining focus, especially for individuals with ADHD. 
 The plugin includes a customizable Pomodoro timer that allows users to set their own focus intervals and break durations. This flexibility is crucial, as a standard
  25-minute focus period may not be suitable for everyone.
@@ -362,7 +387,7 @@ The plugin includes a customizable Pomodoro timer that allows users to set their
 The timer is integrated into the dashboard, providing a visual countdown and notifications when it's time to take a break or return to work. By allowing users to tailor 
 the timing to their own rhythms, the plugin helps to reduce ``state recovery costs'' associated with interruptions and supports sustained focus.
 
-\subsection{Inital User Testing and Feedback}
+\subsection{Initial User Testing and Feedback}
 The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
 tested with a developer to get feedback on UI and functionality of the draft design. At this point the plugin
  was mostly fully functional, but I wanted to get feedback on the design and usability of the plugin.
@@ -381,8 +406,8 @@ From this, I had three main takeaways:
 
 
      To address this, I renamed the action button to ``Generate Steps'' to create a direct link between the action
-    and the result. I also inproved the placeholder with an example goal (e.g., ``Build a login page''). 
-    This provides more context for the tool without overcrouding it with a lenghty description.
+    and the result. I also improved the placeholder with an example goal (e.g., ``Build a login page''). 
+    This provides more context for the tool without overcrowding it with a lengthy description.
     \item AI Response Integrity:
     
     There was a technical bug what was truncating the AI response or omitting text contained within quotation marks.
@@ -396,10 +421,10 @@ From this, I had three main takeaways:
     
     To evaluate the plugin`s versatility and ease of use, the user was tasked with modifying the environment's appearance.
     The user was first asked to complete the tasks in vanilla VS Code, and then with the plugin enabled.
-    The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both vedrsions of
+    The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both versions of
     the \gls{IDE}. However in in all cases the user found the plugin's interface far quicker to navigate for these specific tasks,
     as it provided a more direct path to the settings without needing to search through the standard VS Code menus. For example, 
-    the user was able to change the theme in aprovimately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
+    the user was able to change the theme in approximately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
 
 \end{enumerate}
 

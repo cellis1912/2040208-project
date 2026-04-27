@@ -40,34 +40,34 @@
 \contentsline {subsubsection}{\numberline {3.3.3}Visual Styler}{17}{subsubsection.48}%
 \contentsline {subsection}{\numberline {3.4}System Architecture}{18}{subsection.49}%
 \contentsline {subsection}{\numberline {3.5}UI Simplification and Minimalist Toggle}{20}{subsection.51}%
-\contentsline {subsection}{\numberline {3.6}AI Integration}{20}{subsection.52}%
-\contentsline {subsection}{\numberline {3.7}Dyslexia Settings: Test spacing}{23}{subsection.57}%
-\contentsline {subsubsection}{\numberline {3.7.1}Initial Plan: One Option}{24}{subsubsection.59}%
-\contentsline {subsubsection}{\numberline {3.7.2}Final UI Integration}{25}{subsubsection.62}%
-\contentsline {subsection}{\numberline {3.8}Pomodoro Timer}{26}{subsection.64}%
-\contentsline {subsection}{\numberline {3.9}Inital User Testing and Feedback}{26}{subsection.65}%
-\contentsline {subsection}{\numberline {3.10}Evaluation and Methodology}{29}{subsection.72}%
-\contentsline {subsection}{\numberline {3.11}Experimental Design}{29}{subsection.73}%
-\contentsline {subsection}{\numberline {3.12}Quantitative and Qualitative Frameworks}{30}{subsection.76}%
-\contentsline {subsubsection}{\numberline {3.12.1}NASA Task Load Index (\gls {NASATLX})}{30}{subsubsection.77}%
-\contentsline {subsubsection}{\numberline {3.12.2}System Usability Scale (\gls {SUS})}{30}{subsubsection.78}%
-\contentsline {subsection}{\numberline {3.13}Data Collection and Analysis}{31}{subsection.81}%
-\contentsline {section}{\numberline {4}Results and Discussion}{32}{section.82}%
-\contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{32}{subsection.83}%
-\contentsline {subsection}{\numberline {4.2}Comparative Performance}{32}{subsection.86}%
-\contentsline {subsection}{\numberline {4.3}Efficiency and Time-on-Task Analysis}{34}{subsection.90}%
-\contentsline {subsection}{\numberline {4.4}SUS Metrics}{35}{subsection.92}%
-\contentsline {subsubsection}{\numberline {4.4.1}Item 2 \& 6: Complexity and Consistency}{35}{subsubsection.93}%
-\contentsline {subsubsection}{\numberline {4.4.2}Item 4 \& 10: Independence and Learning Curve}{35}{subsubsection.94}%
-\contentsline {subsubsection}{\numberline {4.4.3}Item 9: Confidence}{35}{subsubsection.95}%
-\contentsline {subsection}{\numberline {4.5}Pre-Study Interview Findings}{35}{subsection.96}%
-\contentsline {subsection}{\numberline {4.6}Real-Time Feedback and User Experience}{36}{subsection.97}%
-\contentsline {subsection}{\numberline {4.7}Number of Clicks and User Flow}{37}{subsection.98}%
-\contentsline {subsection}{\numberline {4.8}Discussion}{37}{subsection.99}%
-\contentsline {subsection}{\numberline {4.9}Limitations}{38}{subsection.100}%
-\contentsline {section}{\numberline {5}Conclusion}{39}{section.101}%
-\contentsline {subsection}{\numberline {5.1}Project Aim}{39}{subsection.102}%
-\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{39}{subsection.103}%
-\contentsline {subsection}{\numberline {5.3}What has been learned}{39}{subsection.104}%
-\contentsline {subsection}{\numberline {5.4}Future Work}{40}{subsection.105}%
-\contentsline {section}{References}{41}{section*.106}%
+\contentsline {subsection}{\numberline {3.6}AI Integration (FR2 and FR3)}{21}{subsection.55}%
+\contentsline {subsection}{\numberline {3.7}Dyslexia Settings: Test spacing (FR5)}{24}{subsection.60}%
+\contentsline {subsubsection}{\numberline {3.7.1}Initial Plan: One Option}{25}{subsubsection.62}%
+\contentsline {subsubsection}{\numberline {3.7.2}Final UI Integration}{26}{subsubsection.65}%
+\contentsline {subsection}{\numberline {3.8}Pomodoro Timer (FR4)}{27}{subsection.67}%
+\contentsline {subsection}{\numberline {3.9}Initial User Testing and Feedback}{27}{subsection.68}%
+\contentsline {subsection}{\numberline {3.10}Evaluation and Methodology}{30}{subsection.75}%
+\contentsline {subsection}{\numberline {3.11}Experimental Design}{30}{subsection.76}%
+\contentsline {subsection}{\numberline {3.12}Quantitative and Qualitative Frameworks}{31}{subsection.79}%
+\contentsline {subsubsection}{\numberline {3.12.1}NASA Task Load Index (\gls {NASATLX})}{31}{subsubsection.80}%
+\contentsline {subsubsection}{\numberline {3.12.2}System Usability Scale (\gls {SUS})}{31}{subsubsection.81}%
+\contentsline {subsection}{\numberline {3.13}Data Collection and Analysis}{32}{subsection.84}%
+\contentsline {section}{\numberline {4}Results and Discussion}{33}{section.85}%
+\contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{33}{subsection.86}%
+\contentsline {subsection}{\numberline {4.2}Comparative Performance}{33}{subsection.89}%
+\contentsline {subsection}{\numberline {4.3}Efficiency and Time-on-Task Analysis}{35}{subsection.93}%
+\contentsline {subsection}{\numberline {4.4}SUS Metrics}{36}{subsection.95}%
+\contentsline {subsubsection}{\numberline {4.4.1}Item 2 \& 6: Complexity and Consistency}{36}{subsubsection.96}%
+\contentsline {subsubsection}{\numberline {4.4.2}Item 4 \& 10: Independence and Learning Curve}{36}{subsubsection.97}%
+\contentsline {subsubsection}{\numberline {4.4.3}Item 9: Confidence}{36}{subsubsection.98}%
+\contentsline {subsection}{\numberline {4.5}Pre-Study Interview Findings}{36}{subsection.99}%
+\contentsline {subsection}{\numberline {4.6}Real-Time Feedback and User Experience}{37}{subsection.100}%
+\contentsline {subsection}{\numberline {4.7}Number of Clicks and User Flow}{38}{subsection.101}%
+\contentsline {subsection}{\numberline {4.8}Discussion}{38}{subsection.102}%
+\contentsline {subsection}{\numberline {4.9}Limitations}{39}{subsection.103}%
+\contentsline {section}{\numberline {5}Conclusion}{40}{section.104}%
+\contentsline {subsection}{\numberline {5.1}Project Aim}{40}{subsection.105}%
+\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{40}{subsection.106}%
+\contentsline {subsection}{\numberline {5.3}What has been learned}{40}{subsection.107}%
+\contentsline {subsection}{\numberline {5.4}Future Work}{41}{subsection.108}%
+\contentsline {section}{References}{42}{section*.109}%

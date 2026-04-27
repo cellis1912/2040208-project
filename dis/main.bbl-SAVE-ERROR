@@ -705,6 +705,19 @@
       \field{pages}{257\bibrangedash 285}
       \range{pages}{29}
     \endentry
+    \entry{TypeScri5:online}{misc}{}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 2026-04-26]}
+      \field{title}{TypeScript vs JavaScript: Which to Choose For Your Project}
+      \verb{urlraw}
+      \verb https://roadmap.sh/javascript/vs-typescript#differences-between-typescript-and-javascript
+      \endverb
+      \verb{url}
+      \verb https://roadmap.sh/javascript/vs-typescript#differences-between-typescript-and-javascript
+      \endverb
+    \endentry
     \entry{verma2025differences}{misc}{}{}
       \name{author}{3}{}{%
         {{hash=32fbd1f477bce2d7f25c0ef30629f9eb}{%
