@@ -1,21 +1,9 @@
 \section{Results and Discussion}
 
 \subsection{NASA-TLX Subjective Workload}
-To evaluate the cognitive and physical demands of both interfaces, a NASA Task Load Index (NASA-TLX) was administered to all participants ($N=5$).
- I calculated both the Raw TLX ($r$-score) and the Weighted TLX ($w$-score) to account for individual differences in workload perception. 
- The weighting factors were determined by the most important criteria, with Mental Demand (5) and Frustration (4) identified as the primary contributors to workload 
- in this task environment. Factors such as Temporal Demand and Physical Demand were weighted lower, reflecting their lesser impact on the overall workload in this context.
-
-\begin{table}[h]
-\centering
-\caption{NASA-TLX Weighting Factors}
-\begin{tabular}{@{}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}@{}} % Fixed width for even spacing
-\toprule
-\textbf{MD} & \textbf{PD} & \textbf{TD} & \textbf{PF} & \textbf{EF} & \textbf{FR} \\ \midrule
-5           & 1           & 0           & 3           & 2           & 4           \\ \bottomrule
-\end{tabular}
-\end{table}
-
+As shown in Table 6, participants reported consistently lower weighted NASA-TLX scores when using the dashboard interface compared to the vanilla IDE.
+These reductions were most pronounced in Mental Demand, Effort, and Frustration, suggesting that the dashboard primarily reduces interface-driven 
+extraneous cognitive load.
 \begin{table}[H]
 \centering
 \caption{NASA-TLX Results for Vanilla vs Dashboard Interfaces}
@@ -40,7 +28,8 @@ Participant & Interface & MD & PD & TD & PF & EF & FR & r-score & w-score \\
 \label{tab:nasa_tlx_results}
 \end{table}
 
-\subsection{Comparative Performance}
+
+\subsection{Workload Comparison and Interpretation}
 The results indicate a substantial reduction in perceived workload when using the Dashboard interface compared to the Vanilla interface.
 
 \begin{itemize}
@@ -119,8 +108,9 @@ While these timings indicate a clear trend, they should be interpreted with caut
 
 
 \subsection{SUS Metrics}
-The System Usability Scale (SUS) was administered to assess the overall usability of both interfaces. The Dashboard interface received an average SUS score of 92.0,
-indicating excellent usability.
+The mean SUS score of 92 places the dashboard within the “excellent” usability range, indicating that the interface imposes minimal learnability 
+burden and supports rapid user confidence. This is particularly significant within the project context, where reducing onboarding friction and 
+preserving attentional continuity were central design goals.
 
 \subsubsection{Item 2 \& 6: Complexity and Consistency} 
 Most common score: 1 (Strongly Disagree that it's complex) and 1 (Strongly Disagree that it's inconsistent). \newline
@@ -210,9 +200,9 @@ panels, the Dashboard reduced this to a single toggle. This reduction in interac
 NFR3 was evaluated by measuring the time for the Dashboard to display the AI-generated task breakdown after the user initiated the request. 
 Across all participants, the average latency was 1.8 seconds, with a standard deviation of 0.3 seconds. This meets the requirement that
 
-AI-generated task steps must begin
-streaming within 2 seconds of re-
-quest initiation.
+Maintaining response latency below two seconds is particularly important for neurodivergent users, as prolonged waiting periods can disrupt 
+attentional continuity and increase the likelihood of task abandonment.
+
 
 
 \subsection{Discussion}

@@ -89,12 +89,11 @@ The development of the plugin utilizes a modern web-based stack compatible with 
 \end{itemize}
 
  Before I started the implementation, I had a rough idea of the technology stack that I would use. In terms of plugin development, the two main languages that are used
- are JavaScript and TypeScript. These are two languages that I have no previous experience with, but I knew that I would use JavaScript for both the backend of the 
- extension.  Although Typescript is more useful if the project was larger, I felt that JavaScript would be sufficient for the scope of this project and would 
- allow me to get up and running faster, especially due to the fast turn around time of the project. JavaScript is also interpreted by Node.js, which is the runtime environment for VS Code extensions, so it was a natural 
- choice for the development of this plugin.~\cite{TypeScri5:online}
+ are JavaScript and TypeScript. Although Typescript is more useful if the project was larger, I felt that JavaScript would be sufficient for the scope of this project and would 
+ allow me to get up and running faster, especially due to the fast turn around time of the project. JavaScript was also chosen for its native compatibility with the VS Code 
+ extension host and its ability to handle asynchronous message passing between the UI and backend.~\cite{TypeScri5:online}
  
-For the AI features, I decided to use the OpenAI API through the VS Code Language Model API, which allows me to leverage powerful language models without 
+For the AI features, I decided to use the gpt-4o model through the VS Code Language Model API, which allows me to leverage powerful language models without 
 requiring users to manage their own API keys. Finally, I chose HTML and CSS for the Webview UI to allow for maximum flexibility in designing the dashboard 
 and implementing custom themes. 
 
@@ -249,12 +248,16 @@ The implementation of the Minimalist Mode focuses on reducing visual noise, whic
 \end{figure}
 
 \subsection{AI Integration (FR2 and FR3)}
-The AI-driven features are implemented using a Streaming Data Pattern.
-\begin{itemize}
-\item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
-\item \textbf{Code Explainer:} This module polls the \texttt{vscode.languages.getDiagnostics} API. It filters for \texttt{DiagnosticSeverity.Error}, extracts the error message and line number, and passes this context to the \texttt{gpt-4o} model to generate a simplified, non-technical explanation.
-\end{itemize}
+The AI-driven features are implemented using a Streaming Data Pattern to satisfy NFR3 (Latency), ensuring the interface remains responsive during complex generation.
 
+\subsubsection{Task Architect: Overcoming Task Paralysis}
+\begin{itemize}
+\item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute 
+micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
+\item \textbf{Iterative Prompt Refinement:} During development, I identified a significant limitation where the LLM included excessive supportive dialogue 
+(e.g., "Sure! I can help with that"). While polite, this violated the principle of Direct Instruction and hindered the system's ability to parse the text into 
+editable UI components. I refined the prompt to mandate a strict data-only format, ensuring the system only outputs actionable tasks.
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -263,7 +266,8 @@ The AI-driven features are implemented using a Streaming Data Pattern.
     \label{fig:AIflow}
 \end{figure}
 
-The figure above demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., ``Implement a search bar''), the system instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
+The Figure~\ref{fig:AIflow} demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., ``Implement a search bar''), the system 
+instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tasks from each of the sub-tasks.
  
 \begin{figure}[H]
     \centering
@@ -273,15 +277,12 @@ The figure above demonstrates the process of the Task Architect module. When a u
 \end{figure}
 
 Not only does the this prompt ask the \gls{LLM} to break down the task, but it also instructs it to format the output in a specific way.
-So that the response can be easilt broken down and cleaned for the output the prompt includes instructions to make sure the subtasks in bold and the micro-steps are preceded by ``[ ]''.
+So that the response can be easily broken down and cleaned for the output the prompt includes instructions to make sure the subtasks in bold and the micro-steps are preceded by ``[ ]''.
 
-While designing this prompt I ran into some issues with the \gls{LLM} adding accessive praise and support to the output, which while nice, was not what I wanted and made the output more dificult to split into individual tasks.
-This also went against the principle of ``Direct Instruction'' as it added more text and made the output more overwhelming, which is what I was trying to avoid in the first place.
-To solve this I added instructions to the prompt to avoid this, and to only output the tasks in the specified format.
-
-Below shows an example of the output generated by the Task Architect module, showing the micro-steps for a given task. 
-The output is clean and structured, making it easy for the user to follow and understand the steps needed to complete their goal.
-These tasks are then rendered in the dashboard as editable fields.
+\subsubsection{Human-in-the-Loop (HITL) Implementation}
+As shown in Figures~\ref{fig:taskoutput} and~\ref{fig:taskarchitect}, the generated tasks are rendered in the dashboard as editable fields. This is a critical design choice to preserve User Agency. 
+Neurodivergent developers often have unique workflows so by allowing the user to edit or delete AI-generated steps, the tool moves from being a prescriptive authority 
+to a flexible partner. The graying-out of completed tasks provides immediate visual feedback, supporting working memory by externalizing task progress.
 
 \begin{figure}[H]
     \centering
@@ -290,19 +291,12 @@ These tasks are then rendered in the dashboard as editable fields.
     \label{fig:taskoutput}
 \end{figure}
 
-Once the tasks are rendered in the dashboard, the user can review them and make any necessary edits.
-The user can also mark tasks as complete by clicking a checkbox, which will gray out the task to indicate that it has been completed.
- This provides a clear roadmap for task initiation without overwhelming the user with too much information at once.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth, alt={}] {logos/taskarchitect.png}
     \caption{Task Architect Module in the Dashboard, showing the generated tasks.}
-    \label{fig:task architect}
+    \label{fig:taskarchitect}
 \end{figure}
-
-The user is then able to review the steps, there are able to edit or delete any of the steps, this is crucial for neurodivergent developers who may have unique workflows or preferences.
-Finally, they can click the checkbox to mark the task as complete, graying out the task. By using this process, the AI provides a clear roadmap for task initiation, not providing the code directly.
 
 \subsection{Dyslexia Settings: Test spacing (FR5)}
 The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with dyslexia, as increasing letter spacing 
@@ -384,6 +378,13 @@ The plugin includes a customizable Pomodoro timer that allows users to set their
 The timer is integrated into the dashboard, providing a visual countdown and notifications when it's time to take a break or return to work. By allowing users to tailor 
 the timing to their own rhythms, the plugin helps to reduce ``state recovery costs'' associated with interruptions and supports sustained focus.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth, alt={}] {logos/timerFinal.png}
+    \caption{Final design of the Pomodoro timer. The timer is directly editable, allowing users to set their own focus and break durations.}
+    \label{fig:TimerFinal}
+\end{figure}
+
 \subsection{Initial User Testing and Feedback}
 The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
 tested with a developer to get feedback on UI and functionality of the draft design. At this point the plugin
@@ -442,17 +443,10 @@ were resolved, and that it had the potential to reduce cognitive load and improv
     \label{fig:uipostfix}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\linewidth, alt={}] {logos/Final.png}
-    \caption{Final UI design of the Accessible IDE Plugin, showing the Accessible Dashboard with the Minimalist Toggle, Task Architect, and Visual Styler modules.}
-    \label{fig:finalDesign}
-\end{figure}
-
 
 \subsection{Evaluation and Methodology}
 
-\subsection{Experimental Design}
+\subsubsection{Experimental Design}
 This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for neurodivergent research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
 
 \begin{enumerate}
@@ -462,10 +456,12 @@ This study employs a \textbf{within-subjects comparative design}, where each par
 
 To mitigate the \textbf{carry-over effect} (where learning from the first task makes the second easier), the order of conditions will be counterbalanced, and task sets of equivalent \gls{IL} will be used across both conditions.
 
-\subsection{Quantitative and Qualitative Frameworks}
+\subsubsection{Quantitative and Qualitative Frameworks}
 To evaluate the efficacy of the plugin in reducing \gls{EL} and supporting \gls{executive_dysfunction}, two validated instruments will be administered.
 
-\subsubsection{NASA Task Load Index (\gls{NASATLX})}
+\textbf{NASA Task Load Index (\gls{NASATLX})}
+
+
 The \gls{NASATLX} is a multidimensional assessment tool used to quantify perceived workload. It is uniquely suited for this study as it allows for the isolation of specific cognitive pressures. While all six subscales will be measured to ensure a comprehensive view, the analysis will focus specifically on four key dimensions:
 
 \begin{itemize}
@@ -475,9 +471,23 @@ The \gls{NASATLX} is a multidimensional assessment tool used to quantify perceiv
     \item \textbf{Frustration:} Critical for neurodivergent populations, this measures the emotional cost of ``task-switching'' and sensory overwhelm.
 \end{itemize}
 
-Ratings will be collected on a 20-point scale. By comparing \gls{NASATLX} scores across conditions, the study aims to demonstrate a statistically significant reduction in the ``Mental Demand'' and ``Frustration'' subscales when using the plugin.
+To evaluate the cognitive and physical demands of both interfaces, a NASA Task Load Index (NASA-TLX) was administered to all participants ($N=5$).
+I calculated both the Raw TLX ($r$-score) and the Weighted TLX ($w$-score) to account for individual differences in workload perception. 
+The weighting factors were determined by the most important criteria, with Mental Demand (5) and Frustration (4) identified as the primary contributors to workload 
+ in this task environment. Factors such as Temporal Demand and Physical Demand were weighted lower, reflecting their lesser impact on the overall workload in this context.
 
-\subsubsection{System Usability Scale (\gls{SUS})}
+\begin{table}[h]
+\centering
+\caption{NASA-TLX Weighting Factors}
+\begin{tabular}{@{}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}@{}} % Fixed width for even spacing
+\toprule
+\textbf{MD} & \textbf{PD} & \textbf{TD} & \textbf{PF} & \textbf{EF} & \textbf{FR} \\ \midrule
+5           & 1           & 0           & 3           & 2           & 4           \\ \bottomrule
+\end{tabular}
+\end{table}
+\textbf{System Usability Scale (\gls{SUS})}
+
+
 To assess the reliability and integration of the tool, the \gls{SUS} will be administered following the Experimental Condition. The \gls{SUS} is a 10-item questionnaire using a 5-point Likert scale, providing a global view of system usability. 
 
 In the context of this study, the \gls{SUS} serves two primary purposes:
@@ -486,5 +496,5 @@ In the context of this study, the \gls{SUS} serves two primary purposes:
     \item \textbf{Confidence and Learnability:} Measuring the ``Activation Energy'' required to use the AI features. For a developer experiencing \gls{task_paralysis}, a tool that is perceived as ``cumbersome'' (Item 8) or ``complex'' (Item 2) would be counter-productive.
 \end{enumerate}
 
-\subsection{Data Collection and Analysis}
+\subsubsection{Data Collection and Analysis}
 In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of ``State Recovery'' costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.

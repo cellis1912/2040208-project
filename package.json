@@ -6,6 +6,7 @@
     "vscode": "^1.109.0"
   },
   "activationEvents": [
+    "*",
     "onCommand:accessible-toggle.showUI"
   ],
   "main": "./src/extension.js",
@@ -19,7 +20,9 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "test": "node ./src/test/runTest.js"
+    "compile": "echo 'No compilation needed'",
+    "test": "node ./src/test/runTest.js",
+    "ui-test": "npx vscode-extension-tester run-tests src/test/extension.test.js -f test-workspace"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -27,11 +30,14 @@
     "@types/vscode": "^1.109.0",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
+    "chai": "^4.5.0",
     "eslint": "^9.39.2",
     "glob": "^13.0.6",
     "mocha": "^11.7.5",
+    "selenium-webdriver": "^4.0.0",
     "sinon": "^21.1.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.54.0",
+    "vscode-extension-tester": "^8.23.0"
   }
 }
