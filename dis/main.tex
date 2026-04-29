@@ -11,69 +11,41 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{tabularx}
-% Language selection:
-\newcommand{\TemplateLanguage}{english}
 \usepackage[english]{babel}
-\AtBeginDocument{\selectlanguage{\TemplateLanguage}}
-
 
 % --------------------------------------------------------
-% Template variables (edit these in ONE place)
+% Template variables
 % --------------------------------------------------------
-% Title page logo
 \newcommand{\TitleSealFile}{logos/Newcastle.png}
 \newcommand{\TitleSealWidth}{0.5\textwidth}
-
-% Title page metadata
 \newcommand{\ThesisTitle}{Design and Evaluation of an Accessible IDE Plugin for Supporting Neurodivergent Software Developers}
 \newcommand{\ProgramName}{Computer Science}
-
-
-% People
 \newcommand{\SupervisorName}{Dr. Vlad Gonzalez}
 \newcommand{\AuthorName}{Clo Elis}
 \newcommand{\StudentNumber}{220402088}
-
-% Place and date
 \newcommand{\SubmissionMonth}{May}
 \newcommand{\SubmissionYear}{2026}
 
 % --------------------------------------------------------
-% Font: Times New Roman (with math support)
+% Fonts & Spacing
 % --------------------------------------------------------
 \usepackage{newtxtext,newtxmath}
-
-% --------------------------------------------------------
-% Page margins
-% --------------------------------------------------------
 \usepackage[top=2.5cm,bottom=2cm,inner=4cm,outer=2cm]{geometry}
-
-% --------------------------------------------------------
-% Line spacing
-% --------------------------------------------------------
 \usepackage{setspace}
 \onehalfspacing
 \usepackage{footmisc}
 \setlength{\footnotesep}{0.8\baselineskip}
 \renewcommand{\footnotelayout}{\setstretch{1.0}}
 
-% Keep tables single-spaced to avoid stretched rows
-\usepackage{etoolbox}
+% Packages
+\usepackage{amsmath, graphicx, url, xcolor, csquotes, etoolbox}
 \AtBeginEnvironment{table}{\singlespacing}
-
-% --------------------------------------------------------
-% Useful packages
-% --------------------------------------------------------
-\usepackage{booktabs, amsmath}
-\usepackage{graphicx}
-\usepackage{url}
 \urlstyle{rm}
 
 % --------------------------------------------------------
 % Hyperlinks
 % --------------------------------------------------------
 \usepackage[pdfpagelabels,plainpages=false,hypertexnames=false]{hyperref}
-\usepackage{xcolor}
 \definecolor{smdsblue}{RGB}{0,69,134}
 \hypersetup{
     colorlinks=true,
@@ -83,75 +55,60 @@
 }
 
 % --------------------------------------------------------
-% Bibliography (BibLaTeX)
+% Bibliography & Glossaries
 % --------------------------------------------------------
 \usepackage[backend=biber,maxcitenames=2,maxbibnames=99,natbib=true]{biblatex}
-\usepackage{csquotes}
 \addbibresource{references.bib}
 
-% --------------------------------------------------------
-% Formatting
-% --------------------------------------------------------
-\parindent0em
-\parskip6pt
-
-% --------------------------------------------------------
-% TOC, LOF, LOT spacing
-% --------------------------------------------------------
-\usepackage{tocloft}
-% Reduce spacing in table of contents
-\setlength{\cftbeforesubsubsecskip}{1pt}
-% Reduce spacing in list of tables
-\setlength{\cftbeforetabskip}{3pt}
-
+% Using 'abbreviations' type for better separation
 \usepackage[acronym, toc, nohypertypes={main,acronym}]{glossaries}
 \makeglossaries%
-\input{glossary_entries}
+\input{glossary_entries} % Ensure this file contains your entries
+% Formatting
+\parindent0em
+\parskip6pt
+\usepackage{tocloft}
+\setlength{\cftbeforesubsubsecskip}{1pt}
+\setlength{\cftbeforetabskip}{3pt}
 
 % --------------------------------------------------------
 % Main document
 % --------------------------------------------------------
 \begin{document}
-% Render the title page
+\glsaddall
+% 1. Title Page
 \input{titlepage.tex}
 
-% Front matter: Roman numbering
+% 2. Front Matter (Roman)
 \pagenumbering{Roman}
 
-% Abstract
-\clearpage
-\include{chapters/abstract}
-\phantomsection
-
-% Declaration and Acknowledgement
-\include{chapters/declarationacknowlegement}
+\section*{Abstract}
+\input{chapters/abstract}
+\addcontentsline{toc}{section}{Abstract}
 \clearpage
 
-% Table of Contents
+\input{chapters/declarationacknowlegement}
+\clearpage
+
 \tableofcontents
 \clearpage
 
-% 1. The Abbreviations List
-\cleardoublepage
-\phantomsection 
+% 3. Lists (Abbreviations & Glossary)
 \printglossary[type=\acronymtype, title={List of Abbreviations}]
+\clearpage
 
-% 2. The Glossary List
-\cleardoublepage
-\phantomsection
 \printglossary[title={Glossary}]
+\clearpage
 
-% Main body: Arabic numbering
+% 4. Main Body (Arabic)
 \pagenumbering{arabic}
-\glsaddall
+\input{chapters/01-introduction}
+\input{chapters/lit-review}
+\input{chapters/methadology}
+\input{chapters/results}
+\input{chapters/conclusion}
 
-\include{chapters/01-introduction}
-\include{chapters/lit-review}
-\include{chapters/methadology}
-\include{chapters/results}
-\include{chapters/conclusion}
-
-% Bibliography (automatically adds itself to TOC via heading=bibintoc)
-\printbibliography[heading=bibintoc, title={\iflanguage{ngerman}{Literaturverzeichnis}{References}}]
+% 5. References
+\printbibliography[heading=bibintoc, title={References}]
 
 \end{document}

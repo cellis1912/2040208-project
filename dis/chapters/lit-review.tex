@@ -1,24 +1,7 @@
 \section{Literature Review}
 \subsection{Cognitive Load Theory (CLT)}
 Cognitive Load Theory, primarily developed by John Sweller, suggests that since the human brain has limited working memory capacity, instructional design can aid in avoiding overload.
-\newline
-
-\subsubsection{Sweller’s Tripartite Framework of Load}
-
 \textcite{sweller1988cognitive} proposes a three-part load framework that identifies three different types of cognitive load that impact a learner's ability to process information:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth, alt={A diagram illustrating Sweller's Tripartite Model. It shows Total Cognitive Load as a header, supported by three equal categories: Intrinsic Load (task difficulty), Extraneous Load (presentation noise), and Germane Load (knowledge construction).}] {logos/clt_diagram.png}
-    \caption{Sweller's Tripartite Model of Cognitive Load, illustrating the balance between Intrinsic, Extraneous, and Germane loads.}
-    \label{fig:clt_diagram}
-\end{figure}
-
-The framework can be simplified down to the idea that the Total Cognitive Load (TCL) is the sum of Intrinsic Load, Extraneous Load, and Germane Load. 
-The goal of instructional design is to manage these loads effectively to maximise learning outcomes.
-$$TCL = IL + EL + GL$$
-where the goal of your plugin is to satisfy the condition:
-$$\downarrow EL + \text{scaffold } IL = \uparrow GL$$
 
 \begin{enumerate}
     \item \gls{IL}: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
@@ -30,6 +13,16 @@ $$\downarrow EL + \text{scaffold } IL = \uparrow GL$$
     which in this scenario would be the code programming task.
 \end{enumerate}
 
+The framework can be simplified down to the idea that the Total Cognitive Load (TCL) is the sum of Intrinsic Load, Extraneous Load, and Germane Load. 
+The goal of instructional design is to manage these loads effectively to maximise learning outcomes.
+$$TCL = IL + EL + GL$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth, alt={A diagram illustrating Sweller's Tripartite Model. It shows Total Cognitive Load as a header, supported by three equal categories: Intrinsic Load (task difficulty), Extraneous Load (presentation noise), and Germane Load (knowledge construction).}] {logos/clt_diagram.png}
+    \caption{Sweller's Tripartite Model of Cognitive Load, illustrating the balance between Intrinsic, Extraneous, and Germane loads.}\label{fig:clt_diagram}
+\end{figure}
+
 
 One of the main focuses of this project is that for neurodivergent developers, the \gls{IDE} environment often imposes a disproportionate Extraneous Load. 
 When \gls{EL} is high, the ``cognitive budget'' is exhausted before the developer can engage with the core logic of the code, leading to task paralysis. 
@@ -39,7 +32,7 @@ their cognitive resources on the actual problem-solving aspect of programming, r
 
 \subsection{Applying CLT to Neurodiversity}
 For neurodivergent developers, the Extraneous Load is not just due to bad design, but a barrier to entry. Features like the Activity Bar and Mini-map, while useful for some, can
-can be filter out by a neurotypical developer but act as ``visual noise'' for those with ADHD or ASD.
+can be filter out by a neurotypical developer but act as ``visual noise'' for those with \gls{ADHD} or \gls{ASD}.
 To be able to code a high IL is required. However, if the ``activation energy'' to start is too high due to executive dysfunction, the developer 
 never reaches the stage where they can handle that load.
 Having a single switch that closes all UI elements will directly targets the suppression of EL to ``free up'' mental bandwidth instantly without having to navigate menus.
@@ -135,7 +128,7 @@ To deepen the analysis of \gls{executive_dysfunction}, we must break it into thr
 \end{itemize}
 
 \subsubsection{The ``Double-Edged Sword'' of Hyperfocus}
-While neurodivergent developers, particularly those with ASD and \gls{ADHD}, are often stereotyped as having a ``superpower'' for deep work, 
+While neurodivergent developers, particularly those with \gls{ASD} and \gls{ADHD}, are often stereotyped as having a ``superpower'' for deep work, 
 this ability to hyperfocus is more accurately described as a dysregulation of attention. Unlike the psychological concept of ``Flow'' which is
  generally sustainable and self-directed, hyperfocus is an involuntary immersion into a task or activity. As noted by \cite{gama2025socio}, hyperfocus allows 
 for an exhaustive exploration of complex problems, yet this intensity often comes at the expense of self-care. Developers may neglect fundamental 
@@ -174,12 +167,12 @@ The Pomodoro Technique, developed by Francesco Cirillo in the late 1980s, is a t
 rule set, specifically designed to address common executive functioning barriers~\cite{miller2025wired}.
 
 \subsubsection{Managing Executive Dysfunction and Task Paralysis}
-For developers with ADHD or ASD, \gls{task_paralysis}, an inability to initiate work due to cognitive overload or anxiety represents a significant hurdle. 
+For developers with \gls{ADHD} or \gls{ASD}, \gls{task_paralysis}, an inability to initiate work due to cognitive overload or anxiety represents a significant hurdle. 
 The Pomodoro Technique mitigates this by lowering the ``activation energy'' required to start. By committing to a manageable, 25-minute sprint, the psychological 
 barrier to entry is reduced, helping individuals bypass the freeze response associated with daunting or abstract tasks.
 
 \subsubsection{Combatting Time Blindness and Hyperfocus Burnout}
-Neurodivergent individuals often experience ``time blindness,'' a difficulty in perceiving the passage of time as a concrete resource. Externalising time through a visual 
+Neurodivergent individuals often experience ``time blindness'', a difficulty in perceiving the passage of time as a concrete resource. Externalising time through a visual 
 or auditory timer provides real-time feedback, helping to anchor the developer to the present task and reducing the risk of underestimating project timelines.
 
 Furthermore, while hyperfocus is frequently cited as a ``superpower'' for developers, it can lead to severe mental and physical exhaustion if left unregulated. The structured 
@@ -215,16 +208,16 @@ This high ``signal'' environment provides several technical advantages:
 \end{itemize}
 
 \subsubsection{The ``Halation'' Risk and Soft High Contrast}
-While high contrast is vital for clarity, pure high contrast (e.g., stark white text on a pure black background) can be counterproductive for those with ASD or specific visual stresses.
+While high contrast is vital for clarity, pure high contrast (e.g., stark white text on a pure black background) can be counterproductive for those with \gls{ASD} or specific visual stresses.
  This combination can cause halation—a glowing or ``bleeding'' effect around letters that makes text appear to vibrate or move.
 
  To address this, the most effective models for neurodiversity are often ``Soft High Contrast'' themes. These utilize high-visibility colors against deep, non-pure-black backgrounds 
- (such as dark greys or navy). This balance provides the necessary ``signal'' for ADHD developers to maintain focus while preventing the sensory overwhelm and visual distortion common in ASD profiles.
-However, the implementation must be nuanced. While high contrast is vital for clarity, ``pure'' high contrast can cause halation (a glowing effect around letters) for those with ASD or visual stress. 
+ (such as dark greys or navy). This balance provides the necessary ``signal'' for ADHD developers to maintain focus while preventing the sensory overwhelm and visual distortion common in \gls{ASD} profiles.
+However, the implementation must be nuanced. While high contrast is vital for clarity, ``pure'' high contrast can cause halation (a glowing effect around letters) for those with \gls{ASD} or visual stress. 
 Therefore, the most effective high-contrast models for neurodiversity are often ``Soft High Contrast'', utilising high-visibility colours against deep non-pure-black backgrounds.
 
 \subsection{AI as a Cognitive Tool: Task Decomposition and Scaffolding}
-For developers with \gls{ADHD} and ASD, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. 
+For developers with \gls{ADHD} and \gls{ASD}, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. 
 Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with "state recovery" and task initiation. \glspl{LLM} offer a unique solution to this 
 through cognitive scaffolding. This process handles the ``low-value'' mental energy drains, such as formatting and scheduling, leaving more room for ``high-value'' deep thinking (\cite{Navigati93:online}).
 

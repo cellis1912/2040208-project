@@ -29,7 +29,7 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
         
         \textbf{FR4} & Time Management &
         The system shall provide a customisable Pomodoro timer integrated into the dashboard, allowing user-defined focus and break durations. &
-        Supports executive functioning through temporal externalisation, mitigating time blindness and hyperfocus burnout commonly reported in ADHD and ASD literature. \\ 
+        Supports executive functioning through temporal externalisation, mitigating time blindness and hyperfocus burnout commonly reported in \gls{ADHD} and \gls{ASD} literature. \\ 
         \addlinespace
         
         \textbf{FR5} & Visual Presets &
@@ -248,7 +248,7 @@ The AI-driven features are implemented using a Streaming Data Pattern to satisfy
 \begin{itemize}
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute 
 micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
-\item \textbf{Iterative Prompt Refinement:} During development, I identified a significant limitation where the LLM included excessive supportive dialogue 
+\item \textbf{Iterative Prompt Refinement:} During development, I identified a significant limitation where the \gls{LLM} included excessive supportive dialogue 
 (e.g., ``Sure! I can help with that''). While polite, this violated the principle of Direct Instruction and hindered the system's ability to parse the text into 
 editable UI components. I refined the prompt to mandate a strict data-only format, ensuring the system only outputs actionable tasks.
 \end{itemize}
