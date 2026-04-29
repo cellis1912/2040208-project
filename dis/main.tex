@@ -104,7 +104,7 @@
 % Reduce spacing in list of tables
 \setlength{\cftbeforetabskip}{3pt}
 
-\usepackage[acronym, toc]{glossaries}
+\usepackage[acronym, toc, nohypertypes={main,acronym}]{glossaries}
 \makeglossaries%
 \input{glossary_entries}
 
@@ -132,16 +132,18 @@
 \clearpage
 
 % 1. The Abbreviations List
+\cleardoublepage
+\phantomsection 
 \printglossary[type=\acronymtype, title={List of Abbreviations}]
-\clearpage
 
 % 2. The Glossary List
-\glsaddall%
-\printglossary[title={Glossary}] 
-\clearpage
+\cleardoublepage
+\phantomsection
+\printglossary[title={Glossary}]
 
 % Main body: Arabic numbering
 \pagenumbering{arabic}
+\glsaddall
 
 \include{chapters/01-introduction}
 \include{chapters/lit-review}
