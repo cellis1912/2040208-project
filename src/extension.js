@@ -29,10 +29,10 @@ function activate(context) {
             collection.set(uri, simplifiedDiagnostics);
         });
     });
-
     const showToggleUI = vscode.commands.registerCommand(
         'accessible-toggle.showUI',
         () => {
+            
             const panel = vscode.window.createWebviewPanel(
                 'accessibleToggle',
                 'Accessibly Dashboard',
@@ -50,7 +50,6 @@ function activate(context) {
                             break;
                         case 'startTimer':
                             timerPanel = panel;
-                            // Use the custom time from the message, or default to 25 mins
                             const seconds = message.customSeconds || (25 * 60);
                             startTimer(panel, seconds);
                             break;
@@ -82,7 +81,6 @@ function activate(context) {
                         case 'dyslexiaOn':
                             applyDyslexiaMode(context);
                             break;
-                        // Inside the switch (message.command) block:
                         case 'updateDyslexiaLevel':
                             await applyDyslexiaSettings(context, message.level);
                             break;
@@ -118,13 +116,12 @@ async function changeFontSize(direction) {
     currentSize = (direction === 'increase') ? currentSize + 2 : Math.max(6, currentSize - 2);
 
     await config.update('editor.fontSize', currentSize, vscode.ConfigurationTarget.Global);
-    return currentSize; // Return the new size so we can send it to the UI
+    return currentSize; 
 }
 
 async function applyDyslexiaSettings(context, level) {
     const config = vscode.workspace.getConfiguration();
 
-    // 1. Save original settings if not already saved
     if (!context.globalState.get(ORIGINAL_EDITOR_SETTINGS_KEY)) {
         await context.globalState.update(ORIGINAL_EDITOR_SETTINGS_KEY, {
             fontFamily: config.get('editor.fontFamily'),
@@ -133,16 +130,14 @@ async function applyDyslexiaSettings(context, level) {
         });
     }
 
-    // 2. Define our levels
     const settings = {
-        'standard': { lineHeight: 0, letterSpacing: 0, font: 'editor.fontFamily' }, // This acts as a soft reset
+        'standard': { lineHeight: 0, letterSpacing: 0, font: 'editor.fontFamily' },
         'relaxed':  { lineHeight: 30, letterSpacing: 0.8, font: 'Lexend, OpenDyslexic, monospace' },
         'spacious': { lineHeight: 40, letterSpacing: 1.5, font: 'OpenDyslexic, Lexend, monospace' }
     };
 
     const choice = settings[level];
 
-    // 3. Apply settings
     await config.update('editor.fontFamily', choice.font, vscode.ConfigurationTarget.Global);
     await config.update('editor.lineHeight', choice.lineHeight, vscode.ConfigurationTarget.Global);
     await config.update('editor.letterSpacing', choice.letterSpacing, vscode.ConfigurationTarget.Global);
@@ -204,7 +199,6 @@ async function runTaskBreakdown(panel, userQuery) {
         let responseText = '';
         for await (const fragment of request.text) {
             responseText += fragment;
-            // Optional: Send fragments to webview for real-time streaming effect
         }
         console.log("--- PLAIN AI OUTPUT START ---");
         console.log(responseText);
@@ -223,7 +217,6 @@ async function runTaskBreakdown(panel, userQuery) {
 async function applyDyslexiaMode(context) {
     const config = vscode.workspace.getConfiguration();
 
-    // Save original editor settings once
     if (!context.globalState.get(ORIGINAL_EDITOR_SETTINGS_KEY)) {
         await context.globalState.update(ORIGINAL_EDITOR_SETTINGS_KEY, {
             fontFamily: config.get('editor.fontFamily'),
@@ -320,10 +313,8 @@ async function applySoftHighContrastLight(context) {
         await context.globalState.update(ORIGINAL_THEME_KEY, config.get('workbench.colorTheme'));
     }
 
-    // Set Base Theme
     await config.update('workbench.colorTheme', 'Visual Studio Light - C++', vscode.ConfigurationTarget.Global);
 
-    // Apply Soft HC Overrides for Light Mode
     await config.update('workbench.colorCustomizations', {
         "editor.background": "#ffffff",
         "editor.foreground": "#000000",
@@ -343,12 +334,10 @@ async function applySoftHighContrastDark(context) {
         await context.globalState.update(ORIGINAL_THEME_KEY, config.get('workbench.colorTheme'));
     }
 
-    // Set Base Theme
     await config.update('workbench.colorTheme', 'Visual Studio Dark', vscode.ConfigurationTarget.Global);
 
-    // Apply Soft HC Overrides for Dark Mode
     await config.update('workbench.colorCustomizations', {
-        "editor.background": "#0d0d0d", // Deep charcoal, softer than pure black
+        "editor.background": "#0d0d0d",
         "editor.foreground": "#e0e0e0",
         "editorLineNumber.activeForeground": "#00ffcc",
         "editor.lineHighlightBackground": "#1a1a1a",
@@ -366,7 +355,6 @@ async function restoreOriginalTheme(context) {
     if (originalTheme) {
         await config.update('workbench.colorTheme', originalTheme, vscode.ConfigurationTarget.Global);
         
-        // CRITICAL: Clear the overrides so the original theme looks correct
         await config.update('workbench.colorCustomizations', {}, vscode.ConfigurationTarget.Global);
         await config.update('editor.cursorStyle', undefined, vscode.ConfigurationTarget.Global);
         
@@ -412,8 +400,6 @@ function formatTime(seconds) {
 }
 
 async function explainActiveErrors(panel) {
-    // 1. Try to find the editor that is currently visible alongside the panel
-    // Or fall back to the first visible text editor
     const editor = vscode.window.activeTextEditor || vscode.window.visibleTextEditors.find(e => e.document.uri.scheme === 'file');
 
     if (!editor) {
@@ -472,7 +458,6 @@ async function explainActiveErrors(panel) {
         });
 
     } catch (err) {
-        // IMPORTANT: Tell the webview that the scan failed
         panel.webview.postMessage({
             command: 'errorResult',
             text: `❌ Error during scan: ${err.message}`
@@ -717,7 +702,6 @@ function getWebviewContent() {
         <script>
             const vscode = acquireVsCodeApi();
             
-            // Re-linking all the button IDs from your script
             document.getElementById('incFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'increase' });
             document.getElementById('decFont').onclick = () => vscode.postMessage({ command: 'changeFontSize', direction: 'decrease' });
             document.getElementById('hcDark').onclick = () => vscode.postMessage({ command: 'hcDark' });
@@ -748,7 +732,6 @@ function getWebviewContent() {
                 vscode.postMessage({ command: 'scanErrors' });
             };
 
-            // Handle Dropdown Change
             document.getElementById('dyslexiaLevel').onchange = (e) => {
                 vscode.postMessage({ 
                     command: 'updateDyslexiaLevel', 
@@ -756,10 +739,9 @@ function getWebviewContent() {
                 });
             };
 
-            // Handle Reset Button
             document.getElementById('resetDyslexia').onclick = () => {
-                document.getElementById('dyslexiaLevel').value = 'standard'; // Reset UI dropdown
-                vscode.postMessage({ command: 'dyslexiaOff' }); // Calls your existing restore function
+                document.getElementById('dyslexiaLevel').value = 'standard';
+                vscode.postMessage({ command: 'dyslexiaOff' });
             };
 
             document.getElementById('buildBtn').onclick = () => {
@@ -770,12 +752,9 @@ function getWebviewContent() {
                 }
             };
 
-            // Add this right after the buildBtn.onclick block
             document.getElementById('clearBtn').onclick = () => {
-                // 1. Clear the text area where you type
                 document.getElementById('taskInput').value = '';
                 
-                // 2. Clear the generated list of tasks below it
                 document.getElementById('output').innerHTML = '';
             };
 
@@ -787,7 +766,6 @@ function getWebviewContent() {
                     const minInput = document.getElementById('focusMinutes');
                     const secDisplay = document.getElementById('timerDisplay');
 
-                    // Only update the input box if the user isn't currently typing in it
                     if (document.activeElement !== minInput) {
                         minInput.value = m;
                     }
@@ -805,36 +783,31 @@ function getWebviewContent() {
                 const out = document.getElementById('output');
                 out.innerHTML = '';
                 
-                // Split lines and filter out empty ones or AI bolding headers
                 const lines = text.split('\\n').filter(l => l.trim() && !l.includes('**'));
 
                 lines.forEach((line) => {
-                    // Clean up AI markers like [ ], -, 1. etc.
                     const cleanText = line.replace(/^[#\\d\\.\\s\\-\\[\\]]+/, '').trim();
                     if(!cleanText) return;
 
-                    // 1. Create the container
                     const div = document.createElement('div');
                     div.className = 'task-row';
                     
-                    // 2. Set the Inner HTML with the checkbox, text input, and delete button
                     div.innerHTML = \`
                         <input type="checkbox" class="task-check">
                         <span class="task-text" contenteditable="true">\${cleanText}</span>
-                        <button class="delete-task" title="Delete Task">×</button>
+                        <button class="delete-task" title="Delete Task">
+                        </button>
                     \`;
 
-                    // 3. Grab references to the elements we just created
                     const checkbox = div.querySelector('.task-check');
                     const textInput = div.querySelector('.task-text');
                     const deleteBtn = div.querySelector('.delete-task');
 
-                    // 4. Logic: Gray out/Strikethrough on toggle
                     checkbox.onchange = () => {
                         if (checkbox.checked) {
                             textInput.style.textDecoration = 'line-through';
                             textInput.style.opacity = '0.4';
-                            div.style.background = 'rgba(255, 255, 255, 0.01)'; // Fade the whole row
+                            div.style.background = 'rgba(255, 255, 255, 0.01)';
                         } else {
                             textInput.style.textDecoration = 'none';
                             textInput.style.opacity = '1';
@@ -842,7 +815,6 @@ function getWebviewContent() {
                         }
                     };
 
-                    // 5. Logic: Delete task on click
                     deleteBtn.onclick = () => {
                         div.remove();
                     };
