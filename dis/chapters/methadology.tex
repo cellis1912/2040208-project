@@ -5,8 +5,7 @@ Instruction'' and ``Visual Comfort'' frameworks identified by \textcite{rocha202
 
 \begin{table}[H]
     \centering
-    \caption{Functional and Non-Functional Requirements for the Accessible \gls{IDE} Plugin}
-    \label{tab:requirements}
+    \caption{Functional and Non-Functional Requirements for the Accessible \gls{IDE} Plugin}\label{tab:requirements}
     \small
     \begin{tabularx}{\textwidth}{@{} l l X X @{}}
         \toprule
@@ -69,8 +68,7 @@ The plugin is architected around three core modules, each designed to address sp
  \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth, alt={}] {logos/Plug-in plan.png}
-    \caption{UI Plan For the Accessible \gls{IDE} Plugin.}
-    \label{fig:plug-inplan}
+    \caption{UI Plan For the Accessible \gls{IDE} Plugin.}\label{fig:plug-inplan}
 \end{figure}
 
 I first designed the UI in figma, which allowed me get a clear vision of how the plugin would look and function. 
@@ -137,10 +135,10 @@ This was counterproductive for two reasons:
 \textbf{Increased Steps}
 \newline
 The original design specifications for the Task Architect called for 3 to 5 broad sub-tasks. However, user testing revealed that this flat structure remained overwhelming. A single step like ``Set up the backend'' was still too abstract for many users to execute confidently.
-To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps.''
+To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct ``micro-steps''.
 
 \subsubsection{Visual Styler} 
-The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}’s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
+The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}`s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
 
 \textbf{Accessibility and WCAG Mapping}
 \newline
@@ -160,7 +158,7 @@ Dynamic Scaling: Users can adjust font sizes and line heights across the entire 
 Granular Customization: Unlike traditional static themes, the Styler follows a ``Visual Comfort'' framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
 
 User Agency and Sensory Regulation
-By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the IDE adapts to the user’s biological needs rather than forcing the user to adapt to a rigid interface.
+By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the IDE adapts to the user`s biological needs rather than forcing the user to adapt to a rigid interface.
 
 \subsection{System Architecture}
 The system is divided into three primary layers: the Presentation Layer (Webview), the Orchestration Layer (Extension Host), and the External Services Layer (VS Code API).
@@ -191,8 +189,7 @@ The architecture employs specialised logic blocks to handle distinct accessibili
 
 \begin{table}[ht]
     \centering
-    \caption{System Component Interaction and API Dependencies}
-    \label{tab:system_architecture}
+    \caption{System Component Interaction and API Dependencies}\label{tab:system_architecture}
     \small % Slightly smaller text to ensure it fits the margins
     \begin{tabular}{@{} l p{4cm} l @{}}
         \toprule
@@ -229,22 +226,19 @@ The implementation of the Minimalist Mode focuses on reducing visual noise, whic
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth, alt={}] {logos/preMinimal.png}
-    \caption{Pre-Minimalist UI, showing the default VS Code interface with all standard elements visible.}
-    \label{fig:PreMinimal}
+    \caption{Pre-Minimalist UI, showing the default VS Code interface with all standard elements visible.}\label{fig:PreMinimal}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth, alt={}] {logos/postMinimal.png}
-    \caption{Post-Minimalist UI, showing the simplified VS Code interface with reduced visual elements.}
-    \label{fig:PostMinimal}
+    \caption{Post-Minimalist UI, showing the simplified VS Code interface with reduced visual elements.}\label{fig:PostMinimal}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/MinimalNote.png}
-    \caption{Notification confirming the activation of Minimalist Mode, providing immediate feedback to the user.}
-    \label{fig:MinimalNote}
+    \caption{Notification confirming the activation of Minimalist Mode, providing immediate feedback to the user.}\label{fig:MinimalNote}
 \end{figure}
 
 \subsection{AI Integration (FR2 and FR3)}
@@ -255,15 +249,14 @@ The AI-driven features are implemented using a Streaming Data Pattern to satisfy
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a ``Micro-step'' structure (3--5 sub-tasks with two 5-minute 
 micro-steps each). This prevents ``Wall of Text'' responses that can be overwhelming.
 \item \textbf{Iterative Prompt Refinement:} During development, I identified a significant limitation where the LLM included excessive supportive dialogue 
-(e.g., "Sure! I can help with that"). While polite, this violated the principle of Direct Instruction and hindered the system's ability to parse the text into 
+(e.g., ``Sure! I can help with that''). While polite, this violated the principle of Direct Instruction and hindered the system's ability to parse the text into 
 editable UI components. I refined the prompt to mandate a strict data-only format, ensuring the system only outputs actionable tasks.
 \end{itemize}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth, alt={}] {logos/aiflow.png}
-    \caption{AI Flow for the Task Architect Module.}
-    \label{fig:AIflow}
+    \caption{AI Flow for the Task Architect Module.}\label{fig:AIflow}
 \end{figure}
 
 The Figure~\ref{fig:AIflow} demonstrates the process of the Task Architect module. When a user enters a high-level goal (e.g., ``Implement a search bar''), the system 
@@ -272,8 +265,7 @@ instructs the \gls{LLM} to output 3-5 actionable sub-tasks with 2 additional tas
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth, alt={}] {logos/aicode.png}
-    \caption{Code written to generate tasks}
-    \label{fig:AIcode}
+    \caption{Code written to generate tasks}\label{fig:AIcode}
 \end{figure}
 
 Not only does the this prompt ask the \gls{LLM} to break down the task, but it also instructs it to format the output in a specific way.
@@ -287,15 +279,13 @@ to a flexible partner. The graying-out of completed tasks provides immediate vis
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/taskoutput.png}
-    \caption{Example of the output generated by the Task Architect module, showing the micro-steps for a given task.}
-    \label{fig:taskoutput}
+    \caption{Example of the output generated by the Task Architect module, showing the micro-steps for a given task.}\label{fig:taskoutput}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth, alt={}] {logos/taskarchitect.png}
-    \caption{Task Architect Module in the Dashboard, showing the generated tasks.}
-    \label{fig:taskarchitect}
+    \caption{Task Architect Module in the Dashboard, showing the generated tasks.}\label{fig:taskarchitect}
 \end{figure}
 
 \subsection{Dyslexia Settings: Test spacing (FR5)}
@@ -312,7 +302,7 @@ necessary customization to accommodate different cognitive needs.
     \label{fig:dyslexiasetcode}
 \end{figure}
 
-As shown in Figure \ref{fig:dyslexiasetcode}, the presets implement a hierarchical increase in visual breathing room:
+As shown in Figure~\ref{fig:dyslexiasetcode}, the presets implement a hierarchical increase in visual breathing room:
 \begin{itemize}
     \item Standard: Acts as a ``soft reset'' to default editor settings ($lineHeight: 0$, $letterSpacing: 0$) using the system's standard font family.
     \item Relaxed: Increases the $lineHeight$ to $30$ and $letterSpacing$ to $0.8$, introducing specialized fonts such as Lexend and OpenDyslexic.
@@ -338,15 +328,13 @@ while Figure \ref{fig:dyslexiasettings} illustrates the enhanced readability ach
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/van.png}
-    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
-    \label{fig:vanillasettings}
+    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:vanillasettings}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/bas.png}
-    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}
-    \label{fig:dyslexiasettings}
+    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:dyslexiasettings}
 \end{figure}
 
 \subsubsection{Final UI Integration}
@@ -354,8 +342,7 @@ The final UI design (see Figure\ref{fig:dyslexiamenu}) unifies the Visual Styler
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/dislecMenu.png}
-    \caption{The UI implementation of the line spacing tool}
-    \label{fig:dyslexiamenu}
+    \caption{The UI implementation of the line spacing tool}\label{fig:dyslexiamenu}
 \end{figure}
 The evolution from fixed values to the hierarchical preset system (Standard, Relaxed, Spacious) 
 represents a shift toward a user-centric sensory model. By centralising these 
@@ -432,15 +419,13 @@ were resolved, and that it had the potential to reduce cognitive load and improv
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth, alt={}] {logos/uiprefix1.png}
-    \caption{UI at the time of initial user testing, before improvements to the UI and AI response integrity were made.}
-    \label{fig:uiprefix}
+    \caption{UI at the time of initial user testing, before improvements to the UI and AI response integrity were made.}\label{fig:uiprefix}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth, alt={}] {logos/uipostfix1.png}
-    \caption{UI after improvements to the UI and AI response integrity were made.}
-    \label{fig:uipostfix}
+    \caption{UI after improvements to the UI and AI response integrity were made.}\label{fig:uipostfix}
 \end{figure}
 
 
