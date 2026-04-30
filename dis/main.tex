@@ -61,9 +61,9 @@
 \addbibresource{references.bib}
 
 % Using 'abbreviations' type for better separation
-\usepackage[acronym, toc, nohypertypes={main,acronym}]{glossaries}
-\makeglossaries%
-\input{glossary_entries} % Ensure this file contains your entries
+\usepackage[acronym, toc, automake]{glossaries-extra} 
+\makeglossaries
+\input{glossary_entries}
 % Formatting
 \parindent0em
 \parskip6pt
@@ -75,7 +75,7 @@
 % Main document
 % --------------------------------------------------------
 \begin{document}
-\glsaddall
+
 % 1. Title Page
 \input{titlepage.tex}
 \glsaddall

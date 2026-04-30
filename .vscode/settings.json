@@ -11,5 +11,16 @@
 	"cSpell.words": [
 		"colour"
 	],
-	"cSpell.language": "en,en-GB"
+	"cSpell.language": "en,en-GB",
+	"latex-workshop.latex.recipes": [
+    {
+        "name": "pdflatex -> makeglossaries -> pdflatex*2",
+        "tools": [
+            "pdflatex",
+            "makeglossaries",
+            "pdflatex",
+            "pdflatex"
+        ]
+    }
+]
 }

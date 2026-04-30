@@ -18,9 +18,9 @@
 \contentsline {subsection}{\numberline {2.3}\Gls {neurodiversity} in Software Engineering}{7}{subsection.24}%
 \contentsline {subsubsection}{\numberline {2.3.1}The Cognitive Load Connection}{7}{subsubsection.25}%
 \contentsline {subsubsection}{\numberline {2.3.2}Executive Functioning and Task Switching}{7}{subsubsection.26}%
-\contentsline {subsubsection}{\numberline {2.3.3}Specific Challenges by Condition}{8}{subsubsection.27}%
+\contentsline {subsubsection}{\numberline {2.3.3}Specific Challenges by Condition}{7}{subsubsection.27}%
 \contentsline {subsubsection}{\numberline {2.3.4}Beyond Medical}{8}{subsubsection.28}%
-\contentsline {subsubsection}{\numberline {2.3.5}The ``Double-Edged Sword'' of Hyperfocus}{9}{subsubsection.29}%
+\contentsline {subsubsection}{\numberline {2.3.5}The ``Double-Edged Sword'' of Hyperfocus}{8}{subsubsection.29}%
 \contentsline {subsection}{\numberline {2.4}Existing Tools}{9}{subsection.30}%
 \contentsline {subsection}{\numberline {2.5}Pomodoro Timer}{10}{subsection.31}%
 \contentsline {subsubsection}{\numberline {2.5.1}Managing Executive Dysfunction and Task Paralysis}{10}{subsubsection.32}%

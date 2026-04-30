@@ -33,7 +33,7 @@ their cognitive resources on the actual problem-solving aspect of programming, r
 \subsection{Applying CLT to \Gls{neurodiversity}}
 For \gls{neurodivergent} developers, the Extraneous Load is not just due to bad design, but a barrier to entry. Features like the Activity Bar and Mini-map, while useful for some, can
 can be filter out by a neurotypical developer but act as ``visual noise'' for those with \gls{ADHD} or \gls{ASD}.
-To be able to code a high IL is required. However, if the ``activation energy'' to start is too high due to executive dysfunction, the developer 
+To be able to code a high IL is required. However, if the ``activation energy'' to start is too high due to \gls{executive_dysfunction}, the developer 
 never reaches the stage where they can handle that load.
 Having a single switch that closes all UI elements will directly targets the suppression of EL to ``free up'' mental bandwidth instantly without having to navigate menus.
 While the AI task decomposition tool acts as a ``cognitive prosthetic'' that scaffolds the IL of project planning, preventing task paralysis.
@@ -76,7 +76,7 @@ reducing the split-attention effect. By presenting the error message and the ass
 \subsection{\Gls{neurodiversity} in Software Engineering}
 To best design an inclusive plug-in, I needed to gain a deep understanding of the specific cognitive roadblocks faced by \gls{neurodivergent}
  developers. Recent research by \textcite{verma2025differences} and \textcite{gama2025socio} highlights that developers with \gls{ADHD}, 
- \gls{ASD}, and Dyslexia face significantly higher frequency of interruptions and difficulty obtaining knowledge.
+ \gls{ASD}, and \gls{dyslexia} face significantly higher frequency of interruptions and difficulty obtaining knowledge.
 
 \subsubsection{The Cognitive Load Connection}
 
@@ -103,14 +103,14 @@ Based on the synthesis of recent studies, the challenges can be categorised as f
 
 \gls{ASD}: Challenges with the ``Double Empathy'' problem in code—where the high-level abstractions or ``implied logic'' used by neurotypical colleagues create a high cognitive overhead for autistic developers who prefer explicit, literal documentation.
 
-Dyslexia: Significant hurdles during the ``syntax-heavy'' stages of programming. While these developers often excel at high-level architectural mapping, the Extraneous Load of spelling-sensitive compiler errors and dense documentation can be a major deterrent to productivity.
+\Gls{dyslexia}: Significant hurdles during the ``syntax-heavy'' stages of programming. While these developers often excel at high-level architectural mapping, the Extraneous Load of spelling-sensitive compiler errors and dense documentation can be a major deterrent to productivity.
 
 \subsubsection{Beyond Medical}
 
 To understand why existing tools fail, we  must examine the shift from the Medical Model to the Social Model of disability.
 
 \begin{itemize}
-    \item The Medical Model: Traditionally, ADHD or Dyslexia in engineering has been viewed as a ``deficit'' to be corrected through individual coaching or medication.
+    \item The Medical Model: Traditionally, ADHD or \gls{dyslexia} in engineering has been viewed as a ``deficit'' to be corrected through individual coaching or medication.
     \item The Social Model: This perspective argues that the developer is ``disabled'' not by their neurology, but by an \gls{IDE} designed with a \gls{neurotypical-bias}. The problem is not the individual's
      brain, but the environment that fails to accommodate it. This shift in perspective is crucial for designing tools that are not just ``assistive'' but truly inclusive, as it focuses on modifying the
       environment (the \gls{IDE}) rather than trying to fix the individual.
@@ -127,10 +127,10 @@ To deepen the analysis of \gls{executive_dysfunction}, we must break it into thr
     \item Cognitive Flexibility: The ability to switch between thinking about the ``big picture'' architecture and the ``low-level'' syntax.
 \end{itemize}
 
-\subsubsection{The ``Double-Edged Sword'' of Hyperfocus}
+\subsubsection{The ``Double-Edged Sword'' of \Gls{hyperfocus}}
 While \gls{neurodivergent} developers, particularly those with \gls{ASD} and \gls{ADHD}, are often stereotyped as having a ``superpower'' for deep work, 
-this ability to hyperfocus is more accurately described as a dysregulation of attention. Unlike the psychological concept of ``Flow'' which is
- generally sustainable and self-directed, hyperfocus is an involuntary immersion into a task or activity. As noted by \cite{gama2025socio}, hyperfocus allows 
+this ability to \gls{hyperfocus} is more accurately described as a dysregulation of attention. Unlike the psychological concept of ``Flow'' which is
+ generally sustainable and self-directed, \gls{hyperfocus} is an involuntary immersion into a task or activity. As noted by \cite{gama2025socio}, \gls{hyperfocus} allows 
 for an exhaustive exploration of complex problems, yet this intensity often comes at the expense of self-care. Developers may neglect fundamental 
 biological needs, such as nutrition, sleep, and hygiene, leading to rapid burnout. 
 
@@ -138,7 +138,7 @@ In the context of software engineering, this creates a High-Intensity/High-Fragi
 in the groove'' is a fragile process where a single interruption can collapse hours of built-up mental context. The subsequent state recovery cost is significantly higher 
 for \gls{neurodivergent} individuals, often leading to burnout or irritability when the state is broken.
 
-In a professional engineering context, this creates a significant conflict between depth and delivery. Hyperfocus can inadvertently trigger over-engineering, 
+In a professional engineering context, this creates a significant conflict between depth and delivery. \Gls{hyperfocus} can inadvertently trigger over-engineering, 
 where a developer becomes locked into optimising a single component while neglecting broader project milestones or team collaborations. This inability to switch 
 off from an interesting problem makes task-switching, a fundamental requirement of agile development, mentally exhausting and practically difficult. Consequently, 
 what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
@@ -150,7 +150,7 @@ the needs of \gls{neurodiverse} employees." \glspl{IDE} are often packed with to
 developers in mind, and complex nested menus can be overwhelming.
 
 Despite the obstacles described, certain features provide essential support for developers.~\cite{morris2015understanding} notes that tools such as code 
-completion and linters are vital to alleviate the difficulties associated with dyslexia, such as syntax memorisation and spelling.
+completion and linters are vital to alleviate the difficulties associated with \gls{dyslexia}, such as syntax memorisation and spelling.
 
 However, the burden of making tools accessible often falls to the user.~\cite{liebel2024challenges} found that developers often create “individual
  strategies and tool configurations to support their productivity". While these features are currently helping, the reliance on manual customisation 
@@ -166,19 +166,19 @@ The Pomodoro Technique, developed by Francesco Cirillo in the late 1980s, is a t
 25 minutes, separated by brief five-minute breaks. In the context of \gls{neurodiversity}, this method is often reframed as a ``cognitive tool'' rather than a rigid 
 rule set, specifically designed to address common executive functioning barriers~\cite{miller2025wired}.
 
-\subsubsection{Managing Executive Dysfunction and Task Paralysis}
+\subsubsection{Managing \Gls{executive_dysfunction} and Task Paralysis}
 For developers with \gls{ADHD} or \gls{ASD}, \gls{task_paralysis}, an inability to initiate work due to cognitive overload or anxiety represents a significant hurdle. 
 The Pomodoro Technique mitigates this by lowering the ``activation energy'' required to start. By committing to a manageable, 25-minute sprint, the psychological 
 barrier to entry is reduced, helping individuals bypass the freeze response associated with daunting or abstract tasks.
 
-\subsubsection{Combatting Time Blindness and Hyperfocus Burnout}
+\subsubsection{Combatting Time Blindness and \Gls{hyperfocus} Burnout}
 \Gls{neurodivergent} individuals often experience ``time blindness'', a difficulty in perceiving the passage of time as a concrete resource. Externalising time through a visual 
 or auditory timer provides real-time feedback, helping to anchor the developer to the present task and reducing the risk of underestimating project timelines.
 
-Furthermore, while hyperfocus is frequently cited as a ``superpower'' for developers, it can lead to severe mental and physical exhaustion if left unregulated. The structured 
+Furthermore, while \gls{hyperfocus} is frequently cited as a ``superpower'' for developers, it can lead to severe mental and physical exhaustion if left unregulated. The structured 
 nature of the Pomodoro cycle acts as a ``release valve'' for focus:
 \begin{itemize}
-\item Mandatory Breaks: Frequent breaks prevent the ``hyperfocus trap,'' where a developer may neglect basic biological needs like nutrition or hydration.
+\item Mandatory Breaks: Frequent breaks prevent the ``\gls{hyperfocus} trap,'' where a developer may neglect basic biological needs like nutrition or hydration.
 
 \item Sensory Regulation: Scheduled pauses provide essential space for sensory recovery, allowing developers to move around to prevent the physical strain and irritability that often follow hours of sedentary deep work.
 \end{itemize}
@@ -203,7 +203,7 @@ By utilizing high-contrast ratios—such as 7:1 or higher, per \gls{WCAG} 2.1 gu
 This high ``signal'' environment provides several technical advantages:
 \begin{itemize}
     \item Reduce Visual Search Time: Finding the start and end of a function block becomes instantaneous rather than a manual scan.
-    \item Mitigate the ``Blur'' of Hyperfocus: As noted by~\cite{newman2025get}, the intense mental strain of being ``in the groove'' can lead to visual fatigue; high contrast maintains legibility even as physiological focus wanes.
+    \item Mitigate the ``Blur'' of \Gls{hyperfocus}: As noted by~\cite{newman2025get}, the intense mental strain of being ``in the groove'' can lead to visual fatigue; high contrast maintains legibility even as physiological focus wanes.
     \item Support Syntax Logic: In complex, nested code, high-contrast separation between brackets and operators serves as a ``visual prosthetic,'' offloading the work of pattern recognition from the brain to the interface.
 \end{itemize}
 

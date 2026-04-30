@@ -19,7 +19,7 @@ instructions and visual comfort frameworks identified by \textcite{rocha2025conc
         
         \textbf{FR2} & AI Support &
         The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks, each containing micro-steps. &
-        Scaffolding of Intrinsic Load (IL) to reduce executive dysfunction and task initiation barriers through stepwise decomposition and cognitive scaffolding principles. \\ 
+        Scaffolding of Intrinsic Load (IL) to reduce \gls{executive_dysfunction} and task initiation barriers through stepwise decomposition and cognitive scaffolding principles. \\ 
         \addlinespace
         
         \textbf{FR3} & Feedback &
@@ -29,7 +29,7 @@ instructions and visual comfort frameworks identified by \textcite{rocha2025conc
         
         \textbf{FR4} & Time Management &
         The system shall provide a customisable Pomodoro timer integrated into the dashboard, allowing user-defined focus and break durations. &
-        Supports executive functioning through temporal externalisation, mitigating time blindness and hyperfocus burnout commonly reported in \gls{ADHD} and \gls{ASD} literature. \\ 
+        Supports executive functioning through temporal externalisation, mitigating time blindness and \gls{hyperfocus} burnout commonly reported in \gls{ADHD} and \gls{ASD} literature. \\ 
         \addlinespace
         
         \textbf{FR5} & Visual Presets &
@@ -153,7 +153,7 @@ To ensure the platform is accessible to the widest possible audience, the Visual
 \newline
 The Visual Styler operates by interacting directly with the workspace.getConfiguration API. This allows the module to move beyond surface-level CSS changes and manipulate the core structural rendering of the workspace:
 
-Dynamic Scaling: Users can adjust font sizes and line heights across the entire interface. Increasing the line height (e.g., to 1.5 or 2.0) is a critical intervention for developers with dyslexia, as it reduces the crowding effect of text and improves character recognition.
+Dynamic Scaling: Users can adjust font sizes and line heights across the entire interface. Increasing the line height (e.g., to 1.5 or 2.0) is a critical intervention for developers with \gls{dyslexia}, as it reduces the crowding effect of text and improves character recognition.
 
 Granular Customization: Unlike traditional static themes, the Styler follows a visual comfort framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
 
@@ -288,8 +288,8 @@ to a flexible partner. The graying-out of completed tasks provides immediate vis
     \caption{Task Architect Module in the Dashboard, showing the generated tasks.}\label{fig:taskarchitect}
 \end{figure}
 
-\subsection{Dyslexia Settings: Test spacing (FR5)}
-The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with dyslexia, as increasing letter spacing 
+\subsection{\Gls{dyslexia} Settings: Test spacing (FR5)}
+The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with \gls{dyslexia}, as increasing letter spacing 
 and vertical padding can significantly reduce the crowding effect in dense code, improving character recognition and overall readability. 
 
 To balance customisability with cognitive ease, the plugin provides a set of predefined spacing presets, Standard, Relaxed, and Spacious,
@@ -322,13 +322,13 @@ while Figure~\ref{fig:dyslexiasettings} illustrates the enhanced readability ach
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/van.png}
-    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:vanillasettings}
+    \caption{Example of the difference in spacing between the default settings and the original \gls{dyslexia} settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:vanillasettings}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth, alt={}] {logos/bas.png}
-    \caption{Example of the difference in spacing between the default settings and the original dyslexia settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:dyslexiasettings}
+    \caption{Example of the difference in spacing between the default settings and the original \gls{dyslexia} settings, where the line height is set to 1.5 and the letter spacing is set to 0.5em.}\label{fig:dyslexiasettings}
 \end{figure}
 
 \subsubsection{Final UI Integration}
@@ -413,7 +413,7 @@ halation risks of pure black-and-white themes.
 revert all environmental changes.
 \end{itemize}
 
-\textbf{Dyslexia Visual Aids and Text Scaling}
+\textbf{\Gls{dyslexia} Visual Aids and Text Scaling}
 \begin{itemize}
 \item Hierarchical Spacing: A dropdown menu offering Standard, Relaxed, and Spacious presets. Selecting "Spacious" programmatically 
 adjusts line height to 40, letter spacing to 1.5, and switches the font to OpenDyslexic.
@@ -432,7 +432,7 @@ three bullet points to prevent cognitive overload.
 \textbf{Time Management}
 \begin{itemize}
     \item Focus Timer: An integrated Pomodoro timer that allows for user-defined focus and break durations. This externalizes time to 
-support developers with "time blindness" and prevents burnout from unregulated hyperfocus.
+support developers with "time blindness" and prevents burnout from unregulated \gls{hyperfocus}.
 \end{itemize}
 
 The transition to this final dashboard reduced the time required for accessibility adjustments from 19.9 seconds (six clicks) 
