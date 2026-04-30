@@ -1,26 +1,26 @@
 \section{Results and Discussion}
 
 \subsection{NASA-TLX Subjective Workload}
-As shown in Table 6, participants reported consistently lower weighted NASA-TLX scores when using the dashboard interface compared to the vanilla IDE.
+As shown in Table 6, participants reported consistently lower weighted NASA-TLX scores when using the dashboard interface compared to the standard \gls{IDE}.
 These reductions were most pronounced in Mental Demand, Effort, and Frustration, suggesting that the dashboard primarily reduces interface-driven 
 extraneous cognitive load.
 \begin{table}[H]
 \centering
-\caption{NASA-TLX Results for Vanilla vs Dashboard Interfaces}
+\caption{NASA-TLX Results for Standard vs Dashboard Interfaces}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llccccccccc}
 \hline
 Participant & Interface & MD & PD & TD & PF & EF & FR & r-score & w-score \\
 \hline
-    1 & vanilla  & 60 & 10 & 0 & 30 & 50 & 60 & 35.0000 & 49.3333 \\
+    1 & standard  & 60 & 10 & 0 & 30 & 50 & 60 & 35.0000 & 49.3333 \\
     1 & dashboard & 10 & 10 & 0 & 0  & 10 & 10 & 6.6667  & 8.0000  \\
-    2 & vanilla  & 35 & 20 & 0 & 5  & 30 & 40 & 21.6667 & 28.6667 \\
+    2 & standard  & 35 & 20 & 0 & 5  & 30 & 40 & 21.6667 & 28.6667 \\
     2 & dashboard & 5  & 10 & 0 & 0  & 10 & 15 & 6.6667  & 7.6667  \\
-    3 & vanilla & 65 & 15 & 0 & 35 & 55 & 65 & 39.1667 & 54.3333 \\
+    3 & standard & 65 & 15 & 0 & 35 & 55 & 65 & 39.1667 & 54.3333 \\
     3 & dashboard & 15 & 5  & 0 & 5  & 10 & 15 & 8.3333  & 11.6667 \\
-    4 & vanilla & 55 & 10 & 0 & 25 & 45 & 55 & 31.6667 & 44.6667 \\
+    4 & standard & 55 & 10 & 0 & 25 & 45 & 55 & 31.6667 & 44.6667 \\
     4 & dashboard & 10 & 5  & 0 & 5  & 10 & 5  & 5.8333  & 7.3333  \\
-    5 & vanilla & 50 & 5  & 0 & 5  & 50 & 50 & 26.6667 & 38.0000 \\
+    5 & standard & 50 & 5  & 0 & 5  & 50 & 50 & 26.6667 & 38.0000 \\
     5 & dashboard & 5  & 5  & 0 & 0  & 5  & 5  & 3.3333  & 4.0000  \\
 \hline
 \end{tabular}%
@@ -30,10 +30,10 @@ Participant & Interface & MD & PD & TD & PF & EF & FR & r-score & w-score \\
 
 
 \subsection{Workload Comparison and Interpretation}
-The results indicate a substantial reduction in perceived workload when using the Dashboard interface compared to the Vanilla interface.
+The results indicate a substantial reduction in perceived workload when using the Dashboard interface compared to the standard interface.
 
 \begin{itemize}
-\item \textbf{Overall Workload:} The mean Weighted Score ($w$-score) for the Vanilla interface was $43.00$ ($\sigma = 10.02$), which was reduced to $7.73$ ($\sigma = 2.72$) 
+\item \textbf{Overall Workload:} The mean Weighted Score ($w$-score) for the standard interface was $43.00$ ($\sigma = 10.02$), which was reduced to $7.73$ ($\sigma = 2.72$) 
  with the Dashboard. This represents an approximate 82\% reduction in total perceived workload.
 \item \textbf{Cognitive Load:} The most dramatic improvement was observed in Mental Demand, which dropped from a mean of $53.0$ to $9.0$. This suggests that the Dashboard successfully offloaded information processing requirements from the user.
 \item \textbf{Frustration and Effort:} Participants reported significantly lower levels of frustration ($10.0$ vs $54.0$) and required less effort ($9.0$ vs $46.0$) to complete the tasks using the Dashboard.
@@ -54,7 +54,7 @@ The results indicate a substantial reduction in perceived workload when using th
 \label{tab:tlx_summary}
 \begin{tabular}{lrr}
 \toprule
-\textbf{Workload Metric} & \textbf{Vanilla Interface} & \textbf{Dashboard Interface} \\
+\textbf{Workload Metric} & \textbf{standard Interface} & \textbf{Dashboard Interface} \\
 \midrule
 Mental Demand    & 53.00 $\pm$ 11.51 & 9.00 $\pm$ 4.18  \\
 Physical Demand  & 12.00 $\pm$ 5.70  & 7.00 $\pm$ 2.74  \\
@@ -88,22 +88,22 @@ The Dashboard demonstrated a large improvement in operational efficiency. As sho
 \label{tab:time_savings}
 \begin{tabular}{@{}lccc@{}}
 \toprule
-\textbf{Task} & \textbf{Vanilla Avg (s)} & \textbf{Dashboard Avg (s)} & \textbf{Time Saved} \\ \midrule
+\textbf{Task} & \textbf{standard Avg (s)} & \textbf{Dashboard Avg (s)} & \textbf{Time Saved} \\ \midrule
 Change Theme         & 15.42 & 2.5 & 83.79\% \\
 Change Font Size     & 22.10 & 4.2 & 81.00\% \\
 Manage Panels* & 32.34 & 3.4 & 89.49\% \\ \bottomrule
-\multicolumn{4}{l}{\small \textit{*Note: Vanilla tasks sometimes resulted in incomplete status.}}
+\multicolumn{4}{l}{\small \textit{*Note: standard tasks sometimes resulted in incomplete status.}}
 \end{tabular}
 \end{table}
 
-The ``Manage Panels'' task provided the most striking difference in results. In the Vanilla interface, several participants struggled to locate specific toggle 
+The ``Manage Panels'' task provided the most striking difference in results. In the standard interface, several participants struggled to locate specific toggle 
 settings, leading to a ``search-loop'' behavior. Most of the participants tried to close each panel individually rather than using the ``Customize Layout'' command.
  This resulted in significantly longer completion times and increased frustration and one of the participants giving up completely. 
 In the Dashboard, the same task was reduced to a singular, high-visibility interaction therefore the task only took a matter of seconds.
 
 While these timings indicate a clear trend, they should be interpreted with caution. Potential variations in manual timing and the participants'
- varying levels of expertise with the baseline IDE (Visual Studio Code) may have influenced the absolute values. 
- Specifically, developers who primarily use alternative editors in their daily workflows may have experienced a steeper learning curve with the ``Vanilla'' interface,
+ varying levels of expertise with the baseline \gls{IDE} (Visual Studio Code) may have influenced the absolute values. 
+ Specifically, developers who primarily use alternative editors in their daily workflows may have experienced a steeper learning curve with the ``standard'' interface,
   potentially inflating the initial completion times.
 
 
@@ -120,7 +120,7 @@ provides a stable environment that protects the user's ``flow state''.
 
 \subsubsection{Item 4 \& 10: Independence and Learning Curve}
 Most common scores: 2 and 1 (Strongly Disagree that they need help or need to learn a lot first). \newline
-Many neurodivergent individuals experience ``Information Overload'' when faced with dense manuals or complex onboarding. Your score shows the Dashboard is 
+Many \gls{neurodivergent} individuals experience ``Information Overload'' when faced with dense manuals or complex onboarding. Your score shows the Dashboard is 
 intuitive by design, allowing a developer to begin working immediately without the executive tax of a long learning phase.
 
 \subsubsection{Item 9: Confidence}
@@ -134,17 +134,17 @@ these findings and ensure they generalise across different populations of develo
 
 \subsection{Pre-Study Interview Findings}
 Prior to the main evaluation, a brief semi-structured interview was conducted with each participant to establish a baseline understanding of their existing 
-workflows, coping strategies, and pain points when using traditional IDEs. Three dominant themes emerged from the responses.
+workflows, coping strategies, and pain points when using traditional \glspl{IDE}. Three dominant themes emerged from the responses.
 \begin{itemize}
 
-\item \textbf{Panel Management:} The majority of participants expressed frustration with the number of open panels in a standard IDE, yet reported 
+\item \textbf{Panel Management:} The majority of participants expressed frustration with the number of open panels in a standard \gls{IDE}, yet reported 
 that they rarely closed them. Rather than actively managing their workspace, participants described a pattern of passive tolerance, simply ignoring panels 
 they did not need. As one participant noted, the effort required to locate and close individual panels felt disproportionate to the benefit, resulting in what 
 might be characterised as a ``cognitive acceptance'' of a cluttered environment. This finding directly supports the need for the single-click Minimalist Toggle.
 
 
 \item \textbf{Task Decomposition:} When asked how they would typically break down a complex programming task, most participants described struggling with initiation.
-Several noted that an empty IDE felt ``daunting'', and their strategies for overcoming this varied: some wrote rough outlines on paper or 
+Several noted that an empty \gls{IDE} felt ``daunting'', and their strategies for overcoming this varied: some wrote rough outlines on paper or 
 in a separate document, while others attempted to hold the steps in working memory. One participant reported regularly using ChatGPT to scaffold 
 their thinking, but found it tended to generate code directly rather than a structured plan, which they described as ``not helpful for actually getting 
 started''. This corroborates the task paralysis literature and provides direct user-grounded motivation for the Task Architect module.
@@ -152,17 +152,17 @@ started''. This corroborates the task paralysis literature and provides direct u
 \item \textbf{Error Handling:} Participants consistently reported that cryptic or verbose error messages increased their frustration and interrupted their 
 flow. When probed on their typical response to an unfamiliar error, most described a reactive process: attempting solutions from memory, searching 
 online, or pasting the error into an AI chatbot. Notably, no participant described a systematic or confident approach to debugging, suggesting that 
-the standard IDE error output does not provide sufficient scaffolding for independent resolution. This reinforces the rationale for the Code Explainer 
+the standard \gls{IDE} error output does not provide sufficient scaffolding for independent resolution. This reinforces the rationale for the Code Explainer 
 module's plain-language feedback approach.
 
 \end{itemize}
 
 \subsection{Real-Time Feedback and User Experience}
-During the evaluation, I observed significant differences in how the Dashboard and the Vanilla interface handled real-time feedback. The Dashboard`s capacity to provide instantaneous 
+During the evaluation, I observed significant differences in how the Dashboard and the standard interface handled real-time feedback. The Dashboard`s capacity to provide instantaneous 
 feedback for aesthetic modifications, such as theme and font-size adjustments, where prefered to the baseline interface. This immediate confirmation allowed
  users to acknowledge their actions to system changes instantly, effectively eliminating uncertainty and the associated cognitive load of second-guessing. In 
- contrast, the Vanilla interface`s settings menus often induced ``verification anxiety,'' where users had to manually exit menus to check if a change had 
- been applied. One participant specifically noted that the lack of immediate visual confirmation in the Vanilla IDE led to redundant, repetitive attempts, which 
+ contrast, the standard interface`s settings menus often induced ``verification anxiety,'' where users had to manually exit menus to check if a change had 
+ been applied. One participant specifically noted that the lack of immediate visual confirmation in the standard \gls{IDE} led to redundant, repetitive attempts, which 
  directly correlated with the higher frustration scores recorded in the NASA-TLX and the higher time taken for these tasks.
 
 Beyond visual configuration, non-visual features such as the AI Task Breakdown and Code Error Checker were evaluated through a ``Think Aloud'' protocol. Participants 
@@ -172,27 +172,27 @@ were asked to interact with these features and explain their how they beleved th
  For the AI Task Breakdown, a ``manual-vs-automated'' baseline was established. Before triggering the AI, users were asked to verbally outline a high-level 
  decomposition of a programming task. While most provided basic, linear steps, the AI-generated breakdown offered a more granular, comprehensive hierarchical 
  structure. Some participents struggled with breaking down the task manually or needed to write down a plan. Participants reported that having this ``Cognitive 
- Scaffolding'' provided directly within the IDE served as a significant ``Executive Functioning'' aid. By offloading the mental energy required for task 
- decomposition, a known bottleneck for neurodivergent individuals who struggle with initiation and sequencing,
+ Scaffolding'' provided directly within the \gls{IDE} served as a significant ``Executive Functioning'' aid. By offloading the mental energy required for task 
+ decomposition, a known bottleneck for \gls{neurodivergent} individuals who struggle with initiation and sequencing,
  the Dashboard allowed users to transition into the ``implementation phase'' with less friction.
 
 
 Similarly, the Code Error Checker transformed the traditionally stressful experience of debugging into an educational interaction. When participants encountered a 
-``No File Open'' error, they responded to the Dashboard`s plain-language feedback significantly faster than they did to standard, often cryptic, IDE diagnostic messages.
+``No File Open'' error, they responded to the Dashboard`s plain-language feedback significantly faster than they did to standard, often cryptic, \gls{IDE} diagnostic messages.
  This reinforces the Dashboard's role not just as a shortcut menu, but as a supportive layer that translates complex system states into actionable information. 
  By providing a safe environment with clear error recovery paths, the system preserves the developer`s ``attentional budget,'' ensuring that minor 
  technical hurdles do not escalate into focus-breaking frustrations. This transition from "system-centric" to "user-centric" feedback is a cornerstone of inclusive 
- design, specifically catering to the need for clarity and predictability in neurodiverse workflows.
+ design, specifically catering to the need for clarity and predictability in \gls{neurodiverse} workflows.
 
 
 \subsection{Number of Clicks and User Flow}
-The Dashboard's design significantly reduced the number of interactions required to perform common tasks. Changing a theme requires just one click compared to an optimal four in the Vanilla interface.
+The Dashboard's design significantly reduced the number of interactions required to perform common tasks. Changing a theme requires just one click compared to an optimal four in the standard interface.
  It is worth noting that this ``optimal path'' assumes the user already knows exactly where to navigate within VS Code's settings menu, which is often not the case, especially for users who are less 
- familiar with this specific IDE.Users unfamiliar with the IDE often took a more circuitous route, increasing both click count and completion time beyond the baseline figures reported in Table 7
+ familiar with this specific \gls{IDE}.Users unfamiliar with the \gls{IDE} often took a more circuitous route, increasing both click count and completion time beyond the baseline figures reported in Table 7
  Similarly, adjusting font size was reduced to a single Dashboard interaction, eliminating the need to locate and navigate nested editor settings entirely.
 
 The most pronounced difference was observed in panel management. Prior to testing, this was not anticipated to be a significant point of friction; however, it proved to be the task with which participants
- most frequently struggled in the Vanilla condition, with several failing to complete it entirely. Where the Vanilla interface required five or more sequential interactions, varying with the number of open
+ most frequently struggled in the standard condition, with several failing to complete it entirely. Where the standard interface required five or more sequential interactions, varying with the number of open
 panels, the Dashboard reduced this to a single toggle. This reduction in interaction depth directly maps to a lower Extraneous Cognitive Load as the developer is no longer required to maintain a mental model
  of the menu hierarchy in working memory, freeing those resources for the primary programming task.
 
@@ -200,15 +200,15 @@ panels, the Dashboard reduced this to a single toggle. This reduction in interac
 NFR3 was evaluated by measuring the time for the Dashboard to display the AI-generated task breakdown after the user initiated the request. 
 Across all participants, the average latency was 1.8 seconds, with a standard deviation of 0.3 seconds. This meets the requirement that
 
-Maintaining response latency below two seconds is particularly important for neurodivergent users, as prolonged waiting periods can disrupt 
+Maintaining response latency below two seconds is particularly important for \gls{neurodivergent} users, as prolonged waiting periods can disrupt 
 attentional continuity and increase the likelihood of task abandonment.
 
 
 
 \subsection{Discussion}
 The empirical data validates the plugin as a successful ``digital ramp''. 
-The 82\% reduction in weighted workload suggests that the ``executive tax'' paid by neurodivergent developers
- is not an inherent trait of their neurology, but a byproduct of "neurotypical bias" in tool design. By suppressing Extraneous Load 
+The 82\% reduction in weighted workload suggests that the ``executive tax'' paid by \gls{neurodivergent} developers
+ is not an inherent trait of their neurology, but a byproduct of \gls{neurotypical-bias} in tool design. By suppressing Extraneous Load 
  (via the Minimalist Toggle) and scaffolding Intrinsic Load (via the Task Architect), the system maximizes Germane Load, allowing 
  cognitive resources to be redirected toward core algorithmic problem-solving.
 
@@ -220,10 +220,10 @@ for the findings:
     The study utilized a limited cohort ($N=5$). Furthermore, participants were known to the researcher 
     prior to the study, introducing a potential recruitment bias that may affect the objectivity of the 
     qualitative feedback.
-    \item \textbf{Participant Confidentiality and Neurodiversity Verification:}
+    \item \textbf{Participant Confidentiality and \Gls{neurodiversity} Verification:}
     Due to stringent ethical considerations regarding the storage of sensitive personal data and the project's
-     condensed timeline, participants were not explicitly asked to disclose or verify their neurodivergent 
-     status. Consequently, while the tool is designed for neurodiverse profiles, the data cannot be 
+     condensed timeline, participants were not explicitly asked to disclose or verify their \gls{neurodivergent} 
+     status. Consequently, while the tool is designed for \gls{neurodiverse} profiles, the data cannot be 
      definitively categorized by specific clinical diagnoses.
     \item \textbf{Short-term Evaluation:}
     The experimental tasks were performed in a controlled, short-term setting. Long-term longitudinal
@@ -231,6 +231,6 @@ for the findings:
      maintains its efficacy over extended, multi-hour work sessions in a professional environment.
     \item \textbf{Baseline Expertise:}
     The absolute values for time-on-task may have been influenced by varying levels of participant expertise
-     with the standard VS Code interface. Developers more accustomed to alternative IDEs may have experienced
-      an inflated learning curve during the ``Vanilla'' control phase.
+     with the standard VS Code interface. Developers more accustomed to alternative \gls{IDE}s may have experienced
+      an inflated learning curve during the standard control phase.
 \end{itemize}

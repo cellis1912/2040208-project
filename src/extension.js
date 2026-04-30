@@ -518,10 +518,12 @@ function getWebviewContent() {
                 padding: 0 5px;
                 opacity: 0.5;
                 transition: opacity 0.2s;
+                flex-shrink: 0;
             }
 
             .delete-task:hover {
                 opacity: 1;
+                color: #ff5555;
             }
 
             .task-row {
@@ -795,8 +797,7 @@ function getWebviewContent() {
                     div.innerHTML = \`
                         <input type="checkbox" class="task-check">
                         <span class="task-text" contenteditable="true">\${cleanText}</span>
-                        <button class="delete-task" title="Delete Task">
-                        </button>
+                        <button class="delete-task" title="Delete Task">&times;</button>
                     \`;
 
                     const checkbox = div.querySelector('.task-check');

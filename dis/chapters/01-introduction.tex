@@ -4,22 +4,22 @@ This project was initially motivated by my lived experience as a \gls{neurodiver
 romanticised as a ``superpower'' due to the high capacity for deep logical analysis
 and rapid skill acquisition. However, this perceived strength came with a significant \gls{cognitive_tax}. Adapting to new environments, fluctuating workloads and 
 maintaining a sustainable work-life balance is often extremely difficult as current tools like \glspl{IDE} lack out of the box features to mitigate 
-these executive functioning barriers. This research seeks to transition the IDE from a passive tool into an active cognitive partner through AI-driven support.
+these executive functioning barriers. This research seeks to transition the \gls{IDE} from a passive tool into an active cognitive partner through AI-driven support.
 
 
 \subsection{Problem Statement}
-While modern IDEs are feature-rich, their design reflects a \gls{neurotypical-bias} that assumes a high baseline for filtering sensory input and managing 
+While modern \glspl{IDE} are feature-rich, their design reflects a \gls{neurotypical-bias} that assumes a high baseline for filtering sensory input and managing 
 multi-step planning. For developers with \gls{ADHD}, \gls{ASD}, or \gls{Dyslexia}, these tools often exacerbate Extraneous Cognitive Load, 
 the mental effort spent on processing the interface rather 
 than the problem logic~\cite{sweller1988cognitive}.
 
-Current IDEs prioritize feature density, often resulting in visual noise from nested menus and persistent notifications. Research indicates that developers with \gls{ADHD} 
-frequently experience task paralysis during project initiation~\cite{bramham2009executive}, while those with \gls{ASD} may struggle with the \gls{double_empathy} problem, leading to them misinterpreting 
+Current \glspl{IDE} prioritise feature density, often resulting in visual noise from nested menus and persistent notifications. Research indicates that developers with \gls{ADHD} 
+frequently experience \gls{task_paralysis}, difficulty initiating tasks during a project~\cite{bramham2009executive}, while those with \gls{ASD} may struggle with the \gls{double_empathy} problem, leading to them misinterpreting 
 ambiguous or implied requirements from team members~\cite{Milton01102012}. Existing AI tools focus almost exclusively on code generation rather than process support. Consequently, there is a critical need 
-for an IDE intervention that acts as a digital ramp, filtering noise and providing the scaffolding necessary to bypass the executive freeze response.
+for an \gls{IDE} intervention that acts as a digital ramp, filtering noise and providing the scaffolding necessary to bypass the executive freeze response.
 
-\subsection{Understanding Neurodiversity in Software Development}
-Before going into the specific technical barriers of modern \glspl{IDE}, it is necessary to define neurodiversity and the cognitive
+\subsection{Understanding \Gls{neurodiversity} in Software Development}
+Before going into the specific technical barriers of modern \glspl{IDE}, it is necessary to define \gls{neurodiversity} and the cognitive
  frameworks that underpin this research. Originally coined by Judy Singer in the late 1990s, \gls{neurodiversity} views neurological differences, such 
  as \gls{ASD}, \gls{ADHD}, and \gls{Dyslexia}, as natural variations in the human genome rather than purely medical deficits~\cite{singer1999why}.
 
@@ -27,12 +27,12 @@ In the context of software engineering, these variations often manifest as uniqu
 developers possess high aptitude for logic and pattern recognition, they frequently encounter barriers related to \gls{executive_dysfunction}. 
 This is an umbrella term for difficulty in mental processes that enable us to plan, focus attention, remember instructions, and juggle multiple tasks 
 successfully. For a developer, \gls{executive_dysfunction} is not a lack of technical ability, but rather a barrier in three key areas: Inhibitory Control
- (filtering IDE distractions), Working Memory (tracking complex syntax), and Cognitive Flexibility (switching between high-level logic and low-level code).
+ (filtering \gls{IDE} distractions), Working Memory (tracking complex syntax), and Cognitive Flexibility (switching between high-level logic and low-level code).
 
-To provide a clearer lens for the objectives of this project, the below table outlines the specific strengths and environmental challenges associated with the conditions most prevalent in the developer community.
+To provide a clearer lens for the objectives of this project, the below table outlines the specific strengths and environmental challenges associated with the conditions most prevalent in the developer community~\cite{sperry2005perceptions}~\cite{hotte2024strengths}~\cite{roitsch2019overview}.
 \begin{table}[H]
     \centering
-    \caption{Neurodivergent Strengths and Environmental Challenges}
+    \caption{\Gls{neurodivergent} Strengths and Environmental Challenges}
     \renewcommand{\arraystretch}{1.5} % Adds breathing room between rows
     \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
         \toprule
@@ -68,7 +68,7 @@ Justification: This directly addresses the issue of visual overload by reducing 
 \textbf{Objective 2: }\gls{AI}-Driven Task Decomposition (The Task Architect)
 
 Target: To implement an \gls{LLM}-integrated module that translates ambiguous programming goals into structured, editable checklists using a Chain of Thought (CoT) prompting strategy. This should be
-implemented via the Open\gls{AI} \gls{API} that breaks down high-level requirements without providing the direct code solution~\cite{ringel2019ai}.
+implemented via the Open\gls{AI} \gls{API} that breaks down high-level requirements~\cite{ringel2019ai}.
 
 
 Justification: This supports task initiation and reduces the energy required to overcome task paralysis, a primary barrier for developers with \gls{ADHD} and \gls{ASD}~\cite{gama2025socio}.
@@ -85,13 +85,13 @@ Justification: This minimizes the cognitive demand of interpreting dense jargon,
 
 \textbf{Objective 4: }Visual Accessibility Customisation (The Visual Styler)
 
-Target: To create at least two visual presets, such as ``Soft High Contrast'', that adhere to \gls{WCAG} 2.1 guidelines to reduce eye strain and enhance readability~\cite{bengtsson2025web}.
+Target: To create at least two visual presets, such as ``Soft High Contrast'', that adhere to \gls{WCAG} 2.1, set of international standards designed to make web content more accessible to people with disabilities it can also help with visual processing, eye strain and enhance readability~\cite{bengtsson2025web}.
 
 Justification: Addresses the sensory sensitivities and colour preferences reported by \gls{neurodivergent} developers in research surveys~\cite{rocha2025conceptual}.
 
 \textbf{Objective 5:} Empirical Evaluation of Cognitive Impact
 
-Target: To conduct a comparative study using the \gls{NASATLX} and the \gls{SUS} to validate the plugin's efficacy against a standard IDE.
+Target: To conduct a comparative study using the \gls{NASATLX} and the \gls{SUS} to validate the plugin's efficacy against a standard \gls{IDE}.
 
 Justification: This provides a standardized scientific metric to confirm if the tool successfully reduces mental demand and frustration for the target demographic.
 
@@ -99,7 +99,7 @@ Justification: This provides a standardized scientific metric to confirm if the 
 
 This dissertation is organized into five sections, following a logical progression from theoretical grounding to empirical validation:
 \begin{itemize}
-  \item \textbf{Section 2: Literature Review} I will evaluate the foundational psychological frameworks of Cognitive Load Theory (CLT) and Multimedia Learning (CTML). This provides a theoretical foundation for other research into the current state of neurodivergent 
+  \item \textbf{Section 2: Literature Review} I will evaluate the foundational psychological frameworks of Cognitive Load Theory (CLT) and Multimedia Learning (CTML). This provides a theoretical foundation for other research into the current state of \gls{neurodivergent} 
   software engineering as well as the shift toward a more social model of disability rather than a medical model.
   \item \textbf{Section 3: Design and Implementation} Details the user requirements and the three-layer system architecture. This chapter explains the technical
    execution of ``Minimalist Toggle'' and ``Task Architect'' as well as the visual presets and styling tools. I will also discuss issues encountered during development and how they were resolved, such as the design of the UI and issues with the AI integration and prompt generation.
@@ -108,3 +108,5 @@ This dissertation is organized into five sections, following a logical progressi
   technology in software development and acknowledging the limitations of the study, such as the small sample size and potential biases in participant selection.
   \item \textbf{Section 5: Conclusion} Summarises the core findings, acknowledges research limitations, and proposes specific avenues for future work with larger, more diverse participant pools.
 \end{itemize}
+
+\newpage

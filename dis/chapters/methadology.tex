@@ -1,6 +1,6 @@
 \section{Design and Implementation}
 \subsection{User Requirements} 
-The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific neurodivergent accessibility guidelines, notably the direct 
+The requirements for the plug-in were derived from a synthesis of Cognitive Load Theory and specific \gls{neurodivergent} accessibility guidelines, notably the direct 
 instructions and visual comfort frameworks identified by \textcite{rocha2025conceptual}.
 
 \begin{table}[H]
@@ -138,7 +138,7 @@ The original design specifications for the Task Architect called for 3 to 5 broa
 To address this, I implemented a hierarchical decomposition strategy. The system is now instructed to generate a primary set of sub-tasks, but with a critical addition: each sub-task must include two distinct micro-steps.
 
 \subsubsection{Visual Styler} 
-The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}`s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for neurodivergent users and those with visual impairments.
+The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}`s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for \gls{neurodivergent} users and those with visual impairments.
 
 \textbf{Accessibility and WCAG Mapping}
 \newline
@@ -158,7 +158,7 @@ Dynamic Scaling: Users can adjust font sizes and line heights across the entire 
 Granular Customization: Unlike traditional static themes, the Styler follows a visual comfort framework. It treats font-weight, letter spacing, and padding as variables that the user can tune to their specific cognitive load requirements.
 
 User Agency and Sensory Regulation
-By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the IDE adapts to the user`s biological needs rather than forcing the user to adapt to a rigid interface.
+By providing an intuitive dashboard for these adjustments, the Visual Styler empowers the developer to curate their own sensory environment. This reduces the cognitive energy spent on deciphering a cluttered or poorly-lit UI, allowing that energy to be redirected toward the primary task of programming. The module essentially acts as a sensory filter, ensuring that the \gls{IDE} adapts to the user`s biological needs rather than forcing the user to adapt to a rigid interface.
 
 \subsection{System Architecture}
 The system is divided into three primary layers: the Presentation Layer (Webview), the Orchestration Layer (Extension Host), and the External Services Layer (VS Code API).
@@ -205,7 +205,7 @@ The architecture employs specialised logic blocks to handle distinct accessibili
 
 4. Integration with Language Models 
 
-The ``Task Architect'' and ``Code Helper'' features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, neurodiverse-friendly steps before pushing the data back to the Presentation Layer.
+The ``Task Architect'' and ``Code Helper'' features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, \gls{neurodiverse}-friendly steps before pushing the data back to the Presentation Layer.
 
 
 \subsection{UI Simplification and Minimalist Toggle}
@@ -273,18 +273,18 @@ So that the response can be easily broken down and cleaned for the output the pr
 
 \subsubsection{Human-in-the-Loop (HITL) Implementation}
 As shown in Figures~\ref{fig:taskoutput} and~\ref{fig:taskarchitect}, the generated tasks are rendered in the dashboard as editable fields. This is a critical design choice to preserve User Agency. 
-Neurodivergent developers often have unique workflows so by allowing the user to edit or delete AI-generated steps, the tool moves from being a prescriptive authority 
+\Gls{neurodivergent} developers often have unique workflows so by allowing the user to edit or delete AI-generated steps, the tool moves from being a prescriptive authority 
 to a flexible partner. The graying-out of completed tasks provides immediate visual feedback, supporting working memory by externalizing task progress.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth, alt={}] {logos/taskoutput.png}
+    \includegraphics[width=0.8\linewidth, alt={}] {logos/taskoutput.png}
     \caption{Example of the output generated by the Task Architect module, showing the micro-steps for a given task.}\label{fig:taskoutput}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\linewidth, alt={}] {logos/taskarchitect.png}
+    \includegraphics[width=0.6\linewidth, alt={}] {logos/taskarchitect.png}
     \caption{Task Architect Module in the Dashboard, showing the generated tasks.}\label{fig:taskarchitect}
 \end{figure}
 
@@ -295,14 +295,8 @@ and vertical padding can significantly reduce the crowding effect in dense code,
 To balance customisability with cognitive ease, the plugin provides a set of predefined spacing presets, Standard, Relaxed, and Spacious,
 for the users to choose from in the dashboard. This allows for quick adjustments without overwhelming the user with too many options, while still providing the 
 necessary customization to accommodate different cognitive needs.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth, alt={}] {logos/dislexSet.png}
-    \caption{The code showing the diffrent presets for spacing and line height}
-    \label{fig:dyslexiasetcode}
-\end{figure}
 
-As shown in Figure~\ref{fig:dyslexiasetcode}, the presets implement a hierarchical increase in visual breathing room:
+The presets implement a hierarchical increase in visual breathing room:
 \begin{itemize}
     \item Standard: Acts as a soft reset to default editor settings ($lineHeight: 0$, $letterSpacing: 0$) using the system's standard font family.
     \item Relaxed: Increases the $lineHeight$ to $30$ and $letterSpacing$ to $0.8$, introducing specialized fonts such as Lexend and OpenDyslexic.
@@ -352,10 +346,16 @@ a readable workspace.
 
 \begin{itemize}
     \item One-Click Presets: Instead of navigating nested VS Code menus, users select the ``Dyslexia-friendly Mode'' or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
-    \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the verification anxiety common when neurodivergent users must exit menus to see if changes were applied.
+    \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the verification anxiety common when \gls{neurodivergent} users must exit menus to see if changes were applied.
     \item Typography Hierarchy: The final implementation ensures that selecting a preset like ``Spacious'' simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
-    \item Non-Destructive Restoration: A critical component of the final UI is the ``Restore Theme'' and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom IDE configurations.
+    \item Non-Destructive Restoration: A critical component of the final UI is the ``Restore Theme'' and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom \gls{IDE} configurations.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.6\linewidth, angle=90, alt={}] {logos/textOptions.png}
+    \caption{Text spacing options implemented}\label{fig:dyslexiaText}
+\end{figure}
 
 \subsection{Pomodoro Timer (FR4)}
 As mentioned in the literature review, the Pomodoro technique can be an effective tool for managing time and maintaining focus, especially for individuals with ADHD. 
@@ -373,49 +373,9 @@ the timing to their own rhythms, the plugin helps to reduce state recovery costs
 \end{figure}
 
 \subsection{Initial User Testing and Feedback}
-The Initial user testing was conducted to evaluate the usability and functionality of the plugin. I
-tested with a developer to get feedback on UI and functionality of the draft design. At this point the plugin
- was mostly fully functional, but I wanted to get feedback on the design and usability of the plugin.
- I asked the user to complete a few tasks using the plugin and then provide feedback on their experience.
- Some of the tasks that I asked them to complete where changing the theme to a high contrast one, and then changing 
-the font size to 18, this was to test the functionality of the plugin and also to see if it was easy for the user to use.
-From this, I had three main takeaways:
-
-\begin{enumerate}
-    \item UI and Functionality requirements:
-    
-    The user found that some of the UI elements where not clearly labelled, this caused confusion
-    especially when it came to the ``Task Architect''and ``Minimalist Toggle'' features. Specifically for the 
-    task tool the user was unclear on what to input into the goal fields. When executing the original button label,
-    ``Decompose'', was too abstract and didn't clearly signal the expected outcome.
-
-
-     To address this, I renamed the action button to ``Generate Steps'' to create a direct link between the action
-    and the result. I also improved the placeholder with an example goal (e.g., ``Build a login page''). 
-    This provides more context for the tool without overcrowding it with a lengthy description.
-    \item AI Response Integrity:
-    
-    There was a technical bug what was truncating the AI response or omitting text contained within quotation marks.
-    This resulted in incomplete micro-steps, significantly reducing the utility of the generated plan.
-
-    To solve this issue, I implemented a more robust parsing strategy that accounts for edge cases in the AI's output. 
-    This involved using regular expressions to ensure that all generated steps, including those with special characters
-     or formatting, are captured and rendered correctly in the UI.
-
-    \item Accessibility and Customization Testing:
-    
-    To evaluate the plugin`s versatility and ease of use, the user was tasked with modifying the environment's appearance.
-    The user was first asked to complete the tasks in vanilla VS Code, and then with the plugin enabled.
-    The user was able to successfully switch to a high-contrast theme and adjusted the font size to 18pt in both versions of
-    the \gls{IDE}. However in in all cases the user found the plugin's interface far quicker to navigate for these specific tasks,
-    as it provided a more direct path to the settings without needing to search through the standard VS Code menus. For example, 
-    the user was able to change the theme in approximately 1.9 seconds or one click with the plugin, compared to 19.9s or 6 clicks in vanilla VS Code.
-
-\end{enumerate}
-
-Overall the user felt that the plugin would be helpful for developers once the issues with the UI and AI responses 
-were resolved, and that it had the potential to reduce cognitive load and improve task initiation.
-
+Initial user testing focused on the plugin's usability and functionality, revealing three critical areas for improvement these are 
+UI clarity, AI reliability, and efficiency. Feedback indicated that original labels like ``Decompose'' were too abstract, 
+leading to a redesign of the Task Architect with clearer button labeling (``Generate Steps'') and contextual placeholders.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth, alt={}] {logos/uiprefix1.png}
@@ -429,10 +389,65 @@ were resolved, and that it had the potential to reduce cognitive load and improv
 \end{figure}
 
 
+Technical evaluations also identified a parsing bug that truncated AI responses, which was resolved by implementing a robust 
+regular expression strategy to ensure full rendering of micro-steps. Finally, comparative testing against standard VS 
+Code demonstrated the plugin's ability to significantly reduce cognitive load; specifically, the user performed accessibility 
+adjustments—such as theme switching—in just 1.9 seconds (one click) compared to 19.9 seconds (six clicks) in the standard \gls{IDE}. 
+These refinements ensured the tool successfully provided a more direct, inclusive path for task initiation and environment customization.
+
+\subsection{Final UI}
+The final UI of the Accessibly Dashboard (see Figure~\ref{fig:finalui}) serves as the unified control center for the plugin`s assistive features. 
+Designed as a centralized Webview panel, it provides a low-friction entry point that reduces the "executive tax" required to manage 
+a complex development environment.
+
+The interface is structured into modular sections to support inhibitory control and working memory:
+
+\textbf{Interface Settings and Theme Presets}
+\begin{itemize}
+\item Minimalist Toggle: A single-click switch ("Close Panels") that simultaneously hides the Activity Bar, Side Bar, Status Bar, 
+and Breadcrumbs to suppress Extraneous Cognitive Load.
+\item Dyslexia Mode: A global toggle to quickly apply readability enhancements.
+\item Soft High Contrast: Includes presets like "Soft HC Dark" and "Soft HC Light" to provide high signal without the sensory 
+halation risks of pure black-and-white themes.
+\item Restore Original: A non-destructive reset button that supports psychological safety by allowing users to instantly 
+revert all environmental changes.
+\end{itemize}
+
+\textbf{Dyslexia Visual Aids and Text Scaling}
+\begin{itemize}
+\item Hierarchical Spacing: A dropdown menu offering Standard, Relaxed, and Spacious presets. Selecting "Spacious" programmatically 
+adjusts line height to 40, letter spacing to 1.5, and switches the font to OpenDyslexic.
+\item Granular Scaling: A dedicated text scaling module allows users to tune the font size in real-time, providing immediate visual 
+confirmation and eliminating "verification anxiety".
+\end{itemize}
+
+\textbf{AI-Driven Scaffolding}
+\begin{itemize}
+    \item Task Architect: A Human-in-the-Loop (HITL) module where users input high-level goals. The AI decomposes these into structured, 
+editable checklists, mitigating the task paralysis common in ADHD and ASD profiles
+    \item Code Helper: A diagnostic interceptor that translates cryptic compiler errors into plain-language instructions, limited to 
+three bullet points to prevent cognitive overload.
+\end{itemize}
+
+\textbf{Time Management}
+\begin{itemize}
+    \item Focus Timer: An integrated Pomodoro timer that allows for user-defined focus and break durations. This externalizes time to 
+support developers with "time blindness" and prevents burnout from unregulated hyperfocus.
+\end{itemize}
+
+The transition to this final dashboard reduced the time required for accessibility adjustments from 19.9 seconds (six clicks) 
+in a standard \gls{IDE} to just 1.9 seconds (one click), representing a significant improvement in operational efficiency.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth, alt={}] {logos/Final.png}
+    \caption{Final UI design.}\label{fig:finalui}
+\end{figure}
+
 \subsection{Evaluation and Methodology}
 
 \subsubsection{Experimental Design}
-This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for neurodivergent research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
+This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for \gls{neurodivergent} research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
 
 \begin{enumerate}
     \item \textbf{Control Condition:} Tasks are performed using a standard \gls{IDE} installation.
@@ -453,7 +468,7 @@ The \gls{NASATLX} is a multidimensional assessment tool used to quantify perceiv
     \item \textbf{Mental Demand:} To assess if the Task Architect successfully reduces the executive function tax required for project initiation.
     \item \textbf{Performance:} To measure the user's self-perception of success in the face of syntax errors or logic bugs.
     \item \textbf{Effort:} To quantify the total mental resources required to reach the goal.
-    \item \textbf{Frustration:} Critical for neurodivergent populations, this measures the emotional cost of switching between tasks and sensory overwhelm.
+    \item \textbf{Frustration:} Critical for \gls{neurodivergent} populations, this measures the emotional cost of switching between tasks and sensory overwhelm.
 \end{itemize}
 
 To evaluate the cognitive and physical demands of both interfaces, a NASA Task Load Index (NASA-TLX) was administered to all participants ($N=5$).
@@ -483,3 +498,5 @@ In the context of this study, the \gls{SUS} serves two primary purposes:
 
 \subsubsection{Data Collection and Analysis}
 In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of state recovery costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.
+
+\newpage

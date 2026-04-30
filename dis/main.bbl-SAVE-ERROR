@@ -461,6 +461,40 @@
       \field{title}{Wired Differently, Working Brilliantly: Understanding and Supporting ADHD \& AuDHD Employees}
       \field{year}{2025}
     \endentry
+    \entry{Milton01102012}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f46ecde311b73cdef87f458f5a5ab17c}{%
+           family={Milton},
+           familyi={M\bibinitperiod},
+           given={Damian\bibnamedelima E.M.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{fullhash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{fullhashraw}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{bibnamehash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{authorbibnamehash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{authornamehash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{authorfullhash}{f46ecde311b73cdef87f458f5a5ab17c}
+      \strng{authorfullhashraw}{f46ecde311b73cdef87f458f5a5ab17c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Disability \& Society}
+      \field{number}{6}
+      \field{title}{On the ontological status of autism: the ‘double empathy problem’}
+      \field{volume}{27}
+      \field{year}{2012}
+      \field{pages}{883\bibrangedash 887}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1080/09687599.2012.710008
+      \endverb
+    \endentry
     \entry{morris2015understanding}{misc}{}{}
       \name{author}{3}{}{%
         {{hash=5283a53c5c081c04252a659743f886e1}{%
