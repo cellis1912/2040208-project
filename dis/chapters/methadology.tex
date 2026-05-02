@@ -19,7 +19,7 @@ instructions and visual comfort frameworks identified by \textcite{rocha2025conc
         
         \textbf{FR2} & AI Support &
         The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks, each containing micro-steps. &
-        Scaffolding of Intrinsic Load (IL) to reduce \gls{executive_dysfunction} and task initiation barriers through stepwise decomposition and cognitive scaffolding principles. \\ 
+        \Gls{scaffolding} of Intrinsic Load (IL) to reduce \gls{executive_dysfunction} and \gls{task_initiation} barriers through stepwise decomposition and cognitive \gls{scaffolding} principles. \\ 
         \addlinespace
         
         \textbf{FR3} & Feedback &
@@ -29,7 +29,7 @@ instructions and visual comfort frameworks identified by \textcite{rocha2025conc
         
         \textbf{FR4} & Time Management &
         The system shall provide a customisable Pomodoro timer integrated into the dashboard, allowing user-defined focus and break durations. &
-        Supports executive functioning through temporal externalisation, mitigating time blindness and \gls{hyperfocus} burnout commonly reported in \gls{ADHD} and \gls{ASD} literature. \\ 
+        Supports executive functioning through temporal externalisation, mitigating \gls{time-blindness} and \gls{hyperfocus} burnout commonly reported in \gls{ADHD} and \gls{ASD} literature. \\ 
         \addlinespace
         
         \textbf{FR5} & Visual Presets &
@@ -103,8 +103,8 @@ By reducing the total number of visual elements on the screen, the module lowers
 code editor itself. When I first had the idea for this toggle I was vaguely aware that I would need to use the vscode.commands API to manipulate the UI.
 
 
-\subsubsection{Task Architect - AI-Driven Scaffolding}
-The Task Architect is a \gls{HITL} module that facilitates task initiation by breaking down overwhelming objectives into granular steps. The module should employs 
+\subsubsection{Task Architect - AI-Driven \Gls{scaffolding}}
+The Task Architect is a \gls{HITL} module that facilitates \gls{task_initiation} by breaking down overwhelming objectives into granular steps. The module should employs 
 a \gls{CoT} prompting strategy to take a complex task and break it down into simpler sub-tasks.
 The generated steps are rendered as editable fields within the dashboard, allowing users to modify or refine the AI's suggestions. This ensures that developers 
 maintain agency over their project architecture while the AI handles the initial decomposition.
@@ -244,7 +244,7 @@ The implementation of the Minimalist Mode focuses on reducing visual noise, whic
 \subsection{AI Integration (FR2 and FR3)}
 The AI-driven features are implemented using a Streaming Data Pattern to satisfy NFR3 (Latency), ensuring the interface remains responsive during complex generation.
 
-\subsubsection{Task Architect: Overcoming Task Paralysis}
+\subsubsection{Task Architect: Overcoming \Gls{task_paralysis}}
 \begin{itemize}
 \item \textbf{Prompt Engineering:} The \textit{Task Architect} uses a strictly defined system prompt to enforce a micro-step structure (3--5 sub-tasks with two 5-minute 
 micro-steps each). This prevents the \gls{LLM} from generating a long response that can be overwhelming.
@@ -274,7 +274,7 @@ So that the response can be easily broken down and cleaned for the output the pr
 \subsubsection{Human-in-the-Loop (HITL) Implementation}
 As shown in Figures~\ref{fig:taskoutput} and~\ref{fig:taskarchitect}, the generated tasks are rendered in the dashboard as editable fields. This is a critical design choice to preserve User Agency. 
 \Gls{neurodivergent} developers often have unique workflows so by allowing the user to edit or delete AI-generated steps, the tool moves from being a prescriptive authority 
-to a flexible partner. The graying-out of completed tasks provides immediate visual feedback, supporting working memory by externalizing task progress.
+to a flexible partner. The graying-out of completed tasks provides immediate visual feedback, supporting \gls{working_memory} by externalizing task progress.
 
 \begin{figure}[H]
     \centering
@@ -363,7 +363,7 @@ The plugin includes a customizable Pomodoro timer that allows users to set their
  25-minute focus period may not be suitable for everyone.
 
 The timer is integrated into the dashboard, providing a visual countdown and notifications when it's time to take a break or return to work. By allowing users to tailor 
-the timing to their own rhythms, the plugin helps to reduce state recovery costs associated with interruptions and supports sustained focus.
+the timing to their own rhythms, the plugin helps to reduce \glspl{state_recovery_cost}s associated with interruptions and supports sustained focus.
 
 \begin{figure}[H]
     \centering
@@ -393,14 +393,14 @@ Technical evaluations also identified a parsing bug that truncated AI responses,
 regular expression strategy to ensure full rendering of micro-steps. Finally, comparative testing against standard VS 
 Code demonstrated the plugin's ability to significantly reduce cognitive load; specifically, the user performed accessibility 
 adjustments—such as theme switching—in just 1.9 seconds (one click) compared to 19.9 seconds (six clicks) in the standard \gls{IDE}. 
-These refinements ensured the tool successfully provided a more direct, inclusive path for task initiation and environment customization.
+These refinements ensured the tool successfully provided a more direct, inclusive path for \gls{task_initiation} and environment customization.
 
 \subsection{Final UI}
 The final UI of the Accessibly Dashboard (see Figure~\ref{fig:finalui}) serves as the unified control center for the plugin`s assistive features. 
 Designed as a centralized Webview panel, it provides a low-friction entry point that reduces the "executive tax" required to manage 
 a complex development environment.
 
-The interface is structured into modular sections to support inhibitory control and working memory:
+The interface is structured into modular sections to support inhibitory control and \gls{working_memory}:
 
 \textbf{Interface Settings and Theme Presets}
 \begin{itemize}
@@ -408,7 +408,7 @@ The interface is structured into modular sections to support inhibitory control 
 and Breadcrumbs to suppress Extraneous Cognitive Load.
 \item Dyslexia Mode: A global toggle to quickly apply readability enhancements.
 \item Soft High Contrast: Includes presets like "Soft HC Dark" and "Soft HC Light" to provide high signal without the sensory 
-halation risks of pure black-and-white themes.
+\gls{halation} risks of pure black-and-white themes.
 \item Restore Original: A non-destructive reset button that supports psychological safety by allowing users to instantly 
 revert all environmental changes.
 \end{itemize}
@@ -421,10 +421,10 @@ adjusts line height to 40, letter spacing to 1.5, and switches the font to OpenD
 confirmation and eliminating "verification anxiety".
 \end{itemize}
 
-\textbf{AI-Driven Scaffolding}
+\textbf{AI-Driven \Gls{scaffolding}}
 \begin{itemize}
     \item Task Architect: A Human-in-the-Loop (HITL) module where users input high-level goals. The AI decomposes these into structured, 
-editable checklists, mitigating the task paralysis common in ADHD and ASD profiles
+editable checklists, mitigating the \gls{task_paralysis} common in ADHD and ASD profiles
     \item Code Helper: A diagnostic interceptor that translates cryptic compiler errors into plain-language instructions, limited to 
 three bullet points to prevent cognitive overload.
 \end{itemize}
@@ -432,7 +432,7 @@ three bullet points to prevent cognitive overload.
 \textbf{Time Management}
 \begin{itemize}
     \item Focus Timer: An integrated Pomodoro timer that allows for user-defined focus and break durations. This externalizes time to 
-support developers with "time blindness" and prevents burnout from unregulated \gls{hyperfocus}.
+support developers with \gls{time-blindness} and prevents burnout from unregulated \gls{hyperfocus}.
 \end{itemize}
 
 The transition to this final dashboard reduced the time required for accessibility adjustments from 19.9 seconds (six clicks) 
@@ -497,6 +497,6 @@ In the context of this study, the \gls{SUS} serves two primary purposes:
 \end{enumerate}
 
 \subsubsection{Data Collection and Analysis}
-In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of state recovery costs following an interruption, providing insight into how the AI scaffolding supports the developer in regaining \gls{hyperfocus}.
+In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of \glspl{state_recovery_cost} following an interruption, providing insight into how the AI \gls{scaffolding} supports the developer in regaining \gls{hyperfocus}.
 
 \newpage

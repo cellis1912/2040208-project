@@ -212,6 +212,50 @@
       \verb https://psycnet.apa.org/record/2011-00741-013
       \endverb
     \endentry
+    \entry{cruz2025empiricalinvestigationexperiencesdyslexic}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=8bb2f3b79a8b96783b72f7043f6c44f8}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Marcos\bibnamedelima Vinicius},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=32fbd1f477bce2d7f25c0ef30629f9eb}{%
+           family={Verma},
+           familyi={V\bibinitperiod},
+           given={Pragya},
+           giveni={P\bibinitperiod}}}%
+        {{hash=620cc9f7fd0de9cfd0af5d7f6bd56311}{%
+           family={Liebel},
+           familyi={L\bibinitperiod},
+           given={Grischa},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd23f20fb01b068a551e1b205329fa6c}
+      \strng{fullhash}{ea3b61f84c942f0f91a947796e3b80df}
+      \strng{fullhashraw}{ea3b61f84c942f0f91a947796e3b80df}
+      \strng{bibnamehash}{ea3b61f84c942f0f91a947796e3b80df}
+      \strng{authorbibnamehash}{ea3b61f84c942f0f91a947796e3b80df}
+      \strng{authornamehash}{fd23f20fb01b068a551e1b205329fa6c}
+      \strng{authorfullhash}{ea3b61f84c942f0f91a947796e3b80df}
+      \strng{authorfullhashraw}{ea3b61f84c942f0f91a947796e3b80df}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.SE}
+      \field{eprinttype}{arXiv}
+      \field{title}{An Empirical Investigation of the Experiences of Dyslexic Software Engineers}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2511.00706
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2511.00706
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2511.00706
+      \endverb
+    \endentry
     \entry{gama2025socio}{misc}{}{}
       \name{author}{5}{}{%
         {{hash=efdb4bb7385aa997050c44c4a6ba2370}{%
@@ -337,6 +381,83 @@
       \verb{url}
       \verb https://remtekworkplace.com/knowledge-hub/the-digital-ramp-and-the-cognitive-debt-navigating-the-brain-ai-loop/
       \endverb
+    \endentry
+    \entry{hotte2024strengths}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=3caa675c7c2dd4a5a6adeddc13a422af}{%
+           family={Hotte-Meunier},
+           familyi={H\bibinithyphendelim M\bibinitperiod},
+           given={Adèle},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4bc3845fdec3ef20d136057a6cd2b30c}{%
+           family={Sarraf},
+           familyi={S\bibinitperiod},
+           given={Lisa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=4b5fbcaae1ef417f811be8aeedd8b819}{%
+           family={Bougeard},
+           familyi={B\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b797dcd40dc4f16cb6d56f7cfa93d8ad}{%
+           family={Bernier},
+           familyi={B\bibinitperiod},
+           given={Félicia},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f7df1f8ddf92ac25101b3cd48527c837}{%
+           family={Voyer},
+           familyi={V\bibinitperiod},
+           given={Chloé},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1db8ae0625de5da971988ecd4e72353f}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Jiaxuan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=af1528a689d109d3e7f4af7e6eec5b50}{%
+           family={El\bibnamedelima Asmar},
+           familyi={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Stéphanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=49b0c59077ba661e4b39d3af25666379}{%
+           family={Stamate},
+           familyi={S\bibinitperiod},
+           given={Alina\bibnamedelima Nusa},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=8af0b225f6f227bb230e7bc85097f0bd}{%
+           family={Corbière},
+           familyi={C\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=07a2ddbd5890e3ddc6b97973cf3547a6}{%
+           family={Villotti},
+           familyi={V\bibinitperiod},
+           given={Patrizia},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Sage UK: London, England}%
+      }
+      \strng{namehash}{0c7fa54e0d73e279f2ad5a72d06c0b44}
+      \strng{fullhash}{5973a83be43eb5dc4b2d949c12c6f063}
+      \strng{fullhashraw}{5973a83be43eb5dc4b2d949c12c6f063}
+      \strng{bibnamehash}{5973a83be43eb5dc4b2d949c12c6f063}
+      \strng{authorbibnamehash}{5973a83be43eb5dc4b2d949c12c6f063}
+      \strng{authornamehash}{0c7fa54e0d73e279f2ad5a72d06c0b44}
+      \strng{authorfullhash}{5973a83be43eb5dc4b2d949c12c6f063}
+      \strng{authorfullhashraw}{5973a83be43eb5dc4b2d949c12c6f063}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neurodiversity}
+      \field{title}{Strengths and challenges to embrace attention-deficit/hyperactivity disorder in employment—A systematic review}
+      \field{volume}{2}
+      \field{year}{2024}
+      \field{pages}{27546330241287655}
+      \range{pages}{1}
     \endentry
     \entry{Hyzy2022}{misc}{}{}
       \name{author}{6}{}{%
@@ -629,6 +750,37 @@
       \field{title}{A Conceptual Model on Neurodivergent Issues in Software Engineering}
       \field{year}{2025}
     \endentry
+    \entry{roitsch2019overview}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a3d3f9555d0bbce6705a98c0b8ad50a4}{%
+           family={Roitsch},
+           familyi={R\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a38d19c30817a8faa2ff342c438a0196}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Silvana\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{fullhash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{fullhashraw}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{bibnamehash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{authorbibnamehash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{authornamehash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{authorfullhash}{b7790bee60ec0d771192cb5555bfe045}
+      \strng{authorfullhashraw}{b7790bee60ec0d771192cb5555bfe045}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science Journal of Education}
+      \field{number}{4}
+      \field{title}{An overview of dyslexia: definition, characteristics, assessment, identification, and intervention}
+      \field{volume}{7}
+      \field{year}{2019}
+    \endentry
     \entry{rosenshine2012principles}{article}{}{}
       \name{author}{1}{}{%
         {{hash=637d536a44f3a937548843805b3ffbfb}{%
@@ -707,6 +859,42 @@
       \field{year}{1999}
       \field{pages}{59\bibrangedash 67}
       \range{pages}{9}
+    \endentry
+    \entry{sperry2005perceptions}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fb9485a44b921fd9d673280579835d7a}{%
+           family={Sperry},
+           familyi={S\bibinitperiod},
+           given={Laurie\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4836ad83983d2c23a2109da088ad9665}{%
+           family={Mesibov},
+           familyi={M\bibinitperiod},
+           given={Gary\bibnamedelima B},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sage Publications Sage CA: Thousand Oaks, CA}%
+      }
+      \strng{namehash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{fullhash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{fullhashraw}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{bibnamehash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{authorbibnamehash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{authornamehash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{authorfullhash}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \strng{authorfullhashraw}{f2fea0b50f21048f1378a2cc582fcc5b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autism}
+      \field{number}{4}
+      \field{title}{Perceptions of social challenges of adults with autism spectrum disorder}
+      \field{volume}{9}
+      \field{year}{2005}
+      \field{pages}{362\bibrangedash 376}
+      \range{pages}{15}
     \endentry
     \entry{sweller1988cognitive}{misc}{}{}
       \name{author}{1}{}{%

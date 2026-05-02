@@ -20,29 +20,29 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Executive Functioning and Task Switching}{7}{subsubsection.26}%
 \contentsline {subsubsection}{\numberline {2.3.3}Specific Challenges by Condition}{7}{subsubsection.27}%
 \contentsline {subsubsection}{\numberline {2.3.4}Beyond Medical}{8}{subsubsection.28}%
-\contentsline {subsubsection}{\numberline {2.3.5}The ``Double-Edged Sword'' of Hyperfocus}{8}{subsubsection.29}%
+\contentsline {subsubsection}{\numberline {2.3.5}The ``Double-Edged Sword'' of \Gls {hyperfocus}}{8}{subsubsection.29}%
 \contentsline {subsection}{\numberline {2.4}Existing Tools}{9}{subsection.30}%
 \contentsline {subsection}{\numberline {2.5}Pomodoro Timer}{10}{subsection.31}%
-\contentsline {subsubsection}{\numberline {2.5.1}Managing Executive Dysfunction and Task Paralysis}{10}{subsubsection.32}%
-\contentsline {subsubsection}{\numberline {2.5.2}Combatting Time Blindness and Hyperfocus Burnout}{10}{subsubsection.33}%
+\contentsline {subsubsection}{\numberline {2.5.1}Managing \Gls {executive_dysfunction} and \Gls {task_paralysis}}{10}{subsubsection.32}%
+\contentsline {subsubsection}{\numberline {2.5.2}Combatting \Gls {time-blindness} and \Gls {hyperfocus} Burnout}{10}{subsubsection.33}%
 \contentsline {subsubsection}{\numberline {2.5.3}Cognitive Load and Adaptive Implementation}{10}{subsubsection.34}%
 \contentsline {subsection}{\numberline {2.6}Colour filters}{11}{subsection.35}%
-\contentsline {subsubsection}{\numberline {2.6.1}The Halation Risk and Soft High Contrast}{11}{subsubsection.36}%
-\contentsline {subsection}{\numberline {2.7}AI as a Cognitive Tool: Task Decomposition and Scaffolding}{12}{subsection.37}%
+\contentsline {subsubsection}{\numberline {2.6.1}The \Gls {halation} Risk and Soft High Contrast}{11}{subsubsection.36}%
+\contentsline {subsection}{\numberline {2.7}AI as a Cognitive Tool: Task Decomposition and \Gls {scaffolding}}{12}{subsection.37}%
 \contentsline {subsection}{\numberline {2.8}NASA-TLX and SUS: Measuring Cognitive Load and Usability}{12}{subsection.38}%
 \contentsline {section}{\numberline {3}Design and Implementation}{13}{section.39}%
 \contentsline {subsection}{\numberline {3.1}User Requirements}{13}{subsection.40}%
 \contentsline {subsection}{\numberline {3.2}Module Design}{14}{subsection.42}%
 \contentsline {subsection}{\numberline {3.3}Technology Stack}{15}{subsection.44}%
 \contentsline {subsubsection}{\numberline {3.3.1}Minimalist Toggle}{15}{subsubsection.45}%
-\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - AI-Driven Scaffolding}{16}{subsubsection.46}%
+\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - AI-Driven \Gls {scaffolding}}{16}{subsubsection.46}%
 \contentsline {subsubsection}{\numberline {3.3.3}Visual Styler}{16}{subsubsection.47}%
 \contentsline {subsection}{\numberline {3.4}System Architecture}{17}{subsection.48}%
 \contentsline {subsection}{\numberline {3.5}UI Simplification and Minimalist Toggle}{19}{subsection.50}%
 \contentsline {subsection}{\numberline {3.6}AI Integration (FR2 and FR3)}{20}{subsection.54}%
-\contentsline {subsubsection}{\numberline {3.6.1}Task Architect: Overcoming Task Paralysis}{20}{subsubsection.55}%
+\contentsline {subsubsection}{\numberline {3.6.1}Task Architect: Overcoming \Gls {task_paralysis}}{20}{subsubsection.55}%
 \contentsline {subsubsection}{\numberline {3.6.2}Human-in-the-Loop (HITL) Implementation}{22}{subsubsection.58}%
-\contentsline {subsection}{\numberline {3.7}Dyslexia Settings: Test spacing (FR5)}{23}{subsection.61}%
+\contentsline {subsection}{\numberline {3.7}\Gls {dyslexia} Settings: Test spacing (FR5)}{23}{subsection.61}%
 \contentsline {subsubsection}{\numberline {3.7.1}Initial Plan: One Option}{24}{subsubsection.62}%
 \contentsline {subsubsection}{\numberline {3.7.2}Final UI Integration}{26}{subsubsection.65}%
 \contentsline {subsection}{\numberline {3.8}Pomodoro Timer (FR4)}{29}{subsection.68}%
@@ -55,20 +55,21 @@
 \contentsline {section}{\numberline {4}Results and Discussion}{35}{section.84}%
 \contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{35}{subsection.85}%
 \contentsline {subsection}{\numberline {4.2}Workload Comparison and Interpretation}{35}{subsection.87}%
-\contentsline {subsection}{\numberline {4.3}Efficiency and Time-on-Task Analysis}{37}{subsection.91}%
-\contentsline {subsection}{\numberline {4.4}SUS Metrics}{38}{subsection.93}%
-\contentsline {subsubsection}{\numberline {4.4.1}Item 2 \& 6: Complexity and Consistency}{38}{subsubsection.94}%
-\contentsline {subsubsection}{\numberline {4.4.2}Item 4 \& 10: Independence and Learning Curve}{38}{subsubsection.95}%
-\contentsline {subsubsection}{\numberline {4.4.3}Item 9: Confidence}{38}{subsubsection.96}%
-\contentsline {subsection}{\numberline {4.5}Pre-Study Interview Findings}{39}{subsection.97}%
-\contentsline {subsection}{\numberline {4.6}Real-Time Feedback and User Experience}{39}{subsection.98}%
-\contentsline {subsection}{\numberline {4.7}Number of Clicks and User Flow}{40}{subsection.99}%
-\contentsline {subsection}{\numberline {4.8}Latency Testing}{41}{subsection.100}%
-\contentsline {subsection}{\numberline {4.9}Discussion}{41}{subsection.101}%
-\contentsline {subsection}{\numberline {4.10}Limitations}{41}{subsection.102}%
-\contentsline {section}{\numberline {5}Conclusion}{42}{section.103}%
-\contentsline {subsection}{\numberline {5.1}Project Aim}{42}{subsection.104}%
-\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{42}{subsection.105}%
-\contentsline {subsection}{\numberline {5.3}What has been learned}{42}{subsection.106}%
-\contentsline {subsection}{\numberline {5.4}Future Work}{43}{subsection.107}%
-\contentsline {section}{References}{43}{section*.108}%
+\contentsline {subsection}{\numberline {4.3}Comparative Workload Topology (Radar Chart Analysis)}{36}{subsection.90}%
+\contentsline {subsection}{\numberline {4.4}Efficiency and Time-on-Task Analysis}{37}{subsection.92}%
+\contentsline {subsection}{\numberline {4.5}SUS Metrics}{38}{subsection.94}%
+\contentsline {subsubsection}{\numberline {4.5.1}Questions 2 \& 6: Complexity and Consistency}{38}{subsubsection.96}%
+\contentsline {subsubsection}{\numberline {4.5.2}Questions 4 \& 10: Independence and Learning Curve}{38}{subsubsection.97}%
+\contentsline {subsubsection}{\numberline {4.5.3}Question 9: Confidence}{39}{subsubsection.98}%
+\contentsline {subsection}{\numberline {4.6}Pre-Study Interview Findings}{39}{subsection.99}%
+\contentsline {subsection}{\numberline {4.7}Real-Time Feedback and User Experience}{40}{subsection.100}%
+\contentsline {subsection}{\numberline {4.8}Number of Clicks and User Flow}{40}{subsection.101}%
+\contentsline {subsection}{\numberline {4.9}Latency Testing}{41}{subsection.102}%
+\contentsline {subsection}{\numberline {4.10}Discussion}{41}{subsection.103}%
+\contentsline {subsection}{\numberline {4.11}Limitations}{41}{subsection.104}%
+\contentsline {section}{\numberline {5}Conclusion}{42}{section.105}%
+\contentsline {subsection}{\numberline {5.1}Project Aim}{42}{subsection.106}%
+\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{42}{subsection.107}%
+\contentsline {subsection}{\numberline {5.3}What has been learned}{42}{subsection.108}%
+\contentsline {subsection}{\numberline {5.4}Future Work}{43}{subsection.109}%
+\contentsline {section}{References}{43}{section*.110}%
