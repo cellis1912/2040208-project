@@ -95,15 +95,15 @@ For the AI features, I decided to use the gpt-4o model through the VS Code Langu
 requiring users to manage their own API keys. Finally, I chose HTML and CSS for the Webview UI to allow for maximum flexibility in designing the dashboard 
 and implementing custom themes. 
 
-\subsubsection{Minimalist Toggle}
+\subsubsection{Minimalist Toggle (FR1)}
 
 The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilises a state-management system to track the current visibility of the VS Code workbench.
 When activated, it dispatches a batch of imperative commands to the vscode.commands API, hiding the Activity Bar, Status Bar, Side Bar, and Breadcrumbs simultaneously.
 By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the
-code editor itself. When I first had the idea for this toggle I was vaguely aware that I would need to use the vscode.commands API to manipulate the UI.
+code editor itself. When I first had the idea for this toggle I was vaguely aware that I would need to use the vscode.commands API to manipulate the UI \ref{}.
 
 
-\subsubsection{Task Architect - AI-Driven \Gls{scaffolding}}
+\subsubsection{Task Architect - AI-Driven \Gls{scaffolding} (FR2)}
 The Task Architect is a \gls{HITL} module that facilitates \gls{task_initiation} by breaking down overwhelming objectives into granular steps. The module should employs 
 a \gls{CoT} prompting strategy to take a complex task and break it down into simpler sub-tasks.
 The generated steps are rendered as editable fields within the dashboard, allowing users to modify or refine the AI's suggestions. This ensures that developers 
@@ -208,7 +208,7 @@ The architecture employs specialised logic blocks to handle distinct accessibili
 The \textit{Task Architect} and \textit{Code Helper} features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, \gls{neurodiverse}-friendly steps before pushing the data back to the Presentation Layer.
 
 
-\subsection{UI Simplification and Minimalist Toggle}
+\subsection{UI Simplification and Minimalist Toggle (FR1)}
 The implementation of the Minimalist Mode focuses on reducing visual noise, which research identifies as a primary driver of cognitive overload and sensory overwhelm for autistic and ADHD developers.
  This module acts as a digital ramp, filtering environmental noise to prevent the exhaustion of a developer's limited cognitive budget.
  

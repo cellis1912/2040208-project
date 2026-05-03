@@ -93,7 +93,7 @@ The standard interface creates a wide, irregular polygon, showing significant pe
 collapses these peaks, reducing them to near-minimal levels. This reduction provides empirical evidence that the plugin successfully suppresses Extraneous 
 Load while providing the Intrinsic scaffolding necessary to protect the user's finite attentional budget.
 
-\subsection{Efficiency and Time-on-Task Analysis}
+\subsection{Efficiency and Time-on-Task Analysis (FR1)}
 The Dashboard demonstrated a large improvement in operational efficiency. As shown in the Table~\ref{tab:time_savings}, users completed configuration
  tasks approximately \textbf{84\% faster} than in the baseline environment.
 
@@ -229,13 +229,33 @@ panels, the Dashboard reduced this to a single toggle. This reduction in interac
  of the menu hierarchy in \gls{working_memory}, freeing those resources for the primary programming task.
 
 \subsection{Latency Testing}
-NFR3 was evaluated by measuring the time for the Dashboard to display the AI-generated task breakdown after the user initiated the request. 
-Across all participants, the average latency was 1.8 seconds, with a standard deviation of 0.3 seconds. This meets the requirement that
+The Performance of NFR3 was evaluated by measuring the time elapsed between a user-initiated request and the rendering of the AI-generated task breakdown in the Dashboard.
 
-Maintaining response latency below two seconds is particularly important for \gls{neurodivergent} users, as prolonged waiting periods can disrupt 
-attentional continuity and increase the likelihood of task abandonment.
+During the initial manual testing phase, I observed an average latency of approximately 3 seconds. While functional, this slightly exceeded the 2-second 
+threshold defined in the project requirements.~\textcite{nielsen1994usability} established that a response time of under 2 seconds is generally perceived 
+as instantaneous by users, which is critical for maintaining flow and minimizing cognitive disruption.
+ To achieve a more rigorous and repeatable measurement, I implemented an automated testing 
+script that programmatically triggered the \textit{Task Architect}. This script recorded the time taken between request initiation and the 
+appearance of the first response in the \gls{UI} window.
 
-\subsection{WCAG Testing}
+
+The automated tests revealed a refined average latency of 1.8 seconds, successfully meeting the performance requirement. Maintaining a 
+response latency below two seconds is particularly critical for neurodivergent users, as prolonged system delays can trigger state recovery 
+costs or disrupt attentional continuity, significantly increasing the likelihood of task abandonment.
+
+\subsection{\gls{WCAG} 2.1 and Accessibility Compliance}
+The Accessible Dashboard achieved a high score of 98/100 on the \gls{WCAG} 2.1 accessibility evaluation. Minor point deductions were exclusively 
+related to the touch target sizing of specific interactive elements, which will be addressed in future iterations.  
+
+This score was validated through a combination of:
+\begin{itemize}
+    \item \textbf{Automated Audits:} Utilizing Lighthouse to identify structural and contrast-related issues.  
+    \item \textbf{Manual Testing:} Verifying compatibility with assistive technologies to ensure a seamless experience for users with motor or visual impairments.  
+\end{itemize}
+
+The high level of compliance indicates that the tool meets stringent international standards, ensuring it is usable by a diverse range 
+of developers. For a tool designed to support neurodivergent software engineers, this baseline of accessibility is essential, as it ensures 
+that the interface itself does not introduce a secondary executive tax or sensory barriers that could negate the benefits of the AI-driven scaffolding.
 
 \subsection{Discussion}
 The empirical data validates the plugin as a successful digital ramp. 
