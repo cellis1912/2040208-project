@@ -19,6 +19,7 @@
 \glossaryentry{halation?\glossentry{halation}|setentrycounter[]{page}"\glsnumberformat}{I}
 \glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{I}
 \glossaryentry{non-destructive restoration?\glossentry{non_destructive}|setentrycounter[]{page}"\glsnumberformat}{I}
+\glossaryentry{extraneous cognitive load?\glossentry{extraneous_cognitive_load}|setentrycounter[]{page}"\glsnumberformat}{I}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{I}
 \glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{I}
 \glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{I}
@@ -35,7 +36,7 @@
 \glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{III}
 \glossaryentry{halation?\glossentry{halation}|setentrycounter[]{page}"\glsnumberformat}{III}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{III}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{III}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{IV}
 \glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{IV}
 \glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{IV}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{VI}
@@ -44,6 +45,7 @@
 \glossaryentry{cognitive tax?\glossentry{cognitive_tax}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{neurotypical bias?\glossentry{neurotypical-bias}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{1}
+\glossaryentry{extraneous cognitive load?\glossentry{extraneous_cognitive_load}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{double empathy problem?\glossentry{double_empathy}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{1}
@@ -144,68 +146,70 @@
 \glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{time blindness?\glossentry{time-blindness}|setentrycounter[]{page}"\glsnumberformat}{13}
-\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{13}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{13}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{time blindness?\glossentry{time-blindness}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{16}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{17}
-\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{17}
-\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{18}
-\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{20}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{22}
-\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{23}
-\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{25}
+\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{18}
+\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{19}
+\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{21}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{23}
+\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{23}
+\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{24}
 \glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{26}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{27}
-\glossaryentry{state recovery cost?\glossentry{state_recovery_cost}|setentrycounter[]{page}"\glsnumberformat}{29}
-\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{halation?\glossentry{halation}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{time blindness?\glossentry{time-blindness}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{33}
-\glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{33}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{33}
-\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{34}
-\glossaryentry{state recovery cost?\glossentry{state_recovery_cost}|setentrycounter[]{page}"\glsnumberformat}{34}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{34}
-\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{34}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{36}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{38}
-\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{39}
-\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{39}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{27}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{28}
+\glossaryentry{state recovery cost?\glossentry{state_recovery_cost}|setentrycounter[]{page}"\glsnumberformat}{30}
+\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{halation?\glossentry{halation}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{dyslexia?\glossentry{dyslexia}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{time blindness?\glossentry{time-blindness}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{34}
+\glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{34}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{34}
+\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{35}
+\glossaryentry{state recovery cost?\glossentry{state_recovery_cost}|setentrycounter[]{page}"\glsnumberformat}{35}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{35}
+\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{35}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{37}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{40}
+\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{40}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{40}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{40}
-\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{40}
-\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{41}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{41}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{41}
-\glossaryentry{neurotypical bias?\glossentry{neurotypical-bias}|setentrycounter[]{page}"\glsnumberformat}{41}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{41}
-\glossaryentry{neurodiversity?\glossentry{neurodiversity}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{executive dysfunction?\glossentry{executive_dysfunction}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{working memory?\glossentry{working_memory}|setentrycounter[]{page}"\glsnumberformat}{42}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{42}
 \glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{42}
 \glossaryentry{neurotypical bias?\glossentry{neurotypical-bias}|setentrycounter[]{page}"\glsnumberformat}{42}
-\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{43}
-\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{43}
-\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{42}
+\glossaryentry{neurodiversity?\glossentry{neurodiversity}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{43}
 \glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{43}
 \glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{43}
 \glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{43}
-\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{neurodivergent?\glossentry{neurodivergent}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{neurotypical bias?\glossentry{neurotypical-bias}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{task initiation?\glossentry{task_initiation}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{neurodiverse?\glossentry{neurodiverse}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{hyperfocus?\glossentry{hyperfocus}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{scaffolding?\glossentry{scaffolding}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{task paralysis?\glossentry{task_paralysis}|setentrycounter[]{page}"\glsnumberformat}{44}

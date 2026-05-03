@@ -111,14 +111,14 @@ Manage Panels* & 32.34 & 3.4 & 89.49\% \\ \bottomrule
 \end{tabular}
 \end{table}
 
-The ``Manage Panels'' task provided the most striking difference in results. In the standard interface, several participants struggled to locate specific toggle 
-settings, leading to a ``search-loop'' behavior. Most of the participants tried to close each panel individually rather than using the ``Customize Layout'' command.
+The \textit{Manage Panels} task provided the most striking difference in results. In the standard interface, several participants struggled to locate specific toggle 
+settings, leading to a \textit{search-loop} behavior. Most of the participants tried to close each panel individually rather than using the \textit{Customize Layout} command.
  This resulted in significantly longer completion times and increased frustration and one of the participants giving up completely. 
 In the Dashboard, the same task was reduced to a singular, high-visibility interaction therefore the task only took a matter of seconds.
 
 While these timings indicate a clear trend, they should be interpreted with caution. Potential variations in manual timing and the participants'
  varying levels of expertise with the baseline \gls{IDE} (Visual Studio Code) may have influenced the absolute values. 
- Specifically, developers who primarily use alternative editors in their daily workflows may have experienced a steeper learning curve with the ``standard'' interface,
+ Specifically, developers who primarily use alternative editors in their daily workflows may have experienced a steeper learning curve with the standard interface,
   potentially inflating the initial completion times.
 
 
@@ -172,11 +172,11 @@ workflows, coping strategies, and pain points when using traditional \glspl{IDE}
 \item \textbf{Panel Management:} The majority of participants expressed frustration with the number of open panels in a standard \gls{IDE}, yet reported 
 that they rarely closed them. Rather than actively managing their workspace, participants described a pattern of passive tolerance, simply ignoring panels 
 they did not need. As one participant noted, the effort required to locate and close individual panels felt disproportionate to the benefit, resulting in what 
-might be characterised as a ``cognitive acceptance'' of a cluttered environment. This finding directly supports the need for the single-click Minimalist Toggle.
+might be characterised as a cognitive acceptance of a cluttered environment. This finding directly supports the need for the single-click Minimalist Toggle.
 
 
 \item \textbf{Task Decomposition:} When asked how they would typically break down a complex programming task, most participants described struggling with initiation.
-Several noted that an empty \gls{IDE} felt ``daunting'', and their strategies for overcoming this varied: some wrote rough outlines on paper or 
+Several noted that an empty \gls{IDE} felt daunting, and their strategies for overcoming this varied: some wrote rough outlines on paper or 
 in a separate document, while others attempted to hold the steps in \gls{working_memory}. One participant reported regularly using ChatGPT to scaffold 
 their thinking, but found it tended to generate code directly rather than a structured plan, which they described as ``not helpful for actually getting 
 started''. This corroborates the \gls{task_paralysis} literature and provides direct user-grounded motivation for the Task Architect module.
@@ -193,34 +193,34 @@ module's plain-language feedback approach.
 During the evaluation, I observed significant differences in how the Dashboard and the standard interface handled real-time feedback. The Dashboard`s capacity to provide instantaneous 
 feedback for aesthetic modifications, such as theme and font-size adjustments, where preferred to the baseline interface. This immediate confirmation allowed
  users to acknowledge their actions to system changes instantly, effectively eliminating uncertainty and the associated cognitive load of second-guessing. In 
- contrast, the standard interface`s settings menus often induced ``verification anxiety,'' where users had to manually exit menus to check if a change had 
+ contrast, the standard interface`s settings menus often induced verification anxiety, where users had to manually exit menus to check if a change had 
  been applied. One participant specifically noted that the lack of immediate visual confirmation in the standard \gls{IDE} led to redundant, repetitive attempts, which 
  directly correlated with the higher frustration scores recorded in the NASA-TLX and the higher time taken for these tasks.
 
-Beyond visual configuration, non-visual features such as the AI Task Breakdown and Code Error Checker were evaluated through a ``Think Aloud'' protocol. Participants 
+Beyond visual configuration, non-visual features such as the AI Task Breakdown and Code Error Checker were evaluated through a \textit{Think Aloud} protocol. Participants 
 were asked to interact with these features and explain their how they believed that they would work as well has how they could interact with them. From this results were consistently positive,
  all participants accurately identified the functional intent and operational flow of these complex tools.
 
- For the AI Task Breakdown, a ``manual-vs-automated'' baseline was established. Before triggering the AI, users were asked to verbally outline a high-level 
+ For the AI Task Breakdown, a manual vs automated baseline was established. Before triggering the AI, users were asked to verbally outline a high-level 
  decomposition of a programming task. While most provided basic, linear steps, the AI-generated breakdown offered a more granular, comprehensive hierarchical 
  structure. Some participants struggled with breaking down the task manually or needed to write down a plan. Participants reported that having this cognitive 
- \gls{scaffolding} provided directly within the \gls{IDE} served as a significant ``Executive Functioning'' aid. By offloading the mental energy required for task 
+ \gls{scaffolding} provided directly within the \gls{IDE} served as a significant aid in reducing \gls{executive_dysfunction}. By offloading the mental energy required for task 
  decomposition, a known bottleneck for \gls{neurodivergent} individuals who struggle with initiation and sequencing,
- the Dashboard allowed users to transition into the ``implementation phase'' with less friction.
+ the Dashboard allowed users to transition into the implementation phase with less friction.
 
 
 Similarly, the Code Error Checker transformed the traditionally stressful experience of debugging into an educational interaction. When participants encountered a 
 ``No File Open'' error, they responded to the Dashboard`s plain-language feedback significantly faster than they did to standard, often cryptic, \gls{IDE} diagnostic messages.
  This reinforces the Dashboard's role not just as a shortcut menu, but as a supportive layer that translates complex system states into actionable information. 
- By providing a safe environment with clear error recovery paths, the system preserves the developer`s ``attentional budget,'' ensuring that minor 
- technical hurdles do not escalate into focus-breaking frustrations. This transition from "system-centric" to "user-centric" feedback is a cornerstone of inclusive 
+ By providing a safe environment with clear error recovery paths, the system preserves the developer`s attentional budget, ensuring that minor 
+ technical hurdles do not escalate into focus-breaking frustrations. This transition from \textit{system-centric} to \textit{user-centric} feedback is a cornerstone of inclusive 
  design, specifically catering to the need for clarity and predictability in \gls{neurodiverse} workflows.
 
 
 \subsection{Number of Clicks and User Flow}
 The Dashboard's design significantly reduced the number of interactions required to perform common tasks. Changing a theme requires just one click compared to an optimal four in the standard interface.
- It is worth noting that this ``optimal path'' assumes the user already knows exactly where to navigate within VS Code's settings menu, which is often not the case, especially for users who are less 
- familiar with this specific \gls{IDE}.Users unfamiliar with the \gls{IDE} often took a more circuitous route, increasing both click count and completion time beyond the baseline figures reported in Table 7
+ It is worth noting that this optimal path assumes the user already knows exactly where to navigate within VS Code's settings menu, which is often not the case, especially for users who are less 
+ familiar with this specific \gls{IDE}.Users unfamiliar with the \gls{IDE} often took a more circuitous route, increasing both click count and completion time beyond the baseline figures reported in Table~\ref{tab:time-saving}
  Similarly, adjusting font size was reduced to a single Dashboard interaction, eliminating the need to locate and navigate nested editor settings entirely.
 
 The most pronounced difference was observed in panel management. Prior to testing, this was not anticipated to be a significant point of friction; however, it proved to be the task with which participants
@@ -238,11 +238,23 @@ attentional continuity and increase the likelihood of task abandonment.
 
 
 \subsection{Discussion}
-The empirical data validates the plugin as a successful ``digital ramp''. 
-The 82\% reduction in weighted workload suggests that the ``executive tax'' paid by \gls{neurodivergent} developers
+The empirical data validates the plugin as a successful digital ramp. 
+The 82\% reduction in weighted workload suggests that the executive tax paid by \gls{neurodivergent} developers
  is not an inherent trait of their neurology, but a byproduct of \gls{neurotypical-bias} in tool design. By suppressing Extraneous Load 
  (via the Minimalist Toggle) and \gls{scaffolding} Intrinsic Load (via the Task Architect), the system maximizes Germane Load, allowing 
  cognitive resources to be redirected toward core algorithmic problem-solving.
+
+Beyond the primary target demographic, the results provide strong evidence for the curb-cut principle within the IDE ecosystem:
+\begin{itemize}
+    \item Validation of Universal Utility: The Excellent SUS score of 92 suggests the interface is perceived not as a niche medical tool, but as a high-performance 
+productivity suite suitable for any developer.
+    \item Universal Operational Efficiency: While designed to mitigate executive dysfunction, the 89.49\% time reduction in panel management (Table~\ref{tab:time_savings}) 
+    represents a universal efficiency gain. This suggests that the nested menus in a standard IDE is a friction point for all users.
+    \item Support for Deep Work: Extraneous Load is a cognitive burden for every developer. By providing a single-click path to a minimalist environment, 
+the plugin supports the deep work and flow-state requirements of neurotypical developers just as effectively as it supports task initiation for those with ADHD or ASD.
+    \item Reduced Verification Anxiety: The implementation of instantaneous feedback for environment changes (Section 4.7) eliminates the verification anxiety common in 
+complex settings menus, streamlining the workflow for the general developer population. 
+\end{itemize}
 
 \subsection{Limitations}
 While the results of this study are encouraging, several limitations must be acknowledged to provide context 
@@ -259,7 +271,7 @@ for the findings:
      definitively categorized by specific clinical diagnoses.
     \item \textbf{Short-term Evaluation:}
     The experimental tasks were performed in a controlled, short-term setting. Long-term longitudinal
-     studies are required to determine if the plugin effectively mitigates ``\gls{hyperfocus} burnout'' or 
+     studies are required to determine if the plugin effectively mitigates \gls{hyperfocus} burnout or 
      maintains its efficacy over extended, multi-hour work sessions in a professional environment.
     \item \textbf{Baseline Expertise:}
     The absolute values for time-on-task may have been influenced by varying levels of participant expertise

@@ -25,7 +25,14 @@
 \newcommand{\StudentNumber}{220402088}
 \newcommand{\SubmissionMonth}{May}
 \newcommand{\SubmissionYear}{2026}
-
+\newcommand{\wordcount}[1]{%
+    \vfill
+    \begin{center}
+        \rule{0.3\textwidth}{0.4pt} \\
+        \vspace{0.2cm}
+        \textbf{Word Count:} #1
+    \end{center}
+}
 % --------------------------------------------------------
 % Fonts & Spacing
 % --------------------------------------------------------
@@ -70,6 +77,8 @@
 \usepackage{tocloft}
 \setlength{\cftbeforesubsubsecskip}{1pt}
 \setlength{\cftbeforetabskip}{3pt}
+
+\renewcommand{\cftdot}{}
 
 % --------------------------------------------------------
 % Main document

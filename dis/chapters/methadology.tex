@@ -13,17 +13,17 @@ instructions and visual comfort frameworks identified by \textcite{rocha2025conc
         \midrule
         
         \textbf{FR1} & Interface &
-        The system shall provide a single-click ``Minimalist Toggle'' to simultaneously hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs. &
+        The system shall provide a single-click \textit{Minimalist Toggle} to simultaneously hide the Activity Bar, Side Bar, Status Bar, and Breadcrumbs. &
         Direct suppression of Extraneous Cognitive Load (EL) through reduction of visual stimuli, supporting inhibitory control and minimising sensory overload in line with Cognitive Load Theory. \\ 
         \addlinespace
         
         \textbf{FR2} & AI Support &
-        The ``Task Architect'' shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks, each containing micro-steps. &
+        The \textit{Task Architect} shall decompose high-level prompts into a structured checklist of 10 manageable sub-tasks, each containing micro-steps. &
         \Gls{scaffolding} of Intrinsic Load (IL) to reduce \gls{executive_dysfunction} and \gls{task_initiation} barriers through stepwise decomposition and cognitive \gls{scaffolding} principles. \\ 
         \addlinespace
         
         \textbf{FR3} & Feedback &
-        The ``Code Explainer'' shall intercept compiler errors and provide non-technical bulleted summaries (maximum three points). &
+        The \textit{Code Explainer} shall intercept compiler errors and provide non-technical bulleted summaries (maximum three points). &
         Reduction of EL by converting jargon-heavy diagnostic messages into direct instruction, aligned with split-attention reduction and plain-language accessibility principles. \\ 
         \addlinespace
         
@@ -144,7 +144,7 @@ The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}
 \newline
 To ensure the platform is accessible to the widest possible audience, the Visual Styler utilizes a systematic mapping of presets based on the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
 \begin{itemize}
-    \item High Contrast Modes: The module provides dedicated ``High Contrast Dark'' and ``High Contrast Light'' themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
+    \item High Contrast Modes: The module provides dedicated \textit{High Contrast Dark} and \textit{High Contrast Light} themes. These presets are programmatically validated to ensure a minimum contrast ratio of 4.5:1 for standard text and 3:1 for large text or UI components.
     \item Sensitivity Accommodations: By offering these specific color profiles, the \gls{IDE} addresses the needs of users with color vision deficiencies (CVD) and photophobia 
     (light sensitivity), allowing for a high-degree of legibility without triggering sensory fatigue.
 \end{itemize}
@@ -205,7 +205,7 @@ The architecture employs specialised logic blocks to handle distinct accessibili
 
 4. Integration with Language Models 
 
-The ``Task Architect'' and ``Code Helper'' features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, \gls{neurodiverse}-friendly steps before pushing the data back to the Presentation Layer.
+The \textit{Task Architect} and \textit{Code Helper} features utilise the VS Code Language Model \gls{API}. This architectural choice ensures security and efficiency, as the extension does not require individual \gls{API} keys from the user. Instead, it requests access to the editor's resident models (e.g., GPT-4o). The system uses a \gls{CoT} prompting strategy to process raw diagnostic data or user goals into structured, \gls{neurodiverse}-friendly steps before pushing the data back to the Presentation Layer.
 
 
 \subsection{UI Simplification and Minimalist Toggle}
@@ -306,7 +306,7 @@ The presets implement a hierarchical increase in visual breathing room:
 The inclusion of OpenDyslexic and Lexend is a critical design choice; these fonts use 
 weighted bottoms or unique shapes to help the brain distinguish between similar
 characters (e.g., ``b'' vs ``d''), which is a common hurdle for dyslexic readers. 
-By offering these as a unified ``Spacious'' preset, the plugin provides a high-signal 
+By offering these as a unified \textit{Spacious} preset, the plugin provides a high-signal 
 environment that accommodates diverse cognitive needs with minimal interaction cost.
 
 \subsubsection{Initial Plan: One Option}
@@ -345,10 +345,10 @@ Accessible Dashboard, the plugin minimizes the executive tax required to curate
 a readable workspace.
 
 \begin{itemize}
-    \item One-Click Presets: Instead of navigating nested VS Code menus, users select the ``Dyslexia-friendly Mode'' or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
+    \item One-Click Presets: Instead of navigating nested VS Code menus, users select the \textit{Dyslexia-friendly Mode} or specific high-contrast buttons. This reduces interaction depth from approximately six clicks to one, significantly lowering extraneous cognitive load.
     \item Immediate Visual Confirmation: The dashboard provides real-time feedback, eliminating the verification anxiety common when \gls{neurodivergent} users must exit menus to see if changes were applied.
-    \item Typography Hierarchy: The final implementation ensures that selecting a preset like ``Spacious'' simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
-    \item Non-Destructive Restoration: A critical component of the final UI is the ``Restore Theme'' and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom \gls{IDE} configurations.
+    \item Typography Hierarchy: The final implementation ensures that selecting a preset like \textit{Spacious} simultaneously updates three variables: increasing $lineHeight$ to 40, $letterSpacing$ to 1.5, and switching the typeface to OpenDyslexic.
+    \item Non-Destructive Restoration: A critical component of the final UI is the \textit{Restore Theme} and reset functionality. This allows developers to experiment with spacing and contrast without the anxiety of losing their original, custom \gls{IDE} configurations.
 \end{itemize}
 
 \begin{figure}[H]
@@ -492,7 +492,7 @@ To assess the reliability and integration of the tool, the \gls{SUS} will be adm
 
 In the context of this study, the \gls{SUS} serves two primary purposes:
 \begin{enumerate}
-    \item \textbf{Integration Assessment:} Identifying if the ``Minimalist Toggle'' feels like a seamless part of the workflow or an added complexity.
+    \item \textbf{Integration Assessment:} Identifying if the \textit{Minimalist Toggle} feels like a seamless part of the workflow or an added complexity.
     \item \textbf{Confidence and Learnability:} Measuring the activation energy required to use the AI features. For a developer experiencing \gls{task_paralysis}, a tool that is perceived as irritating to use (Item 8) or complex (Item 2) would be counter-productive.
 \end{enumerate}
 

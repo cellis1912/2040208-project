@@ -517,6 +517,41 @@
       \verb https://mhealth.jmir.org/2022/8/e37290
       \endverb
     \endentry
+    \entry{johnson2003creating}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f3aaee3091842bedfe51158d4424f192}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Donna\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=322e47109bf782417381851c7e42c087}{%
+           family={Fox},
+           familyi={F\bibinitperiod},
+           given={Judith\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Center for Research on Developmental Education}%
+        {Urban Literacy, General~…}%
+      }
+      \strng{namehash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{fullhash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{fullhashraw}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{bibnamehash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{authorbibnamehash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{authornamehash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{authorfullhash}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \strng{authorfullhashraw}{12ce8a32502b809fab2e7d8e73b01cb0}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Curriculum transformation and disability: Implementing universal design in higher education}
+      \field{title}{Creating curb cuts in the classroom: Adapting universal design principles to education}
+      \field{year}{2003}
+      \field{pages}{7\bibrangedash 21}
+      \range{pages}{15}
+    \endentry
     \entry{liebel2024challenges}{inproceedings}{}{}
       \name{author}{3}{}{%
         {{hash=620cc9f7fd0de9cfd0af5d7f6bd56311}{%
@@ -700,6 +735,59 @@
       \field{year}{2025}
       \field{pages}{1217\bibrangedash 1229}
       \range{pages}{13}
+    \endentry
+    \entry{null2013universal}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1a6dee0dd6eeb054e9ebf013c39514ba}{%
+           family={Null},
+           familyi={N\bibinitperiod},
+           given={Roberta},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{fullhash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{fullhashraw}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{bibnamehash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{authorbibnamehash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{authornamehash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{authorfullhash}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \strng{authorfullhashraw}{1a6dee0dd6eeb054e9ebf013c39514ba}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Universal design: Principles and models}
+      \field{year}{2013}
+    \endentry
+    \entry{reid2024curb}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=ccaa9ee3d757e6869a99684dfe51fae5}{%
+           family={Reid},
+           familyi={R\bibinitperiod},
+           given={Blake\bibnamedelima E},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of California Press}%
+      }
+      \strng{namehash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{fullhash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{fullhashraw}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{bibnamehash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{authorbibnamehash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{authornamehash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{authorfullhash}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \strng{authorfullhashraw}{ccaa9ee3d757e6869a99684dfe51fae5}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Feminist cyberlaw}
+      \field{title}{The curb-cut effect and the perils of accessibility without disability}
+      \field{year}{2024}
     \endentry
     \entry{ringel2019ai}{article}{}{}
       \name{author}{1}{}{%
