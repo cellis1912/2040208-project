@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  3 MAY 2026 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.29)  3 MAY 2026 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,7 +1106,7 @@ Package biblatex Info: Reference segment=0 on input line 86.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logos/Newcastle.png, id=303, 3854.4pt x 2168.1pt>
+<logos/Newcastle.png, id=307, 3854.4pt x 2168.1pt>
 File: logos/Newcastle.png Graphic file (type png)
 <use logos/Newcastle.png>
 Package pdftex.def Info: logos/Newcastle.png  used on input line 15.
@@ -1224,7 +1224,7 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 102.
  [3{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [4]) (chapters/lit-review.tex
-<logos/clt_diagram.png, id=873, 598.48593pt x 213.04594pt>
+<logos/clt_diagram.png, id=881, 598.48593pt x 213.04594pt>
 File: logos/clt_diagram.png Graphic file (type png)
 <use logos/clt_diagram.png>
 Package pdftex.def Info: logos/clt_diagram.png  used on input line 22.
@@ -1327,7 +1327,7 @@ Underfull \hbox (badness 1117) in paragraph at lines 61--61
  []
 
 [13]
-<logos/Plug-in plan.png, id=1092, 514.17094pt x 899.61093pt>
+<logos/Plug-in plan.png, id=1100, 514.17094pt x 899.61093pt>
 File: logos/Plug-in plan.png Graphic file (type png)
 <use logos/Plug-in plan.png>
 Package pdftex.def Info: logos/Plug-in plan.png  used on input line 70.
@@ -1357,18 +1357,18 @@ Overfull \hbox (100.36093pt too wide) in paragraph at lines 181--182
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 10.0pt on input line 198.
 [19]
-<logos/preMinimal.png, id=1141, 1918.91907pt x 1021.56656pt>
+<logos/preMinimal.png, id=1149, 1918.91907pt x 1021.56656pt>
 File: logos/preMinimal.png Graphic file (type png)
 <use logos/preMinimal.png>
 Package pdftex.def Info: logos/preMinimal.png  used on input line 228.
 (pdftex.def)             Requested size: 384.1096pt x 204.48116pt.
-<logos/postMinimal.png, id=1142, 1920.42468pt x 1044.15094pt>
+<logos/postMinimal.png, id=1150, 1920.42468pt x 1044.15094pt>
 File: logos/postMinimal.png Graphic file (type png)
 <use logos/postMinimal.png>
 Package pdftex.def Info: logos/postMinimal.png  used on input line 234.
 (pdftex.def)             Requested size: 384.1096pt x 208.84242pt.
  [20 <./logos/preMinimal.png>]
-<logos/MinimalNote.png, id=1148, 338.01282pt x 35.38219pt>
+<logos/MinimalNote.png, id=1156, 338.01282pt x 35.38219pt>
 File: logos/MinimalNote.png Graphic file (type png)
 <use logos/MinimalNote.png>
 Package pdftex.def Info: logos/MinimalNote.png  used on input line 240.
@@ -1382,24 +1382,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 247.
 
-<logos/aiflow.png, id=1152, 162.6075pt x 453.695pt>
+<logos/aiflow.png, id=1160, 162.6075pt x 453.695pt>
 File: logos/aiflow.png Graphic file (type png)
 <use logos/aiflow.png>
 Package pdftex.def Info: logos/aiflow.png  used on input line 258.
 (pdftex.def)             Requested size: 128.0387pt x 357.27286pt.
 [21 <./logos/postMinimal.png> <./logos/MinimalNote.png>]
-<logos/aicode.png, id=1163, 842.39719pt x 434.37282pt>
+<logos/aicode.png, id=1171, 842.39719pt x 434.37282pt>
 File: logos/aicode.png Graphic file (type png)
 <use logos/aicode.png>
 Package pdftex.def Info: logos/aicode.png  used on input line 267.
 (pdftex.def)             Requested size: 426.79135pt x 220.06905pt.
  [22 <./logos/aiflow.png> <./logos/aicode.png>]
-<logos/taskoutput.png, id=1176, 469.00218pt x 295.1025pt>
+<logos/taskoutput.png, id=1184, 469.00218pt x 295.1025pt>
 File: logos/taskoutput.png Graphic file (type png)
 <use logos/taskoutput.png>
 Package pdftex.def Info: logos/taskoutput.png  used on input line 281.
 (pdftex.def)             Requested size: 341.43437pt x 214.83315pt.
-<logos/taskarchitect.png, id=1177, 354.57469pt x 669.2503pt>
+<logos/taskarchitect.png, id=1185, 354.57469pt x 669.2503pt>
 File: logos/taskarchitect.png Graphic file (type png)
 <use logos/taskarchitect.png>
 Package pdftex.def Info: logos/taskarchitect.png  used on input line 287.
@@ -1414,60 +1414,60 @@ Overfull \hbox (3.0219pt too wide) in paragraph at lines 303--304
 []\T1/ntxtlf/m/n/10.95 Spacious: Of-fers the max-i-mum level of sep-a-ra-tion with a $\OML/ntxmi/m/it/10.95 lineHeight$ \T1/ntxtlf/m/n/10.95 of $\OT1/minntx/m/n/10.95 40$ \T1/ntxtlf/m/n/10.95 and $\OML/ntxmi/m/it/10.95 letterSpacing$
  []
 
-<logos/van.png, id=1194, 548.80031pt x 532.23843pt>
+<logos/van.png, id=1202, 548.80031pt x 532.23843pt>
 File: logos/van.png Graphic file (type png)
 <use logos/van.png>
 Package pdftex.def Info: logos/van.png  used on input line 324.
 (pdftex.def)             Requested size: 298.75264pt x 289.7434pt.
 [25]
-<logos/bas.png, id=1203, 602.25pt x 722.7pt>
+<logos/bas.png, id=1211, 602.25pt x 722.7pt>
 File: logos/bas.png Graphic file (type png)
 <use logos/bas.png>
 Package pdftex.def Info: logos/bas.png  used on input line 330.
 (pdftex.def)             Requested size: 298.75264pt x 358.51505pt.
  [26 <./logos/van.png>]
-<logos/dislecMenu.png, id=1211, 335.00156pt x 156.585pt>
+<logos/dislecMenu.png, id=1219, 335.00156pt x 156.585pt>
 File: logos/dislecMenu.png Graphic file (type png)
 <use logos/dislecMenu.png>
 Package pdftex.def Info: logos/dislecMenu.png  used on input line 338.
 (pdftex.def)             Requested size: 298.75264pt x 139.63974pt.
  [27 <./logos/bas.png> <./logos/dislecMenu.png>]
-<logos/textOptions.png, id=1220, 1799.22188pt x 1003.49907pt>
+<logos/textOptions.png, id=1228, 1799.22188pt x 1003.49907pt>
 File: logos/textOptions.png Graphic file (type png)
 <use logos/textOptions.png>
 Package pdftex.def Info: logos/textOptions.png  used on input line 356.
 (pdftex.def)             Requested size: 682.86876pt x 380.85893pt.
  [28] [29 <./logos/textOptions.png>]
-<logos/timerFinal.png, id=1231, 337.26pt x 249.93375pt>
+<logos/timerFinal.png, id=1239, 337.26pt x 249.93375pt>
 File: logos/timerFinal.png Graphic file (type png)
 <use logos/timerFinal.png>
 Package pdftex.def Info: logos/timerFinal.png  used on input line 370.
 (pdftex.def)             Requested size: 256.07741pt x 189.77618pt.
-<logos/uiprefix1.png, id=1232, 251.43938pt x 168.63pt>
+<logos/uiprefix1.png, id=1240, 251.43938pt x 168.63pt>
 File: logos/uiprefix1.png Graphic file (type png)
 <use logos/uiprefix1.png>
 Package pdftex.def Info: logos/uiprefix1.png  used on input line 381.
 (pdftex.def)             Requested size: 256.07741pt x 171.74043pt.
  [30 <./logos/timerFinal.png>]
-<logos/uipostfix1.png, id=1239, 499.11469pt x 421.575pt>
+<logos/uipostfix1.png, id=1247, 499.11469pt x 421.575pt>
 File: logos/uipostfix1.png Graphic file (type png)
 <use logos/uipostfix1.png>
 Package pdftex.def Info: logos/uipostfix1.png  used on input line 387.
 (pdftex.def)             Requested size: 256.07741pt x 216.2998pt.
  [31 <./logos/uiprefix1.png> <./logos/uipostfix1.png>]
-<logos/Final.png, id=1259, 575.90157pt x 791.95876pt>
+<logos/Final.png, id=1267, 575.90157pt x 791.95876pt>
 File: logos/Final.png Graphic file (type png)
 <use logos/Final.png>
 Package pdftex.def Info: logos/Final.png  used on input line 443.
 (pdftex.def)             Requested size: 426.79135pt x 586.92247pt.
  [32] [33 <./logos/Final.png>] [34] [35]) (chapters/results.tex
-<Charts/nasatlxGraph.pdf, id=1300, 1445.4pt x 813.0375pt>
+<Charts/nasatlxGraph.pdf, id=1308, 1445.4pt x 813.0375pt>
 File: Charts/nasatlxGraph.pdf Graphic file (type pdf)
 <use Charts/nasatlxGraph.pdf>
 Package pdftex.def Info: Charts/nasatlxGraph.pdf  used on input line 45.
 (pdftex.def)             Requested size: 426.79135pt x 240.06729pt.
  [36]
-<Charts/radar-chart.png, id=1308, 960.58875pt x 695.59875pt>
+<Charts/radar-chart.png, id=1316, 960.58875pt x 695.59875pt>
 File: Charts/radar-chart.png Graphic file (type png)
 <use Charts/radar-chart.png>
 Package pdftex.def Info: Charts/radar-chart.png  used on input line 86.
@@ -1480,10 +1480,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: Reference `tab:time-saving' on page 41 undefined on input line 223.
 
-[41] [42]) (chapters/conclusion.tex [43])
+[41] [42] [43]) (chapters/conclusion.tex [44])
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 121.
- [44] [45{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [46] (main.aux)
+ [45{C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [46] [47] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1493,16 +1493,16 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A3FD220AD5010EED942503518BF8DD7D;15077.
+(rerunfilecheck)             Checksum: B792925AF221D446692DFA016C6054A4;15199.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35368 strings out of 467871
- 666146 string characters out of 5419344
+ 35371 strings out of 467871
+ 666183 string characters out of 5419344
  1604961 words of memory out of 5000000
- 63587 multiletter control sequences out of 15000+600000
+ 63588 multiletter control sequences out of 15000+600000
  687646 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,90p,2550b,2450s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1519,9 +1519,9 @@ pdfTeX warning (dest): name{page.IV} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{page.I} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/Clo/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (54 pages, 1532130 bytes).
+Output written on main.pdf (55 pages, 1534088 bytes).
 PDF statistics:
- 1515 PDF objects out of 1728 (max. 8388607)
- 238 named destinations out of 1000 (max. 500000)
- 701 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1527 PDF objects out of 1728 (max. 8388607)
+ 240 named destinations out of 1000 (max. 500000)
+ 709 words of extra memory for PDF output out of 10000 (max. 10000000)
 

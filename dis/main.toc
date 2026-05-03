@@ -66,11 +66,12 @@
 \contentsline {subsection}{\numberline {4.7}Real-Time Feedback and User Experience}{41}{subsection.101}%
 \contentsline {subsection}{\numberline {4.8}Number of Clicks and User Flow}{41}{subsection.102}%
 \contentsline {subsection}{\numberline {4.9}Latency Testing}{42}{subsection.103}%
-\contentsline {subsection}{\numberline {4.10}Discussion}{42}{subsection.104}%
-\contentsline {subsection}{\numberline {4.11}Limitations}{43}{subsection.105}%
-\contentsline {section}{\numberline {5}Conclusion}{43}{section.106}%
-\contentsline {subsection}{\numberline {5.1}Project Aim}{43}{subsection.107}%
-\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{44}{subsection.108}%
-\contentsline {subsection}{\numberline {5.3}What has been learned}{44}{subsection.109}%
-\contentsline {subsection}{\numberline {5.4}Future Work}{44}{subsection.110}%
-\contentsline {section}{References}{45}{section*.111}%
+\contentsline {subsection}{\numberline {4.10}WCAG Testing}{42}{subsection.104}%
+\contentsline {subsection}{\numberline {4.11}Discussion}{42}{subsection.105}%
+\contentsline {subsection}{\numberline {4.12}Limitations}{43}{subsection.106}%
+\contentsline {section}{\numberline {5}Conclusion}{44}{section.107}%
+\contentsline {subsection}{\numberline {5.1}Project Aim}{44}{subsection.108}%
+\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{44}{subsection.109}%
+\contentsline {subsection}{\numberline {5.3}What has been learned}{44}{subsection.110}%
+\contentsline {subsection}{\numberline {5.4}Future Work}{45}{subsection.111}%
+\contentsline {section}{References}{45}{section*.112}%
