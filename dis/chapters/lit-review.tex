@@ -23,9 +23,9 @@ $$TCL = IL + EL + GL$$
     \caption{Sweller's Tripartite Model of Cognitive Load, illustrating the balance between Intrinsic, Extraneous, and Germane loads.}\label{fig:clt_diagram}
 \end{figure}
 
-
-One of the main focuses of this project is that for \gls{neurodivergent} developers, the \gls{IDE} environment often imposes a disproportionate Extraneous Load. 
-When \gls{EL} is high, the cognitive budget is exhausted before the developer can engage with the core logic of the code, leading to \gls{task_paralysis}. 
+While Sweller's Cognitive Load Theory provides the theoretical foundation, the application of these principles to \gls{neurodivergent} developers requires 
+a more nuanced approach. One of the main focuses of this project is that for \gls{neurodivergent} developers, the \gls{IDE} environment often imposes a 
+disproportionate Extraneous Load. When \gls{EL} is high, the cognitive budget is exhausted before the developer can engage with the core logic of the code, leading to \gls{task_paralysis}. 
 My plugin aims to free up this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and \gls{scaffolding} \gls{IL} (via the Task Architect),
 thereby maximizing the availability of cognitive resources for Germane processing. By reducing the noise and providing structured support, the plugin allows \gls{neurodivergent} developers to focus
 their cognitive resources on the actual problem-solving aspect of programming, rather than being overwhelmed by the interface or the complexity of the task at hand.
@@ -221,13 +221,12 @@ For developers with \gls{ADHD} and \gls{ASD}, the most significant barrier to pr
 Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with state recovery and \gls{task_initiation}.~\glspl{LLM} offer a unique solution to this 
 through cognitive \gls{scaffolding}. This process handles the \textit{low-value} mental energy drains, such as formatting and scheduling, leaving more room for \textit{high-value} deep thinking (\cite{Navigati93:online}).
 
-\gls{CoT} as Task Decomposition is one of the most effective applications of \glspl{LLM} for \gls{neurodivergent} developers. Instead of asking a model to simply write a function, the developer can use the 
-model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the \textit{activation energy} barrier identified in \gls{ADHD} populations. By prompting a model to 
+Instead of asking a model to simply write a function, the developer can use the model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the \textit{activation energy} barrier identified in \gls{ADHD} populations. By prompting a model to 
 think step-by-step, the AI generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
 
-As noted by Mew (2025), this automated pattern of \gls{scaffolding} can increase productivity for developers with \gls{ADHD} by up to 55 percent. Existing tools already demonstrate this by taking a single
+As noted by \textcite{Navigati93:online}, this automated pattern of \gls{scaffolding} can increase productivity for developers with \gls{ADHD}. Existing tools already demonstrate this by taking a single
  overwhelming command (e.g., ``build an authentication system'') and breaking it into manageable milestones. This effectively transforms AI from a simple code generator into a digital ramp that bypasses 
- the freeze response common in \gls{task_paralysis} (\cite{Navigati93:online}).
+ the freeze response common in \gls{task_paralysis}.
 
  \subsection{NASA-TLX and SUS: Measuring Cognitive Load and Usability}
 To evaluate the effectiveness of the plugin, I will use the NASA Task Load Index (NASA-TLX) to measure cognitive load and the System Usability Scale (SUS) to assess usability.
@@ -250,3 +249,5 @@ designed to be accessible and usable by disabled and non-disabled people alike~\
 In the context of this project, the plugin's features, such as the Minimalist Toggle and Code Explainer, are designed to reduce cognitive load for \gls{neurodivergent} developers. 
 However, these features also have the potential to benefit neurotypical developers by providing a cleaner interface and clearer error explanations. By applying the curb-cut principle, 
 the plugin aims to create an inclusive environment that enhances the user experience for all developers, regardless of their accessibility needs.
+
+\newpage

@@ -71,9 +71,9 @@ The plugin is architected around three core modules, each designed to address sp
     \caption{UI Plan For the Accessible \gls{IDE} Plugin.}\label{fig:plug-inplan}
 \end{figure}
 
-I first designed the UI in figma, which allowed me get a clear vision of how the plugin would look and function. 
-This also allowed me to make sure that the design of the plugin was in line with the requirements that I had set out in the previous section.
-Before I designed the UI I was already aware that I would implement the UI using HTML and CSS in a Webview, which allowed me to create a custom dashboard 
+I first designed the \gls{UI} in figma, which allowed me get a clear vision of how the plugin would look and function. 
+This also guaranteed that the design of the plugin was in line with the requirements that I had set out in the previous section.
+Before having an idea for the UI I was already aware that I would implement the UI using HTML and CSS in a Webview, which allowed me to create a custom dashboard 
 that could be easily accessed from within VS Code.
 
 \subsection{Technology Stack}
@@ -88,7 +88,7 @@ The development of the plugin utilizes a modern web-based stack compatible with 
 
  Before I started the implementation, I had a rough idea of the technology stack that I would use. In terms of plugin development, the two main languages that are used
  are JavaScript and TypeScript. Although Typescript is more useful if the project was larger, I felt that JavaScript would be sufficient for the scope of this project and would 
- allow me to get up and running faster, especially due to the fast turn around time of the project. JavaScript was also chosen for its native compatibility with the VS Code 
+ allow me develop the plugin quickly, especially due to the fast turn around time of the project. JavaScript was also chosen for its native compatibility with the VS Code 
  extension host and its ability to handle asynchronous message passing between the UI and backend.~\cite{TypeScri5:online}
  
 For the AI features, I decided to use the gpt-4o model through the VS Code Language Model API, which allows me to leverage powerful language models without 
@@ -100,7 +100,7 @@ and implementing custom themes.
 The Minimalist Toggle serves as a reset for the \gls{IDE}. It utilises a state-management system to track the current visibility of the VS Code workbench.
 When activated, it dispatches a batch of imperative commands to the vscode.commands API, hiding the Activity Bar, Status Bar, Side Bar, and Breadcrumbs simultaneously.
 By reducing the total number of visual elements on the screen, the module lowers extraneous cognitive load, allowing the developer to allocate more mental energy to the
-code editor itself. When I first had the idea for this toggle I was vaguely aware that I would need to use the vscode.commands API to manipulate the UI \ref{}.
+code editor itself.
 
 
 \subsubsection{Task Architect - AI-Driven \Gls{scaffolding} (FR2)}
@@ -140,7 +140,7 @@ To address this, I implemented a hierarchical decomposition strategy. The system
 \subsubsection{Visual Styler} 
 The Visual Styler is a specialized UI/UX module designed to manage the \gls{IDE}`s aesthetic environment, specifically targeting the reduction of eye strain and sensory overwhelm. By prioritizing visual ergonomics, the module ensures that the development environment remains inclusive for \gls{neurodivergent} users and those with visual impairments.
 
-\textbf{Accessibility and WCAG Mapping}
+\textbf{Accessibility and \gls{WCAG} Mapping}
 \newline
 To ensure the platform is accessible to the widest possible audience, the Visual Styler utilizes a systematic mapping of presets based on the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
 \begin{itemize}
@@ -445,6 +445,15 @@ in a standard \gls{IDE} to just 1.9 seconds (one click), representing a signific
 \end{figure}
 
 \subsection{Evaluation and Methodology}
+
+\subsubsection{Ethical Considerations}
+Since this project involves human participants and also targets a vulnerable population, ethical considerations are 
+paramount. The study will adhere to the following ethical guidelines:
+\begin{itemize}
+    \item \textbf{Informed Consent:} All participants will have the study fully explained to them, including the purpose, procedures. 
+    \item \textbf{Confidentiality:} No names or personally identifiable information will be collected. Including information about the participants' neurodivergent status.
+    \item \textbf{Voluntary Participation:} Participation in the study will be entirely voluntary, with no penalties for withdrawal at any stage.
+\end{itemize}
 
 \subsubsection{Experimental Design}
 This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for \gls{neurodivergent} research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.

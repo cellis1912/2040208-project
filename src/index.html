@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root { 
+    --spacing: 20px; 
+    --radius: 12px;
+    --card-bg: var(--vscode-sideBar-background, #2a2a2a);
+    --input-bg: var(--vscode-input-background, #333);
+    --accent: var(--vscode-button-background, #007acc);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--vscode-foreground, #fff);
+    background-color: var(--vscode-editor-background, #1e1e1e);
+    padding: 30px;
+    line-height: 1.5;
+}
+
+h1 { font-size: 2rem; margin-bottom: 30px; }
+
+.container { 
+    display: grid; 
+    gap: 25px; 
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+}
+
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--vscode-widget-border, #444);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #555;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.task-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.delete-task {
+    background: transparent;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<title>Accessibly Dashboard</title>
+<h1>Accessibly Dashboard</h1>
+
+<!-- ARIA live region -->
+<div id="ariaLive" aria-live="polite" style="position:absolute; left:-9999px;"></div>
+
+<div class="container">
+
+<section class="section-card">
+<h2>Interface Settings</h2>
+
+<div class="row">
+<label for="toggleSwitch">Close Panels</label>
+<input type="checkbox" id="toggleSwitch">
+</div>
+
+<div class="row">
+<label for="dyslexiaToggle">Dyslexia Mode</label>
+<input type="checkbox" id="dyslexiaToggle">
+</div>
+
+</section>
+
+<section class="section-card">
+<h2>Dyslexia Settings</h2>
+
+<label for="dyslexiaLevel">Spacing Level</label>
+<select id="dyslexiaLevel">
+<option value="standard">Standard</option>
+<option value="relaxed">Relaxed</option>
+<option value="spacious">Spacious</option>
+</select>
+
+<button id="resetDyslexia" class="secondary">Reset</button>
+
+</section>
+
+<section class="section-card">
+<h2>Text Scaling</h2>
+
+<button id="decFont">A-</button>
+<span id="currentFontSize">20px</span>
+<button id="incFont">A+</button>
+
+</section>
+
+<section class="section-card">
+<h2>Focus Timer</h2>
+
+<label for="focusMinutes">Focus time (minutes)</label>
+<input type="number" id="focusMinutes" value="25">
+
+<div>
+<button id="start">Start</button>
+<button id="pause">Pause</button>
+</div>
+
+</section>
+
+<section class="section-card">
+<h2>Task Architect</h2>
+
+<label for="taskInput">Task goal</label>
+<textarea id="taskInput"></textarea>
+
+<button id="buildBtn">Generate</button>
+
+<div id="output"></div>
+
+</section>
+
+</div>
+
+<script>
+let vscode;
+
+if (typeof acquireVsCodeApi === "function") {
+    vscode = acquireVsCodeApi();
+} else {
+    vscode = { postMessage: (msg) => console.log(msg) };
+}
+
+function announce(msg) {
+    document.getElementById('ariaLive').textContent = msg;
+}
+
+document.getElementById('buildBtn').onclick = () => {
+    const val = document.getElementById('taskInput').value;
+    if(val){
+        vscode.postMessage({ command: 'breakdownTask', userQuery: val });
+        announce("Generating tasks");
+    }
+};
+
+function renderTasks(text) {
+    const out = document.getElementById('output');
+    out.innerHTML = '';
+
+    text.split('\n').forEach(line => {
+        if(!line.trim()) return;
+
+        const div = document.createElement('div');
+        div.className = 'task-row';
+
+        div.innerHTML = `
+            <input type="checkbox">
+            <span>${line}</span>
+            <button class="delete-task" aria-label="Delete task">×</button>
+        `;
+
+        div.querySelector('.delete-task').onclick = () => {
+            div.remove();
+            announce("Task deleted");
+        };
+
+        out.appendChild(div);
+    });
+
+    announce("Tasks generated");
+}
+</script>
+
+</body>
+</html>
