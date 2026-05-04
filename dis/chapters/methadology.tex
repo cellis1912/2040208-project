@@ -121,7 +121,6 @@ could be seamlessly rendered as editable fields within the dashboard, preserving
 through conversational filler.
 
 
-
 \textbf{Balancing Granularity and Utility}
 \newline
 Initial experiments with simple prompts such as ``How to code a login page'', the \gls{LLM} would bypass the architectural phase and provide a block of code immediately. 
@@ -287,6 +286,39 @@ to a flexible partner. The graying-out of completed tasks provides immediate vis
     \includegraphics[width=0.6\linewidth, alt={}] {logos/taskarchitect.png}
     \caption{Task Architect Module in the Dashboard, showing the generated tasks.}\label{fig:taskarchitect}
 \end{figure}
+
+\subsubsection{Code Explainer: Mitigating Technical Cognitive Overload}
+The Code Explainer is a diagnostic interceptor designed to address the high extraneous cognitive load often imposed by cryptic compiler errors. 
+For neurodivergent developers, particularly those with \gls{ASD}, standard diagnostic messages can be ambiguous, leading to a breakdown in task 
+momentum.
+
+\textbf{Technical Implementation and Workflow}
+
+
+The module is implemented as an asynchronous function, explainActiveErrors, which operates through a three-stage pipeline: Detection, Extraction, and Translation.
+\begin{itemize}
+    \item Detection: The system first verifies that a code file is active within the editor. If no file is detected, the system provides a clear, actionable 
+instruction to the user: "No code file detected. Please click into your code file and then back to the dashboard." This ensures that the user understands 
+the necessary context for the feature to function, reducing confusion and promoting a sense of control.
+    \item Extraction: Using the vscode.languages.getDiagnostics API, the module identifies active compiler issues. To minimize noise, 
+    the system specifically filters for vscode.DiagnosticSeverity.Error, ensuring the developer is not overwhelmed by warnings or information-level 
+    messages that do not immediately block execution.
+    \item Translation: The raw error messages and their corresponding line numbers are compiled into an errorList string. 
+    This list is then dispatched to the resident gpt-4o model via the VS Code Language Model API.
+\end{itemize}
+
+\textbf{Prompt Engineering for Direct Instruction}
+
+
+To satisfy the requirement for beginner-friendly, non-technical feedback, the module employs a strictly constrained system prompt. The AI is instructed to:
+\begin{itemize}
+    \item Identify the problem and provide a specific fix.
+    \item Maintain a concise, bulleted format.
+    \item Avoid all \textit{supportive language} or conversational preambles.
+\end{itemize}
+
+This approach aligns with the principle of Direct Instruction, reducing the \gls{cognitive_tax} required to 
+filter through polite but unnecessary conversational filler.
 
 \subsection{\Gls{dyslexia} Settings: Test spacing (FR5)}
 The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with \gls{dyslexia}, as increasing letter spacing 
