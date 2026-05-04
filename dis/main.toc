@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{Abstract}{I}{section*.1}%
-\contentsline {section}{List of Abbreviations}{V}{section*.2}%
-\contentsline {section}{Glossary}{VI}{section*.4}%
+\contentsline {section}{List of Abbreviations}{VI}{section*.2}%
+\contentsline {section}{Glossary}{VII}{section*.4}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.6}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.7}%
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{1}{subsection.8}%
@@ -30,50 +30,50 @@
 \contentsline {subsubsection}{\numberline {2.6.1}The \Gls {halation} Risk and Soft High Contrast}{11}{subsubsection.36}%
 \contentsline {subsection}{\numberline {2.7}AI as a Cognitive Tool: Task Decomposition and \Gls {scaffolding}}{12}{subsection.37}%
 \contentsline {subsection}{\numberline {2.8}NASA-TLX and SUS: Measuring Cognitive Load and Usability}{12}{subsection.38}%
-\contentsline {subsection}{\numberline {2.9}Curb-Cut Principle and Universal Design}{12}{subsection.39}%
-\contentsline {section}{\numberline {3}Design and Implementation}{14}{section.40}%
-\contentsline {subsection}{\numberline {3.1}User Requirements}{14}{subsection.41}%
-\contentsline {subsection}{\numberline {3.2}Module Design}{15}{subsection.43}%
-\contentsline {subsection}{\numberline {3.3}Technology Stack}{16}{subsection.45}%
+\contentsline {subsection}{\numberline {2.9}Curb-Cut Principle and Universal Design}{13}{subsection.39}%
+\contentsline {section}{\numberline {3}Design and Implementation}{13}{section.40}%
+\contentsline {subsection}{\numberline {3.1}User Requirements}{13}{subsection.41}%
+\contentsline {subsection}{\numberline {3.2}Module Design}{14}{subsection.43}%
+\contentsline {subsection}{\numberline {3.3}Technology Stack}{15}{subsection.45}%
 \contentsline {subsubsection}{\numberline {3.3.1}Minimalist Toggle (FR1)}{16}{subsubsection.46}%
-\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - AI-Driven \Gls {scaffolding} (FR2)}{17}{subsubsection.47}%
+\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - AI-Driven \Gls {scaffolding} (FR2)}{16}{subsubsection.47}%
 \contentsline {subsubsection}{\numberline {3.3.3}Visual Styler}{17}{subsubsection.48}%
 \contentsline {subsection}{\numberline {3.4}System Architecture}{18}{subsection.49}%
 \contentsline {subsection}{\numberline {3.5}UI Simplification and Minimalist Toggle (FR1)}{19}{subsection.51}%
 \contentsline {subsection}{\numberline {3.6}AI Integration (FR2 and FR3)}{21}{subsection.55}%
 \contentsline {subsubsection}{\numberline {3.6.1}Task Architect: Overcoming \Gls {task_paralysis}}{21}{subsubsection.56}%
 \contentsline {subsubsection}{\numberline {3.6.2}Human-in-the-Loop (HITL) Implementation}{23}{subsubsection.59}%
-\contentsline {subsubsection}{\numberline {3.6.3}Code Explainer: Mitigating Technical Cognitive Overload}{24}{subsubsection.62}%
-\contentsline {subsection}{\numberline {3.7}\Gls {dyslexia} Settings: Test spacing (FR5)}{25}{subsection.63}%
-\contentsline {subsubsection}{\numberline {3.7.1}Initial Plan: One Option}{26}{subsubsection.64}%
-\contentsline {subsubsection}{\numberline {3.7.2}Final UI Integration}{27}{subsubsection.67}%
-\contentsline {subsection}{\numberline {3.8}Pomodoro Timer (FR4)}{30}{subsection.70}%
-\contentsline {subsection}{\numberline {3.9}Initial User Testing and Feedback}{30}{subsection.72}%
-\contentsline {subsection}{\numberline {3.10}Final UI}{31}{subsection.75}%
-\contentsline {subsection}{\numberline {3.11}Evaluation and Methodology}{34}{subsection.77}%
-\contentsline {subsubsection}{\numberline {3.11.1}Ethical Considerations}{34}{subsubsection.78}%
-\contentsline {subsubsection}{\numberline {3.11.2}Experimental Design}{34}{subsubsection.79}%
-\contentsline {subsubsection}{\numberline {3.11.3}Quantitative and Qualitative Frameworks}{34}{subsubsection.82}%
-\contentsline {subsubsection}{\numberline {3.11.4}Data Collection and Analysis}{35}{subsubsection.86}%
-\contentsline {section}{\numberline {4}Results and Discussion}{36}{section.87}%
-\contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{36}{subsection.88}%
-\contentsline {subsection}{\numberline {4.2}Workload Comparison and Interpretation}{36}{subsection.90}%
-\contentsline {subsection}{\numberline {4.3}Comparative Workload Topology (Radar Chart Analysis)}{37}{subsection.93}%
-\contentsline {subsection}{\numberline {4.4}Efficiency and Time-on-Task Analysis (FR1)}{38}{subsection.95}%
-\contentsline {subsection}{\numberline {4.5}SUS Metrics}{39}{subsection.97}%
-\contentsline {subsubsection}{\numberline {4.5.1}Questions 2 \& 6: Complexity and Consistency}{39}{subsubsection.99}%
-\contentsline {subsubsection}{\numberline {4.5.2}Questions 4 \& 10: Independence and Learning Curve}{39}{subsubsection.100}%
-\contentsline {subsubsection}{\numberline {4.5.3}Question 9: Confidence}{40}{subsubsection.101}%
-\contentsline {subsection}{\numberline {4.6}Pre-Study Interview Findings}{40}{subsection.102}%
-\contentsline {subsection}{\numberline {4.7}Real-Time Feedback and User Experience}{41}{subsection.103}%
-\contentsline {subsection}{\numberline {4.8}Number of Clicks and User Flow}{41}{subsection.104}%
-\contentsline {subsection}{\numberline {4.9}Latency Testing}{42}{subsection.105}%
-\contentsline {subsection}{\numberline {4.10}\gls {WCAG} 2.1 and Accessibility Compliance}{42}{subsection.106}%
-\contentsline {subsection}{\numberline {4.11}Discussion}{43}{subsection.107}%
-\contentsline {subsection}{\numberline {4.12}Limitations}{43}{subsection.108}%
-\contentsline {section}{\numberline {5}Conclusion}{45}{section.109}%
-\contentsline {subsection}{\numberline {5.1}Project Aim}{45}{subsection.110}%
-\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{45}{subsection.111}%
-\contentsline {subsection}{\numberline {5.3}What has been learned}{45}{subsection.112}%
-\contentsline {subsection}{\numberline {5.4}Future Work}{46}{subsection.113}%
-\contentsline {section}{References}{46}{section*.114}%
+\contentsline {subsubsection}{\numberline {3.6.3}Code Explainer: Mitigating Technical Cognitive Overload}{25}{subsubsection.62}%
+\contentsline {subsection}{\numberline {3.7}\Gls {dyslexia} Settings: Test spacing (FR5)}{26}{subsection.63}%
+\contentsline {subsubsection}{\numberline {3.7.1}Initial Plan: One Option}{27}{subsubsection.64}%
+\contentsline {subsubsection}{\numberline {3.7.2}Final UI Integration}{28}{subsubsection.67}%
+\contentsline {subsection}{\numberline {3.8}Pomodoro Timer (FR4)}{31}{subsection.70}%
+\contentsline {subsection}{\numberline {3.9}Initial User Testing and Feedback}{31}{subsection.72}%
+\contentsline {subsection}{\numberline {3.10}Final UI}{32}{subsection.75}%
+\contentsline {subsection}{\numberline {3.11}Evaluation and Methodology}{35}{subsection.77}%
+\contentsline {subsubsection}{\numberline {3.11.1}Ethical Considerations}{35}{subsubsection.78}%
+\contentsline {subsubsection}{\numberline {3.11.2}Experimental Design}{35}{subsubsection.79}%
+\contentsline {subsubsection}{\numberline {3.11.3}Quantitative and Qualitative Frameworks}{35}{subsubsection.82}%
+\contentsline {subsubsection}{\numberline {3.11.4}Data Collection and Analysis}{36}{subsubsection.86}%
+\contentsline {section}{\numberline {4}Results and Discussion}{37}{section.87}%
+\contentsline {subsection}{\numberline {4.1}NASA-TLX Subjective Workload}{37}{subsection.88}%
+\contentsline {subsection}{\numberline {4.2}Workload Comparison and Interpretation}{37}{subsection.90}%
+\contentsline {subsection}{\numberline {4.3}Comparative Workload Topology (Radar Chart Analysis)}{39}{subsection.93}%
+\contentsline {subsection}{\numberline {4.4}Efficiency and Time-on-Task Analysis (FR1)}{39}{subsection.95}%
+\contentsline {subsection}{\numberline {4.5}SUS Metrics}{40}{subsection.97}%
+\contentsline {subsubsection}{\numberline {4.5.1}Questions 2 \& 6: Complexity and Consistency}{40}{subsubsection.99}%
+\contentsline {subsubsection}{\numberline {4.5.2}Questions 4 \& 10: Independence and Learning Curve}{41}{subsubsection.100}%
+\contentsline {subsubsection}{\numberline {4.5.3}Question 9: Confidence}{41}{subsubsection.101}%
+\contentsline {subsection}{\numberline {4.6}Pre-Study Interview Findings}{41}{subsection.102}%
+\contentsline {subsection}{\numberline {4.7}Real-Time Feedback and User Experience}{42}{subsection.103}%
+\contentsline {subsection}{\numberline {4.8}Number of Clicks and User Flow}{43}{subsection.104}%
+\contentsline {subsection}{\numberline {4.9}Latency Testing}{43}{subsection.105}%
+\contentsline {subsection}{\numberline {4.10}\gls {WCAG} 2.1 and Accessibility Compliance}{43}{subsection.106}%
+\contentsline {subsection}{\numberline {4.11}Discussion}{44}{subsection.107}%
+\contentsline {subsection}{\numberline {4.12}Limitations}{44}{subsection.108}%
+\contentsline {section}{\numberline {5}Conclusion}{46}{section.109}%
+\contentsline {subsection}{\numberline {5.1}Project Aim}{46}{subsection.110}%
+\contentsline {subsection}{\numberline {5.2}Conclusion of Objectives}{46}{subsection.111}%
+\contentsline {subsection}{\numberline {5.3}What has been learned}{46}{subsection.112}%
+\contentsline {subsection}{\numberline {5.4}Future Work}{47}{subsection.113}%
+\contentsline {section}{References}{47}{section*.114}%

@@ -86,12 +86,12 @@ The development of the plugin utilizes a modern web-based stack compatible with 
     \item HTML/CSS: Used within the Webview layer to construct the Accessible Dashboard. This allows for the implementation of custom high-contrast themes and dynamic scaling that exceeds the limitations of standard VS Code CSS.
 \end{itemize}
 
- Before I started the implementation, I had a rough idea of the technology stack that I would use. In terms of plugin development, the two main languages that are used
+In terms of plugin development, the two main languages that are used
  are JavaScript and TypeScript. Although Typescript is more useful if the project was larger, I felt that JavaScript would be sufficient for the scope of this project and would 
  allow me develop the plugin quickly, especially due to the fast turn around time of the project. JavaScript was also chosen for its native compatibility with the VS Code 
  extension host and its ability to handle asynchronous message passing between the UI and backend.~\cite{TypeScri5:online}
  
-For the AI features, I decided to use the gpt-4o model through the VS Code Language Model API, which allows me to leverage powerful language models without 
+For the AI features, I decided to use the \textit{gpt-4o} model through the VS Code Language Model API, which allows me to leverage powerful language models without 
 requiring users to manage their own API keys. Finally, I chose HTML and CSS for the Webview UI to allow for maximum flexibility in designing the dashboard 
 and implementing custom themes. 
 
@@ -304,7 +304,7 @@ the necessary context for the feature to function, reducing confusion and promot
     the system specifically filters for vscode.DiagnosticSeverity.Error, ensuring the developer is not overwhelmed by warnings or information-level 
     messages that do not immediately block execution.
     \item Translation: The raw error messages and their corresponding line numbers are compiled into an errorList string. 
-    This list is then dispatched to the resident gpt-4o model via the VS Code Language Model API.
+This list is then dispatched to the resident \textit{gpt-4o} model via the VS Code Language Model API.
 \end{itemize}
 
 \textbf{Prompt Engineering for Direct Instruction}
@@ -324,7 +324,7 @@ filter through polite but unnecessary conversational filler.
 The Visual Styler module allows users to adjust the spacing between characters and line height in the \gls{IDE}. This is particularly beneficial for developers with \gls{dyslexia}, as increasing letter spacing 
 and vertical padding can significantly reduce the crowding effect in dense code, improving character recognition and overall readability. 
 
-To balance customisability with cognitive ease, the plugin provides a set of predefined spacing presets, Standard, Relaxed, and Spacious,
+    To balance customisability with cognitive ease, the plugin provides a set of predefined spacing presets, \textit{Standard, Relaxed, and Spacious},
 for the users to choose from in the dashboard. This allows for quick adjustments without overwhelming the user with too many options, while still providing the 
 necessary customization to accommodate different cognitive needs.
 
@@ -424,7 +424,7 @@ leading to a redesign of the Task Architect with clearer button labeling (``Gene
 Technical evaluations also identified a parsing bug that truncated AI responses, which was resolved by implementing a robust 
 regular expression strategy to ensure full rendering of micro-steps. Finally, comparative testing against standard VS 
 Code demonstrated the plugin's ability to significantly reduce cognitive load; specifically, the user performed accessibility 
-adjustments—such as theme switching—in just 1.9 seconds (one click) compared to 19.9 seconds (six clicks) in the standard \gls{IDE}. 
+adjustments,such as theme switching, in just 1.9 seconds (one click) compared to 19.9 seconds (six clicks) in the standard \gls{IDE}. 
 These refinements ensured the tool successfully provided a more direct, inclusive path for \gls{task_initiation} and environment customization.
 
 \subsection{Final UI}
@@ -488,14 +488,14 @@ paramount. The study will adhere to the following ethical guidelines:
 \end{itemize}
 
 \subsubsection{Experimental Design}
-This study employs a \textbf{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for \gls{neurodivergent} research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
+This study employs a \textit{within-subjects comparative design}, where each participant acts as their own control. This design is particularly effective for \gls{neurodivergent} research as it accounts for the high degree of individual variance in cognitive processing styles \cite{verma2025differences}. Participants will perform two standardized programming tasks: a project-planning phase and a debugging phase.
 
 \begin{enumerate}
     \item \textbf{Control Condition:} Tasks are performed using a standard \gls{IDE} installation.
     \item \textbf{Experimental Condition:} Tasks are performed using the \gls{IDE} equipped with the Accessible Plugin features (Minimalist Toggle, Task Architect, and Visual Styler).
 \end{enumerate}
 
-To mitigate the \textbf{carry-over effect} (where learning from the first task makes the second easier), the order of conditions will be counterbalanced, and task sets of equivalent \gls{IL} will be used across both conditions.
+To mitigate the \textit{carry-over effect} (where learning from the first task makes the second easier), the order of conditions will be counterbalanced, and task sets of equivalent \gls{IL} will be used across both conditions.
 
 \subsubsection{Quantitative and Qualitative Frameworks}
 To evaluate the efficacy of the plugin in reducing \gls{EL} and supporting \gls{executive_dysfunction}, two validated instruments will be administered.
@@ -538,6 +538,6 @@ In the context of this study, the \gls{SUS} serves two primary purposes:
 \end{enumerate}
 
 \subsubsection{Data Collection and Analysis}
-In addition to the questionnaires, the study will record \textbf{Time-on-Task} (to measure efficiency) and use a \textbf{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of \glspl{state_recovery_cost} following an interruption, providing insight into how the AI \gls{scaffolding} supports the developer in regaining \gls{hyperfocus}.
+In addition to the questionnaires, the study will record \textit{Time-on-Task} (to measure efficiency) and use a \textit{Think-Aloud Protocol}. This qualitative approach will capture real-time instances of \glspl{state_recovery_cost} following an interruption, providing insight into how the AI \gls{scaffolding} supports the developer in regaining \gls{hyperfocus}.
 
 \newpage

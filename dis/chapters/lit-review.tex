@@ -24,8 +24,8 @@ $$TCL = IL + EL + GL$$
 \end{figure}
 
 While Sweller's Cognitive Load Theory provides the theoretical foundation, the application of these principles to \gls{neurodivergent} developers requires 
-a more nuanced approach. One of the main focuses of this project is that for \gls{neurodivergent} developers, the \gls{IDE} environment often imposes a 
-disproportionate Extraneous Load. When \gls{EL} is high, the cognitive budget is exhausted before the developer can engage with the core logic of the code, leading to \gls{task_paralysis}. 
+a more nuanced approach. One of the main focuses of this project is that for these developers, the \gls{IDE} environment often imposes a 
+disproportionate \gls{EL}. When \gls{EL} is high, the cognitive budget is exhausted before the developer can engage with the core logic of the code, leading to \gls{task_paralysis}. 
 My plugin aims to free up this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and \gls{scaffolding} \gls{IL} (via the Task Architect),
 thereby maximizing the availability of cognitive resources for Germane processing. By reducing the noise and providing structured support, the plugin allows \gls{neurodivergent} developers to focus
 their cognitive resources on the actual problem-solving aspect of programming, rather than being overwhelmed by the interface or the complexity of the task at hand.
@@ -58,7 +58,7 @@ Further more these smaller task can be seen as \gls{scaffolding} for the user wh
 
 
 \subsubsection{The Cognitive Theory of Multimedia Learning (CTML)}
-While Sweller’s Cognitive Load Theory focuses primarily on the nature and management of cognitive load, Mayer’s \gls{CTML} 
+While Sweller’s Cognitive Load Theory focuses primarily on the nature and management of cognitive load, Mayer’s \gls{CTML}~\cite{mayer2005cognitive} 
 provides a more detailed explanation of how information is processed across visual and auditory channels. Within the context of software development, the
 \gls{IDE} can be understood as a high-density multimedia environment in which multiple streams of related information must be processed simultaneously.
 
@@ -87,7 +87,7 @@ For a \gls{neurodivergent} developer, a standard \gls{IDE} error message often c
 
 \subsubsection{Executive Functioning and Task Switching}
 
-\gls{executive_dysfunction} is a primary barrier cited by both~\textcite{verma2025differences} and~\textcite{gama2025socio}. This manifests
+\Gls{executive_dysfunction} is a primary barrier cited by both~\textcite{verma2025differences} and~\textcite{gama2025socio}. This manifests
  itself as difficulty in \gls{task_initiation} (starting a new project) and switching between tasks.
 
 \textbf{The Industry Context:} In a modern software environment, developers are rarely afforded the luxury of a single focus; they must
@@ -99,19 +99,19 @@ For a \gls{neurodivergent} developer, a standard \gls{IDE} error message often c
 
 Based on the synthesis of recent studies, the challenges can be categorised as follows:
 
-\gls{ADHD}: Frequent loss of state due to external interruptions and internal distraction. \cite{verma2025differences} found that these developers report higher stress related to waiting for answers, as delays in information retrieval often lead to a total loss of task momentum.
+\textbf{\gls{ADHD}}: Frequent loss of state due to external interruptions and internal distraction.\textcite{verma2025differences} found that these developers report higher stress related to waiting for answers, as delays in information retrieval often lead to a total loss of task momentum.
 
-\gls{ASD}: Challenges with the \Gls{double_empathy} problem in code—where the high-level abstractions or implied logic used by neurotypical colleagues create a high cognitive overhead for autistic developers who prefer explicit, literal documentation.
+\textbf{\gls{ASD}}: Challenges with the \Gls{double_empathy} problem in code, where the high-level abstractions or implied logic used by neurotypical colleagues create a high cognitive overhead for autistic developers who prefer explicit, literal documentation.
 
-\Gls{dyslexia}: Significant hurdles during the syntax-heavy stages of programming. While these developers often excel at high-level architectural mapping, the Extraneous Load of spelling-sensitive compiler errors and dense documentation can be a major deterrent to productivity.
+\textbf{\Gls{dyslexia}}: Significant hurdles during the syntax-heavy stages of programming. While these developers often excel at high-level architectural mapping, the \gls{EL} of spelling-sensitive compiler errors and dense documentation can be a major deterrent to productivity.
 
 \subsubsection{Beyond Medical}
 
 To understand why existing tools fail, we  must examine the shift from the \Gls{medical_model} to the \Gls{social_model} of disability.
 
 \begin{itemize}
-    \item The \Gls{medical_model}: Traditionally, ADHD or \gls{dyslexia} in engineering has been viewed as a deficit to be corrected through individual coaching or medication.
-    \item The \Gls{social_model}: This perspective argues that the developer is disabled not by their neurology, but by an \gls{IDE} designed with a \gls{neurotypical-bias}. The problem is not the individual's
+    \item \textbf{The \Gls{medical_model}}: Traditionally, ADHD or \gls{dyslexia} in engineering has been viewed as a deficit to be corrected through individual coaching or medication.
+    \item \textbf{The \Gls{social_model}}: This perspective argues that the developer is disabled not by their neurology, but by an \gls{IDE} designed with a \gls{neurotypical-bias}. The problem is not the individual's
      brain, but the environment that fails to accommodate it. This shift in perspective is crucial for designing tools that are not just assistive but truly inclusive, as it focuses on modifying the
       environment (the \gls{IDE}) rather than trying to fix the individual.
 \end{itemize}
@@ -119,22 +119,22 @@ To understand why existing tools fail, we  must examine the shift from the \Gls{
 The minimalist toggle and the code explainer are designed with this \gls{social_model} in mind, aiming to create an environment that reduces barriers and allows \gls{neurodivergent} developers to thrive 
 without needing to conform to a neurotypical standard.
 
-Executive Functioning (EF) Domains in Programming
+\Gls{EF} Domains in Programming
 To deepen the analysis of \gls{executive_dysfunction}, we must break it into three core domains:
 \begin{itemize}
-    \item Inhibitory Control: The ability to ignore distractions. For ADHD developers, the \textit{pop-up} notifications of a linter can break a fragile state of focus.
-    \item \Gls{working_memory}: Dyslexic developers often have a high capacity for 3D spatial reasoning but a limited verbal \gls{working_memory}, making syntax-heavy languages like C++ more taxing than cleaner languages like Python.
-    \item Cognitive Flexibility: The ability to switch between thinking about the big picture architecture and the low-level syntax.
+    \item \textbf{Inhibitory Control}: The ability to ignore distractions. For ADHD developers, the \textit{pop-up} notifications of a linter can break a fragile state of focus.
+    \item \textbf{\Gls{working_memory}}: Dyslexic developers often have a high capacity for 3D spatial reasoning but a limited verbal \gls{working_memory}, making syntax-heavy languages like C++ more taxing than cleaner languages like Python.
+    \item \textbf{Cognitive Flexibility}: The ability to switch between thinking about the big picture architecture and the low-level syntax.
 \end{itemize}
 
 \subsubsection{The Double-Edged Sword of \Gls{hyperfocus}}
 While \gls{neurodivergent} developers, particularly those with \gls{ASD} and \gls{ADHD}, are often stereotyped as having a \textit{superpower} for deep work, 
 this ability to \gls{hyperfocus} is more accurately described as a dysregulation of attention. Unlike the psychological concept of \textit{flow} which is
- generally sustainable and self-directed, \gls{hyperfocus} is an involuntary immersion into a task or activity. As noted by~\cite{gama2025socio}, \gls{hyperfocus} allows 
+ generally sustainable and self-directed, \gls{hyperfocus} is an involuntary immersion into a task or activity. As noted by~\textcite{gama2025socio}, \gls{hyperfocus} allows 
 for an exhaustive exploration of complex problems, yet this intensity often comes at the expense of self-care. Developers may neglect fundamental 
 biological needs, such as nutrition, sleep, and hygiene, leading to rapid burnout. 
 
-In the context of software engineering, this creates a High-Intensity/High-Fragility paradox.~\cite{newman2025get} identifies that for \gls{ADHD} programmers, achieving a flow state is a fragile process where a single interruption can collapse hours of built-up mental context. The subsequent \gls{state_recovery_cost} is significantly higher 
+In the context of software engineering, this creates a High-Intensity/High-Fragility paradox.~\textcite{newman2025get} identifies that for \gls{ADHD} programmers, achieving a flow state is a fragile process where a single interruption can collapse hours of built-up mental context. The subsequent \gls{state_recovery_cost} is significantly higher 
 for \gls{neurodivergent} individuals, often leading to burnout or irritability when the state is broken.
 
 In a professional engineering context, this creates a significant conflict between depth and delivery. \Gls{hyperfocus} can inadvertently trigger over-engineering, 
@@ -144,14 +144,14 @@ what appears to be peak productivity from the outside is often an unsustainable 
 
 \subsection{Existing Tools}
 The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a \gls{neurotypical-bias}, creating barriers for those who may 
-require additional support. \cite{morris2015understanding} observes workplace tools are frequently built with assumptions that ``may not align with 
+require additional support.~\textcite{morris2015understanding} observes workplace tools are frequently built with assumptions that ``may not align with 
 the needs of \gls{neurodiverse} employees.'' \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with \gls{neurodiverse} 
 developers in mind, and complex nested menus can be overwhelming.
 
-Despite the obstacles described, certain features provide essential support for developers.~\cite{morris2015understanding} notes that tools such as code 
+Despite the obstacles described, certain features provide essential support for developers.~\textcite{morris2015understanding} notes that tools such as code 
 completion and linters are vital to alleviate the difficulties associated with \gls{dyslexia}, such as syntax memorisation and spelling.
 
-However, the burden of making tools accessible often falls to the user.~\cite{liebel2024challenges} found that developers often create ``individual
+However, the burden of making tools accessible often falls to the user.~\textcite{liebel2024challenges} found that developers often create ``individual
  strategies and tool configurations to support their productivity''. While these features are currently helping, the reliance on manual customisation 
  implies a lack of \textit{out-of-the-box} inclusivity.
 
@@ -161,7 +161,7 @@ This project aims to bridge the gap between the availability of generic tools an
  requires expert configuration to an active partner in the development process.
 
 \subsection{Pomodoro Timer}
-The Pomodoro Technique, developed by Francesco Cirillo in the late 1980s, is a time-management framework that partitions work into focused intervals. Typically
+The Pomodoro Technique, developed by Francesco Cirillo~\cite{cirillo2018pomodoro} in the late 1980s, is a time-management framework that partitions work into focused intervals. Typically
 25 minutes, separated by brief five-minute breaks. In the context of \gls{neurodiversity}, this method is often reframed as a cognitive tool rather than a rigid 
 rule set, specifically designed to address common executive functioning barriers~\cite{miller2025wired}.
 
@@ -174,7 +174,7 @@ barrier to entry is reduced, helping individuals bypass the freeze response asso
 \Gls{neurodivergent} individuals often experience \gls{time-blindness}, a difficulty in perceiving the passage of time as a concrete resource. Externalising time through a visual 
 or auditory timer provides real-time feedback, helping to anchor the developer to the present task and reducing the risk of underestimating project timelines.
 
-Furthermore, while \gls{hyperfocus} is frequently cited as a \textit{superpower} for developers, it can lead to severe mental and physical exhaustion if left unregulated. The structured 
+Furthermore, while \gls{hyperfocus} can lead to severe mental and physical exhaustion if left unregulated. The structured 
 nature of the Pomodoro cycle acts as a release valve for focus:
 \begin{itemize}
 \item Mandatory Breaks: Frequent breaks prevent the \gls{hyperfocus} trap, where a developer may neglect basic biological needs like nutrition or hydration.
@@ -184,7 +184,7 @@ nature of the Pomodoro cycle acts as a release valve for focus:
 
 \subsubsection{Cognitive Load and Adaptive Implementation}
 From the perspective of Cognitive Load Theory (CLT), the Pomodoro Technique manages mental resources by preventing the exhaustion of the cognitive budget. By breaking a 
-complex project into small, time-limited stages, the method reduces Extraneous Load, the unnecessary effort required to manage a vast, unstructured task—allowing for more 
+complex project into small, time-limited stages, the method reduces Extraneous Load, the unnecessary effort required to manage a vast, unstructured task, allowing for more 
 Germane Load to be directed toward core algorithmic problem-solving.
 
 However, In some cases it could be argued that the standard Pomodoro settings can sometimes be counterproductive if applied too rigidly. For individuals with ADHD, 
@@ -192,12 +192,12 @@ a 25-minute window may be too short to enter a productive flow state, leading to
  will allow users to customise the length of their focus intervals and breaks, providing flexibility to accommodate different working styles and cognitive needs.
 
 \subsection{Colour filters}
-Visual presentation can influence reading performance and comfort.\textcite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, 
+Visual presentation can influence reading performance and comfort.~\textcite{griffiths2016effect} found that coloured overlays may reduce visual stress for some readers, 
 although the benefits vary significantly between individuals. This suggests that software tools should support flexible visual customisation rather than relying on a single accessibility configuration.
 
 In some cases, high-contrast models are essential because they provide the necessary visual \gls{scaffolding} to combat \gls{task_paralysis}. For developers with \gls{ADHD}, a low-contrast or pastel theme can
 cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
-By utilizing high-contrast ratios—such as 7:1 or higher, per \gls{WCAG} 2.1 guidelines—the \gls{IDE} creates a clear visual hierarchy.
+By utilizing high-contrast ratios such as 7:1 or higher, per \gls{WCAG} 2.1 guidelines the \gls{IDE} creates a clear visual hierarchy.
 
 This high signal environment provides several technical advantages:
 \begin{itemize}
@@ -217,7 +217,7 @@ Therefore, the most effective high-contrast models for \gls{neurodiversity} are 
 
 \subsection{AI as a Cognitive Tool: Task Decomposition and \Gls{scaffolding}}
 For developers with \gls{ADHD} and \gls{ASD}, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. 
-Research by \parencite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with state recovery and \gls{task_initiation}.~\glspl{LLM} offer a unique solution to this 
+Research by \textcite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with state recovery and \gls{task_initiation}.~\glspl{LLM} offer a unique solution to this 
 through cognitive \gls{scaffolding}. This process handles the \textit{low-value} mental energy drains, such as formatting and scheduling, leaving more room for \textit{high-value} deep thinking (\cite{Navigati93:online}).
 
 Instead of asking a model to simply write a function, the developer can use the model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the \textit{activation energy} barrier identified in \gls{ADHD} populations. By prompting a model to 
@@ -248,5 +248,3 @@ designed to be accessible and usable by disabled and non-disabled people alike~\
 In the context of this project, the plugin's features, such as the Minimalist Toggle and Code Explainer, are designed to reduce cognitive load for \gls{neurodivergent} developers. 
 However, these features also have the potential to benefit neurotypical developers by providing a cleaner interface and clearer error explanations. By applying the curb-cut principle, 
 the plugin aims to create an inclusive environment that enhances the user experience for all developers, regardless of their accessibility needs.
-
-\newpage

@@ -212,6 +212,32 @@
       \verb https://psycnet.apa.org/record/2011-00741-013
       \endverb
     \endentry
+    \entry{cirillo2018pomodoro}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b816ead7ec71b78ad50069d17d303f04}{%
+           family={Cirillo},
+           familyi={C\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Crown Currency}%
+      }
+      \strng{namehash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{fullhash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{fullhashraw}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{bibnamehash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{authorbibnamehash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{authornamehash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{authorfullhash}{b816ead7ec71b78ad50069d17d303f04}
+      \strng{authorfullhashraw}{b816ead7ec71b78ad50069d17d303f04}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Pomodoro technique: The acclaimed time-management system that has transformed how we work}
+      \field{year}{2018}
+    \endentry
     \entry{cruz2025empiricalinvestigationexperiencesdyslexic}{misc}{}{}
       \name{author}{3}{}{%
         {{hash=8bb2f3b79a8b96783b72f7043f6c44f8}{%
@@ -587,6 +613,34 @@
       \field{year}{2024}
       \field{pages}{57\bibrangedash 68}
       \range{pages}{12}
+    \endentry
+    \entry{mayer2005cognitive}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=bcc3ded7dcfcffd5504d0475fabf58d6}{%
+           family={Mayer},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{fullhash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{fullhashraw}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{bibnamehash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{authorbibnamehash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{authornamehash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{authorfullhash}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \strng{authorfullhashraw}{bcc3ded7dcfcffd5504d0475fabf58d6}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Cambridge handbook of multimedia learning}
+      \field{number}{1}
+      \field{title}{Cognitive theory of multimedia learning}
+      \field{volume}{41}
+      \field{year}{2005}
+      \field{pages}{31\bibrangedash 48}
+      \range{pages}{18}
     \endentry
     \entry{miller2025wired}{article}{}{}
       \name{author}{2}{}{%
