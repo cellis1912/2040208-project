@@ -76,7 +76,7 @@
 \glossentry{neurodiversity}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{6\delimN 7}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{10\delimR 12}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{10\delimN 11}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{45}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{I}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{III}}}%
@@ -119,7 +119,7 @@
 		\setentrycounter[]{page}\glsnumberformat{I}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %
 \glossentry{task_initiation}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{7}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{12}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{14}\delimN 
@@ -128,7 +128,8 @@
 		\setentrycounter[]{page}\glsnumberformat{46}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{I}}}%
 \glossentry{task_paralysis}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1\delimN 2}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{1}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{5\delimN 6}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{10\delimR 12}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{21}\delimN 

@@ -28,19 +28,19 @@
 \contentsline {subsubsection}{\numberline {2.5.3}Cognitive Load and Adaptive Implementation}{10}{subsubsection.34}%
 \contentsline {subsection}{\numberline {2.6}Colour filters}{11}{subsection.35}%
 \contentsline {subsubsection}{\numberline {2.6.1}The \Gls {halation} Risk and Soft High Contrast}{11}{subsubsection.36}%
-\contentsline {subsection}{\numberline {2.7}AI as a Cognitive Tool: Task Decomposition and \Gls {scaffolding}}{12}{subsection.37}%
+\contentsline {subsection}{\numberline {2.7}\gls {AI} as a Cognitive Tool: Task Decomposition and \Gls {scaffolding}}{12}{subsection.37}%
 \contentsline {subsection}{\numberline {2.8}NASA-TLX and SUS: Measuring Cognitive Load and Usability}{12}{subsection.38}%
-\contentsline {subsection}{\numberline {2.9}Curb-Cut Principle and Universal Design}{13}{subsection.39}%
+\contentsline {subsection}{\numberline {2.9}Curb-Cut Principle and Universal Design}{12}{subsection.39}%
 \contentsline {section}{\numberline {3}Design and Implementation}{13}{section.40}%
 \contentsline {subsection}{\numberline {3.1}User Requirements}{13}{subsection.41}%
 \contentsline {subsection}{\numberline {3.2}Module Design}{14}{subsection.43}%
 \contentsline {subsection}{\numberline {3.3}Technology Stack}{15}{subsection.45}%
 \contentsline {subsubsection}{\numberline {3.3.1}Minimalist Toggle (FR1)}{16}{subsubsection.46}%
-\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - AI-Driven \Gls {scaffolding} (FR2)}{16}{subsubsection.47}%
+\contentsline {subsubsection}{\numberline {3.3.2}Task Architect - \gls {AI}-Driven \Gls {scaffolding} (FR2)}{16}{subsubsection.47}%
 \contentsline {subsubsection}{\numberline {3.3.3}Visual Styler}{17}{subsubsection.48}%
 \contentsline {subsection}{\numberline {3.4}System Architecture}{18}{subsection.49}%
 \contentsline {subsection}{\numberline {3.5}UI Simplification and Minimalist Toggle (FR1)}{19}{subsection.51}%
-\contentsline {subsection}{\numberline {3.6}AI Integration (FR2 and FR3)}{21}{subsection.55}%
+\contentsline {subsection}{\numberline {3.6}\gls {AI} Integration (FR2 and FR3)}{21}{subsection.55}%
 \contentsline {subsubsection}{\numberline {3.6.1}Task Architect: Overcoming \Gls {task_paralysis}}{21}{subsubsection.56}%
 \contentsline {subsubsection}{\numberline {3.6.2}Human-in-the-Loop (HITL) Implementation}{23}{subsubsection.59}%
 \contentsline {subsubsection}{\numberline {3.6.3}Code Explainer: Mitigating Technical Cognitive Overload}{25}{subsubsection.62}%

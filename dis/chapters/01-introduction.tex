@@ -4,7 +4,7 @@ This project was initially motivated by my lived experience as a \gls{neurodiver
 romanticised as a \textit{superpower} due to the high capacity for deep logical analysis
 and rapid skill acquisition. However, this perceived strength came with a significant \gls{cognitive_tax}. Adapting to new environments, fluctuating workloads and 
 maintaining a sustainable work-life balance is often extremely difficult as current tools like \glspl{IDE} lack out of the box features to mitigate 
-these executive functioning barriers. This research seeks to transition the \gls{IDE} from a passive tool into an active cognitive partner through AI-driven support.
+these Executive Functioning~(\gls{EF}) barriers. This research seeks to transition the \gls{IDE} from a passive tool into an active cognitive partner through \gls{AI}-driven support.
 
 
 \subsection{Problem Statement}
@@ -16,7 +16,7 @@ than the problem logic~\cite{sweller1988cognitive}.
 Current \glspl{IDE} prioritise feature density, often resulting in visual noise from nested menus and persistent notifications. Research indicates that developers with \gls{ADHD} 
 frequently experience \gls{task_paralysis}, difficulty initiating tasks during a project~\cite{bramham2009executive}, while those with \gls{ASD} may struggle with the \gls{double_empathy}, a disconnect between the communication
 styles of neurodivergent and neurotypical individuals, leading to them misinterpreting 
-ambiguous or implied requirements from team members~\cite{Milton01102012}. Existing AI tools focus almost exclusively on code generation rather than process support. Consequently, there is a critical need 
+ambiguous or implied requirements from team members~\cite{Milton01102012}. Existing \gls{AI} tools focus almost exclusively on code generation rather than process support. Consequently, there is a critical need 
 for an \gls{IDE} intervention that acts as a digital ramp, filtering noise and providing the \gls{scaffolding} necessary to bypass the executive freeze response.
 
 \subsection{Understanding \Gls{neurodiversity} in Software Development}
@@ -59,7 +59,7 @@ The primary objective of this project is to design, implement, and evaluate an a
 
 \textbf{Objective 1:} Interface Optimisation (The Minimalist Toggle)
 
-Target: Develop a single \textit{Minimalist Toggle} feature that simultaneously hides non-essential \gls{UI} elements, including the Activity Bar, Status Bar, Mini-map, and Breadcrumbs.
+Target: Develop a single \textit{Minimalist Toggle} feature that simultaneously hides non-essential User Interface~(\gls{UI}) elements, including the Activity Bar, Status Bar, Mini-map, and Breadcrumbs.
 
 
 Justification: This directly addresses the issue of visual overload by reducing the number of stimuli competing for the developer's attention, thus lowering the Extraneous
@@ -68,7 +68,7 @@ Justification: This directly addresses the issue of visual overload by reducing 
 \textbf{Objective 2: }\gls{AI}-Driven Task Decomposition (The Task Architect)
 
 Target: To implement an \gls{LLM}-integrated module that translates ambiguous programming goals into structured, editable checklists to allow the user to have final control over the task breakdown. This should be
-implemented via the Open\gls{AI} \gls{API} that breaks down high-level requirements~\cite{ringel2019ai}.
+implemented via the Open\gls{AI} Application Programming Interface~(\gls{API}) that breaks down high-level requirements~\cite{ringel2019ai}.
 
 
 Justification: This supports \gls{task_initiation} and reduces the energy required to overcome \gls{task_paralysis}, a primary barrier for developers with \gls{ADHD} and \gls{ASD}~\cite{gama2025socio}.
@@ -78,14 +78,14 @@ Justification: This supports \gls{task_initiation} and reduces the energy requir
 Target: To build a diagnostic interceptor that re-interprets complex compiler errors into plain-language, bulleted instructions~\cite{rocha2025conceptual}. Limit output to a maximum of three bullet points using direct instructions style.
 
 
-Justification: This minimizes the cognitive demand of interpreting dense text, preventing rabbit holes and supporting the literal communication needs identified in the \Gls{double_empathy}
+Justification: This minimises the cognitive demand of interpreting dense text, preventing rabbit holes and supporting the literal communication needs identified in the \Gls{double_empathy}
  problem. By simplifying the feedback loop, developers can maintain focus on the core problem rather than getting lost in peripheral details. This is particularly beneficial for those with \gls{ASD},
   who may struggle with implied logic and prefer clear, direct instructions. Additionally, it can help mitigate the \gls{hyperfocus} trap by providing concise guidance that keeps the developer on track 
   without overwhelming them with information.
 
 \textbf{Objective 4: }Visual Accessibility Customisation (The Visual Styler)
 
-Target: To create at least two visual presets, such as \textit{Soft High Contrast}, that adhere to \gls{WCAG} 2.1, set of international standards designed to make web content more accessible to people with disabilities it can also help with visual processing, eye strain and enhance readability~\cite{bengtsson2025web}.
+Target: To create at least two visual presets, such as \textit{Soft High Contrast}, that adhere to Web Content Accessibility Guidelines~(\gls{WCAG} 2.1), set of international standards designed to make web content more accessible to people with disabilities it can also help with visual processing, eye strain and enhance readability~\cite{bengtsson2025web}.
 
 Justification: Addresses the sensory sensitivities and colour preferences reported by \gls{neurodivergent} developers in research surveys~\cite{rocha2025conceptual}.
 
@@ -93,17 +93,17 @@ Justification: Addresses the sensory sensitivities and colour preferences report
 
 Target: To conduct a comparative study using the \gls{NASATLX} and the \gls{SUS} to validate the plugin's efficacy against a standard \gls{IDE}.
 
-Justification: This provides a standardized scientific metric to confirm if the tool successfully reduces mental demand and frustration for the target demographic.
+Justification: This provides a standardised scientific metric to confirm if the tool successfully reduces mental demand and frustration for the target demographic.
 
 \subsection{Dissertation Structure}
 
-This dissertation is organized into five sections, following a logical progression from theoretical grounding to empirical validation:
+This dissertation is organised into five sections, following a logical progression from theoretical grounding to empirical validation:
 \begin{itemize}
   \item \textbf{Section 2: Literature Review} I will evaluate the foundational psychological frameworks of Cognitive Load Theory (CLT) and Multimedia Learning (CTML). This provides a theoretical foundation for other research into the current state of \gls{neurodivergent} 
-  software engineering as well as the shift toward a more \gls{social_model} of disability rather than a \gls{medical_model}.
+  software engineering as well as the shift toward a more \gls{social_model} rather than a \gls{medical_model}.
   \item \textbf{Section 3: Design and Implementation} Details the user requirements and the three-layer system architecture. This chapter explains the technical
-   execution of \textit{Minimalist Toggle} and \textit{Task Architect} as well as the visual presets and styling tools. I will also discuss issues encountered during development and how they were resolved, such as the design of the UI and issues with the AI integration and prompt generation.
-  \item \textbf{Section 4: Results and Discussion} Presents the quantitative and qualitative findings from the user study ($N=5$). It analyzes the 82\% reduction in perceived workload measured by the NASA-TLX 
+   execution of \textit{Minimalist Toggle} and \textit{Task Architect} as well as the visual presets and styling tools. I will also discuss issues encountered during development and how they were resolved, such as the design of the UI and issues with the \gls{AI} integration and prompt generation.
+  \item \textbf{Section 4: Results and Discussion} Presents the quantitative and qualitative findings from the user study ($N=5$). It analyses the 82\% reduction in perceived workload measured by the \gls{NASATLX} 
   and evaluates the tool`s excellent usability rating via the System Usability Scale (SUS). This section also includes a critical discussion of the results, exploring the implications for future assistive 
   technology in software development and acknowledging the limitations of the study, such as the small sample size and potential biases in participant selection.
   \item \textbf{Section 5: Conclusion} Summarises the core findings, acknowledges research limitations, and proposes specific avenues for future work with larger, more diverse participant pools.

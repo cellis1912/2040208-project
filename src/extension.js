@@ -460,7 +460,7 @@ async function explainActiveErrors(panel) {
     } catch (err) {
         panel.webview.postMessage({
             command: 'errorResult',
-            text: `❌ Error during scan: ${err.message}`
+            text: `Error during scan: ${err.message}`
         });
         vscode.window.showErrorMessage(`AI Error: ${err.message}`);
     }

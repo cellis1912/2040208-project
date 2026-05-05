@@ -4,22 +4,22 @@ Cognitive Load Theory, primarily developed by John Sweller, suggests that since 
 \textcite{sweller1988cognitive} proposes a three-part load framework that identifies three different types of cognitive load that impact a learner's ability to process information:
 
 \begin{enumerate}
-    \item \gls{IL}: This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
-    simultaneously to understand a concept. For example, learning basic vocabulary has low intrinsic load, while mastering complex syntax has high intrinsic load.
-    \item \gls{EL}: This is seen as the unnecessary load that you would aim to minimise wherever possible. It is influenced by the way 
+    \item Intrinsic Load~(\gls{IL}): This is the inherent difficulty of the task itself. It is defined by the number of elements must be processed 
+    simultaneously to understand a concept. For example, learning basic vocabulary has low \gls{IL}, while mastering complex syntax has high \gls{IL}.
+    \item Extraneous Load~(\gls{EL}): This is seen as the unnecessary load that you would aim to minimise wherever possible. It is influenced by the way 
     information is presented. Some examples that could exacerbate the load are poorly designed diagrams, distracting environments or redundant
      text. Poor design choices force the brain to waste resources on non-essential processing.
-    \item \gls{GL}: This is the load I am aiming to maximise. It refers to the mental effort that can be directed toward the more key task, 
+    \item Germane Load~(\gls{GL}): This is the load I am aiming to maximise. It refers to the mental effort that can be directed toward the more key task, 
     which in this scenario would be the code programming task.
 \end{enumerate}
 
-The framework can be simplified down to the idea that the Total Cognitive Load (TCL) is the sum of Intrinsic Load, Extraneous Load, and Germane Load. 
+The framework can be simplified down to the idea that the Total Cognitive Load~(\gls{TCL}) is the sum of \gls{IL}, \gls{EL}, and \gls{GL}. 
 The goal of instructional design is to manage these loads effectively to maximise learning outcomes.
 $$TCL = IL + EL + GL$$
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth, alt={A diagram illustrating Sweller's Tripartite Model. It shows Total Cognitive Load as a header, supported by three equal categories: Intrinsic Load (task difficulty), Extraneous Load (presentation noise), and Germane Load (knowledge construction).}] {logos/clt_diagram.png}
+    \includegraphics[width=0.8\linewidth, alt={A diagram illustrating Sweller's Tripartite Model. It shows Total Cognitive Load as a header, supported by three equal categories: \gls{IL} (task difficulty), \gls{EL} (presentation noise), and \gls{GL} (knowledge construction).}] {logos/clt_diagram.png}
     \caption{Sweller's Tripartite Model of Cognitive Load, illustrating the balance between Intrinsic, Extraneous, and Germane loads.}\label{fig:clt_diagram}
 \end{figure}
 
@@ -27,16 +27,16 @@ While Sweller's Cognitive Load Theory provides the theoretical foundation, the a
 a more nuanced approach. One of the main focuses of this project is that for these developers, the \gls{IDE} environment often imposes a 
 disproportionate \gls{EL}. When \gls{EL} is high, the cognitive budget is exhausted before the developer can engage with the core logic of the code, leading to \gls{task_paralysis}. 
 My plugin aims to free up this mental bandwidth by suppressing \gls{EL} (via the Minimalist Toggle) and \gls{scaffolding} \gls{IL} (via the Task Architect),
-thereby maximizing the availability of cognitive resources for Germane processing. By reducing the noise and providing structured support, the plugin allows \gls{neurodivergent} developers to focus
+thereby maximising the availability of cognitive resources for Germane processing. By reducing the noise and providing structured support, the plugin allows \gls{neurodivergent} developers to focus
 their cognitive resources on the actual problem-solving aspect of programming, rather than being overwhelmed by the interface or the complexity of the task at hand.
 
 \subsection{Applying CLT to \Gls{neurodiversity}}
-For \gls{neurodivergent} developers, the Extraneous Load is not just due to bad design, but a barrier to entry. Features like the Activity Bar and Mini-map, while useful for some, can
-can be filter out by a neurotypical developer but act as visual noise for those with \gls{ADHD} or \gls{ASD}.
-To be able to code a high IL is required. However, if the activation energy to start is too high due to \gls{executive_dysfunction}, the developer 
+For \gls{neurodivergent} developers, the \gls{EL} is not just due to bad design, but a barrier to entry. Features like the Activity Bar and Mini-map, while useful for some, can
+be filtered out by a neurotypical developer but act as visual noise for those with \gls{ADHD} or \gls{ASD}.
+To be able to code a high \gls{IL} is required. However, if the activation energy to start is too high due to \gls{executive_dysfunction}, the developer 
 never reaches the stage where they can handle that load.
-Having a single switch that closes all UI elements will directly targets the suppression of \gls{EL} to free up mental bandwidth instantly without having to navigate menus.
-While the AI task decomposition tool acts as a cognitive prosthetic that scaffolds the \gls{IL} of project planning, preventing \gls{task_paralysis}.
+Having a single switch that closes all UI elements will directly targetC the suppression of \gls{EL} to free up mental bandwidth instantly without having to navigate menus.
+While the \gls{AI} task decomposition tool acts as a cognitive prosthetic that scaffolds the \gls{IL} of project planning, preventing \gls{task_paralysis}.
 
 
 \subsubsection{Integration with Rosenshine`s Principles of Instruction}
@@ -47,9 +47,9 @@ environments~\cite{rosenshine2012principles}.
 Main connections to Sweller`s principles include:
 
 \begin{itemize}
-    \item Small Steps (Principle 2): By presenting new material in small increments, the instructor limits the Intrinsic Load, ensuring the 
+    \item Small Steps (Principle 2): By presenting new material in small increments, the instructor limits the \gls{IL}, ensuring the 
     \gls{working_memory} is not overwhelmed at the outset.
-    \item \Gls{scaffolding} (Principle 7): Providing temporary supports reduces Extraneous Load, allowing the learner to focus their cognitive 
+    \item \Gls{scaffolding} (Principle 7): Providing temporary supports reduces \gls{EL}, allowing the learner to focus their cognitive 
     resources on the core task rather than the noise of the process.
 \end{itemize}
 
@@ -58,18 +58,18 @@ Further more these smaller task can be seen as \gls{scaffolding} for the user wh
 
 
 \subsubsection{The Cognitive Theory of Multimedia Learning (CTML)}
-While Sweller’s Cognitive Load Theory focuses primarily on the nature and management of cognitive load, Mayer’s \gls{CTML}~\cite{mayer2005cognitive} 
+While Sweller’s Cognitive Load Theory focuses primarily on the nature and management of cognitive load, Mayer`s \gls{CTML}~\cite{mayer2005cognitive} 
 provides a more detailed explanation of how information is processed across visual and auditory channels. Within the context of software development, the
 \gls{IDE} can be understood as a high-density multimedia environment in which multiple streams of related information must be processed simultaneously.
 
-Within this framework, Ayres and Sweller’s split-attention principle describes the split-attention effect as occurring when learners are required to divide their attention 
+Within this framework, Ayres and Sweller`s split-attention principle describes the split-attention effect as occurring when learners are required to divide their attention 
 between physically separated yet cognitively related sources of information~\cite{AyresSweller2021}. In a software development context, this may occur when an error message 
 in the console refers to a line of code located hundreds of lines away in the editor. For a \gls{neurodivergent} developer, this creates a significant spatial split, requiring 
 additional mental effort to navigate between and mentally integrate these sources of information. This integration process contributes directly to extraneous cognitive load, 
 as cognitive resources are expended on locating and connecting information rather than resolving the underlying programming problem.
 
 To mitigate this, the plugin`s \textit{Code Explainer} feature will provide an integrated view that combines the error message with the relevant code context, effectively 
-reducing the split-attention effect. By presenting the error message and the associated code in a unified interface, the plugin minimizes the need for mental integration
+reducing the split-attention effect. By presenting the error message and the associated code in a unified interface, the plugin minimises the need for mental integration
  across separate sources, thereby reducing extraneous cognitive load and allowing developers to focus more effectively on problem-solving.
 
 
@@ -80,9 +80,9 @@ To best design an inclusive plug-in, I needed to gain a deep understanding of th
 
 \subsubsection{The Cognitive Load Connection}
 
-For a \gls{neurodivergent} developer, a standard \gls{IDE} error message often carries a high Extraneous Load. What a neurotypical developer
+For a \gls{neurodivergent} developer, a standard \gls{IDE} error message often carries a high \gls{EL}. What a neurotypical developer
  might perceive as a simple notification, a \gls{neurodivergent} individual may experience as a wall of cryptic text, inconsistent highlighting, 
- and ambiguous phrasing. This noise competes for limited \gls{working_memory} resources, leaving little room for the Intrinsic Load required actually 
+ and ambiguous phrasing. This noise competes for limited \gls{working_memory} resources, leaving little room for the \gls{IL} required actually 
  to solve the logical problem.
 
 \subsubsection{Executive Functioning and Task Switching}
@@ -107,10 +107,10 @@ Based on the synthesis of recent studies, the challenges can be categorised as f
 
 \subsubsection{Beyond Medical}
 
-To understand why existing tools fail, we  must examine the shift from the \Gls{medical_model} to the \Gls{social_model} of disability.
+To understand why existing tools fail, we  must examine the shift from the \Gls{medical_model} to the \Gls{social_model}.
 
 \begin{itemize}
-    \item \textbf{The \Gls{medical_model}}: Traditionally, ADHD or \gls{dyslexia} in engineering has been viewed as a deficit to be corrected through individual coaching or medication.
+    \item \textbf{The \Gls{medical_model}}: Traditionally, \gls{ADHD} or \gls{dyslexia} in engineering has been viewed as a deficit to be corrected through individual coaching or medication.
     \item \textbf{The \Gls{social_model}}: This perspective argues that the developer is disabled not by their neurology, but by an \gls{IDE} designed with a \gls{neurotypical-bias}. The problem is not the individual's
      brain, but the environment that fails to accommodate it. This shift in perspective is crucial for designing tools that are not just assistive but truly inclusive, as it focuses on modifying the
       environment (the \gls{IDE}) rather than trying to fix the individual.
@@ -122,7 +122,7 @@ without needing to conform to a neurotypical standard.
 \Gls{EF} Domains in Programming
 To deepen the analysis of \gls{executive_dysfunction}, we must break it into three core domains:
 \begin{itemize}
-    \item \textbf{Inhibitory Control}: The ability to ignore distractions. For ADHD developers, the \textit{pop-up} notifications of a linter can break a fragile state of focus.
+    \item \textbf{Inhibitory Control}: The ability to ignore distractions. For \gls{ADHD} developers, the \textit{pop-up} notifications of a linter can break a fragile state of focus.
     \item \textbf{\Gls{working_memory}}: Dyslexic developers often have a high capacity for 3D spatial reasoning but a limited verbal \gls{working_memory}, making syntax-heavy languages like C++ more taxing than cleaner languages like Python.
     \item \textbf{Cognitive Flexibility}: The ability to switch between thinking about the big picture architecture and the low-level syntax.
 \end{itemize}
@@ -143,7 +143,7 @@ off from an interesting problem makes task-switching, a fundamental requirement 
 what appears to be peak productivity from the outside is often an unsustainable trade-off that risks both the developer's well-being and the project's timeline.
 
 \subsection{Existing Tools}
-The design of \glspl{IDE}often follows a one-size-fits-all model, which inherently leads to a \gls{neurotypical-bias}, creating barriers for those who may 
+The design of \glspl{IDE} often follows a one-size-fits-all model, which inherently leads to a \gls{neurotypical-bias}, creating barriers for those who may 
 require additional support.~\textcite{morris2015understanding} observes workplace tools are frequently built with assumptions that ``may not align with 
 the needs of \gls{neurodiverse} employees.'' \glspl{IDE} are often packed with tools that enable customisation; however, they are not designed with \gls{neurodiverse} 
 developers in mind, and complex nested menus can be overwhelming.
@@ -163,7 +163,7 @@ This project aims to bridge the gap between the availability of generic tools an
 \subsection{Pomodoro Timer}
 The Pomodoro Technique, developed by Francesco Cirillo~\cite{cirillo2018pomodoro} in the late 1980s, is a time-management framework that partitions work into focused intervals. Typically
 25 minutes, separated by brief five-minute breaks. In the context of \gls{neurodiversity}, this method is often reframed as a cognitive tool rather than a rigid 
-rule set, specifically designed to address common executive functioning barriers~\cite{miller2025wired}.
+rule set, specifically designed to address common \gls{EF} barriers~\cite{miller2025wired}.
 
 \subsubsection{Managing \Gls{executive_dysfunction} and \Gls{task_paralysis}}
 For developers with \gls{ADHD} or \gls{ASD}, \gls{task_paralysis}, an inability to initiate work due to cognitive overload or anxiety represents a significant hurdle. 
@@ -184,10 +184,10 @@ nature of the Pomodoro cycle acts as a release valve for focus:
 
 \subsubsection{Cognitive Load and Adaptive Implementation}
 From the perspective of Cognitive Load Theory (CLT), the Pomodoro Technique manages mental resources by preventing the exhaustion of the cognitive budget. By breaking a 
-complex project into small, time-limited stages, the method reduces Extraneous Load, the unnecessary effort required to manage a vast, unstructured task, allowing for more 
-Germane Load to be directed toward core algorithmic problem-solving.
+complex project into small, time-limited stages, the method reduces \gls{EL}, the unnecessary effort required to manage a vast, unstructured task, allowing for more 
+\gls{GL} to be directed toward core algorithmic problem-solving.
 
-However, In some cases it could be argued that the standard Pomodoro settings can sometimes be counterproductive if applied too rigidly. For individuals with ADHD, 
+However, In some cases it could be argued that the standard Pomodoro settings can sometimes be counterproductive if applied too rigidly. For individuals with \gls{ADHD}, 
 a 25-minute window may be too short to enter a productive flow state, leading to \glspl{state_recovery_cost} if interrupted too early. To address this, the plugin
  will allow users to customise the length of their focus intervals and breaks, providing flexibility to accommodate different working styles and cognitive needs.
 
@@ -197,7 +197,7 @@ although the benefits vary significantly between individuals. This suggests that
 
 In some cases, high-contrast models are essential because they provide the necessary visual \gls{scaffolding} to combat \gls{task_paralysis}. For developers with \gls{ADHD}, a low-contrast or pastel theme can
 cause code elements to bleed together, increasing the cognitive effort required to distinguish between keywords, variables, and logic.
-By utilizing high-contrast ratios such as 7:1 or higher, per \gls{WCAG} 2.1 guidelines the \gls{IDE} creates a clear visual hierarchy.
+By utilising high-contrast ratios such as 7:1 or higher, per \gls{WCAG} 2.1 guidelines the \gls{IDE} creates a clear visual hierarchy.
 
 This high signal environment provides several technical advantages:
 \begin{itemize}
@@ -210,32 +210,32 @@ This high signal environment provides several technical advantages:
 While high contrast is vital for clarity, pure high contrast (e.g., stark white text on a pure black background) can be counterproductive for those with \gls{ASD} or specific visual stresses.
  This combination can cause \gls{halation}, a glowing or bleeding effect around letters that makes text appear to vibrate or move~\cite{cruz2025empiricalinvestigationexperiencesdyslexic}.
 
- To address this, the most effective models for \gls{neurodiversity} are often \textit{Soft High Contrast} themes. These utilize high-visibility colors against deep, non-pure-black backgrounds 
- (such as dark greys or navy). This balance provides the necessary signal for ADHD developers to maintain focus while preventing the sensory overwhelm and visual distortion common in \gls{ASD} profiles.
-However, the implementation must be nuanced. While high contrast is vital for clarity, high contrast can cause \gls{halation} (a glowing effect around letters) for those with \gls{ASD} or visual stress. 
+ To address this, the most effective models for \gls{neurodiversity} are often \textit{Soft High Contrast} themes. These utilise high-visibility colors against deep, non-pure-black backgrounds 
+ (such as dark greys or navy). This balance provides the necessary signal for \gls{ADHD} developers to maintain focus while preventing the sensory overwhelm and visual distortion common in \gls{ASD} profiles.
+However, the implementation must be nuanced in order to avoid \gls{halation}.
 Therefore, the most effective high-contrast models for \gls{neurodiversity} are often \textit{Soft High Contrast}, utilising high-visibility colours against deep non-pure-black backgrounds.
 
-\subsection{AI as a Cognitive Tool: Task Decomposition and \Gls{scaffolding}}
+\subsection{\gls{AI} as a Cognitive Tool: Task Decomposition and \Gls{scaffolding}}
 For developers with \gls{ADHD} and \gls{ASD}, the most significant barrier to productivity is often not the complexity of the code itself, but the executive function tax required to organise a project. 
 Research by \textcite{newman2025get} indicates that \gls{ADHD} professional programmers specifically struggle with state recovery and \gls{task_initiation}.~\glspl{LLM} offer a unique solution to this 
 through cognitive \gls{scaffolding}. This process handles the \textit{low-value} mental energy drains, such as formatting and scheduling, leaving more room for \textit{high-value} deep thinking (\cite{Navigati93:online}).
 
 Instead of asking a model to simply write a function, the developer can use the model to decompose a broad, abstract goal into a granular, step-by-step plan. This process mitigates the \textit{activation energy} barrier identified in \gls{ADHD} populations. By prompting a model to 
-think step-by-step, the AI generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
+think step-by-step, the \gls{AI} generates a logical roadmap for the developer to work through, as well as referring back to it if the task is interrupted.
 
 As noted by \textcite{Navigati93:online}, this automated pattern of \gls{scaffolding} can increase productivity for developers with \gls{ADHD}. Existing tools already demonstrate this by taking a single
- overwhelming command (e.g., ``build an authentication system'') and breaking it into manageable milestones. This effectively transforms AI from a simple code generator into a digital ramp that bypasses 
+ overwhelming command (e.g., ``build an authentication system'') and breaking it into manageable milestones. This effectively transforms \gls{AI} from a simple code generator into a digital ramp that bypasses 
  the freeze response common in \gls{task_paralysis}.
 
  \subsection{NASA-TLX and SUS: Measuring Cognitive Load and Usability}
-To evaluate the effectiveness of the plugin, I will use the NASA Task Load Index (NASA-TLX) to measure cognitive load and the System Usability Scale (SUS) to assess usability.
-The NASA-TLX provides a multidimensional assessment of perceived workload across six dimensions: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
-This will allow me to quantify the reduction in cognitive load achieved by the plugin. The SUS, on the other hand, is a widely used tool for assessing the usability of systems and interfaces.
+To evaluate the effectiveness of the plugin, I will use the NASA Task Load Index (\gls{NASATLX}) to measure cognitive load and the \gls{SUS} to assess usability.
+The \gls{NASATLX} provides a multidimensional assessment of perceived workload across six dimensions: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
+This will allow me to quantify the reduction in cognitive load achieved by the plugin. The \gls{SUS}, on the other hand, is a widely used tool for assessing the usability of systems and interfaces.
 It consists of a 10-item questionnaire that provides a global view of subjective assessments of usability. By using both tools, I can gain insights into how well the plugin reduces cognitive
  load while also ensuring that it is user-friendly and accessible for \gls{neurodivergent} developers.
 
  I have chosen these tools because they are well-established in the field of human-computer interaction and provide a comprehensive framework for evaluating both the cognitive and usability
-  aspects of the plugin. The NASA-TLX will help me understand the specific areas where cognitive load is reduced, while the SUS will provide feedback on the overall user experience. 
+  aspects of the plugin. The \gls{NASATLX} will help me understand the specific areas where cognitive load is reduced, while the \gls{SUS} will provide feedback on the overall user experience. 
   This dual approach ensures that the plugin is not only effective in reducing cognitive load but also meets the usability needs of its target audience.
 
 \subsection{Curb-Cut Principle and Universal Design}
